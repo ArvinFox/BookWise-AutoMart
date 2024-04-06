@@ -226,6 +226,7 @@
       <DependentUpon>BookWiseAutoMart.mdf</DependentUpon>
     </Content>
     <Content Include="Resources\bar-chart.png" />
+    <None Include="Resources\home.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

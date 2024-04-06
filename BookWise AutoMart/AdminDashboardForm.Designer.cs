@@ -33,33 +33,33 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlInventoryManegement = new System.Windows.Forms.Panel();
             this.btnInventoryManagement = new System.Windows.Forms.Button();
+            this.picBoxInventoryManagement = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelWelcomeAdmin = new System.Windows.Forms.TableLayoutPanel();
             this.lblWelcomeAdmin = new System.Windows.Forms.Label();
             this.pnlUserManagement = new System.Windows.Forms.Panel();
             this.btnUserManagement = new System.Windows.Forms.Button();
+            this.picBoxUserManagement = new System.Windows.Forms.PictureBox();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.tableLayoutPanelAdminDashboard = new System.Windows.Forms.TableLayoutPanel();
             this.pnlReportsAnalytics = new System.Windows.Forms.Panel();
             this.btnReportsAnalytics = new System.Windows.Forms.Button();
+            this.picBoxReportsAnalytics = new System.Windows.Forms.PictureBox();
             this.pnlOffersPromotions = new System.Windows.Forms.Panel();
             this.btnOffersPromotions = new System.Windows.Forms.Button();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.picBoxReportsAnalytics = new System.Windows.Forms.PictureBox();
             this.picBoxOffersPromotions = new System.Windows.Forms.PictureBox();
-            this.picBoxUserManagement = new System.Windows.Forms.PictureBox();
-            this.picBoxInventoryManagement = new System.Windows.Forms.PictureBox();
+            this.pnlAdmin = new System.Windows.Forms.Panel();
             this.picBoxAdminDashboard = new System.Windows.Forms.PictureBox();
             this.pnlInventoryManegement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxInventoryManagement)).BeginInit();
             this.tableLayoutPanelWelcomeAdmin.SuspendLayout();
             this.pnlUserManagement.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).BeginInit();
             this.tableLayoutPanelAdminDashboard.SuspendLayout();
             this.pnlReportsAnalytics.SuspendLayout();
-            this.pnlOffersPromotions.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxReportsAnalytics)).BeginInit();
+            this.pnlOffersPromotions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxOffersPromotions)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxInventoryManagement)).BeginInit();
+            this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminDashboard)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,6 +134,16 @@
             this.btnInventoryManagement.UseVisualStyleBackColor = false;
             this.btnInventoryManagement.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // picBoxInventoryManagement
+            // 
+            this.picBoxInventoryManagement.Image = global::BookWise_AutoMart.Properties.Resources.inventory_management;
+            this.picBoxInventoryManagement.Location = new System.Drawing.Point(32, 27);
+            this.picBoxInventoryManagement.Name = "picBoxInventoryManagement";
+            this.picBoxInventoryManagement.Size = new System.Drawing.Size(199, 192);
+            this.picBoxInventoryManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxInventoryManagement.TabIndex = 0;
+            this.picBoxInventoryManagement.TabStop = false;
+            // 
             // tableLayoutPanelWelcomeAdmin
             // 
             this.tableLayoutPanelWelcomeAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -188,6 +198,16 @@
             this.btnUserManagement.UseVisualStyleBackColor = false;
             this.btnUserManagement.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // picBoxUserManagement
+            // 
+            this.picBoxUserManagement.Image = global::BookWise_AutoMart.Properties.Resources.user_management;
+            this.picBoxUserManagement.Location = new System.Drawing.Point(32, 27);
+            this.picBoxUserManagement.Name = "picBoxUserManagement";
+            this.picBoxUserManagement.Size = new System.Drawing.Size(195, 192);
+            this.picBoxUserManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxUserManagement.TabIndex = 0;
+            this.picBoxUserManagement.TabStop = false;
+            // 
             // btnMaximize
             // 
             this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
@@ -202,6 +222,7 @@
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.TabStop = false;
             this.btnMaximize.UseVisualStyleBackColor = true;
+            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // tableLayoutPanelAdminDashboard
             // 
@@ -252,6 +273,16 @@
             this.btnReportsAnalytics.UseVisualStyleBackColor = false;
             this.btnReportsAnalytics.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // picBoxReportsAnalytics
+            // 
+            this.picBoxReportsAnalytics.Image = global::BookWise_AutoMart.Properties.Resources.reports_analytics;
+            this.picBoxReportsAnalytics.Location = new System.Drawing.Point(32, 27);
+            this.picBoxReportsAnalytics.Name = "picBoxReportsAnalytics";
+            this.picBoxReportsAnalytics.Size = new System.Drawing.Size(199, 192);
+            this.picBoxReportsAnalytics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxReportsAnalytics.TabIndex = 0;
+            this.picBoxReportsAnalytics.TabStop = false;
+            // 
             // pnlOffersPromotions
             // 
             this.pnlOffersPromotions.AutoSize = true;
@@ -282,6 +313,16 @@
             this.btnOffersPromotions.UseVisualStyleBackColor = false;
             this.btnOffersPromotions.Click += new System.EventHandler(this.btnControl_Click);
             // 
+            // picBoxOffersPromotions
+            // 
+            this.picBoxOffersPromotions.Image = global::BookWise_AutoMart.Properties.Resources.offers_promotions;
+            this.picBoxOffersPromotions.Location = new System.Drawing.Point(32, 27);
+            this.picBoxOffersPromotions.Name = "picBoxOffersPromotions";
+            this.picBoxOffersPromotions.Size = new System.Drawing.Size(199, 192);
+            this.picBoxOffersPromotions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxOffersPromotions.TabIndex = 0;
+            this.picBoxOffersPromotions.TabStop = false;
+            // 
             // pnlAdmin
             // 
             this.pnlAdmin.Controls.Add(this.lblAdminDashboardTitle);
@@ -294,46 +335,6 @@
             this.pnlAdmin.Name = "pnlAdmin";
             this.pnlAdmin.Size = new System.Drawing.Size(1280, 40);
             this.pnlAdmin.TabIndex = 14;
-            // 
-            // picBoxReportsAnalytics
-            // 
-            this.picBoxReportsAnalytics.Image = global::BookWise_AutoMart.Properties.Resources.reports_analytics;
-            this.picBoxReportsAnalytics.Location = new System.Drawing.Point(32, 27);
-            this.picBoxReportsAnalytics.Name = "picBoxReportsAnalytics";
-            this.picBoxReportsAnalytics.Size = new System.Drawing.Size(199, 192);
-            this.picBoxReportsAnalytics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxReportsAnalytics.TabIndex = 0;
-            this.picBoxReportsAnalytics.TabStop = false;
-            // 
-            // picBoxOffersPromotions
-            // 
-            this.picBoxOffersPromotions.Image = global::BookWise_AutoMart.Properties.Resources.offers_promotions;
-            this.picBoxOffersPromotions.Location = new System.Drawing.Point(32, 27);
-            this.picBoxOffersPromotions.Name = "picBoxOffersPromotions";
-            this.picBoxOffersPromotions.Size = new System.Drawing.Size(199, 192);
-            this.picBoxOffersPromotions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxOffersPromotions.TabIndex = 0;
-            this.picBoxOffersPromotions.TabStop = false;
-            // 
-            // picBoxUserManagement
-            // 
-            this.picBoxUserManagement.Image = global::BookWise_AutoMart.Properties.Resources.user_management;
-            this.picBoxUserManagement.Location = new System.Drawing.Point(32, 27);
-            this.picBoxUserManagement.Name = "picBoxUserManagement";
-            this.picBoxUserManagement.Size = new System.Drawing.Size(195, 192);
-            this.picBoxUserManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxUserManagement.TabIndex = 0;
-            this.picBoxUserManagement.TabStop = false;
-            // 
-            // picBoxInventoryManagement
-            // 
-            this.picBoxInventoryManagement.Image = global::BookWise_AutoMart.Properties.Resources.inventory_management;
-            this.picBoxInventoryManagement.Location = new System.Drawing.Point(32, 27);
-            this.picBoxInventoryManagement.Name = "picBoxInventoryManagement";
-            this.picBoxInventoryManagement.Size = new System.Drawing.Size(199, 192);
-            this.picBoxInventoryManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxInventoryManagement.TabIndex = 0;
-            this.picBoxInventoryManagement.TabStop = false;
             // 
             // picBoxAdminDashboard
             // 
@@ -356,25 +357,25 @@
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 1024);
+            this.MinimumSize = new System.Drawing.Size(1280, 1018);
             this.Name = "AdminDashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboardForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlInventoryManegement.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxInventoryManagement)).EndInit();
             this.tableLayoutPanelWelcomeAdmin.ResumeLayout(false);
             this.tableLayoutPanelWelcomeAdmin.PerformLayout();
             this.pnlUserManagement.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).EndInit();
             this.tableLayoutPanelAdminDashboard.ResumeLayout(false);
             this.tableLayoutPanelAdminDashboard.PerformLayout();
             this.pnlReportsAnalytics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxReportsAnalytics)).EndInit();
             this.pnlOffersPromotions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffersPromotions)).EndInit();
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxReportsAnalytics)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxOffersPromotions)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxInventoryManagement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminDashboard)).EndInit();
             this.ResumeLayout(false);
 

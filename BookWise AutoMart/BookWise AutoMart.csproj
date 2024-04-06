@@ -108,6 +108,12 @@
     <Compile Include="UserControlInventoryManagement.Designer.cs">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminControlForm.resx">
       <DependentUpon>AdminControlForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +141,9 @@
     </Compile>
     <EmbeddedResource Include="UserControlInventoryManagement.resx">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -216,6 +225,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BookWiseAutoMart.mdf</DependentUpon>
     </Content>
+    <Content Include="Resources\bar-chart.png" />
+    <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -230,7 +230,7 @@
             this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFilterCategories.FormattingEnabled = true;
-            this.comboBoxFilterCategories.Location = new System.Drawing.Point(173, 20);
+            this.comboBoxFilterCategories.Location = new System.Drawing.Point(173, 16);
             this.comboBoxFilterCategories.MaxDropDownItems = 20;
             this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
             this.comboBoxFilterCategories.Size = new System.Drawing.Size(194, 32);

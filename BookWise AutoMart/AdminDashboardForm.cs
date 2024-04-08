@@ -54,10 +54,5 @@ namespace BookWise_AutoMart
 
             this.Hide();
         }
-
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

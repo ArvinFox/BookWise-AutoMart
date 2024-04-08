@@ -39,10 +39,10 @@
             this.btnAdminLogin = new System.Windows.Forms.Button();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.lblAdminLoginTitle = new System.Windows.Forms.Label();
+            this.picBoxAdminLogin = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.picBoxAdminLogin = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanelAdminCredentials.SuspendLayout();
             this.pnlPassword.SuspendLayout();
             this.tableLayoutPanelAdminLoginBtn.SuspendLayout();
@@ -101,7 +101,6 @@
             this.txtAdminUsername.Name = "txtAdminUsername";
             this.txtAdminUsername.Size = new System.Drawing.Size(395, 43);
             this.txtAdminUsername.TabIndex = 1;
-            this.txtAdminUsername.TabStop = false;
             this.txtAdminUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdminUsername_KeyPress);
             // 
             // pnlPassword
@@ -141,7 +140,6 @@
             this.txtAdminPassword.Name = "txtAdminPassword";
             this.txtAdminPassword.Size = new System.Drawing.Size(398, 44);
             this.txtAdminPassword.TabIndex = 3;
-            this.txtAdminPassword.TabStop = false;
             this.txtAdminPassword.TextChanged += new System.EventHandler(this.txtAdminPassword_TextChanged);
             this.txtAdminPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdminPassword_KeyPress);
             // 
@@ -169,13 +167,13 @@
             this.btnAdminLogin.Name = "btnAdminLogin";
             this.btnAdminLogin.Size = new System.Drawing.Size(168, 69);
             this.btnAdminLogin.TabIndex = 0;
-            this.btnAdminLogin.TabStop = false;
             this.btnAdminLogin.Text = "Login";
             this.btnAdminLogin.UseVisualStyleBackColor = false;
             this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.White;
             this.pnlAdmin.Controls.Add(this.lblAdminLoginTitle);
             this.pnlAdmin.Controls.Add(this.picBoxAdminLogin);
             this.pnlAdmin.Controls.Add(this.btnMinimize);
@@ -196,6 +194,16 @@
             this.lblAdminLoginTitle.Size = new System.Drawing.Size(122, 24);
             this.lblAdminLoginTitle.TabIndex = 4;
             this.lblAdminLoginTitle.Text = "Admin Login";
+            // 
+            // picBoxAdminLogin
+            // 
+            this.picBoxAdminLogin.Image = global::BookWise_AutoMart.Properties.Resources.admin_avatar__20px_;
+            this.picBoxAdminLogin.Location = new System.Drawing.Point(10, 8);
+            this.picBoxAdminLogin.Name = "picBoxAdminLogin";
+            this.picBoxAdminLogin.Size = new System.Drawing.Size(25, 25);
+            this.picBoxAdminLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBoxAdminLogin.TabIndex = 3;
+            this.picBoxAdminLogin.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -242,16 +250,6 @@
             this.btnClose.TabStop = false;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // picBoxAdminLogin
-            // 
-            this.picBoxAdminLogin.Image = global::BookWise_AutoMart.Properties.Resources.admin_avatar__20px_;
-            this.picBoxAdminLogin.Location = new System.Drawing.Point(10, 8);
-            this.picBoxAdminLogin.Name = "picBoxAdminLogin";
-            this.picBoxAdminLogin.Size = new System.Drawing.Size(25, 25);
-            this.picBoxAdminLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxAdminLogin.TabIndex = 3;
-            this.picBoxAdminLogin.TabStop = false;
             // 
             // AdminLoginForm
             // 

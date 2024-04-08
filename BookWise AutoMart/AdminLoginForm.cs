@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace BookWise_AutoMart
 {
     public partial class AdminLoginForm : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\arvin\\Source\\Repos\\BookWise-AutoMart\\BookWise AutoMart\\Admin_BookWiseAutoMart.mdf\";Integrated Security=True";
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\User\\Desktop\\BookWise-AutoMart\\BookWise AutoMart\\Admin_BookWiseAutoMart.mdf\";Integrated Security=True";
 
         public AdminLoginForm()
         {
@@ -84,11 +85,11 @@ namespace BookWise_AutoMart
             string query = "SELECT admin_password FROM Admins WHERE BINARY_CHECKSUM(admin_username) = BINARY_CHECKSUM(@Username)";
             // BINARY_CHECKSUM is used for comparing the checksums of two sets of data to determine if they are identical (in this case, it is used to check the letter-case of the data)
 
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    try
                     {
                         command.Parameters.AddWithValue("@Username", username);
 
@@ -103,13 +104,12 @@ namespace BookWise_AutoMart
                         // Verify the hashed password using BCrypt
                         return BCrypt.Net.BCrypt.Verify(password, hashedPassword);
                     }
+                    catch (Exception)
+                    {
+                        return false;   // Consider login failed in case of an error
+                    }
                 }
             }
-            catch (Exception)
-            {
-                return false;   // Consider login failed in case of an error
-            }
-
             // Closing the connection is not necessary.
             // Using the 'using' statement with 'SqlConnection', will automatically call the 'Dispose' method (this will close the connection to the database) on the 'SqlConnection' object when the execution leaves the scope of the 'using' block.
         }

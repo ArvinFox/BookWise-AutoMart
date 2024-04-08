@@ -28,7 +28,6 @@ namespace BookWise_AutoMart
             offersPromotionsForm = new UserControlOffersPromotions();
             btnReportsAnalytics = new UserControlReportsAnalytics();*/
 
-
             form = formControl;
             lblCurrentControl.Text = formControl.ToUpper();
         }

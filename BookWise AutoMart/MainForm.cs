@@ -12,7 +12,7 @@ namespace BookWise_AutoMart
 {
     public partial class MainForm : Form
     {
-        private string sequence = "admin123";
+        private string passcode = "admin123";
         private int currentIndex = 0;
 
         public MainForm()
@@ -22,15 +22,15 @@ namespace BookWise_AutoMart
 
         private void MainForm_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (currentIndex < sequence.Length && e.KeyChar == sequence[currentIndex])
+            if (currentIndex < passcode.Length && e.KeyChar == passcode[currentIndex])
             {
                 // Move to the next character
                 currentIndex++;
 
-                // If the sequence is complete
-                if (currentIndex == sequence.Length)
+                // If the passcode is complete
+                if (currentIndex == passcode.Length)
                 {
-                    currentIndex = 0;   // Reset the sequence
+                    currentIndex = 0;   // Reset the passcode
 
                     bool adminLoginFormFound = false;
 
@@ -56,7 +56,7 @@ namespace BookWise_AutoMart
             }
             else
             {
-                // Reset the sequence if the user types an incorrect character
+                // Reset the passcode if the user types an incorrect character
                 currentIndex = 0;
             }
         }

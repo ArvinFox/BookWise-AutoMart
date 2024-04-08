@@ -69,6 +69,7 @@
             this.btnLogin.TabStop = false;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             // 
             // btnGuest
             // 
@@ -85,9 +86,11 @@
             this.btnGuest.TabStop = false;
             this.btnGuest.Text = "Guest";
             this.btnGuest.UseVisualStyleBackColor = false;
+            this.btnGuest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainForm_KeyPress);
             // 
             // pnlWelcomeUser
             // 
+            this.pnlWelcomeUser.BackColor = System.Drawing.Color.White;
             this.pnlWelcomeUser.Controls.Add(this.lblWelcomeUserTitle);
             this.pnlWelcomeUser.Controls.Add(this.picBoxWelcomeUser);
             this.pnlWelcomeUser.Dock = System.Windows.Forms.DockStyle.Top;

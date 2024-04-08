@@ -129,7 +129,6 @@
             this.btnInventoryManagement.Name = "btnInventoryManagement";
             this.btnInventoryManagement.Size = new System.Drawing.Size(199, 87);
             this.btnInventoryManagement.TabIndex = 2;
-            this.btnInventoryManagement.TabStop = false;
             this.btnInventoryManagement.Text = "Inventory Management";
             this.btnInventoryManagement.UseVisualStyleBackColor = false;
             this.btnInventoryManagement.Click += new System.EventHandler(this.btnControl_Click);
@@ -193,7 +192,6 @@
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(199, 87);
             this.btnUserManagement.TabIndex = 3;
-            this.btnUserManagement.TabStop = false;
             this.btnUserManagement.Text = "User Management";
             this.btnUserManagement.UseVisualStyleBackColor = false;
             this.btnUserManagement.Click += new System.EventHandler(this.btnControl_Click);
@@ -222,7 +220,6 @@
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.TabStop = false;
             this.btnMaximize.UseVisualStyleBackColor = true;
-            this.btnMaximize.Click += new System.EventHandler(this.btnMaximize_Click);
             // 
             // tableLayoutPanelAdminDashboard
             // 
@@ -268,7 +265,6 @@
             this.btnReportsAnalytics.Name = "btnReportsAnalytics";
             this.btnReportsAnalytics.Size = new System.Drawing.Size(199, 87);
             this.btnReportsAnalytics.TabIndex = 3;
-            this.btnReportsAnalytics.TabStop = false;
             this.btnReportsAnalytics.Text = "Reporting && Analytics";
             this.btnReportsAnalytics.UseVisualStyleBackColor = false;
             this.btnReportsAnalytics.Click += new System.EventHandler(this.btnControl_Click);
@@ -308,7 +304,6 @@
             this.btnOffersPromotions.Name = "btnOffersPromotions";
             this.btnOffersPromotions.Size = new System.Drawing.Size(199, 87);
             this.btnOffersPromotions.TabIndex = 3;
-            this.btnOffersPromotions.TabStop = false;
             this.btnOffersPromotions.Text = "Offers && Promotions";
             this.btnOffersPromotions.UseVisualStyleBackColor = false;
             this.btnOffersPromotions.Click += new System.EventHandler(this.btnControl_Click);
@@ -325,6 +320,7 @@
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.White;
             this.pnlAdmin.Controls.Add(this.lblAdminDashboardTitle);
             this.pnlAdmin.Controls.Add(this.picBoxAdminDashboard);
             this.pnlAdmin.Controls.Add(this.btnMinimize);
@@ -357,7 +353,7 @@
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 1018);
+            this.MinimumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "AdminDashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboardForm";

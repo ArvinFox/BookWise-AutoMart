@@ -21,7 +21,7 @@ namespace BookWise_AutoMart
 
         int id;
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\arvin\\source\\repos\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\User\\Desktop\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
 
         public AdminEditItemForm(int itemId)
         {
@@ -49,10 +49,10 @@ namespace BookWise_AutoMart
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ItemId", id);
-
                     try
                     {
+                        command.Parameters.AddWithValue("@ItemId", id);
+
                         connection.Open();
 
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -189,35 +189,35 @@ namespace BookWise_AutoMart
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ItemId", id);
-                    command.Parameters.AddWithValue("@ItemName", $"{txtItemName.Text}");
-                    command.Parameters.AddWithValue("@ItemDescription", $"{txtItemDescription.Text}");
-                    command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text));
-                    command.Parameters.AddWithValue("@Stock", Convert.ToInt32(txtStock.Text));
-
-                    byte[] imageData;
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        pictureBoxImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                        imageData = ms.ToArray();
-                    }
-                    command.Parameters.AddWithValue("@ImageData", imageData);
-
                     try
                     {
+                        command.Parameters.AddWithValue("@ItemId", id);
+                        command.Parameters.AddWithValue("@ItemName", $"{txtItemName.Text}");
+                        command.Parameters.AddWithValue("@ItemDescription", $"{txtItemDescription.Text}");
+                        command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text));
+                        command.Parameters.AddWithValue("@Stock", Convert.ToInt32(txtStock.Text));
+
+                        byte[] imageData;
+                        using (MemoryStream ms = new MemoryStream())
+                        {
+                            pictureBoxImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                            imageData = ms.ToArray();
+                        }
+                        command.Parameters.AddWithValue("@ImageData", imageData);
+                    
                         connection.Open();
 
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Item details updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Item details updated successfully.", "Update Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             btnCancel.PerformClick();
                         }
                         else
                         {
-                            MessageBox.Show("Failed to update item details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Failed to update item details.", "Update Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
@@ -244,28 +244,28 @@ namespace BookWise_AutoMart
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ItemId", id);
-
                     try
                     {
+                        command.Parameters.AddWithValue("@ItemId", id);
+
                         connection.Open();
 
                         int rowsAffected = command.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show($"[Item ID: {id}]\nItem deleted successfully.", "Item Deletion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show($"[Item ID: {id}]\nItem deleted successfully.", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             btnCancel.PerformClick();
                         }
                         else
                         {
-                            MessageBox.Show($"[Item ID: {id}]\nUnable to delete item.", "Item Deletion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show($"[Item ID: {id}]\nUnable to delete item.", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show($"Error in deleting item: {ex.Message}", "Item Deletion", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show($"Error in deleting item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

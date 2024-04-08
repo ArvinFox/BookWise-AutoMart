@@ -23,7 +23,7 @@ namespace BookWise_AutoMart
             this.Font = new Font("Gadugi", 15, FontStyle.Bold);
             this.Height = 60;
             this.Cursor = Cursors.Hand;
-            this.TabStop = false;
+            this.TabStop = true;
 
             this.MouseEnter += (sender, e) =>
             {

@@ -60,7 +60,7 @@ namespace BookWise_AutoMart
             btnEditItem.Font = new Font("Gadugi", 14, FontStyle.Bold);
             btnEditItem.BackColor = Color.DarkCyan;
             btnEditItem.ForeColor = Color.White;
-            btnEditItem.TabStop = false;
+            btnEditItem.TabStop = true;
             btnEditItem.Dock = DockStyle.Bottom;
             btnEditItem.Height = 40;
             btnEditItem.Cursor = Cursors.Hand;
@@ -120,7 +120,7 @@ namespace BookWise_AutoMart
             textBox.BorderStyle = BorderStyle.None;
             textBox.GotFocus += (sender, e) =>
             {
-                HideCaret(((TextBox)sender).Handle);
+                HideCaret(((TextBox)sender).Handle);    // To disable the blinking character (cursor) on the textbox
             };
 
             // Calculate the height based on the text content

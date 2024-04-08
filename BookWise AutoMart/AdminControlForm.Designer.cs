@@ -35,29 +35,30 @@
             this.btnMaximize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanelAdminNavigation = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelReportsAnalytics = new System.Windows.Forms.TableLayoutPanel();
+            this.btnReportsAnalytics = new System.Windows.Forms.Button();
+            this.tableLayoutPanelOffersPromotions = new System.Windows.Forms.TableLayoutPanel();
+            this.btnOffersPromotions = new System.Windows.Forms.Button();
+            this.tableLayoutPanelUserManagement = new System.Windows.Forms.TableLayoutPanel();
+            this.btnUserManagement = new System.Windows.Forms.Button();
             this.tableLayoutPanelInventoryManagement = new System.Windows.Forms.TableLayoutPanel();
             this.btnInventoryManagement = new System.Windows.Forms.Button();
-            this.tableLayoutPanelUserManagement = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelOffersPromotions = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanelReportsAnalytics = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUserManagement = new System.Windows.Forms.Button();
-            this.btnOffersPromotions = new System.Windows.Forms.Button();
-            this.btnReportsAnalytics = new System.Windows.Forms.Button();
             this.tableLayoutPanelCurrentControl = new System.Windows.Forms.TableLayoutPanel();
             this.lblCurrentControl = new System.Windows.Forms.Label();
             this.pnlDisplayControl = new System.Windows.Forms.Panel();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminControl)).BeginInit();
             this.tableLayoutPanelAdminNavigation.SuspendLayout();
-            this.tableLayoutPanelInventoryManagement.SuspendLayout();
-            this.tableLayoutPanelUserManagement.SuspendLayout();
-            this.tableLayoutPanelOffersPromotions.SuspendLayout();
             this.tableLayoutPanelReportsAnalytics.SuspendLayout();
+            this.tableLayoutPanelOffersPromotions.SuspendLayout();
+            this.tableLayoutPanelUserManagement.SuspendLayout();
+            this.tableLayoutPanelInventoryManagement.SuspendLayout();
             this.tableLayoutPanelCurrentControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlAdmin
             // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.White;
             this.pnlAdmin.Controls.Add(this.lblAdminControlTitle);
             this.pnlAdmin.Controls.Add(this.picBoxAdminControl);
             this.pnlAdmin.Controls.Add(this.btnMinimize);
@@ -154,6 +155,99 @@
             this.tableLayoutPanelAdminNavigation.Size = new System.Drawing.Size(1280, 180);
             this.tableLayoutPanelAdminNavigation.TabIndex = 15;
             // 
+            // tableLayoutPanelReportsAnalytics
+            // 
+            this.tableLayoutPanelReportsAnalytics.ColumnCount = 1;
+            this.tableLayoutPanelReportsAnalytics.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelReportsAnalytics.Controls.Add(this.btnReportsAnalytics, 0, 0);
+            this.tableLayoutPanelReportsAnalytics.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelReportsAnalytics.Location = new System.Drawing.Point(963, 3);
+            this.tableLayoutPanelReportsAnalytics.Name = "tableLayoutPanelReportsAnalytics";
+            this.tableLayoutPanelReportsAnalytics.RowCount = 1;
+            this.tableLayoutPanelReportsAnalytics.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelReportsAnalytics.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelReportsAnalytics.TabIndex = 3;
+            // 
+            // btnReportsAnalytics
+            // 
+            this.btnReportsAnalytics.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReportsAnalytics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
+            this.btnReportsAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReportsAnalytics.FlatAppearance.BorderSize = 0;
+            this.btnReportsAnalytics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(27)))), ((int)(((byte)(154)))));
+            this.btnReportsAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportsAnalytics.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportsAnalytics.ForeColor = System.Drawing.Color.White;
+            this.btnReportsAnalytics.Location = new System.Drawing.Point(57, 43);
+            this.btnReportsAnalytics.Name = "btnReportsAnalytics";
+            this.btnReportsAnalytics.Size = new System.Drawing.Size(199, 87);
+            this.btnReportsAnalytics.TabIndex = 7;
+            this.btnReportsAnalytics.Text = "Reporting && Analytics";
+            this.btnReportsAnalytics.UseVisualStyleBackColor = false;
+            this.btnReportsAnalytics.Click += new System.EventHandler(this.btnReportsAnalytics_Click);
+            // 
+            // tableLayoutPanelOffersPromotions
+            // 
+            this.tableLayoutPanelOffersPromotions.ColumnCount = 1;
+            this.tableLayoutPanelOffersPromotions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOffersPromotions.Controls.Add(this.btnOffersPromotions, 0, 0);
+            this.tableLayoutPanelOffersPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelOffersPromotions.Location = new System.Drawing.Point(643, 3);
+            this.tableLayoutPanelOffersPromotions.Name = "tableLayoutPanelOffersPromotions";
+            this.tableLayoutPanelOffersPromotions.RowCount = 1;
+            this.tableLayoutPanelOffersPromotions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelOffersPromotions.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelOffersPromotions.TabIndex = 2;
+            // 
+            // btnOffersPromotions
+            // 
+            this.btnOffersPromotions.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnOffersPromotions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
+            this.btnOffersPromotions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOffersPromotions.FlatAppearance.BorderSize = 0;
+            this.btnOffersPromotions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(74)))), ((int)(((byte)(25)))));
+            this.btnOffersPromotions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOffersPromotions.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOffersPromotions.ForeColor = System.Drawing.Color.White;
+            this.btnOffersPromotions.Location = new System.Drawing.Point(57, 43);
+            this.btnOffersPromotions.Name = "btnOffersPromotions";
+            this.btnOffersPromotions.Size = new System.Drawing.Size(199, 87);
+            this.btnOffersPromotions.TabIndex = 7;
+            this.btnOffersPromotions.Text = "Offers && Promotions";
+            this.btnOffersPromotions.UseVisualStyleBackColor = false;
+            this.btnOffersPromotions.Click += new System.EventHandler(this.btnOffersPromotions_Click);
+            // 
+            // tableLayoutPanelUserManagement
+            // 
+            this.tableLayoutPanelUserManagement.ColumnCount = 1;
+            this.tableLayoutPanelUserManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelUserManagement.Controls.Add(this.btnUserManagement, 0, 0);
+            this.tableLayoutPanelUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelUserManagement.Location = new System.Drawing.Point(323, 3);
+            this.tableLayoutPanelUserManagement.Name = "tableLayoutPanelUserManagement";
+            this.tableLayoutPanelUserManagement.RowCount = 1;
+            this.tableLayoutPanelUserManagement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelUserManagement.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelUserManagement.TabIndex = 1;
+            // 
+            // btnUserManagement
+            // 
+            this.btnUserManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUserManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
+            this.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUserManagement.FlatAppearance.BorderSize = 0;
+            this.btnUserManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
+            this.btnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserManagement.ForeColor = System.Drawing.Color.White;
+            this.btnUserManagement.Location = new System.Drawing.Point(57, 43);
+            this.btnUserManagement.Name = "btnUserManagement";
+            this.btnUserManagement.Size = new System.Drawing.Size(199, 87);
+            this.btnUserManagement.TabIndex = 7;
+            this.btnUserManagement.Text = "User Management";
+            this.btnUserManagement.UseVisualStyleBackColor = false;
+            this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
+            // 
             // tableLayoutPanelInventoryManagement
             // 
             this.tableLayoutPanelInventoryManagement.ColumnCount = 1;
@@ -181,106 +275,9 @@
             this.btnInventoryManagement.Name = "btnInventoryManagement";
             this.btnInventoryManagement.Size = new System.Drawing.Size(199, 87);
             this.btnInventoryManagement.TabIndex = 7;
-            this.btnInventoryManagement.TabStop = false;
             this.btnInventoryManagement.Text = "Inventory Management";
             this.btnInventoryManagement.UseVisualStyleBackColor = false;
             this.btnInventoryManagement.Click += new System.EventHandler(this.btnInventoryManagement_Click);
-            // 
-            // tableLayoutPanelUserManagement
-            // 
-            this.tableLayoutPanelUserManagement.ColumnCount = 1;
-            this.tableLayoutPanelUserManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelUserManagement.Controls.Add(this.btnUserManagement, 0, 0);
-            this.tableLayoutPanelUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelUserManagement.Location = new System.Drawing.Point(323, 3);
-            this.tableLayoutPanelUserManagement.Name = "tableLayoutPanelUserManagement";
-            this.tableLayoutPanelUserManagement.RowCount = 1;
-            this.tableLayoutPanelUserManagement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelUserManagement.Size = new System.Drawing.Size(314, 174);
-            this.tableLayoutPanelUserManagement.TabIndex = 1;
-            // 
-            // tableLayoutPanelOffersPromotions
-            // 
-            this.tableLayoutPanelOffersPromotions.ColumnCount = 1;
-            this.tableLayoutPanelOffersPromotions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOffersPromotions.Controls.Add(this.btnOffersPromotions, 0, 0);
-            this.tableLayoutPanelOffersPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelOffersPromotions.Location = new System.Drawing.Point(643, 3);
-            this.tableLayoutPanelOffersPromotions.Name = "tableLayoutPanelOffersPromotions";
-            this.tableLayoutPanelOffersPromotions.RowCount = 1;
-            this.tableLayoutPanelOffersPromotions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOffersPromotions.Size = new System.Drawing.Size(314, 174);
-            this.tableLayoutPanelOffersPromotions.TabIndex = 2;
-            // 
-            // tableLayoutPanelReportsAnalytics
-            // 
-            this.tableLayoutPanelReportsAnalytics.ColumnCount = 1;
-            this.tableLayoutPanelReportsAnalytics.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelReportsAnalytics.Controls.Add(this.btnReportsAnalytics, 0, 0);
-            this.tableLayoutPanelReportsAnalytics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelReportsAnalytics.Location = new System.Drawing.Point(963, 3);
-            this.tableLayoutPanelReportsAnalytics.Name = "tableLayoutPanelReportsAnalytics";
-            this.tableLayoutPanelReportsAnalytics.RowCount = 1;
-            this.tableLayoutPanelReportsAnalytics.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelReportsAnalytics.Size = new System.Drawing.Size(314, 174);
-            this.tableLayoutPanelReportsAnalytics.TabIndex = 3;
-            // 
-            // btnUserManagement
-            // 
-            this.btnUserManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUserManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
-            this.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUserManagement.FlatAppearance.BorderSize = 0;
-            this.btnUserManagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(101)))), ((int)(((byte)(192)))));
-            this.btnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUserManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(57, 43);
-            this.btnUserManagement.Name = "btnUserManagement";
-            this.btnUserManagement.Size = new System.Drawing.Size(199, 87);
-            this.btnUserManagement.TabIndex = 7;
-            this.btnUserManagement.TabStop = false;
-            this.btnUserManagement.Text = "User Management";
-            this.btnUserManagement.UseVisualStyleBackColor = false;
-            this.btnUserManagement.Click += new System.EventHandler(this.btnUserManagement_Click);
-            // 
-            // btnOffersPromotions
-            // 
-            this.btnOffersPromotions.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnOffersPromotions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
-            this.btnOffersPromotions.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOffersPromotions.FlatAppearance.BorderSize = 0;
-            this.btnOffersPromotions.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(74)))), ((int)(((byte)(25)))));
-            this.btnOffersPromotions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOffersPromotions.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOffersPromotions.ForeColor = System.Drawing.Color.White;
-            this.btnOffersPromotions.Location = new System.Drawing.Point(57, 43);
-            this.btnOffersPromotions.Name = "btnOffersPromotions";
-            this.btnOffersPromotions.Size = new System.Drawing.Size(199, 87);
-            this.btnOffersPromotions.TabIndex = 7;
-            this.btnOffersPromotions.TabStop = false;
-            this.btnOffersPromotions.Text = "Offers && Promotions";
-            this.btnOffersPromotions.UseVisualStyleBackColor = false;
-            this.btnOffersPromotions.Click += new System.EventHandler(this.btnOffersPromotions_Click);
-            // 
-            // btnReportsAnalytics
-            // 
-            this.btnReportsAnalytics.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnReportsAnalytics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            this.btnReportsAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportsAnalytics.FlatAppearance.BorderSize = 0;
-            this.btnReportsAnalytics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(27)))), ((int)(((byte)(154)))));
-            this.btnReportsAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportsAnalytics.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportsAnalytics.ForeColor = System.Drawing.Color.White;
-            this.btnReportsAnalytics.Location = new System.Drawing.Point(57, 43);
-            this.btnReportsAnalytics.Name = "btnReportsAnalytics";
-            this.btnReportsAnalytics.Size = new System.Drawing.Size(199, 87);
-            this.btnReportsAnalytics.TabIndex = 7;
-            this.btnReportsAnalytics.TabStop = false;
-            this.btnReportsAnalytics.Text = "Reporting && Analytics";
-            this.btnReportsAnalytics.UseVisualStyleBackColor = false;
-            this.btnReportsAnalytics.Click += new System.EventHandler(this.btnReportsAnalytics_Click);
             // 
             // tableLayoutPanelCurrentControl
             // 
@@ -339,10 +336,10 @@
             this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminControl)).EndInit();
             this.tableLayoutPanelAdminNavigation.ResumeLayout(false);
-            this.tableLayoutPanelInventoryManagement.ResumeLayout(false);
-            this.tableLayoutPanelUserManagement.ResumeLayout(false);
-            this.tableLayoutPanelOffersPromotions.ResumeLayout(false);
             this.tableLayoutPanelReportsAnalytics.ResumeLayout(false);
+            this.tableLayoutPanelOffersPromotions.ResumeLayout(false);
+            this.tableLayoutPanelUserManagement.ResumeLayout(false);
+            this.tableLayoutPanelInventoryManagement.ResumeLayout(false);
             this.tableLayoutPanelCurrentControl.ResumeLayout(false);
             this.tableLayoutPanelCurrentControl.PerformLayout();
             this.ResumeLayout(false);

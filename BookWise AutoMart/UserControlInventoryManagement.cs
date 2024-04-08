@@ -16,7 +16,7 @@ namespace BookWise_AutoMart
     {
         private string categoryName = "Books";
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\arvin\\source\\repos\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\User\\Desktop\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
 
         public UserControlInventoryManagement()
         {
@@ -27,20 +27,47 @@ namespace BookWise_AutoMart
 
             DisplayCategories();
             DisplayItems();
+            PopulateCategoriesComboBox();
+            Placeholder(txtSearchBar, "Enter item name...");
         }
 
+        private void Placeholder(TextBox textBox, string placeholder)
+        {
+            textBox.Text = placeholder;
+            textBox.ForeColor = SystemColors.GrayText;
+
+            textBox.GotFocus += (sender, e) =>
+            {
+                if (textBox.Text == placeholder)
+                {
+                    textBox.Text = "";
+                    textBox.ForeColor = SystemColors.WindowText;
+                }
+            };
+
+            textBox.LostFocus += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    textBox.Text = placeholder;
+                    textBox.ForeColor = SystemColors.GrayText;
+                }
+            };
+        }
         private void DisplayCategories()
         {
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string query = "SELECT category_name FROM Categories ORDER BY category_id DESC";
-                    // The data is fetched from the bottom to top (ORDER BY) because due to the 'Dock' property being set to 'Top', the last button added will be at the top (in the panel)
+                string query = "SELECT category_name FROM Categories ORDER BY category_id DESC";
+                // The data is fetched from the bottom to top (ORDER BY) because due to the 'Dock' property being set to 'Top', the last button added will be at the top (in the panel)
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
                     {
                         connection.Open();
+
+                        CategoriesButton lastCategoryButton = null; // To keep track of the last category added
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
@@ -57,33 +84,125 @@ namespace BookWise_AutoMart
                                 categoryButton.Click += (sender, e) =>
                                 {
                                     categoryName = categoryButton.Text;
+                                    PopulateCategoriesComboBox();
                                     DisplayItems();
                                 };
+
+                                // Update the reference to the last category button
+                                lastCategoryButton = categoryButton;
                             }
                         }
+                        // Trigger the click event for the last category button (which is also the first category in the database as it is fetched in reverse order)
+                        if (lastCategoryButton != null)
+                        {
+                            lastCategoryButton.PerformClick();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error retrieving data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error retrieving data: " + ex.Message);
-            }
         }
-        private void DisplayItems()
+        private void DisplayItems(string filterOption = null)
         {
+            lblSelectedCategory.Text = " " + categoryName;
+
             // Clear existing items from flowLayoutPanelDisplayItems
             flowLayoutPanelDisplayItems.Controls.Clear();
 
-            try
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string query = @"SELECT Items.* 
-                             FROM Items 
-                             INNER JOIN Categories ON Items.item_category_id = Categories.category_id 
-                             WHERE Categories.category_name = @CategoryName";
+                string query = string.IsNullOrEmpty(filterOption)
+                    ? @"SELECT Items.* 
+                        FROM Items 
+                        INNER JOIN Categories ON Items.item_category_id = Categories.category_id 
+                        WHERE Categories.category_name = @CategoryName"
+                    : @"SELECT Items.* 
+                        FROM Items 
+                        INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id 
+                        WHERE SubCategories.subcategory_name = @FilterOption";
 
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        if (string.IsNullOrEmpty(filterOption))
+                        {
+                            command.Parameters.AddWithValue("@CategoryName", categoryName);
+                        }
+                        else
+                        {
+                            command.Parameters.AddWithValue("@FilterOption", filterOption);
+                        }
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    int itemId = (int)reader["item_id"];
+                                    string itemName = reader["item_name"].ToString();
+                                    string itemDescription = reader["item_description"].ToString();
+                                    decimal price = (decimal)reader["price"];
+                                    int stock = (int)reader["stock"];
+                                    byte[] imageData = (byte[])reader["image"];
+
+                                    // Convert byte array to image
+                                    Image image;
+                                    using (MemoryStream ms = new MemoryStream(imageData))
+                                    {
+                                        image = Image.FromStream(ms);
+                                    }
+
+                                    DisplayItemsPanel newItem = new DisplayItemsPanel(itemId, itemName, itemDescription, price, stock, image);
+
+                                    // Add item (panel) to FlowLayoutPanel
+                                    flowLayoutPanelDisplayItems.Controls.Add(newItem);
+                                }
+                            }
+                            else
+                            {
+                                Label noItemsLabel = new Label();
+                                noItemsLabel.Text = "No items available.";
+                                noItemsLabel.ForeColor = Color.LightGray;
+                                noItemsLabel.Font = new Font("Gadugi", 15, FontStyle.Bold);
+                                noItemsLabel.TextAlign = ContentAlignment.MiddleCenter;
+                                noItemsLabel.Padding = new Padding(12);
+                                noItemsLabel.AutoSize = true;
+                                flowLayoutPanelDisplayItems.Controls.Add(noItemsLabel);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error retrieving data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void PopulateCategoriesComboBox()
+        {
+            comboBoxFilterCategories.Items.Clear(); // Clear the items in the combo box
+
+            comboBoxFilterCategories.Items.Add("All " + categoryName);  // Add "All items" option
+
+            comboBoxFilterCategories.SelectedIndex = 0;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT subcategory_name
+                                 FROM SubCategories
+                                 INNER JOIN Categories ON SubCategories.subcategory_category_id = Categories.category_id
+                                 WHERE Categories.category_name = @CategoryName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
                     {
                         command.Parameters.AddWithValue("@CategoryName", categoryName);
 
@@ -93,32 +212,16 @@ namespace BookWise_AutoMart
                         {
                             while (reader.Read())
                             {
-                                int itemId = (int)reader["item_id"];
-                                string itemName = reader["item_name"].ToString();
-                                string itemDescription = reader["item_description"].ToString();
-                                decimal price = (decimal)reader["price"];
-                                int stock = (int)reader["stock"];
-                                byte[] imageData = (byte[])reader["image"];
-
-                                // Convert byte array to image
-                                Image image;
-                                using (MemoryStream ms = new MemoryStream(imageData))
-                                {
-                                    image = Image.FromStream(ms);
-                                }
-
-                                DisplayItemsPanel newItem = new DisplayItemsPanel(itemId, itemName, itemDescription, price, stock, image);
-
-                                // Add item (panel) to FlowLayoutPanel
-                                flowLayoutPanelDisplayItems.Controls.Add(newItem);
+                                string subcategoryName = reader["subcategory_name"].ToString();
+                                comboBoxFilterCategories.Items.Add(subcategoryName);
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error retrieving categories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error retrieving data: " + ex.Message);
             }
         }
 
@@ -137,7 +240,25 @@ namespace BookWise_AutoMart
         {
             if (this.Parent != null)
             {
-                this.Width = this.Parent.ClientSize.Width;
+                this.Width = this.Parent.ClientSize.Width;  // To take the entire screen size
+            }
+        }
+
+        private void comboBoxFilterCategories_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = comboBoxFilterCategories.SelectedItem?.ToString();
+            //  If whatever before the '?' sign exists (is not empty), then do what comes after it. Otherwise, just stop and don't do anything.
+
+            if (!string.IsNullOrEmpty(selectedCategory))
+            {
+                if (selectedCategory.Equals("All " + categoryName))
+                {
+                    DisplayItems();
+                }
+                else
+                {
+                    DisplayItems(selectedCategory); // Update display based on selected category
+                }
             }
         }
     }

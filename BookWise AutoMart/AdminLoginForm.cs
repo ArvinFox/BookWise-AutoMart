@@ -14,7 +14,7 @@ namespace BookWise_AutoMart
 {
     public partial class AdminLoginForm : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\SASHEN\\Desktop\\New folder\\BookWise-AutoMart\\BookWise AutoMart\\Admin_BookWiseAutoMart.mdf\";Integrated Security=True";
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Laptop Outlet\\OneDrive\\Desktop\\C#\\BookWise-AutoMart\\BookWise AutoMart\\Admin_BookWiseAutoMart.mdf\";Integrated Security=True";
 
         public AdminLoginForm()
         {

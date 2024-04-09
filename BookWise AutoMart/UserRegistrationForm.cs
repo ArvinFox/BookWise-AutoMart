@@ -94,7 +94,7 @@ namespace BookWise_AutoMart
             Console.ReadLine();
 
             // If all validations pass, proceed with database insertion
-            SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\SASHEN\Desktop\New folder\BookWise-AutoMart\BookWise AutoMart\BookWiseAutoMart.mdf"";Integrated Security=True");
+            SqlConnection con1 = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Laptop Outlet\OneDrive\Desktop\C#\BookWise-AutoMart\BookWise AutoMart\BookWiseAutoMart.mdf"";Integrated Security=True");
 
             string query = $"INSERT INTO Users (name, gender, email, contact_number, registration_date) VALUES ('{name}', '{gender}','{email}', {phoneNumber}, '{registrationDate}')";
 

@@ -16,7 +16,7 @@ namespace BookWise_AutoMart
     {
         private string categoryName = "Books";
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\SASHEN\\Desktop\\New folder\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Laptop Outlet\\OneDrive\\Desktop\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
 
         public UserControlInventoryManagement()
         {

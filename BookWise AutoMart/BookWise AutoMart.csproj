@@ -94,6 +94,12 @@
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,12 @@
     </Compile>
     <Compile Include="UserControlInventoryManagement.Designer.cs">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDisplayItemsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserDisplayItemsPanel.Designer.cs">
+      <DependentUpon>UserDisplayItemsPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserPanel.cs">
       <SubType>Form</SubType>
@@ -132,6 +144,9 @@
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +162,9 @@
     </Compile>
     <EmbeddedResource Include="UserControlInventoryManagement.resx">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDisplayItemsPanel.resx">
+      <DependentUpon>UserDisplayItemsPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel.resx">
       <DependentUpon>UserPanel.cs</DependentUpon>

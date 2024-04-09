@@ -18,7 +18,7 @@ namespace BookWise_AutoMart
 
         private UserDisplayItemsPanel UserDisplayItemsPanel;
 
-        SqlConnection connectionString = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\Laptop Outlet\\OneDrive\\Y1 - S3\\New folder\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True");
+        SqlConnection connectionString = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\123ma\\OneDrive\\Documents\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True");
 
 
         public UserPanel()

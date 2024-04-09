@@ -120,6 +120,12 @@
     <Compile Include="UserDisplayItemsPanel.Designer.cs">
       <DependentUpon>UserDisplayItemsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserFeedbackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserFeedbackForm.Designer.cs">
+      <DependentUpon>UserFeedbackForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserPanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserDisplayItemsPanel.resx">
       <DependentUpon>UserDisplayItemsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserFeedbackForm.resx">
+      <DependentUpon>UserFeedbackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPanel.resx">
       <DependentUpon>UserPanel.cs</DependentUpon>
@@ -254,6 +263,8 @@
     </Content>
     <Content Include="Resources\bar-chart.png" />
     <None Include="Resources\home.png" />
+    <None Include="Resources\Gold_Star_Colored_1.png" />
+    <None Include="Resources\Gold_Star_Uncolored_1.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

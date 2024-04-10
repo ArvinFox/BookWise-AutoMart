@@ -60,7 +60,7 @@
             this.pnlCategoriesMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCategoriesMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlCategoriesMenu.Name = "pnlCategoriesMenu";
-            this.pnlCategoriesMenu.Size = new System.Drawing.Size(287, 558);
+            this.pnlCategoriesMenu.Size = new System.Drawing.Size(287, 684);
             this.pnlCategoriesMenu.TabIndex = 4;
             // 
             // pnlDisplayCategories
@@ -69,14 +69,14 @@
             this.pnlDisplayCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDisplayCategories.Location = new System.Drawing.Point(0, 70);
             this.pnlDisplayCategories.Name = "pnlDisplayCategories";
-            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 418);
+            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 544);
             this.pnlDisplayCategories.TabIndex = 1;
             // 
             // pnlAddNewCategory
             // 
             this.pnlAddNewCategory.Controls.Add(this.btnAddNewCategory);
             this.pnlAddNewCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAddNewCategory.Location = new System.Drawing.Point(0, 488);
+            this.pnlAddNewCategory.Location = new System.Drawing.Point(0, 614);
             this.pnlAddNewCategory.Name = "pnlAddNewCategory";
             this.pnlAddNewCategory.Size = new System.Drawing.Size(287, 70);
             this.pnlAddNewCategory.TabIndex = 1;
@@ -199,6 +199,7 @@
             this.txtSearchBar.Name = "txtSearchBar";
             this.txtSearchBar.Size = new System.Drawing.Size(265, 34);
             this.txtSearchBar.TabIndex = 1;
+            this.txtSearchBar.TextChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
             // lblSearch
             // 
@@ -235,7 +236,7 @@
             this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
             this.comboBoxFilterCategories.Size = new System.Drawing.Size(180, 32);
             this.comboBoxFilterCategories.TabIndex = 1;
-            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxFilterCategories_SelectedIndexChanged);
+            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
             // flowLayoutPanelDisplayItems
             // 
@@ -245,7 +246,7 @@
             this.flowLayoutPanelDisplayItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelDisplayItems.Location = new System.Drawing.Point(287, 70);
             this.flowLayoutPanelDisplayItems.Name = "flowLayoutPanelDisplayItems";
-            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(925, 488);
+            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(925, 614);
             this.flowLayoutPanelDisplayItems.TabIndex = 6;
             // 
             // UserControlInventoryManagement
@@ -256,7 +257,7 @@
             this.Controls.Add(this.pnlCategoriesMenu);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlInventoryManagement";
-            this.Size = new System.Drawing.Size(1212, 558);
+            this.Size = new System.Drawing.Size(1212, 684);
             this.ParentChanged += new System.EventHandler(this.UserControlInventoryManagement_ParentChanged);
             this.pnlCategoriesMenu.ResumeLayout(false);
             this.pnlAddNewCategory.ResumeLayout(false);

@@ -14,6 +14,8 @@ namespace BookWise_AutoMart
 {
     public partial class UserControlInventoryManagement : UserControl
     {
+        private string selectedCategory;
+        private string searchedItem;
         private string categoryName = "Books";
 
         string connectionString = DatabaseString.GetUserDatabase();
@@ -85,6 +87,7 @@ namespace BookWise_AutoMart
                                 {
                                     categoryName = categoryButton.Text;
                                     PopulateCategoriesComboBox();
+                                    Placeholder(txtSearchBar, "Enter item name...");
                                     DisplayItems();
                                 };
 
@@ -105,7 +108,7 @@ namespace BookWise_AutoMart
                 }
             }
         }
-        private void DisplayItems(string filterOption = null)
+        private void DisplayItems(string filterOption = null, string searchedItemName = null)
         {
             lblSelectedCategory.Text = " " + categoryName;
 
@@ -114,27 +117,74 @@ namespace BookWise_AutoMart
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = string.IsNullOrEmpty(filterOption)
-                    ? @"SELECT Items.* 
-                        FROM Items 
-                        INNER JOIN Categories ON Items.item_category_id = Categories.category_id 
-                        WHERE Categories.category_name = @CategoryName"
-                    : @"SELECT Items.* 
-                        FROM Items 
-                        INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id 
-                        WHERE SubCategories.subcategory_name = @FilterOption";
+                string query = "";
+
+                // not filtered item and not searched item (filterOption == null && searchedItemName == null)
+                if (string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
+                {
+                    query = @"SELECT Items.*
+                              FROM Items
+                              INNER JOIN Categories ON Items.item_category_id = Categories.category_id
+                              WHERE Categories.category_name = @CategoryName";
+                }
+
+                // filtered item but not searched item (filterOption != null && searchedItemName == null)
+                else if (!string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
+                {
+                    query = @"SELECT Items.*
+                              FROM Items
+                              INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
+                              WHERE SubCategories.subcategory_name = @FilterOption";
+                }
+
+                // not filtered item but searched item (filterOption == null && searchedItemName != null)
+                else if (string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
+                {
+                    query = @"SELECT Items.*
+                              FROM Items
+                              INNER JOIN Categories ON Items.item_category_id = Categories.category_id
+                              INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
+                              WHERE (Items.item_name LIKE @ItemName OR Categories.category_name = @ItemName) AND Categories.category_name = @CategoryName";
+                }
+
+                // filtered item and searched item (filterOption != null && searchedItemName != null)
+                else if (!string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
+                {
+                    query = @"SELECT Items.*
+                              FROM Items
+                              INNER JOIN Categories ON Items.item_category_id = Categories.category_id
+                              INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
+                              WHERE SubCategories.subcategory_name = @FilterOption AND (Items.item_name LIKE @ItemName OR Categories.category_name LIKE @ItemName)";
+                }
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     try
                     {
-                        if (string.IsNullOrEmpty(filterOption))
+                        // not filtered item and not searched item (filterOption == null && searchedItemName == null)
+                        if (string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
                         {
-                            command.Parameters.AddWithValue("@CategoryName", categoryName);
+                            command.Parameters.AddWithValue("@CategoryName", $"{categoryName}");
                         }
-                        else
+
+                        // filtered item but not searched item (filterOption != null && searchedItemName == null)
+                        else if (!string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
                         {
-                            command.Parameters.AddWithValue("@FilterOption", filterOption);
+                            command.Parameters.AddWithValue("@FilterOption", $"{filterOption}");
+                        }
+
+                        // not filtered item but searched item (filterOption == null && searchedItemName != null)
+                        else if (string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
+                        {
+                            command.Parameters.AddWithValue("@ItemName", $"%{searchedItemName}%");
+                            command.Parameters.AddWithValue("@CategoryName", $"{categoryName}");
+                        }
+
+                        // filtered item and searched item (filterOption != null && searchedItemName != null)
+                        else if (!string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
+                        {
+                            command.Parameters.AddWithValue("@FilterOption", $"{filterOption}");
+                            command.Parameters.AddWithValue("@ItemName", $"%{searchedItemName}%");
                         }
 
                         connection.Open();
@@ -240,25 +290,41 @@ namespace BookWise_AutoMart
         {
             if (this.Parent != null)
             {
+                // To take the entire screen size
                 this.Width = this.Parent.ClientSize.Width;
-                this.Height = this.Parent.ClientSize.Height;// To take the entire screen size
+                this.Height = this.Parent.ClientSize.Height;
             }
         }
 
-        private void comboBoxFilterCategories_SelectedIndexChanged(object sender, EventArgs e)
+        private void FilteringConditionsApplied(object sender, EventArgs e)
         {
-            string selectedCategory = comboBoxFilterCategories.SelectedItem?.ToString();
+            searchedItem = txtSearchBar.Text.Trim();
+            selectedCategory = comboBoxFilterCategories.SelectedItem?.ToString();
             //  If whatever before the '?' sign exists (is not empty), then do what comes after it. Otherwise, just stop and don't do anything.
 
             if (!string.IsNullOrEmpty(selectedCategory))
             {
                 if (selectedCategory.Equals("All " + categoryName))
                 {
-                    DisplayItems();
+                    if (string.IsNullOrWhiteSpace(searchedItem) || searchedItem.Equals("Enter item name..."))
+                    {
+                        DisplayItems();
+                    }
+                    else
+                    {
+                        DisplayItems(filterOption: null, searchedItemName: searchedItem);
+                    }
                 }
                 else
                 {
-                    DisplayItems(selectedCategory); // Update display based on selected category
+                    if (string.IsNullOrWhiteSpace(searchedItem) || searchedItem.Equals("Enter item name..."))
+                    {
+                        DisplayItems(filterOption: selectedCategory, searchedItemName: null);
+                    }
+                    else
+                    {
+                        DisplayItems(filterOption: selectedCategory, searchedItemName: searchedItem);
+                    }
                 }
             }
         }

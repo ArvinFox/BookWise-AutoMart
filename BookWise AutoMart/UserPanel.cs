@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,13 +19,67 @@ namespace BookWise_AutoMart
 
         private UserDisplayItemsPanel UserDisplayItemsPanel;
 
-        SqlConnection connectionString = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\123ma\\OneDrive\\Documents\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True");
+        SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
 
 
         public UserPanel()
         {
             InitializeComponent();
             UserDisplayItemsPanel = new UserDisplayItemsPanel();
+            
+            DisplayCategories();
+        }
+
+        /*private void ShowMenu(Panel menu)
+        {
+            if (menu.Visible == false)
+            {
+                HideMenu();
+                menu.Visible = true;
+            }
+            else
+            {
+                menu.Visible = false;
+            }
+        }*/
+        private void HideMenu()
+        {
+            pnlCategoryScroll.Visible = false;
+        }
+
+        private void DisplayCategories()
+        {
+            try
+            {
+                string query = "SELECT category_name FROM Categories ORDER BY category_id DESC";
+                using (SqlCommand cmd = new SqlCommand(query, connectionString))
+                {
+                    connectionString.Open();
+                    using (SqlDataReader readCategories = cmd.ExecuteReader())
+                    {
+                        while (readCategories.Read())
+                        {
+                            string category = readCategories["category_name"].ToString();
+                            CategoriesButton categoryButton = new CategoriesButton(category);
+                            pnlCategoryScroll.Controls.Add(categoryButton);
+                            categoryButton.Click += (sender, e) => 
+                            { 
+                                category_Name = categoryButton.Text;
+                                SwitchUserControl(UserDisplayItemsPanel);
+                            };
+                        }
+                    }
+                    connectionString.Close();
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void AddUserControl(Control control)
@@ -39,49 +94,35 @@ namespace BookWise_AutoMart
             AddUserControl(newControl);
         }
 
-        private void btnMaximize_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMinimize_Click_1(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void btnClose_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            Button button = (Button)sender;
-            string C_name = button.Text;
-            category_Name = button.Text;
+            /* Button button = (Button)sender;
+             string C_name = button.Text;
+             category_Name = button.Text;
 
-            try
-            {
-                string query = $"SELECT * FROM Categories WHERE category_name = '{C_name}'";
-                SqlCommand cmd = new SqlCommand(query, connectionString);
-                connectionString.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.HasRows)
-                {
-                    reader.Read();
-                    id = Convert.ToInt32(reader["category_id"]);
-                    SwitchUserControl(UserDisplayItemsPanel);
-                }
-                else
-                {
-                    // Message for category is not found 
-                    MessageBox.Show("Category not found.");
-                }
-            }
-            catch (Exception ex)
-            {
-               MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+             try
+             {
+                 string query = $"SELECT * FROM Categories WHERE category_name = '{C_name}'";
+                 SqlCommand cmd = new SqlCommand(query, connectionString);
+                 connectionString.Open();
+                 SqlDataReader reader = cmd.ExecuteReader();
+                 if (reader.HasRows)
+                 {
+                     reader.Read();
+                     id = Convert.ToInt32(reader["category_id"]);
+                     SwitchUserControl(UserDisplayItemsPanel);
+                 }
+                 else
+                 {
+                     // Message for category is not found 
+                     MessageBox.Show("Category not found.");
+                 }
+             }
+             catch (Exception ex)
+             {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+             }*/
+           /* ShowMenu(pnlCategoryScroll);*/
         }
     }
 }

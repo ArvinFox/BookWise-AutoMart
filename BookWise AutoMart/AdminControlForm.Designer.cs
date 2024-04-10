@@ -67,7 +67,7 @@
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(1280, 40);
+            this.pnlAdmin.Size = new System.Drawing.Size(1918, 40);
             this.pnlAdmin.TabIndex = 14;
             // 
             // lblAdminControlTitle
@@ -96,7 +96,7 @@
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Image = global::BookWise_AutoMart.Properties.Resources.minimize__20px_;
-            this.btnMinimize.Location = new System.Drawing.Point(1115, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1753, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(55, 40);
@@ -112,7 +112,7 @@
             this.btnMaximize.FlatAppearance.BorderSize = 0;
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Image = global::BookWise_AutoMart.Properties.Resources.maximize__20px_;
-            this.btnMaximize.Location = new System.Drawing.Point(1170, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1808, 0);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(0);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(55, 40);
@@ -127,7 +127,7 @@
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Image = global::BookWise_AutoMart.Properties.Resources.close__20px_;
-            this.btnClose.Location = new System.Drawing.Point(1225, 0);
+            this.btnClose.Location = new System.Drawing.Point(1863, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(0);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(55, 40);
@@ -152,7 +152,7 @@
             this.tableLayoutPanelAdminNavigation.Name = "tableLayoutPanelAdminNavigation";
             this.tableLayoutPanelAdminNavigation.RowCount = 1;
             this.tableLayoutPanelAdminNavigation.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAdminNavigation.Size = new System.Drawing.Size(1280, 180);
+            this.tableLayoutPanelAdminNavigation.Size = new System.Drawing.Size(1918, 180);
             this.tableLayoutPanelAdminNavigation.TabIndex = 15;
             // 
             // tableLayoutPanelReportsAnalytics
@@ -161,11 +161,11 @@
             this.tableLayoutPanelReportsAnalytics.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelReportsAnalytics.Controls.Add(this.btnReportsAnalytics, 0, 0);
             this.tableLayoutPanelReportsAnalytics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelReportsAnalytics.Location = new System.Drawing.Point(963, 3);
+            this.tableLayoutPanelReportsAnalytics.Location = new System.Drawing.Point(1440, 3);
             this.tableLayoutPanelReportsAnalytics.Name = "tableLayoutPanelReportsAnalytics";
             this.tableLayoutPanelReportsAnalytics.RowCount = 1;
             this.tableLayoutPanelReportsAnalytics.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelReportsAnalytics.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelReportsAnalytics.Size = new System.Drawing.Size(475, 174);
             this.tableLayoutPanelReportsAnalytics.TabIndex = 3;
             // 
             // btnReportsAnalytics
@@ -178,7 +178,7 @@
             this.btnReportsAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReportsAnalytics.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportsAnalytics.ForeColor = System.Drawing.Color.White;
-            this.btnReportsAnalytics.Location = new System.Drawing.Point(57, 43);
+            this.btnReportsAnalytics.Location = new System.Drawing.Point(138, 43);
             this.btnReportsAnalytics.Name = "btnReportsAnalytics";
             this.btnReportsAnalytics.Size = new System.Drawing.Size(199, 87);
             this.btnReportsAnalytics.TabIndex = 7;
@@ -192,11 +192,11 @@
             this.tableLayoutPanelOffersPromotions.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelOffersPromotions.Controls.Add(this.btnOffersPromotions, 0, 0);
             this.tableLayoutPanelOffersPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelOffersPromotions.Location = new System.Drawing.Point(643, 3);
+            this.tableLayoutPanelOffersPromotions.Location = new System.Drawing.Point(961, 3);
             this.tableLayoutPanelOffersPromotions.Name = "tableLayoutPanelOffersPromotions";
             this.tableLayoutPanelOffersPromotions.RowCount = 1;
             this.tableLayoutPanelOffersPromotions.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelOffersPromotions.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelOffersPromotions.Size = new System.Drawing.Size(473, 174);
             this.tableLayoutPanelOffersPromotions.TabIndex = 2;
             // 
             // btnOffersPromotions
@@ -209,7 +209,7 @@
             this.btnOffersPromotions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffersPromotions.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffersPromotions.ForeColor = System.Drawing.Color.White;
-            this.btnOffersPromotions.Location = new System.Drawing.Point(57, 43);
+            this.btnOffersPromotions.Location = new System.Drawing.Point(137, 43);
             this.btnOffersPromotions.Name = "btnOffersPromotions";
             this.btnOffersPromotions.Size = new System.Drawing.Size(199, 87);
             this.btnOffersPromotions.TabIndex = 7;
@@ -223,11 +223,11 @@
             this.tableLayoutPanelUserManagement.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelUserManagement.Controls.Add(this.btnUserManagement, 0, 0);
             this.tableLayoutPanelUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelUserManagement.Location = new System.Drawing.Point(323, 3);
+            this.tableLayoutPanelUserManagement.Location = new System.Drawing.Point(482, 3);
             this.tableLayoutPanelUserManagement.Name = "tableLayoutPanelUserManagement";
             this.tableLayoutPanelUserManagement.RowCount = 1;
             this.tableLayoutPanelUserManagement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelUserManagement.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelUserManagement.Size = new System.Drawing.Size(473, 174);
             this.tableLayoutPanelUserManagement.TabIndex = 1;
             // 
             // btnUserManagement
@@ -240,7 +240,7 @@
             this.btnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(57, 43);
+            this.btnUserManagement.Location = new System.Drawing.Point(137, 43);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(199, 87);
             this.btnUserManagement.TabIndex = 7;
@@ -258,7 +258,7 @@
             this.tableLayoutPanelInventoryManagement.Name = "tableLayoutPanelInventoryManagement";
             this.tableLayoutPanelInventoryManagement.RowCount = 1;
             this.tableLayoutPanelInventoryManagement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelInventoryManagement.Size = new System.Drawing.Size(314, 174);
+            this.tableLayoutPanelInventoryManagement.Size = new System.Drawing.Size(473, 174);
             this.tableLayoutPanelInventoryManagement.TabIndex = 0;
             // 
             // btnInventoryManagement
@@ -271,7 +271,7 @@
             this.btnInventoryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventoryManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryManagement.ForeColor = System.Drawing.Color.White;
-            this.btnInventoryManagement.Location = new System.Drawing.Point(57, 43);
+            this.btnInventoryManagement.Location = new System.Drawing.Point(137, 43);
             this.btnInventoryManagement.Name = "btnInventoryManagement";
             this.btnInventoryManagement.Size = new System.Drawing.Size(199, 87);
             this.btnInventoryManagement.TabIndex = 7;
@@ -290,7 +290,7 @@
             this.tableLayoutPanelCurrentControl.Name = "tableLayoutPanelCurrentControl";
             this.tableLayoutPanelCurrentControl.RowCount = 1;
             this.tableLayoutPanelCurrentControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelCurrentControl.Size = new System.Drawing.Size(1280, 50);
+            this.tableLayoutPanelCurrentControl.Size = new System.Drawing.Size(1918, 50);
             this.tableLayoutPanelCurrentControl.TabIndex = 16;
             // 
             // lblCurrentControl
@@ -299,7 +299,7 @@
             this.lblCurrentControl.AutoSize = true;
             this.lblCurrentControl.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCurrentControl.ForeColor = System.Drawing.Color.White;
-            this.lblCurrentControl.Location = new System.Drawing.Point(477, 3);
+            this.lblCurrentControl.Location = new System.Drawing.Point(796, 3);
             this.lblCurrentControl.Name = "lblCurrentControl";
             this.lblCurrentControl.Size = new System.Drawing.Size(326, 44);
             this.lblCurrentControl.TabIndex = 0;
@@ -311,14 +311,14 @@
             this.pnlDisplayControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDisplayControl.Location = new System.Drawing.Point(0, 270);
             this.pnlDisplayControl.Name = "pnlDisplayControl";
-            this.pnlDisplayControl.Size = new System.Drawing.Size(1280, 754);
+            this.pnlDisplayControl.Size = new System.Drawing.Size(1918, 748);
             this.pnlDisplayControl.TabIndex = 17;
             // 
             // AdminControlForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1280, 1024);
+            this.ClientSize = new System.Drawing.Size(1918, 1018);
             this.Controls.Add(this.pnlDisplayControl);
             this.Controls.Add(this.tableLayoutPanelCurrentControl);
             this.Controls.Add(this.tableLayoutPanelAdminNavigation);
@@ -326,7 +326,8 @@
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 1024);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1918, 1018);
             this.Name = "AdminControlForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminControlForm";

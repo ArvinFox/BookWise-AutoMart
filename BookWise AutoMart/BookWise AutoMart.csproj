@@ -91,6 +91,7 @@
     <Compile Include="CategoriesButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DatabaseString.cs" />
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
     </Compile>

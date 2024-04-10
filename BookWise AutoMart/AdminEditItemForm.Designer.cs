@@ -28,10 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxDecrementStock = new System.Windows.Forms.PictureBox();
-            this.pictureBoxIncrementStock = new System.Windows.Forms.PictureBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.lblImage = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
@@ -48,43 +45,14 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBoxDecrementStock = new System.Windows.Forms.PictureBox();
+            this.pictureBoxIncrementStock = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncrementStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
-            this.tableLayoutPanelTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pictureBoxDecrementStock
-            // 
-            this.pictureBoxDecrementStock.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxDecrementStock.Image = global::BookWise_AutoMart.Properties.Resources.down;
-            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(475, 372);
-            this.pictureBoxDecrementStock.Name = "pictureBoxDecrementStock";
-            this.pictureBoxDecrementStock.Size = new System.Drawing.Size(18, 15);
-            this.pictureBoxDecrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDecrementStock.TabIndex = 39;
-            this.pictureBoxDecrementStock.TabStop = false;
-            this.pictureBoxDecrementStock.Click += new System.EventHandler(this.pictureBoxDecrementStock_Click);
-            this.pictureBoxDecrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseDown);
-            this.pictureBoxDecrementStock.MouseEnter += new System.EventHandler(this.pictureBoxDecrementStock_MouseEnter);
-            this.pictureBoxDecrementStock.MouseLeave += new System.EventHandler(this.pictureBoxDecrementStock_MouseLeave);
-            this.pictureBoxDecrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseUp);
-            // 
-            // pictureBoxIncrementStock
-            // 
-            this.pictureBoxIncrementStock.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxIncrementStock.Image = global::BookWise_AutoMart.Properties.Resources.up;
-            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(475, 358);
-            this.pictureBoxIncrementStock.Name = "pictureBoxIncrementStock";
-            this.pictureBoxIncrementStock.Size = new System.Drawing.Size(18, 15);
-            this.pictureBoxIncrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIncrementStock.TabIndex = 38;
-            this.pictureBoxIncrementStock.TabStop = false;
-            this.pictureBoxIncrementStock.Click += new System.EventHandler(this.pictureBoxIncrementStock_Click);
-            this.pictureBoxIncrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseDown);
-            this.pictureBoxIncrementStock.MouseEnter += new System.EventHandler(this.pictureBoxIncrementStock_MouseEnter);
-            this.pictureBoxIncrementStock.MouseLeave += new System.EventHandler(this.pictureBoxIncrementStock_MouseLeave);
-            this.pictureBoxIncrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseUp);
             // 
             // btnChooseImage
             // 
@@ -99,15 +67,6 @@
             this.btnChooseImage.Text = "Choose Image";
             this.btnChooseImage.UseVisualStyleBackColor = false;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(268, 409);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 36;
-            this.pictureBoxImage.TabStop = false;
             // 
             // lblImage
             // 
@@ -304,6 +263,47 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Edit Item Details";
             // 
+            // pictureBoxDecrementStock
+            // 
+            this.pictureBoxDecrementStock.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxDecrementStock.Image = global::BookWise_AutoMart.Properties.Resources.down;
+            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(475, 372);
+            this.pictureBoxDecrementStock.Name = "pictureBoxDecrementStock";
+            this.pictureBoxDecrementStock.Size = new System.Drawing.Size(18, 15);
+            this.pictureBoxDecrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDecrementStock.TabIndex = 39;
+            this.pictureBoxDecrementStock.TabStop = false;
+            this.pictureBoxDecrementStock.Click += new System.EventHandler(this.pictureBoxDecrementStock_Click);
+            this.pictureBoxDecrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseDown);
+            this.pictureBoxDecrementStock.MouseEnter += new System.EventHandler(this.pictureBoxDecrementStock_MouseEnter);
+            this.pictureBoxDecrementStock.MouseLeave += new System.EventHandler(this.pictureBoxDecrementStock_MouseLeave);
+            this.pictureBoxDecrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseUp);
+            // 
+            // pictureBoxIncrementStock
+            // 
+            this.pictureBoxIncrementStock.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxIncrementStock.Image = global::BookWise_AutoMart.Properties.Resources.up;
+            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(475, 358);
+            this.pictureBoxIncrementStock.Name = "pictureBoxIncrementStock";
+            this.pictureBoxIncrementStock.Size = new System.Drawing.Size(18, 15);
+            this.pictureBoxIncrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIncrementStock.TabIndex = 38;
+            this.pictureBoxIncrementStock.TabStop = false;
+            this.pictureBoxIncrementStock.Click += new System.EventHandler(this.pictureBoxIncrementStock_Click);
+            this.pictureBoxIncrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseDown);
+            this.pictureBoxIncrementStock.MouseEnter += new System.EventHandler(this.pictureBoxIncrementStock_MouseEnter);
+            this.pictureBoxIncrementStock.MouseLeave += new System.EventHandler(this.pictureBoxIncrementStock_MouseLeave);
+            this.pictureBoxIncrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseUp);
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(268, 409);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 36;
+            this.pictureBoxImage.TabStop = false;
+            // 
             // AdminEditItemForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -335,11 +335,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminEditItemForm";
             this.Load += new System.EventHandler(this.AdminEditItemForm_Load);
+            this.tableLayoutPanelTitle.ResumeLayout(false);
+            this.tableLayoutPanelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncrementStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
-            this.tableLayoutPanelTitle.ResumeLayout(false);
-            this.tableLayoutPanelTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

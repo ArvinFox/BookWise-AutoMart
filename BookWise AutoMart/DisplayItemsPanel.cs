@@ -23,15 +23,15 @@ namespace BookWise_AutoMart
             tableLayoutPanelDisplayItem.ColumnCount = 1;
             tableLayoutPanelDisplayItem.RowCount = 2;
             tableLayoutPanelDisplayItem.RowStyles.Add(new RowStyle(SizeType.Percent, 40));
-            tableLayoutPanelDisplayItem.RowStyles.Add(new RowStyle(SizeType.Percent, 60));
+            tableLayoutPanelDisplayItem.RowStyles.Add(new RowStyle(SizeType.Percent, 40));
             tableLayoutPanelDisplayItem.AutoSize = true;
 
             // PictureBox for item image
             PictureBox picBoxItemImage = new PictureBox();
             picBoxItemImage.Anchor = AnchorStyles.None;
             picBoxItemImage.Image = image;
-            picBoxItemImage.SizeMode = PictureBoxSizeMode.StretchImage;
-            picBoxItemImage.Size = new Size(110, 100);
+            picBoxItemImage.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoxItemImage.Size = new Size(150, 200);
             tableLayoutPanelDisplayItem.Controls.Add(picBoxItemImage, 0, 0);    // First column, first row
 
             // Panel to store item details

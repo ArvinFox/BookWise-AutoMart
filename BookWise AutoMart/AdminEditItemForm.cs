@@ -21,7 +21,7 @@ namespace BookWise_AutoMart
 
         int id;
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\123ma\\OneDrive\\Documents\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminEditItemForm(int itemId)
         {

@@ -16,7 +16,7 @@ namespace BookWise_AutoMart
     {
         private string categoryName = "Books";
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\123ma\\OneDrive\\Documents\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        string connectionString = DatabaseString.GetUserDatabase();
 
         public UserControlInventoryManagement()
         {
@@ -240,7 +240,8 @@ namespace BookWise_AutoMart
         {
             if (this.Parent != null)
             {
-                this.Width = this.Parent.ClientSize.Width;  // To take the entire screen size
+                this.Width = this.Parent.ClientSize.Width;
+                this.Height = this.Parent.ClientSize.Height;// To take the entire screen size
             }
         }
 

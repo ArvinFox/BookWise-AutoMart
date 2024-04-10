@@ -28,40 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.butSearch = new System.Windows.Forms.Button();
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.tblCategoryNameContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.flpItemCardsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tblFilterSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.tblSearchContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.tblCategoryNameContainer.SuspendLayout();
             this.tblFilterSearchContainer.SuspendLayout();
             this.tblSearchContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // butSearch
-            // 
-            this.butSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.butSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butSearch.Location = new System.Drawing.Point(392, 26);
-            this.butSearch.Name = "butSearch";
-            this.butSearch.Size = new System.Drawing.Size(151, 41);
-            this.butSearch.TabIndex = 7;
-            this.butSearch.Text = "Search";
-            this.butSearch.UseVisualStyleBackColor = true;
-            // 
             // txtItemName
             // 
-            this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtItemName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(20, 29);
+            this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtItemName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtItemName.Location = new System.Drawing.Point(242, 24);
             this.txtItemName.Name = "txtItemName";
-            this.txtItemName.Size = new System.Drawing.Size(349, 35);
+            this.txtItemName.Size = new System.Drawing.Size(349, 45);
             this.txtItemName.TabIndex = 6;
             // 
             // tblCategoryNameContainer
             // 
+            this.tblCategoryNameContainer.BackColor = System.Drawing.SystemColors.Control;
             this.tblCategoryNameContainer.ColumnCount = 1;
             this.tblCategoryNameContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblCategoryNameContainer.Controls.Add(this.lblCategoryName, 0, 0);
@@ -77,11 +67,11 @@
             // 
             this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryName.AutoSize = true;
-            this.lblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(430, 27);
+            this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI Black", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryName.Location = new System.Drawing.Point(373, 15);
             this.lblCategoryName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(304, 46);
+            this.lblCategoryName.Size = new System.Drawing.Size(418, 70);
             this.lblCategoryName.TabIndex = 1;
             this.lblCategoryName.Text = "category Name";
             this.lblCategoryName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,7 +79,7 @@
             // flpItemCardsContainer
             // 
             this.flpItemCardsContainer.AutoScroll = true;
-            this.flpItemCardsContainer.BackColor = System.Drawing.Color.White;
+            this.flpItemCardsContainer.BackColor = System.Drawing.SystemColors.Control;
             this.flpItemCardsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpItemCardsContainer.Location = new System.Drawing.Point(0, 200);
             this.flpItemCardsContainer.Name = "flpItemCardsContainer";
@@ -98,9 +88,10 @@
             // 
             // tblFilterSearchContainer
             // 
+            this.tblFilterSearchContainer.BackColor = System.Drawing.SystemColors.Control;
             this.tblFilterSearchContainer.ColumnCount = 2;
             this.tblFilterSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblFilterSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 642F));
+            this.tblFilterSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 641F));
             this.tblFilterSearchContainer.Controls.Add(this.tblSearchContainer, 1, 0);
             this.tblFilterSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.tblFilterSearchContainer.Location = new System.Drawing.Point(0, 100);
@@ -113,17 +104,28 @@
             // tblSearchContainer
             // 
             this.tblSearchContainer.ColumnCount = 2;
-            this.tblSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.16352F));
-            this.tblSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.83648F));
-            this.tblSearchContainer.Controls.Add(this.txtItemName, 0, 0);
-            this.tblSearchContainer.Controls.Add(this.butSearch, 1, 0);
+            this.tblSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.63779F));
+            this.tblSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.36221F));
+            this.tblSearchContainer.Controls.Add(this.txtItemName, 1, 0);
+            this.tblSearchContainer.Controls.Add(this.lblSearch, 0, 0);
             this.tblSearchContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblSearchContainer.Location = new System.Drawing.Point(525, 3);
+            this.tblSearchContainer.Location = new System.Drawing.Point(526, 3);
             this.tblSearchContainer.Name = "tblSearchContainer";
             this.tblSearchContainer.RowCount = 1;
             this.tblSearchContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblSearchContainer.Size = new System.Drawing.Size(636, 94);
+            this.tblSearchContainer.Size = new System.Drawing.Size(635, 94);
             this.tblSearchContainer.TabIndex = 8;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(116, 28);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(120, 38);
+            this.lblSearch.TabIndex = 7;
+            this.lblSearch.Text = "Search :";
             // 
             // UserDisplayItemsPanel
             // 
@@ -146,12 +148,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button butSearch;
         private System.Windows.Forms.TextBox txtItemName;
         private System.Windows.Forms.TableLayoutPanel tblCategoryNameContainer;
         private System.Windows.Forms.Label lblCategoryName;
         private System.Windows.Forms.FlowLayoutPanel flpItemCardsContainer;
         private System.Windows.Forms.TableLayoutPanel tblFilterSearchContainer;
         private System.Windows.Forms.TableLayoutPanel tblSearchContainer;
+        private System.Windows.Forms.Label lblSearch;
     }
 }

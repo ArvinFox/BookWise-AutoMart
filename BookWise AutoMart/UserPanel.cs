@@ -15,8 +15,7 @@ namespace BookWise_AutoMart
     public partial class UserPanel : Form
     {
         public static int id;
-        public static string category_Name;
-
+        public static string categoryName;
         private UserDisplayItemsPanel UserDisplayItemsPanel;
 
         SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
@@ -25,8 +24,6 @@ namespace BookWise_AutoMart
         public UserPanel()
         {
             InitializeComponent();
-            UserDisplayItemsPanel = new UserDisplayItemsPanel();
-            
             DisplayCategories();
         }
 
@@ -41,11 +38,11 @@ namespace BookWise_AutoMart
             {
                 menu.Visible = false;
             }
-        }*/
+        }
         private void HideMenu()
         {
             pnlCategoryScroll.Visible = false;
-        }
+        }*/
 
         private void DisplayCategories()
         {
@@ -62,9 +59,10 @@ namespace BookWise_AutoMart
                             string category = readCategories["category_name"].ToString();
                             CategoriesButton categoryButton = new CategoriesButton(category);
                             pnlCategoryScroll.Controls.Add(categoryButton);
-                            categoryButton.Click += (sender, e) => 
-                            { 
-                                category_Name = categoryButton.Text;
+                            categoryButton.Click += (sender, e) =>
+                            {
+                                categoryName = categoryButton.Text;
+                                UserDisplayItemsPanel = new UserDisplayItemsPanel(categoryName);
                                 SwitchUserControl(UserDisplayItemsPanel);
                             };
                         }
@@ -82,6 +80,7 @@ namespace BookWise_AutoMart
             }
         }
 
+        //Add a user control to User display items panel
         private void AddUserControl(Control control)
         {
             control.Dock = DockStyle.Fill;
@@ -96,33 +95,7 @@ namespace BookWise_AutoMart
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            /* Button button = (Button)sender;
-             string C_name = button.Text;
-             category_Name = button.Text;
-
-             try
-             {
-                 string query = $"SELECT * FROM Categories WHERE category_name = '{C_name}'";
-                 SqlCommand cmd = new SqlCommand(query, connectionString);
-                 connectionString.Open();
-                 SqlDataReader reader = cmd.ExecuteReader();
-                 if (reader.HasRows)
-                 {
-                     reader.Read();
-                     id = Convert.ToInt32(reader["category_id"]);
-                     SwitchUserControl(UserDisplayItemsPanel);
-                 }
-                 else
-                 {
-                     // Message for category is not found 
-                     MessageBox.Show("Category not found.");
-                 }
-             }
-             catch (Exception ex)
-             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }*/
-           /* ShowMenu(pnlCategoryScroll);*/
+            /* ShowMenu(pnlCategoryScroll);*/
         }
     }
 }

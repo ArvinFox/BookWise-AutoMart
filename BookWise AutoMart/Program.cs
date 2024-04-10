@@ -16,7 +16,7 @@ namespace BookWise_AutoMart
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserFeedbackForm());
+            Application.Run(new AdminDashboardForm("Arvin"));
         }
     }
 }

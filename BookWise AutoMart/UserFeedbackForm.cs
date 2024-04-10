@@ -19,7 +19,7 @@ namespace BookWise_AutoMart
             InitializeComponent();
         }
 
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\Users\\123ma\\OneDrive\\Documents\\C#\\BookWise-AutoMart\\BookWise AutoMart\\BookWiseAutoMart.mdf\";Integrated Security=True";
+        private string connectionString = DatabaseString.GetUserDatabase();
 
         private void StarCount(int starCount, bool showLabel = false)
         {

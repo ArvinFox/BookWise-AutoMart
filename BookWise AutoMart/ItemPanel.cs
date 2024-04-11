@@ -129,6 +129,13 @@ namespace BookWise_AutoMart
                     e.Handled = true;
                 }
             };
+            txtQty.TextChanged += (sender, e) =>
+            {
+                if (string.IsNullOrWhiteSpace(txtQty.Text.Trim()))
+                {
+                    txtQty.Text = "0";
+                }
+            };
 
             //create a button for Remove
             Button butRemove = new Button();
@@ -218,6 +225,15 @@ namespace BookWise_AutoMart
             btnBuyItem.Dock = DockStyle.Top;
             btnBuyItem.Height = 40;
             btnBuyItem.Cursor = Cursors.Hand;
+            btnBuyItem.Click += (sender, e) =>
+            {
+                int qty= Convert.ToInt32((txtQty.Text.Trim()));
+                if (qty > stock)
+                {
+                    OutOfStockForm outOfStockForm = new OutOfStockForm(stock, txtQty);
+                    outOfStockForm.ShowDialog();
+                }
+            };
 
             // Add labels and "Add to Cart" button to details panel
             panelItemDetails.Controls.Add(btnBuyItem);

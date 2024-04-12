@@ -95,6 +95,12 @@
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="InformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformationForm.Designer.cs">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -118,6 +124,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl2.Designer.cs">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl3.Designer.cs">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl4.Designer.cs">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlInventoryManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -160,6 +190,9 @@
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InformationForm.resx">
+      <DependentUpon>InformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +212,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl2.resx">
+      <DependentUpon>UserControl2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl3.resx">
+      <DependentUpon>UserControl3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl4.resx">
+      <DependentUpon>UserControl4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlInventoryManagement.resx">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,10 +319,14 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BookWiseAutoMart.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\uncolored-circle.jpg" />
+    <None Include="Resources\backward.jpg" />
     <Content Include="Resources\bar-chart.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\Gold_Star_Colored_1.png" />
     <None Include="Resources\Gold_Star_Uncolored_1.png" />
+    <None Include="Resources\colored-circle.jpg" />
+    <None Include="Resources\forward.jpg" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

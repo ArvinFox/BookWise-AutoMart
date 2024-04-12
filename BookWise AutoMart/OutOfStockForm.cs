@@ -25,10 +25,26 @@ namespace BookWise_AutoMart
 
         private void butOk_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             textBoxQty.Text = stock.ToString();
-            UserPanel userPanel = new UserPanel();
-            userPanel.Show();
+            bool userPanelFound = false;
+
+            foreach(Form form in Application.OpenForms)
+            {
+                if(form is UserPanel)
+                {
+                    form.Show();
+                    userPanelFound = true;
+                    break;
+                }
+            }
+
+            if(!userPanelFound)
+            {
+                UserPanel userPanel = new UserPanel();
+                userPanel.Show();
+            }
+            this.Hide();
         }
 
         private void OutOfStockForm_Load(object sender, EventArgs e)

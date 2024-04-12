@@ -33,10 +33,14 @@
             this.lblCategoryName = new System.Windows.Forms.Label();
             this.flpItemCardsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tblFilterSearchContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxFilterCategories = new System.Windows.Forms.ComboBox();
+            this.lblFilter = new System.Windows.Forms.Label();
             this.tblSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
             this.tblCategoryNameContainer.SuspendLayout();
             this.tblFilterSearchContainer.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tblSearchContainer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,10 +48,11 @@
             // 
             this.txtItemName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtItemName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtItemName.Location = new System.Drawing.Point(242, 24);
+            this.txtItemName.Location = new System.Drawing.Point(241, 24);
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(349, 45);
             this.txtItemName.TabIndex = 6;
+            this.txtItemName.TextChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
             // tblCategoryNameContainer
             // 
@@ -92,6 +97,7 @@
             this.tblFilterSearchContainer.ColumnCount = 2;
             this.tblFilterSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblFilterSearchContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 641F));
+            this.tblFilterSearchContainer.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tblFilterSearchContainer.Controls.Add(this.tblSearchContainer, 1, 0);
             this.tblFilterSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
             this.tblFilterSearchContainer.Location = new System.Drawing.Point(0, 100);
@@ -100,6 +106,47 @@
             this.tblFilterSearchContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblFilterSearchContainer.Size = new System.Drawing.Size(1164, 100);
             this.tblFilterSearchContainer.TabIndex = 0;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.63779F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.36221F));
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxFilterCategories, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblFilter, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 94);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // comboBoxFilterCategories
+            // 
+            this.comboBoxFilterCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFilterCategories.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFilterCategories.FormattingEnabled = true;
+            this.comboBoxFilterCategories.Location = new System.Drawing.Point(197, 24);
+            this.comboBoxFilterCategories.MaxDropDownItems = 20;
+            this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
+            this.comboBoxFilterCategories.Size = new System.Drawing.Size(317, 46);
+            this.comboBoxFilterCategories.TabIndex = 8;
+            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.Black;
+            this.lblFilter.Location = new System.Drawing.Point(50, 28);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(141, 38);
+            this.lblFilter.TabIndex = 7;
+            this.lblFilter.Text = "Filter by: ";
             // 
             // tblSearchContainer
             // 
@@ -121,7 +168,7 @@
             this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(116, 28);
+            this.lblSearch.Location = new System.Drawing.Point(115, 28);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(120, 38);
             this.lblSearch.TabIndex = 7;
@@ -141,6 +188,8 @@
             this.tblCategoryNameContainer.ResumeLayout(false);
             this.tblCategoryNameContainer.PerformLayout();
             this.tblFilterSearchContainer.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.tblSearchContainer.ResumeLayout(false);
             this.tblSearchContainer.PerformLayout();
             this.ResumeLayout(false);
@@ -155,5 +204,8 @@
         private System.Windows.Forms.TableLayoutPanel tblFilterSearchContainer;
         private System.Windows.Forms.TableLayoutPanel tblSearchContainer;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.ComboBox comboBoxFilterCategories;
     }
 }

@@ -135,9 +135,9 @@
             this.lblCategories.AutoSize = true;
             this.lblCategories.Font = new System.Drawing.Font("Gadugi", 19F, System.Drawing.FontStyle.Bold);
             this.lblCategories.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCategories.Location = new System.Drawing.Point(39, 16);
+            this.lblCategories.Location = new System.Drawing.Point(20, 12);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(209, 38);
+            this.lblCategories.Size = new System.Drawing.Size(247, 45);
             this.lblCategories.TabIndex = 1;
             this.lblCategories.Text = "CATEGORIES";
             // 
@@ -155,7 +155,7 @@
             this.tableLayoutPanelFunctionalities.Name = "tableLayoutPanelFunctionalities";
             this.tableLayoutPanelFunctionalities.RowCount = 1;
             this.tableLayoutPanelFunctionalities.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFunctionalities.Size = new System.Drawing.Size(925, 70);
+            this.tableLayoutPanelFunctionalities.Size = new System.Drawing.Size(970, 70);
             this.tableLayoutPanelFunctionalities.TabIndex = 5;
             // 
             // lblSelectedCategory
@@ -164,9 +164,9 @@
             this.lblSelectedCategory.AutoSize = true;
             this.lblSelectedCategory.Font = new System.Drawing.Font("Gadugi", 16F, System.Drawing.FontStyle.Bold);
             this.lblSelectedCategory.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedCategory.Location = new System.Drawing.Point(13, 19);
+            this.lblSelectedCategory.Location = new System.Drawing.Point(4, 16);
             this.lblSelectedCategory.Name = "lblSelectedCategory";
-            this.lblSelectedCategory.Size = new System.Drawing.Size(159, 32);
+            this.lblSelectedCategory.Size = new System.Drawing.Size(186, 38);
             this.lblSelectedCategory.TabIndex = 0;
             this.lblSelectedCategory.Text = " (Category)";
             this.lblSelectedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,22 +183,22 @@
             this.tableLayoutPanelFilterSearch.Controls.Add(this.lblFilter, 0, 0);
             this.tableLayoutPanelFilterSearch.Controls.Add(this.comboBoxFilterCategories, 1, 0);
             this.tableLayoutPanelFilterSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFilterSearch.Location = new System.Drawing.Point(188, 3);
+            this.tableLayoutPanelFilterSearch.Location = new System.Drawing.Point(197, 3);
             this.tableLayoutPanelFilterSearch.Name = "tableLayoutPanelFilterSearch";
             this.tableLayoutPanelFilterSearch.RowCount = 1;
             this.tableLayoutPanelFilterSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFilterSearch.Size = new System.Drawing.Size(734, 64);
+            this.tableLayoutPanelFilterSearch.Size = new System.Drawing.Size(770, 64);
             this.tableLayoutPanelFilterSearch.TabIndex = 1;
             // 
             // txtSearchBar
             // 
             this.txtSearchBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtSearchBar.Font = new System.Drawing.Font("Gadugi", 14F);
-            this.txtSearchBar.Location = new System.Drawing.Point(466, 15);
+            this.txtSearchBar.Location = new System.Drawing.Point(489, 15);
             this.txtSearchBar.MaximumSize = new System.Drawing.Size(280, 0);
             this.txtSearchBar.Multiline = true;
             this.txtSearchBar.Name = "txtSearchBar";
-            this.txtSearchBar.Size = new System.Drawing.Size(265, 34);
+            this.txtSearchBar.Size = new System.Drawing.Size(278, 34);
             this.txtSearchBar.TabIndex = 1;
             this.txtSearchBar.TextChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
@@ -208,9 +208,9 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSearch.Location = new System.Drawing.Point(365, 18);
+            this.lblSearch.Location = new System.Drawing.Point(365, 15);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(95, 27);
+            this.lblSearch.Size = new System.Drawing.Size(118, 34);
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Search: ";
             // 
@@ -220,9 +220,9 @@
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilter.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFilter.Location = new System.Drawing.Point(43, 18);
+            this.lblFilter.Location = new System.Drawing.Point(24, 15);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(112, 27);
+            this.lblFilter.Size = new System.Drawing.Size(139, 34);
             this.lblFilter.TabIndex = 0;
             this.lblFilter.Text = "Filter by: ";
             // 
@@ -232,10 +232,10 @@
             this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFilterCategories.FormattingEnabled = true;
-            this.comboBoxFilterCategories.Location = new System.Drawing.Point(161, 20);
+            this.comboBoxFilterCategories.Location = new System.Drawing.Point(169, 14);
             this.comboBoxFilterCategories.MaxDropDownItems = 20;
             this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
-            this.comboBoxFilterCategories.Size = new System.Drawing.Size(180, 32);
+            this.comboBoxFilterCategories.Size = new System.Drawing.Size(189, 36);
             this.comboBoxFilterCategories.TabIndex = 1;
             this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
@@ -247,7 +247,7 @@
             this.flowLayoutPanelDisplayItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelDisplayItems.Location = new System.Drawing.Point(287, 70);
             this.flowLayoutPanelDisplayItems.Name = "flowLayoutPanelDisplayItems";
-            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(925, 614);
+            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(970, 614);
             this.flowLayoutPanelDisplayItems.TabIndex = 6;
             // 
             // UserControlInventoryManagement
@@ -258,7 +258,7 @@
             this.Controls.Add(this.pnlCategoriesMenu);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlInventoryManagement";
-            this.Size = new System.Drawing.Size(1212, 684);
+            this.Size = new System.Drawing.Size(1257, 684);
             this.ParentChanged += new System.EventHandler(this.UserControlInventoryManagement_ParentChanged);
             this.pnlCategoriesMenu.ResumeLayout(false);
             this.pnlAddNewCategory.ResumeLayout(false);

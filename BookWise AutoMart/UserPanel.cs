@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,13 +19,19 @@ namespace BookWise_AutoMart
         public static int id;
         public static string categoryName;
         private UserDisplayItemsPanel UserDisplayItemsPanel;
+        public static DataGridView cart;
+        public static Label total;
+        public static TextBox Qty;
+        private string connectionString = DatabaseString.GetUserDatabase();
 
-        SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
+        //SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
 
         public UserPanel()
         {
             InitializeComponent();
             DisplayCategories();
+            cart = dataGridViewCart;
+            total = lblAmount;
         }
 
         /*private void ShowMenu(Panel menu)
@@ -47,27 +55,30 @@ namespace BookWise_AutoMart
         {
             try
             {
-                string query = "SELECT * FROM Categories ORDER BY category_id DESC";
-                using (SqlCommand cmd = new SqlCommand(query, connectionString))
+                using(SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    connectionString.Open();
-                    using (SqlDataReader readCategories = cmd.ExecuteReader())
+                    string query = "SELECT * FROM Categories ORDER BY category_id DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        while (readCategories.Read())
+                        connection.Open();
+                        using (SqlDataReader readCategories = cmd.ExecuteReader())
                         {
-                            int categoryId = (int)readCategories["category_id"];
-                            string category = readCategories["category_name"].ToString();
-                            CategoriesButton categoryButton = new CategoriesButton(categoryId, category, false);
-                            pnlCategoryScroll.Controls.Add(categoryButton);
-                            categoryButton.Click += (sender, e) =>
+                            while (readCategories.Read())
                             {
-                                categoryName = categoryButton.Text;
-                                UserDisplayItemsPanel = new UserDisplayItemsPanel(categoryName);
-                                SwitchUserControl(UserDisplayItemsPanel);
-                            };
+                                int categoryId = (int)readCategories["category_id"];
+                                string category = readCategories["category_name"].ToString();
+                                CategoriesButton categoryButton = new CategoriesButton(categoryId, category, false);
+                                pnlCategoryScroll.Controls.Add(categoryButton);
+                                categoryButton.Click += (sender, e) =>
+                                {
+                                    categoryName = categoryButton.Text;
+                                    UserDisplayItemsPanel = new UserDisplayItemsPanel(categoryName);
+                                    SwitchUserControl(UserDisplayItemsPanel);
+                                };
+                            }
                         }
+                        connection.Close();
                     }
-                    connectionString.Close();
                 }
             }
             catch (SqlException sqlex)
@@ -97,5 +108,69 @@ namespace BookWise_AutoMart
         {
             /* ShowMenu(pnlCategoryScroll);*/
         }
+
+        private void butPay_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow row in dataGridViewCart.Rows)
+            {
+                int itemId = Convert.ToInt32(row.Cells["ColumnId"].Value);
+                int quantity = Convert.ToInt32(row.Cells["ColumnQty"].Value);
+                int itemStock = GetStock(itemId);
+                UpdateStock(itemId, quantity,itemStock);
+            }
+
+        }
+
+        private void UpdateStock(int itemId, int quantity,int itemStock)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Items SET stock = @Stock WHERE item_id = @ItemId";
+                using(SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@Stock", itemStock-quantity);
+                        cmd.Parameters.AddWithValue("@ItemId", itemId);
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        //---------Error-----------
+                    }
+                }
+                 
+            }
+        }
+
+        private int GetStock(int ItemId)
+        {
+            int stock = 0;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Items WHERE item_id = @ItemId";
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@ItemId", ItemId);
+                        connection.Open();
+                        using(SqlDataReader stockReader = cmd.ExecuteReader())
+                        {
+                            stockReader.Read();
+                            stock = (int)stockReader["stock"];
+                            return stock;
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        //-------error---------
+                    }
+                }
+            }
+            return -1;
+        }
     }
+    
 }

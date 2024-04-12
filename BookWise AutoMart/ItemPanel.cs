@@ -228,11 +228,48 @@ namespace BookWise_AutoMart
             btnBuyItem.Click += (sender, e) =>
             {
                 int qty= Convert.ToInt32((txtQty.Text.Trim()));
+                decimal sum = 0;
+                //To display a message when the quantity that enter will exceed the current stock
                 if (qty > stock)
                 {
                     OutOfStockForm outOfStockForm = new OutOfStockForm(stock, txtQty);
                     outOfStockForm.ShowDialog();
                 }
+                else
+                {
+                    //Add the items to the cart
+                    DataGridViewRow newRow = new DataGridViewRow();
+
+                    DataGridViewTextBoxCell qtyCell = new DataGridViewTextBoxCell();
+                    qtyCell.Value = qty;
+                    newRow.Cells.Add(qtyCell);
+
+                    DataGridViewTextBoxCell idCell = new DataGridViewTextBoxCell();
+                    idCell.Value = itemId;
+                    newRow.Cells.Add(idCell);
+
+                    DataGridViewTextBoxCell itemCell = new DataGridViewTextBoxCell();
+                    itemCell.Value = itemName;
+                    newRow.Cells.Add(itemCell);
+
+                    DataGridViewTextBoxCell unitAmountCell = new DataGridViewTextBoxCell();
+                    unitAmountCell.Value = price;
+                    newRow.Cells.Add(unitAmountCell);
+
+                    DataGridViewTextBoxCell amountCell = new DataGridViewTextBoxCell();
+                    amountCell.Value = qty * price;
+                    newRow.Cells.Add(amountCell);
+
+                    UserPanel.cart.Rows.Add(newRow);
+                }
+
+                //To display the total amount
+                for (int i = 0; i < UserPanel.cart.Rows.Count; ++i)
+                {
+                    sum += Convert.ToDecimal(UserPanel.cart.Rows[i].Cells["ColumnAmount"].Value);
+                }
+                UserPanel.total.Text = sum.ToString();
+
             };
 
             // Add labels and "Add to Cart" button to details panel

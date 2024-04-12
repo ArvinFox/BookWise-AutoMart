@@ -28,14 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tblBorder = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlContainer = new System.Windows.Forms.Panel();
+            this.rtbItemDescription = new System.Windows.Forms.RichTextBox();
+            this.lblRequiredFields = new System.Windows.Forms.Label();
+            this.lblImageRequired = new System.Windows.Forms.Label();
+            this.lblStockRequired = new System.Windows.Forms.Label();
+            this.lblPriceRequired = new System.Windows.Forms.Label();
+            this.lblItemDescriptionRequired = new System.Windows.Forms.Label();
+            this.lblItemNameRequired = new System.Windows.Forms.Label();
+            this.pictureBoxDecrementStock = new System.Windows.Forms.PictureBox();
             this.btnChooseImage = new System.Windows.Forms.Button();
+            this.pictureBoxIncrementStock = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.lblImage = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.txtStock = new System.Windows.Forms.TextBox();
             this.lblPrice = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lblItemDescription = new System.Windows.Forms.Label();
-            this.txtItemDescription = new System.Windows.Forms.TextBox();
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.txtItemName = new System.Windows.Forms.TextBox();
@@ -45,14 +56,164 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pictureBoxDecrementStock = new System.Windows.Forms.PictureBox();
-            this.pictureBoxIncrementStock = new System.Windows.Forms.PictureBox();
-            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanelTitle.SuspendLayout();
+            this.tblBorder.SuspendLayout();
+            this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncrementStock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
+            this.tableLayoutPanelTitle.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tblBorder
+            // 
+            this.tblBorder.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.tblBorder.ColumnCount = 3;
+            this.tblBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tblBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblBorder.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tblBorder.Controls.Add(this.pnlContainer, 1, 1);
+            this.tblBorder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblBorder.Location = new System.Drawing.Point(0, 0);
+            this.tblBorder.Name = "tblBorder";
+            this.tblBorder.RowCount = 3;
+            this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.tblBorder.Size = new System.Drawing.Size(754, 748);
+            this.tblBorder.TabIndex = 0;
+            // 
+            // pnlContainer
+            // 
+            this.pnlContainer.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContainer.Controls.Add(this.rtbItemDescription);
+            this.pnlContainer.Controls.Add(this.lblRequiredFields);
+            this.pnlContainer.Controls.Add(this.lblImageRequired);
+            this.pnlContainer.Controls.Add(this.lblStockRequired);
+            this.pnlContainer.Controls.Add(this.lblPriceRequired);
+            this.pnlContainer.Controls.Add(this.lblItemDescriptionRequired);
+            this.pnlContainer.Controls.Add(this.lblItemNameRequired);
+            this.pnlContainer.Controls.Add(this.pictureBoxDecrementStock);
+            this.pnlContainer.Controls.Add(this.btnChooseImage);
+            this.pnlContainer.Controls.Add(this.pictureBoxIncrementStock);
+            this.pnlContainer.Controls.Add(this.pictureBoxImage);
+            this.pnlContainer.Controls.Add(this.lblImage);
+            this.pnlContainer.Controls.Add(this.lblStock);
+            this.pnlContainer.Controls.Add(this.txtStock);
+            this.pnlContainer.Controls.Add(this.lblPrice);
+            this.pnlContainer.Controls.Add(this.txtPrice);
+            this.pnlContainer.Controls.Add(this.lblItemDescription);
+            this.pnlContainer.Controls.Add(this.lblItemName);
+            this.pnlContainer.Controls.Add(this.lblId);
+            this.pnlContainer.Controls.Add(this.txtItemName);
+            this.pnlContainer.Controls.Add(this.lblItemId);
+            this.pnlContainer.Controls.Add(this.btnCancel);
+            this.pnlContainer.Controls.Add(this.btnDelete);
+            this.pnlContainer.Controls.Add(this.btnSave);
+            this.pnlContainer.Controls.Add(this.tableLayoutPanelTitle);
+            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContainer.Location = new System.Drawing.Point(6, 6);
+            this.pnlContainer.Name = "pnlContainer";
+            this.pnlContainer.Size = new System.Drawing.Size(742, 736);
+            this.pnlContainer.TabIndex = 0;
+            // 
+            // rtbItemDescription
+            // 
+            this.rtbItemDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbItemDescription.Font = new System.Drawing.Font("Gadugi", 15F);
+            this.rtbItemDescription.Location = new System.Drawing.Point(263, 207);
+            this.rtbItemDescription.Name = "rtbItemDescription";
+            this.rtbItemDescription.Size = new System.Drawing.Size(419, 73);
+            this.rtbItemDescription.TabIndex = 71;
+            this.rtbItemDescription.Text = "";
+            this.rtbItemDescription.TextChanged += new System.EventHandler(this.rtbItemDescription_TextChanged);
+            // 
+            // lblRequiredFields
+            // 
+            this.lblRequiredFields.AutoSize = true;
+            this.lblRequiredFields.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblRequiredFields.ForeColor = System.Drawing.Color.Red;
+            this.lblRequiredFields.Location = new System.Drawing.Point(7, 634);
+            this.lblRequiredFields.Name = "lblRequiredFields";
+            this.lblRequiredFields.Size = new System.Drawing.Size(302, 28);
+            this.lblRequiredFields.TabIndex = 70;
+            this.lblRequiredFields.Text = "*Please fill out all the fields";
+            this.lblRequiredFields.Visible = false;
+            // 
+            // lblImageRequired
+            // 
+            this.lblImageRequired.AutoSize = true;
+            this.lblImageRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblImageRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblImageRequired.Location = new System.Drawing.Point(428, 586);
+            this.lblImageRequired.Name = "lblImageRequired";
+            this.lblImageRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblImageRequired.TabIndex = 69;
+            this.lblImageRequired.Text = "*";
+            this.lblImageRequired.Visible = false;
+            // 
+            // lblStockRequired
+            // 
+            this.lblStockRequired.AutoSize = true;
+            this.lblStockRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblStockRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblStockRequired.Location = new System.Drawing.Point(497, 347);
+            this.lblStockRequired.Name = "lblStockRequired";
+            this.lblStockRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblStockRequired.TabIndex = 68;
+            this.lblStockRequired.Text = "*";
+            this.lblStockRequired.Visible = false;
+            // 
+            // lblPriceRequired
+            // 
+            this.lblPriceRequired.AutoSize = true;
+            this.lblPriceRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblPriceRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblPriceRequired.Location = new System.Drawing.Point(497, 297);
+            this.lblPriceRequired.Name = "lblPriceRequired";
+            this.lblPriceRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblPriceRequired.TabIndex = 67;
+            this.lblPriceRequired.Text = "*";
+            this.lblPriceRequired.Visible = false;
+            // 
+            // lblItemDescriptionRequired
+            // 
+            this.lblItemDescriptionRequired.AutoSize = true;
+            this.lblItemDescriptionRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblItemDescriptionRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblItemDescriptionRequired.Location = new System.Drawing.Point(688, 207);
+            this.lblItemDescriptionRequired.Name = "lblItemDescriptionRequired";
+            this.lblItemDescriptionRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblItemDescriptionRequired.TabIndex = 66;
+            this.lblItemDescriptionRequired.Text = "*";
+            this.lblItemDescriptionRequired.Visible = false;
+            // 
+            // lblItemNameRequired
+            // 
+            this.lblItemNameRequired.AutoSize = true;
+            this.lblItemNameRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblItemNameRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblItemNameRequired.Location = new System.Drawing.Point(688, 151);
+            this.lblItemNameRequired.Name = "lblItemNameRequired";
+            this.lblItemNameRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblItemNameRequired.TabIndex = 65;
+            this.lblItemNameRequired.Text = "*";
+            this.lblItemNameRequired.Visible = false;
+            // 
+            // pictureBoxDecrementStock
+            // 
+            this.pictureBoxDecrementStock.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxDecrementStock.Image = global::BookWise_AutoMart.Properties.Resources.down;
+            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(470, 364);
+            this.pictureBoxDecrementStock.Name = "pictureBoxDecrementStock";
+            this.pictureBoxDecrementStock.Size = new System.Drawing.Size(18, 15);
+            this.pictureBoxDecrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDecrementStock.TabIndex = 64;
+            this.pictureBoxDecrementStock.TabStop = false;
+            this.pictureBoxDecrementStock.Click += new System.EventHandler(this.pictureBoxDecrementStock_Click);
+            this.pictureBoxDecrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseDown);
+            this.pictureBoxDecrementStock.MouseEnter += new System.EventHandler(this.pictureBoxDecrementStock_MouseEnter);
+            this.pictureBoxDecrementStock.MouseLeave += new System.EventHandler(this.pictureBoxDecrementStock_MouseLeave);
+            this.pictureBoxDecrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseUp);
             // 
             // btnChooseImage
             // 
@@ -60,23 +221,48 @@
             this.btnChooseImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChooseImage.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImage.ForeColor = System.Drawing.Color.Black;
-            this.btnChooseImage.Location = new System.Drawing.Point(268, 594);
+            this.btnChooseImage.Location = new System.Drawing.Point(263, 586);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(159, 42);
-            this.btnChooseImage.TabIndex = 37;
+            this.btnChooseImage.TabIndex = 62;
             this.btnChooseImage.Text = "Choose Image";
             this.btnChooseImage.UseVisualStyleBackColor = false;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            // 
+            // pictureBoxIncrementStock
+            // 
+            this.pictureBoxIncrementStock.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBoxIncrementStock.Image = global::BookWise_AutoMart.Properties.Resources.up;
+            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(470, 350);
+            this.pictureBoxIncrementStock.Name = "pictureBoxIncrementStock";
+            this.pictureBoxIncrementStock.Size = new System.Drawing.Size(18, 15);
+            this.pictureBoxIncrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxIncrementStock.TabIndex = 63;
+            this.pictureBoxIncrementStock.TabStop = false;
+            this.pictureBoxIncrementStock.Click += new System.EventHandler(this.pictureBoxIncrementStock_Click);
+            this.pictureBoxIncrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseDown);
+            this.pictureBoxIncrementStock.MouseEnter += new System.EventHandler(this.pictureBoxIncrementStock_MouseEnter);
+            this.pictureBoxIncrementStock.MouseLeave += new System.EventHandler(this.pictureBoxIncrementStock_MouseLeave);
+            this.pictureBoxIncrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseUp);
+            // 
+            // pictureBoxImage
+            // 
+            this.pictureBoxImage.Location = new System.Drawing.Point(263, 401);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.TabIndex = 61;
+            this.pictureBoxImage.TabStop = false;
             // 
             // lblImage
             // 
             this.lblImage.AutoSize = true;
             this.lblImage.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblImage.ForeColor = System.Drawing.Color.Black;
-            this.lblImage.Location = new System.Drawing.Point(38, 409);
+            this.lblImage.Location = new System.Drawing.Point(33, 401);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(90, 28);
-            this.lblImage.TabIndex = 35;
+            this.lblImage.TabIndex = 60;
             this.lblImage.Text = "Image:";
             // 
             // lblStock
@@ -84,76 +270,70 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblStock.ForeColor = System.Drawing.Color.Black;
-            this.lblStock.Location = new System.Drawing.Point(38, 359);
+            this.lblStock.Location = new System.Drawing.Point(33, 351);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(81, 28);
-            this.lblStock.TabIndex = 34;
+            this.lblStock.TabIndex = 59;
             this.lblStock.Text = "Stock:";
             // 
             // txtStock
             // 
             this.txtStock.BackColor = System.Drawing.Color.White;
-            this.txtStock.Font = new System.Drawing.Font("Gadugi", 16F);
+            this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStock.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtStock.ForeColor = System.Drawing.Color.Black;
-            this.txtStock.Location = new System.Drawing.Point(268, 355);
+            this.txtStock.Location = new System.Drawing.Point(263, 347);
             this.txtStock.Multiline = true;
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(228, 37);
-            this.txtStock.TabIndex = 33;
+            this.txtStock.TabIndex = 58;
+            this.txtStock.Text = "0";
+            this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // lblPrice
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblPrice.Location = new System.Drawing.Point(38, 309);
+            this.lblPrice.Location = new System.Drawing.Point(33, 301);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(76, 28);
-            this.lblPrice.TabIndex = 32;
+            this.lblPrice.TabIndex = 57;
             this.lblPrice.Text = "Price:";
             // 
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.White;
-            this.txtPrice.Font = new System.Drawing.Font("Gadugi", 16F);
+            this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrice.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPrice.Location = new System.Drawing.Point(268, 305);
+            this.txtPrice.Location = new System.Drawing.Point(263, 297);
             this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(228, 37);
-            this.txtPrice.TabIndex = 31;
+            this.txtPrice.TabIndex = 56;
+            this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
             // 
             // lblItemDescription
             // 
             this.lblItemDescription.AutoSize = true;
             this.lblItemDescription.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblItemDescription.ForeColor = System.Drawing.Color.Black;
-            this.lblItemDescription.Location = new System.Drawing.Point(38, 216);
+            this.lblItemDescription.Location = new System.Drawing.Point(33, 208);
             this.lblItemDescription.Name = "lblItemDescription";
             this.lblItemDescription.Size = new System.Drawing.Size(210, 28);
-            this.lblItemDescription.TabIndex = 30;
+            this.lblItemDescription.TabIndex = 55;
             this.lblItemDescription.Text = "Item Description:";
-            // 
-            // txtItemDescription
-            // 
-            this.txtItemDescription.BackColor = System.Drawing.Color.White;
-            this.txtItemDescription.Font = new System.Drawing.Font("Gadugi", 16F);
-            this.txtItemDescription.ForeColor = System.Drawing.Color.Black;
-            this.txtItemDescription.Location = new System.Drawing.Point(268, 215);
-            this.txtItemDescription.Multiline = true;
-            this.txtItemDescription.Name = "txtItemDescription";
-            this.txtItemDescription.Size = new System.Drawing.Size(419, 73);
-            this.txtItemDescription.TabIndex = 29;
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
             this.lblItemName.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(38, 160);
+            this.lblItemName.Location = new System.Drawing.Point(33, 152);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(145, 28);
-            this.lblItemName.TabIndex = 28;
+            this.lblItemName.TabIndex = 54;
             this.lblItemName.Text = "Item Name:";
             // 
             // lblId
@@ -161,32 +341,34 @@
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblId.ForeColor = System.Drawing.Color.Gray;
-            this.lblId.Location = new System.Drawing.Point(263, 106);
+            this.lblId.Location = new System.Drawing.Point(258, 98);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(56, 28);
-            this.lblId.TabIndex = 27;
+            this.lblId.TabIndex = 53;
             this.lblId.Text = "(ID)";
             // 
             // txtItemName
             // 
             this.txtItemName.BackColor = System.Drawing.Color.White;
-            this.txtItemName.Font = new System.Drawing.Font("Gadugi", 16F);
+            this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtItemName.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtItemName.ForeColor = System.Drawing.Color.Black;
-            this.txtItemName.Location = new System.Drawing.Point(268, 159);
+            this.txtItemName.Location = new System.Drawing.Point(263, 151);
             this.txtItemName.Multiline = true;
             this.txtItemName.Name = "txtItemName";
             this.txtItemName.Size = new System.Drawing.Size(419, 37);
-            this.txtItemName.TabIndex = 26;
+            this.txtItemName.TabIndex = 52;
+            this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
             // 
             // lblItemId
             // 
             this.lblItemId.AutoSize = true;
             this.lblItemId.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblItemId.ForeColor = System.Drawing.Color.Black;
-            this.lblItemId.Location = new System.Drawing.Point(38, 106);
+            this.lblItemId.Location = new System.Drawing.Point(33, 98);
             this.lblItemId.Name = "lblItemId";
             this.lblItemId.Size = new System.Drawing.Size(104, 28);
-            this.lblItemId.TabIndex = 25;
+            this.lblItemId.TabIndex = 51;
             this.lblItemId.Text = "Item ID:";
             // 
             // btnCancel
@@ -197,10 +379,10 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(613, 678);
+            this.btnCancel.Location = new System.Drawing.Point(608, 670);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 61);
-            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TabIndex = 50;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -213,10 +395,10 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(150, 678);
+            this.btnDelete.Location = new System.Drawing.Point(145, 670);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 61);
-            this.btnDelete.TabIndex = 23;
+            this.btnDelete.TabIndex = 49;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -229,10 +411,10 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(12, 678);
+            this.btnSave.Location = new System.Drawing.Point(7, 670);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(126, 61);
-            this.btnSave.TabIndex = 22;
+            this.btnSave.TabIndex = 48;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -248,8 +430,8 @@
             this.tableLayoutPanelTitle.Name = "tableLayoutPanelTitle";
             this.tableLayoutPanelTitle.RowCount = 1;
             this.tableLayoutPanelTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(754, 72);
-            this.tableLayoutPanelTitle.TabIndex = 21;
+            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(742, 72);
+            this.tableLayoutPanelTitle.TabIndex = 47;
             // 
             // lblTitle
             // 
@@ -257,77 +439,18 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Gadugi", 22F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(224, 14);
+            this.lblTitle.Location = new System.Drawing.Point(218, 14);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(306, 44);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Edit Item Details";
-            // 
-            // pictureBoxDecrementStock
-            // 
-            this.pictureBoxDecrementStock.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxDecrementStock.Image = global::BookWise_AutoMart.Properties.Resources.down;
-            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(475, 372);
-            this.pictureBoxDecrementStock.Name = "pictureBoxDecrementStock";
-            this.pictureBoxDecrementStock.Size = new System.Drawing.Size(18, 15);
-            this.pictureBoxDecrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDecrementStock.TabIndex = 39;
-            this.pictureBoxDecrementStock.TabStop = false;
-            this.pictureBoxDecrementStock.Click += new System.EventHandler(this.pictureBoxDecrementStock_Click);
-            this.pictureBoxDecrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseDown);
-            this.pictureBoxDecrementStock.MouseEnter += new System.EventHandler(this.pictureBoxDecrementStock_MouseEnter);
-            this.pictureBoxDecrementStock.MouseLeave += new System.EventHandler(this.pictureBoxDecrementStock_MouseLeave);
-            this.pictureBoxDecrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxDecrementStock_MouseUp);
-            // 
-            // pictureBoxIncrementStock
-            // 
-            this.pictureBoxIncrementStock.BackColor = System.Drawing.SystemColors.Control;
-            this.pictureBoxIncrementStock.Image = global::BookWise_AutoMart.Properties.Resources.up;
-            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(475, 358);
-            this.pictureBoxIncrementStock.Name = "pictureBoxIncrementStock";
-            this.pictureBoxIncrementStock.Size = new System.Drawing.Size(18, 15);
-            this.pictureBoxIncrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxIncrementStock.TabIndex = 38;
-            this.pictureBoxIncrementStock.TabStop = false;
-            this.pictureBoxIncrementStock.Click += new System.EventHandler(this.pictureBoxIncrementStock_Click);
-            this.pictureBoxIncrementStock.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseDown);
-            this.pictureBoxIncrementStock.MouseEnter += new System.EventHandler(this.pictureBoxIncrementStock_MouseEnter);
-            this.pictureBoxIncrementStock.MouseLeave += new System.EventHandler(this.pictureBoxIncrementStock_MouseLeave);
-            this.pictureBoxIncrementStock.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxIncrementStock_MouseUp);
-            // 
-            // pictureBoxImage
-            // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(268, 409);
-            this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxImage.TabIndex = 36;
-            this.pictureBoxImage.TabStop = false;
             // 
             // AdminEditItemForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(754, 748);
-            this.Controls.Add(this.pictureBoxDecrementStock);
-            this.Controls.Add(this.pictureBoxIncrementStock);
-            this.Controls.Add(this.btnChooseImage);
-            this.Controls.Add(this.pictureBoxImage);
-            this.Controls.Add(this.lblImage);
-            this.Controls.Add(this.lblStock);
-            this.Controls.Add(this.txtStock);
-            this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.txtPrice);
-            this.Controls.Add(this.lblItemDescription);
-            this.Controls.Add(this.txtItemDescription);
-            this.Controls.Add(this.lblItemName);
-            this.Controls.Add(this.lblId);
-            this.Controls.Add(this.txtItemName);
-            this.Controls.Add(this.lblItemId);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tableLayoutPanelTitle);
+            this.Controls.Add(this.tblBorder);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -335,21 +458,32 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminEditItemForm";
             this.Load += new System.EventHandler(this.AdminEditItemForm_Load);
-            this.tableLayoutPanelTitle.ResumeLayout(false);
-            this.tableLayoutPanelTitle.PerformLayout();
+            this.tblBorder.ResumeLayout(false);
+            this.pnlContainer.ResumeLayout(false);
+            this.pnlContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxIncrementStock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
+            this.tableLayoutPanelTitle.ResumeLayout(false);
+            this.tableLayoutPanelTitle.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.TableLayoutPanel tblBorder;
+        private System.Windows.Forms.Panel pnlContainer;
+        private System.Windows.Forms.RichTextBox rtbItemDescription;
+        private System.Windows.Forms.Label lblRequiredFields;
+        private System.Windows.Forms.Label lblImageRequired;
+        private System.Windows.Forms.Label lblStockRequired;
+        private System.Windows.Forms.Label lblPriceRequired;
+        private System.Windows.Forms.Label lblItemDescriptionRequired;
+        private System.Windows.Forms.Label lblItemNameRequired;
         private System.Windows.Forms.PictureBox pictureBoxDecrementStock;
-        private System.Windows.Forms.PictureBox pictureBoxIncrementStock;
         private System.Windows.Forms.Button btnChooseImage;
+        private System.Windows.Forms.PictureBox pictureBoxIncrementStock;
         private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.Label lblImage;
         private System.Windows.Forms.Label lblStock;
@@ -357,7 +491,6 @@
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label lblItemDescription;
-        private System.Windows.Forms.TextBox txtItemDescription;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtItemName;

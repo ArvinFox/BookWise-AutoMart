@@ -87,8 +87,8 @@
             this.btnAddNewCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNewCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnAddNewCategory.FlatAppearance.BorderSize = 0;
-            this.btnAddNewCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SteelBlue;
-            this.btnAddNewCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DodgerBlue;
+            this.btnAddNewCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnAddNewCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddNewCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewCategory.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewCategory.ForeColor = System.Drawing.Color.DeepSkyBlue;
@@ -102,6 +102,7 @@
             this.btnAddNewCategory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddNewCategory.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAddNewCategory.UseVisualStyleBackColor = false;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
             this.btnAddNewCategory.MouseEnter += new System.EventHandler(this.btnAddNewCategory_MouseEnter);
             this.btnAddNewCategory.MouseLeave += new System.EventHandler(this.btnAddNewCategory_MouseLeave);
             // 

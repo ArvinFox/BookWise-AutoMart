@@ -20,7 +20,6 @@ namespace BookWise_AutoMart
 
         SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
 
-
         public UserPanel()
         {
             InitializeComponent();
@@ -48,7 +47,7 @@ namespace BookWise_AutoMart
         {
             try
             {
-                string query = "SELECT category_name FROM Categories ORDER BY category_id DESC";
+                string query = "SELECT * FROM Categories ORDER BY category_id DESC";
                 using (SqlCommand cmd = new SqlCommand(query, connectionString))
                 {
                     connectionString.Open();
@@ -56,8 +55,9 @@ namespace BookWise_AutoMart
                     {
                         while (readCategories.Read())
                         {
+                            int categoryId = (int)readCategories["category_id"];
                             string category = readCategories["category_name"].ToString();
-                            CategoriesButton categoryButton = new CategoriesButton(category);
+                            CategoriesButton categoryButton = new CategoriesButton(categoryId, category, false);
                             pnlCategoryScroll.Controls.Add(categoryButton);
                             categoryButton.Click += (sender, e) =>
                             {

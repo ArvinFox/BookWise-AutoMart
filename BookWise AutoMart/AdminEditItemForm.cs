@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace BookWise_AutoMart
 {
@@ -19,7 +21,9 @@ namespace BookWise_AutoMart
         // Timer for decrementing stock
         private Timer decrementTimer = new Timer();
 
-        int id;
+        private int id;
+        byte[] previousImageData;
+        private bool imageChanged = false;
 
         string connectionString = DatabaseString.GetUserDatabase();
 
@@ -35,10 +39,10 @@ namespace BookWise_AutoMart
 
             id = itemId;
 
-            Placeholder(txtItemName, "Enter Item Name");
-            Placeholder(txtItemDescription, "Enter Item Description");
-            Placeholder(txtPrice, "Enter Item Price");
-            Placeholder(txtStock, "Enter Item Stock");
+            Placeholder("Enter Item Name", txtItemName, null);
+            Placeholder("Enter Item Description", null, rtbItemDescription);
+            Placeholder("Enter Item Price", txtPrice, null);
+            Placeholder("Enter Item Stock", txtStock, null);
         }
 
         private void AdminEditItemForm_Load(object sender, EventArgs e)
@@ -62,14 +66,14 @@ namespace BookWise_AutoMart
                                 reader.Read();
                                 lblId.Text = id.ToString();
                                 txtItemName.Text = reader["item_name"].ToString();
-                                txtItemDescription.Text = reader["item_description"].ToString();
+                                rtbItemDescription.Text = reader["item_description"].ToString();
                                 txtPrice.Text = reader["price"].ToString();
                                 txtStock.Text = reader["stock"].ToString();
 
-                                byte[] imageData = (byte[])reader["image"];
+                                previousImageData = (byte[])reader["image"];
 
                                 Image image;
-                                using (MemoryStream ms = new MemoryStream(imageData))
+                                using (MemoryStream ms = new MemoryStream(previousImageData))
                                 {
                                     image = Image.FromStream(ms);
                                 }
@@ -80,7 +84,7 @@ namespace BookWise_AutoMart
                             {
                                 lblId.Text = "Error";
                                 txtItemName.Text = "Error";
-                                txtItemDescription.Text = "Error";
+                                rtbItemDescription.Text = "Error";
                                 txtPrice.Text = "Error";
                                 txtStock.Text = "Error";
 
@@ -126,6 +130,7 @@ namespace BookWise_AutoMart
                     // Load the selected image
                     Image selectedImage = Image.FromFile(filePath);
                     pictureBoxImage.Image = selectedImage;
+                    imageChanged = true;
                 }
                 catch (Exception ex)
                 {
@@ -133,49 +138,124 @@ namespace BookWise_AutoMart
                 }
             }
         }
+        private void DisplayErrorMessages(string errors)
+        {
+            string[] errorMessages = errors.Split(new[] {'\n'}, StringSplitOptions.RemoveEmptyEntries);
+            // split the errors into sub-errors (separated using the new line character)
+            // StringSplitOptions.RemoveEmptyEntries --> excludes any empty strings
+
+            foreach (string errorMessage in errorMessages)
+            {
+                if (errorMessage.Contains("Please fill out all the fields"))
+                {
+                    lblRequiredFields.Visible = true;
+                    lblItemNameRequired.Visible = true;
+                    lblItemDescriptionRequired.Visible = true;
+                    lblPriceRequired.Visible = true;
+                    lblStockRequired.Visible = true;
+
+                }
+
+                if (errorMessage.Contains("Please enter item name"))
+                {
+                    lblItemNameRequired.Visible = true;
+                    lblRequiredFields.Visible = true;
+                }
+
+                if (errorMessage.Contains("Please enter item description"))
+                {
+                    lblItemDescriptionRequired.Visible = true;
+                    lblRequiredFields.Visible = true;
+                }
+
+                if (errorMessage.Contains("Please enter item price") || errorMessage.Contains("Please enter a valid price"))
+                {
+                    if (errorMessage.Contains("Please enter item price"))
+                    {
+                        lblPriceRequired.Text = "*";
+                        lblRequiredFields.Visible = true;
+                    }
+                    else if (errorMessage.Contains("Please enter a valid price"))
+                    {
+                        lblPriceRequired.Text = "Please enter a valid price";
+                    }
+
+                    lblPriceRequired.Visible = true;
+                }
+
+                if (errorMessage.Contains("Please enter item stock") || errorMessage.Contains("Please enter a valid stock"))
+                {
+                    if (errorMessage.Contains("Please enter item stock"))
+                    {
+                        lblStockRequired.Text = "*";
+                        lblRequiredFields.Visible = true;
+                    }
+                    else if (errorMessage.Contains("Please enter a valid stock"))
+                    {
+                        lblStockRequired.Text = "Please enter a valid stock";
+                    }
+
+                    lblStockRequired.Visible = true;
+                }
+            }
+        }
+        private void ClearErrorMessages()
+        {
+            lblPriceRequired.Text = "*";
+            lblStockRequired.Text = "*";
+
+            lblRequiredFields.Visible = false;
+            lblItemNameRequired.Visible = false;
+            lblItemDescriptionRequired.Visible = false;
+            lblPriceRequired.Visible = false;
+            lblStockRequired.Visible = false;
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
+            ClearErrorMessages();
+
             string errors = "";
 
-            if (IsFieldEmpty(txtItemName) && IsFieldEmpty(txtItemDescription) && IsFieldEmpty(txtPrice) && IsFieldEmpty(txtStock))
+            if (IsFieldEmpty(txtItemName) && IsFieldEmpty(null, rtbItemDescription) && IsFieldEmpty(txtPrice) && IsFieldEmpty(txtStock))
             {
-                errors += "Please fill out all the fields.\n";
+                errors += "Please fill out all the fields\n";
             }
             else
             {
                 if (IsFieldEmpty(txtItemName))
                 {
-                    errors += "Please enter item name.\n";
+                    errors += "Please enter item name\n";
                 }
 
-                if (IsFieldEmpty(txtItemDescription))
+                if (IsFieldEmpty(null, rtbItemDescription))
                 {
-                    errors += "Please enter item description.\n";
+                    errors += "Please enter item description\n";
                 }
 
                 if (IsFieldEmpty(txtPrice))
                 {
-                    errors += "Please enter item price.\n";
+                    errors += "Please enter item price\n";
                 }
                 else if (!IsValidPrice(txtPrice))
                 {
-                    errors += "Please enter a valid price.\n";
+                    errors += "Please enter a valid price\n";
                 }
 
                 if (IsFieldEmpty(txtStock))
                 {
-                    errors += "Please enter item stock.\n";
+                    errors += "Please enter item stock\n";
                 }
                 else if (!IsValidStock(txtStock))
                 {
-                    errors += "Please enter a valid stock.\n";
+                    errors += "Please enter a valid stock\n";
                 }
             }
 
             // Check for any errors
             if (errors != "")
             {
-                MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                /*MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
+                DisplayErrorMessages(errors);
                 return;
             }
 
@@ -193,16 +273,26 @@ namespace BookWise_AutoMart
                     {
                         command.Parameters.AddWithValue("@ItemId", id);
                         command.Parameters.AddWithValue("@ItemName", $"{txtItemName.Text}");
-                        command.Parameters.AddWithValue("@ItemDescription", $"{txtItemDescription.Text}");
+                        command.Parameters.AddWithValue("@ItemDescription", $"{rtbItemDescription.Text}");
                         command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text));
                         command.Parameters.AddWithValue("@Stock", Convert.ToInt32(txtStock.Text));
 
                         byte[] imageData;
-                        using (MemoryStream ms = new MemoryStream())
+
+                        // check if item image changed
+                        if (imageChanged)
                         {
-                            pictureBoxImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                            imageData = ms.ToArray();
+                            using (MemoryStream ms = new MemoryStream())
+                            {
+                                pictureBoxImage.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                                imageData = ms.ToArray();
+                            }
                         }
+                        else
+                        {
+                            imageData = previousImageData;
+                        }
+
                         command.Parameters.AddWithValue("@ImageData", imageData);
                     
                         connection.Open();
@@ -214,6 +304,7 @@ namespace BookWise_AutoMart
                             MessageBox.Show("Item details updated successfully.", "Update Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             btnCancel.PerformClick();
+                            AdminControlForm.btnReloadInventoryManagementForm.PerformClick();   // Refresh form
                         }
                         else
                         {
@@ -229,7 +320,7 @@ namespace BookWise_AutoMart
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show($"[Item ID: {id}]\nAre you sure you want to delete this item?", "Item Deletion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show($"[Item ID: {id}]\nAre you sure you want to delete this item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
@@ -257,6 +348,7 @@ namespace BookWise_AutoMart
                             MessageBox.Show($"[Item ID: {id}]\nItem deleted successfully.", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             btnCancel.PerformClick();
+                            AdminControlForm.btnReloadInventoryManagementForm.PerformClick();   // Refresh form
                         }
                         else
                         {
@@ -275,55 +367,84 @@ namespace BookWise_AutoMart
             this.Close();
         }
 
-        private void Placeholder(TextBox textBox, string placeholder)
+        private void Placeholder(string placeholder, TextBox textBox = null, RichTextBox rtb = null)
         {
-            textBox.GotFocus += (sender, e) =>
+            if (textBox == null)
             {
-                if (textBox.Text == placeholder)
+                rtb.GotFocus += (sender, e) =>
                 {
-                    textBox.Text = "";
-                    textBox.ForeColor = SystemColors.WindowText;
-                }
-            };
+                    if (rtb.Text == placeholder)
+                    {
+                        rtb.Text = "";
+                        rtb.ForeColor = SystemColors.WindowText;
+                    }
+                };
 
-            textBox.LostFocus += (sender, e) =>
-            {
-                if (string.IsNullOrWhiteSpace(textBox.Text))
+                rtb.LostFocus += (sender, e) =>
                 {
-                    textBox.Text = placeholder;
-                    textBox.ForeColor = SystemColors.GrayText;
-                }
-            };
+                    if (string.IsNullOrWhiteSpace(rtb.Text))
+                    {
+                        rtb.Text = placeholder;
+                        rtb.ForeColor = SystemColors.GrayText;
+                    }
+                };
+            }
+            else
+            {
+                textBox.GotFocus += (sender, e) =>
+                {
+                    if (textBox.Text == placeholder)
+                    {
+                        textBox.Text = "";
+                        textBox.ForeColor = SystemColors.WindowText;
+                    }
+                };
+
+                textBox.LostFocus += (sender, e) =>
+                {
+                    if (string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        textBox.Text = placeholder;
+                        textBox.ForeColor = SystemColors.GrayText;
+                    }
+                };
+            }
         }
 
-        private bool IsFieldEmpty(TextBox textBox)
+        private bool IsFieldEmpty(TextBox textBox = null, RichTextBox rtb = null)
         {
-            if (textBox == txtItemName)
+            if (textBox == null)
             {
-                if (textBox.Text.Trim() == "Enter Item Name" || string.IsNullOrWhiteSpace(textBox.Text))
+                if (rtb == rtbItemDescription)
                 {
-                    return true;
+                    if (rtb.Text.Trim() == "Enter Item Description" || string.IsNullOrWhiteSpace(rtb.Text))
+                    {
+                        return true;
+                    }
                 }
             }
-            else if (textBox == txtItemDescription)
+            else
             {
-                if (textBox.Text.Trim() == "Enter Item Description" || string.IsNullOrWhiteSpace(textBox.Text))
+                if (textBox == txtItemName)
                 {
-                    return true;
+                    if (textBox.Text.Trim() == "Enter Item Name" || string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return true;
+                    }
                 }
-            }
-            else if (textBox == txtPrice)
-            {
-                if (textBox.Text.Trim() == "Enter Item Price" || string.IsNullOrWhiteSpace(textBox.Text))
+                else if (textBox == txtPrice)
                 {
-                    return true;
+                    if (textBox.Text.Trim() == "Enter Item Price" || string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return true;
+                    }
                 }
-            }
-            else if (textBox == txtStock)
-            {
-                if (textBox.Text.Trim() == "Enter Item Stock" || string.IsNullOrWhiteSpace(textBox.Text))
+                else if (textBox == txtStock)
                 {
-                    return true;
+                    if (textBox.Text.Trim() == "Enter Item Stock" || string.IsNullOrWhiteSpace(textBox.Text))
+                    {
+                        return true;
+                    }
                 }
             }
 
@@ -370,13 +491,13 @@ namespace BookWise_AutoMart
             if (IsFieldEmpty(txtStock))
             {
                 incrementTimer.Stop();
-                MessageBox.Show("Please enter item stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DisplayErrorMessages("Please enter item stock");
                 return;
             }
             else if (!IsValidStock(txtStock))
             {
                 incrementTimer.Stop();
-                MessageBox.Show("Please enter a valid stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DisplayErrorMessages("Please enter a valid stock");
                 return;
             }
 
@@ -408,13 +529,13 @@ namespace BookWise_AutoMart
             if (IsFieldEmpty(txtStock))
             {
                 decrementTimer.Stop();
-                MessageBox.Show("Please enter item stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DisplayErrorMessages("Please enter item stock");
                 return;
             }
             else if (!IsValidStock(txtStock))
             {
                 decrementTimer.Stop();
-                MessageBox.Show("Please enter a valid stock.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DisplayErrorMessages("Please enter a valid stock");
                 return;
             }
 
@@ -447,6 +568,52 @@ namespace BookWise_AutoMart
         {
             pictureBoxDecrementStock.BackColor = Color.LightGray;
             decrementTimer.Stop();
+        }
+
+        private void txtItemName_TextChanged(object sender, EventArgs e)
+        {
+            if (IsFieldEmpty(txtItemName))
+            {
+                return;
+            }
+            else
+            {
+                lblItemNameRequired.Visible = false;
+            }
+            
+        }
+        private void rtbItemDescription_TextChanged(object sender, EventArgs e)
+        {
+            if (IsFieldEmpty(null, rtbItemDescription))
+            {
+                return;
+            }
+            else
+            {
+                lblItemDescriptionRequired.Visible = false;
+            }
+        }
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (IsFieldEmpty(txtPrice))
+            {
+                return;
+            }
+            else
+            {
+                lblPriceRequired.Visible = false;
+            }
+        }
+        private void txtStock_TextChanged(object sender, EventArgs e)
+        {
+            if (IsFieldEmpty(txtStock))
+            {
+                return;
+            }
+            else
+            {
+                lblStockRequired.Visible = false;
+            }
         }
     }
 }

@@ -12,21 +12,22 @@ namespace BookWise_AutoMart
 {
     public partial class AdminControlForm : Form
     {
-        UserControlInventoryManagement inventoryForm;
-        /*UserControlUserManagement userForm;*/
-        /*UserControlOffersPromotions offersPromotionsForm;*/
-        /*UserControlReportsAnalytics reportsAnalyticsForm;*/
+        public static Button btnReloadInventoryManagementForm;  // used to refresh the form
+        /*public static Button btnReloadUserManagementForm;
+        public static Button btnReloadOffersPromotionsForm;
+        public static Button btnReloadReportsAnalyticsForm;*/
 
+        private UserControl currentlyDisplayedControl;  // current instance of UserControl
         string form;
 
         public AdminControlForm(string formControl)
         {
             InitializeComponent();
 
-            inventoryForm = new UserControlInventoryManagement();
-            /*userForm = new UserControlUserManagement();
-            offersPromotionsForm = new UserControlOffersPromotions();
-            btnReportsAnalytics = new UserControlReportsAnalytics();*/
+            btnReloadInventoryManagementForm = btnInventoryManagement;
+            /*btnReloadUserManagementForm = btnUserManagement;
+            btnReloadOffersPromotionsForm = btnOffersPromotions;
+            btnReloadReportsAnalyticsForm = btnReloadInventoryManagementForm;*/
 
             form = formControl;
             lblCurrentControl.Text = formControl.ToUpper();
@@ -43,8 +44,16 @@ namespace BookWise_AutoMart
 
         private void NavigateControl(UserControl userControl)
         {
+            // Dispose of the currently displayed control, if it exists
+            if (currentlyDisplayedControl != null)
+            {
+                currentlyDisplayedControl.Dispose();    // Dispose (close) exisiting UserControl instance
+                currentlyDisplayedControl = null;
+            }
+
             pnlDisplayControl.Controls.Clear();
             pnlDisplayControl.Controls.Add(userControl);
+            currentlyDisplayedControl = userControl;
         }
         private void ResetPanelAndButtonColors()
         {
@@ -61,7 +70,7 @@ namespace BookWise_AutoMart
 
         private void btnInventoryManagement_Click(object sender, EventArgs e)
         {
-            NavigateControl(inventoryForm);
+            NavigateControl(new UserControlInventoryManagement());
             lblCurrentControl.Text = "INVENTORY MANAGEMENT";
 
             ResetPanelAndButtonColors();
@@ -70,7 +79,7 @@ namespace BookWise_AutoMart
         }
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(userForm);*/
+            /*NavigateControl(new UserControlUserManagement());*/
             lblCurrentControl.Text = "USER MANAGEMENT";
 
             ResetPanelAndButtonColors();
@@ -79,7 +88,7 @@ namespace BookWise_AutoMart
         }
         private void btnOffersPromotions_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(offersPromotionsForm);*/
+            /*NavigateControl(new UserControlOffersPromotions());*/
             lblCurrentControl.Text = "OFFERS && PROMOTIONS";
 
             ResetPanelAndButtonColors();
@@ -88,7 +97,7 @@ namespace BookWise_AutoMart
         }
         private void btnReportsAnalytics_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(reportsAnalyticsForm);*/
+            /*NavigateControl(UserControlReportsAnalytics());*/
             lblCurrentControl.Text = "REPORTING && ANALYTICS";
 
             ResetPanelAndButtonColors();

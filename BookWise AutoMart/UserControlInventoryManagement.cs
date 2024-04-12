@@ -60,7 +60,7 @@ namespace BookWise_AutoMart
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT category_name FROM Categories ORDER BY category_id DESC";
+                string query = "SELECT * FROM Categories ORDER BY category_id DESC";
                 // The data is fetched from the bottom to top (ORDER BY) because due to the 'Dock' property being set to 'Top', the last button added will be at the top (in the panel)
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -77,8 +77,9 @@ namespace BookWise_AutoMart
                             while (reader.Read())
                             {
                                 // Create a new Button for each data row
+                                int categoryId = (int)reader["category_id"];
                                 string category = reader["category_name"].ToString();
-                                CategoriesButton categoryButton = new CategoriesButton(category);
+                                CategoriesButton categoryButton = new CategoriesButton(categoryId, category, true);
 
                                 // Add the button to a container control (panel)
                                 pnlDisplayCategories.Controls.Add(categoryButton);
@@ -326,6 +327,27 @@ namespace BookWise_AutoMart
                         DisplayItems(filterOption: selectedCategory, searchedItemName: searchedItem);
                     }
                 }
+            }
+        }
+
+        private void btnAddNewCategory_Click(object sender, EventArgs e)
+        {
+            bool adminAddNewCategoryFormFound = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is AdminAddNewCategoryForm)
+                {
+                    form.ShowDialog();
+                    adminAddNewCategoryFormFound = true;
+                    break;
+                }
+            }
+
+            if (!adminAddNewCategoryFormFound)
+            {
+                AdminAddNewCategoryForm adminAddNewCategoryForm = new AdminAddNewCategoryForm();
+                adminAddNewCategoryForm.ShowDialog();
             }
         }
     }

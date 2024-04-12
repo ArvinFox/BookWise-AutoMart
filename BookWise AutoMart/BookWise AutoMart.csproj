@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAddNewCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddNewCategoryForm.Designer.cs">
+      <DependentUpon>AdminAddNewCategoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     <Compile Include="UserRegistrationForm.Designer.cs">
       <DependentUpon>UserRegistrationForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminAddNewCategoryForm.resx">
+      <DependentUpon>AdminAddNewCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminControlForm.resx">
       <DependentUpon>AdminControlForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,6 +336,9 @@
     <None Include="Resources\Gold_Star_Uncolored_1.png" />
     <None Include="Resources\colored-circle.jpg" />
     <None Include="Resources\forward.jpg" />
+    <None Include="Resources\delete %28blue%29.png" />
+    <None Include="Resources\delete %28gray%29.png" />
+    <None Include="Resources\delete %28white%29.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

@@ -155,7 +155,7 @@ namespace BookWise_AutoMart
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-            catch (Exception ex) 
+            catch (Exception) 
             {
                 //error, error message.
             }

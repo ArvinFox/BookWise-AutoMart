@@ -56,6 +56,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.lblSubcategoryRequired = new System.Windows.Forms.Label();
+            this.lblSubcategory = new System.Windows.Forms.Label();
+            this.comboBoxSubcategories = new System.Windows.Forms.ComboBox();
             this.tblBorder.SuspendLayout();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).BeginInit();
@@ -79,12 +82,15 @@
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tblBorder.Size = new System.Drawing.Size(754, 748);
+            this.tblBorder.Size = new System.Drawing.Size(754, 804);
             this.tblBorder.TabIndex = 0;
             // 
             // pnlContainer
             // 
             this.pnlContainer.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContainer.Controls.Add(this.comboBoxSubcategories);
+            this.pnlContainer.Controls.Add(this.lblSubcategoryRequired);
+            this.pnlContainer.Controls.Add(this.lblSubcategory);
             this.pnlContainer.Controls.Add(this.rtbItemDescription);
             this.pnlContainer.Controls.Add(this.lblRequiredFields);
             this.pnlContainer.Controls.Add(this.lblImageRequired);
@@ -113,7 +119,7 @@
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(6, 6);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(742, 736);
+            this.pnlContainer.Size = new System.Drawing.Size(742, 792);
             this.pnlContainer.TabIndex = 0;
             // 
             // rtbItemDescription
@@ -132,7 +138,7 @@
             this.lblRequiredFields.AutoSize = true;
             this.lblRequiredFields.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblRequiredFields.ForeColor = System.Drawing.Color.Red;
-            this.lblRequiredFields.Location = new System.Drawing.Point(7, 634);
+            this.lblRequiredFields.Location = new System.Drawing.Point(7, 688);
             this.lblRequiredFields.Name = "lblRequiredFields";
             this.lblRequiredFields.Size = new System.Drawing.Size(302, 28);
             this.lblRequiredFields.TabIndex = 70;
@@ -144,7 +150,7 @@
             this.lblImageRequired.AutoSize = true;
             this.lblImageRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblImageRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblImageRequired.Location = new System.Drawing.Point(428, 586);
+            this.lblImageRequired.Location = new System.Drawing.Point(428, 640);
             this.lblImageRequired.Name = "lblImageRequired";
             this.lblImageRequired.Size = new System.Drawing.Size(22, 28);
             this.lblImageRequired.TabIndex = 69;
@@ -156,7 +162,7 @@
             this.lblStockRequired.AutoSize = true;
             this.lblStockRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblStockRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblStockRequired.Location = new System.Drawing.Point(497, 347);
+            this.lblStockRequired.Location = new System.Drawing.Point(497, 401);
             this.lblStockRequired.Name = "lblStockRequired";
             this.lblStockRequired.Size = new System.Drawing.Size(22, 28);
             this.lblStockRequired.TabIndex = 68;
@@ -168,7 +174,7 @@
             this.lblPriceRequired.AutoSize = true;
             this.lblPriceRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblPriceRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblPriceRequired.Location = new System.Drawing.Point(497, 297);
+            this.lblPriceRequired.Location = new System.Drawing.Point(497, 351);
             this.lblPriceRequired.Name = "lblPriceRequired";
             this.lblPriceRequired.Size = new System.Drawing.Size(22, 28);
             this.lblPriceRequired.TabIndex = 67;
@@ -203,7 +209,7 @@
             // 
             this.pictureBoxDecrementStock.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBoxDecrementStock.Image = global::BookWise_AutoMart.Properties.Resources.down;
-            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(470, 364);
+            this.pictureBoxDecrementStock.Location = new System.Drawing.Point(470, 418);
             this.pictureBoxDecrementStock.Name = "pictureBoxDecrementStock";
             this.pictureBoxDecrementStock.Size = new System.Drawing.Size(18, 15);
             this.pictureBoxDecrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -221,7 +227,7 @@
             this.btnChooseImage.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChooseImage.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChooseImage.ForeColor = System.Drawing.Color.Black;
-            this.btnChooseImage.Location = new System.Drawing.Point(263, 586);
+            this.btnChooseImage.Location = new System.Drawing.Point(263, 640);
             this.btnChooseImage.Name = "btnChooseImage";
             this.btnChooseImage.Size = new System.Drawing.Size(159, 42);
             this.btnChooseImage.TabIndex = 62;
@@ -233,7 +239,7 @@
             // 
             this.pictureBoxIncrementStock.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBoxIncrementStock.Image = global::BookWise_AutoMart.Properties.Resources.up;
-            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(470, 350);
+            this.pictureBoxIncrementStock.Location = new System.Drawing.Point(470, 404);
             this.pictureBoxIncrementStock.Name = "pictureBoxIncrementStock";
             this.pictureBoxIncrementStock.Size = new System.Drawing.Size(18, 15);
             this.pictureBoxIncrementStock.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +253,7 @@
             // 
             // pictureBoxImage
             // 
-            this.pictureBoxImage.Location = new System.Drawing.Point(263, 401);
+            this.pictureBoxImage.Location = new System.Drawing.Point(263, 455);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
             this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -259,7 +265,7 @@
             this.lblImage.AutoSize = true;
             this.lblImage.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblImage.ForeColor = System.Drawing.Color.Black;
-            this.lblImage.Location = new System.Drawing.Point(33, 401);
+            this.lblImage.Location = new System.Drawing.Point(33, 455);
             this.lblImage.Name = "lblImage";
             this.lblImage.Size = new System.Drawing.Size(90, 28);
             this.lblImage.TabIndex = 60;
@@ -270,7 +276,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblStock.ForeColor = System.Drawing.Color.Black;
-            this.lblStock.Location = new System.Drawing.Point(33, 351);
+            this.lblStock.Location = new System.Drawing.Point(33, 405);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(81, 28);
             this.lblStock.TabIndex = 59;
@@ -282,7 +288,7 @@
             this.txtStock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStock.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtStock.ForeColor = System.Drawing.Color.Black;
-            this.txtStock.Location = new System.Drawing.Point(263, 347);
+            this.txtStock.Location = new System.Drawing.Point(263, 401);
             this.txtStock.Multiline = true;
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(228, 37);
@@ -295,7 +301,7 @@
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.lblPrice.ForeColor = System.Drawing.Color.Black;
-            this.lblPrice.Location = new System.Drawing.Point(33, 301);
+            this.lblPrice.Location = new System.Drawing.Point(33, 355);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(76, 28);
             this.lblPrice.TabIndex = 57;
@@ -307,7 +313,7 @@
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPrice.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPrice.Location = new System.Drawing.Point(263, 297);
+            this.txtPrice.Location = new System.Drawing.Point(263, 351);
             this.txtPrice.Multiline = true;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(228, 37);
@@ -379,7 +385,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.Black;
-            this.btnCancel.Location = new System.Drawing.Point(608, 670);
+            this.btnCancel.Location = new System.Drawing.Point(608, 724);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(126, 61);
             this.btnCancel.TabIndex = 50;
@@ -395,7 +401,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(145, 670);
+            this.btnDelete.Location = new System.Drawing.Point(145, 724);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 61);
             this.btnDelete.TabIndex = 49;
@@ -411,7 +417,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(7, 670);
+            this.btnSave.Location = new System.Drawing.Point(7, 724);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(126, 61);
             this.btnSave.TabIndex = 48;
@@ -445,11 +451,47 @@
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Edit Item Details";
             // 
+            // lblSubcategoryRequired
+            // 
+            this.lblSubcategoryRequired.AutoSize = true;
+            this.lblSubcategoryRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblSubcategoryRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblSubcategoryRequired.Location = new System.Drawing.Point(497, 298);
+            this.lblSubcategoryRequired.Name = "lblSubcategoryRequired";
+            this.lblSubcategoryRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblSubcategoryRequired.TabIndex = 78;
+            this.lblSubcategoryRequired.Text = "*";
+            this.lblSubcategoryRequired.Visible = false;
+            // 
+            // lblSubcategory
+            // 
+            this.lblSubcategory.AutoSize = true;
+            this.lblSubcategory.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSubcategory.ForeColor = System.Drawing.Color.Black;
+            this.lblSubcategory.Location = new System.Drawing.Point(33, 303);
+            this.lblSubcategory.Name = "lblSubcategory";
+            this.lblSubcategory.Size = new System.Drawing.Size(162, 28);
+            this.lblSubcategory.TabIndex = 77;
+            this.lblSubcategory.Text = "Subcategory:";
+            // 
+            // comboBoxSubcategories
+            // 
+            this.comboBoxSubcategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSubcategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubcategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSubcategories.Font = new System.Drawing.Font("Gadugi", 15F);
+            this.comboBoxSubcategories.FormattingEnabled = true;
+            this.comboBoxSubcategories.Location = new System.Drawing.Point(263, 298);
+            this.comboBoxSubcategories.MaxDropDownItems = 20;
+            this.comboBoxSubcategories.Name = "comboBoxSubcategories";
+            this.comboBoxSubcategories.Size = new System.Drawing.Size(228, 37);
+            this.comboBoxSubcategories.TabIndex = 81;
+            // 
             // AdminEditItemForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(754, 748);
+            this.ClientSize = new System.Drawing.Size(754, 804);
             this.Controls.Add(this.tblBorder);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -500,5 +542,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTitle;
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblSubcategoryRequired;
+        private System.Windows.Forms.Label lblSubcategory;
+        private System.Windows.Forms.ComboBox comboBoxSubcategories;
     }
 }

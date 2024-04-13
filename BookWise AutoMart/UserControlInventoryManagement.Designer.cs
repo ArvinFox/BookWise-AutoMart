@@ -30,8 +30,10 @@
         {
             this.pnlCategoriesMenu = new System.Windows.Forms.Panel();
             this.pnlDisplayCategories = new System.Windows.Forms.Panel();
-            this.pnlAddNewCategory = new System.Windows.Forms.Panel();
+            this.pnlAdd = new System.Windows.Forms.Panel();
+            this.tableLayoutPanelAddNewButtons = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddNewCategory = new System.Windows.Forms.Button();
+            this.btnAddNewItem = new System.Windows.Forms.Button();
             this.pnlCategories = new System.Windows.Forms.Panel();
             this.tableLayoutPanelCategories = new System.Windows.Forms.TableLayoutPanel();
             this.lblCategories = new System.Windows.Forms.Label();
@@ -44,7 +46,8 @@
             this.comboBoxFilterCategories = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanelDisplayItems = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlCategoriesMenu.SuspendLayout();
-            this.pnlAddNewCategory.SuspendLayout();
+            this.pnlAdd.SuspendLayout();
+            this.tableLayoutPanelAddNewButtons.SuspendLayout();
             this.pnlCategories.SuspendLayout();
             this.tableLayoutPanelCategories.SuspendLayout();
             this.tableLayoutPanelFunctionalities.SuspendLayout();
@@ -55,7 +58,7 @@
             // 
             this.pnlCategoriesMenu.BackColor = System.Drawing.Color.Gainsboro;
             this.pnlCategoriesMenu.Controls.Add(this.pnlDisplayCategories);
-            this.pnlCategoriesMenu.Controls.Add(this.pnlAddNewCategory);
+            this.pnlCategoriesMenu.Controls.Add(this.pnlAdd);
             this.pnlCategoriesMenu.Controls.Add(this.pnlCategories);
             this.pnlCategoriesMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlCategoriesMenu.Location = new System.Drawing.Point(0, 0);
@@ -69,24 +72,41 @@
             this.pnlDisplayCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDisplayCategories.Location = new System.Drawing.Point(0, 70);
             this.pnlDisplayCategories.Name = "pnlDisplayCategories";
-            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 544);
+            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 474);
             this.pnlDisplayCategories.TabIndex = 1;
             // 
-            // pnlAddNewCategory
+            // pnlAdd
             // 
-            this.pnlAddNewCategory.Controls.Add(this.btnAddNewCategory);
-            this.pnlAddNewCategory.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAddNewCategory.Location = new System.Drawing.Point(0, 614);
-            this.pnlAddNewCategory.Name = "pnlAddNewCategory";
-            this.pnlAddNewCategory.Size = new System.Drawing.Size(287, 70);
-            this.pnlAddNewCategory.TabIndex = 1;
+            this.pnlAdd.Controls.Add(this.tableLayoutPanelAddNewButtons);
+            this.pnlAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlAdd.Location = new System.Drawing.Point(0, 544);
+            this.pnlAdd.MaximumSize = new System.Drawing.Size(0, 140);
+            this.pnlAdd.Name = "pnlAdd";
+            this.pnlAdd.Size = new System.Drawing.Size(287, 140);
+            this.pnlAdd.TabIndex = 1;
+            // 
+            // tableLayoutPanelAddNewButtons
+            // 
+            this.tableLayoutPanelAddNewButtons.ColumnCount = 1;
+            this.tableLayoutPanelAddNewButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAddNewButtons.Controls.Add(this.btnAddNewCategory, 0, 1);
+            this.tableLayoutPanelAddNewButtons.Controls.Add(this.btnAddNewItem, 0, 0);
+            this.tableLayoutPanelAddNewButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelAddNewButtons.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelAddNewButtons.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanelAddNewButtons.Name = "tableLayoutPanelAddNewButtons";
+            this.tableLayoutPanelAddNewButtons.RowCount = 2;
+            this.tableLayoutPanelAddNewButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAddNewButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAddNewButtons.Size = new System.Drawing.Size(287, 140);
+            this.tableLayoutPanelAddNewButtons.TabIndex = 0;
             // 
             // btnAddNewCategory
             // 
-            this.btnAddNewCategory.BackColor = System.Drawing.Color.LightBlue;
+            this.btnAddNewCategory.BackColor = System.Drawing.Color.PowderBlue;
             this.btnAddNewCategory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddNewCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAddNewCategory.FlatAppearance.BorderSize = 0;
+            this.btnAddNewCategory.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.btnAddNewCategory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnAddNewCategory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddNewCategory.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -94,9 +114,9 @@
             this.btnAddNewCategory.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnAddNewCategory.Image = global::BookWise_AutoMart.Properties.Resources.add_new_item__blue_;
             this.btnAddNewCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewCategory.Location = new System.Drawing.Point(0, 0);
+            this.btnAddNewCategory.Location = new System.Drawing.Point(3, 73);
             this.btnAddNewCategory.Name = "btnAddNewCategory";
-            this.btnAddNewCategory.Size = new System.Drawing.Size(287, 70);
+            this.btnAddNewCategory.Size = new System.Drawing.Size(281, 64);
             this.btnAddNewCategory.TabIndex = 1;
             this.btnAddNewCategory.Text = "Add Category";
             this.btnAddNewCategory.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -105,6 +125,31 @@
             this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
             this.btnAddNewCategory.MouseEnter += new System.EventHandler(this.btnAddNewCategory_MouseEnter);
             this.btnAddNewCategory.MouseLeave += new System.EventHandler(this.btnAddNewCategory_MouseLeave);
+            // 
+            // btnAddNewItem
+            // 
+            this.btnAddNewItem.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnAddNewItem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAddNewItem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAddNewItem.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnAddNewItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkSeaGreen;
+            this.btnAddNewItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAddNewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddNewItem.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewItem.ForeColor = System.Drawing.Color.Navy;
+            this.btnAddNewItem.Image = global::BookWise_AutoMart.Properties.Resources.add_new_item__navy_;
+            this.btnAddNewItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewItem.Location = new System.Drawing.Point(3, 3);
+            this.btnAddNewItem.Name = "btnAddNewItem";
+            this.btnAddNewItem.Size = new System.Drawing.Size(281, 64);
+            this.btnAddNewItem.TabIndex = 2;
+            this.btnAddNewItem.Text = "Add Item";
+            this.btnAddNewItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddNewItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnAddNewItem.UseVisualStyleBackColor = false;
+            this.btnAddNewItem.Click += new System.EventHandler(this.btnAddNewItem_Click);
+            this.btnAddNewItem.MouseEnter += new System.EventHandler(this.btnAddNewItem_MouseEnter);
+            this.btnAddNewItem.MouseLeave += new System.EventHandler(this.btnAddNewItem_MouseLeave);
             // 
             // pnlCategories
             // 
@@ -135,9 +180,9 @@
             this.lblCategories.AutoSize = true;
             this.lblCategories.Font = new System.Drawing.Font("Gadugi", 19F, System.Drawing.FontStyle.Bold);
             this.lblCategories.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblCategories.Location = new System.Drawing.Point(20, 12);
+            this.lblCategories.Location = new System.Drawing.Point(39, 16);
             this.lblCategories.Name = "lblCategories";
-            this.lblCategories.Size = new System.Drawing.Size(247, 45);
+            this.lblCategories.Size = new System.Drawing.Size(209, 38);
             this.lblCategories.TabIndex = 1;
             this.lblCategories.Text = "CATEGORIES";
             // 
@@ -164,9 +209,9 @@
             this.lblSelectedCategory.AutoSize = true;
             this.lblSelectedCategory.Font = new System.Drawing.Font("Gadugi", 16F, System.Drawing.FontStyle.Bold);
             this.lblSelectedCategory.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedCategory.Location = new System.Drawing.Point(4, 16);
+            this.lblSelectedCategory.Location = new System.Drawing.Point(17, 19);
             this.lblSelectedCategory.Name = "lblSelectedCategory";
-            this.lblSelectedCategory.Size = new System.Drawing.Size(186, 38);
+            this.lblSelectedCategory.Size = new System.Drawing.Size(159, 32);
             this.lblSelectedCategory.TabIndex = 0;
             this.lblSelectedCategory.Text = " (Category)";
             this.lblSelectedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,9 +253,9 @@
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSearch.Location = new System.Drawing.Point(365, 15);
+            this.lblSearch.Location = new System.Drawing.Point(388, 18);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(118, 34);
+            this.lblSearch.Size = new System.Drawing.Size(95, 27);
             this.lblSearch.TabIndex = 0;
             this.lblSearch.Text = "Search: ";
             // 
@@ -220,9 +265,9 @@
             this.lblFilter.AutoSize = true;
             this.lblFilter.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFilter.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFilter.Location = new System.Drawing.Point(24, 15);
+            this.lblFilter.Location = new System.Drawing.Point(51, 18);
             this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(139, 34);
+            this.lblFilter.Size = new System.Drawing.Size(112, 27);
             this.lblFilter.TabIndex = 0;
             this.lblFilter.Text = "Filter by: ";
             // 
@@ -232,10 +277,10 @@
             this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxFilterCategories.FormattingEnabled = true;
-            this.comboBoxFilterCategories.Location = new System.Drawing.Point(169, 14);
+            this.comboBoxFilterCategories.Location = new System.Drawing.Point(169, 20);
             this.comboBoxFilterCategories.MaxDropDownItems = 20;
             this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
-            this.comboBoxFilterCategories.Size = new System.Drawing.Size(189, 36);
+            this.comboBoxFilterCategories.Size = new System.Drawing.Size(189, 32);
             this.comboBoxFilterCategories.TabIndex = 1;
             this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
@@ -261,7 +306,8 @@
             this.Size = new System.Drawing.Size(1257, 684);
             this.ParentChanged += new System.EventHandler(this.UserControlInventoryManagement_ParentChanged);
             this.pnlCategoriesMenu.ResumeLayout(false);
-            this.pnlAddNewCategory.ResumeLayout(false);
+            this.pnlAdd.ResumeLayout(false);
+            this.tableLayoutPanelAddNewButtons.ResumeLayout(false);
             this.pnlCategories.ResumeLayout(false);
             this.tableLayoutPanelCategories.ResumeLayout(false);
             this.tableLayoutPanelCategories.PerformLayout();
@@ -278,7 +324,7 @@
 
         private System.Windows.Forms.Panel pnlCategoriesMenu;
         private System.Windows.Forms.Panel pnlDisplayCategories;
-        private System.Windows.Forms.Panel pnlAddNewCategory;
+        private System.Windows.Forms.Panel pnlAdd;
         private System.Windows.Forms.Button btnAddNewCategory;
         private System.Windows.Forms.Panel pnlCategories;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCategories;
@@ -291,5 +337,7 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TextBox txtSearchBar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFilterSearch;
+        private System.Windows.Forms.Button btnAddNewItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAddNewButtons;
     }
 }

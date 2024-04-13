@@ -73,6 +73,16 @@ namespace BookWise_AutoMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_new_item__navy_ {
+            get {
+                object obj = ResourceManager.GetObject("add-new-item (navy)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_new_item__white_ {
             get {
                 object obj = ResourceManager.GetObject("add-new-item (white)", resourceCulture);
@@ -186,6 +196,16 @@ namespace BookWise_AutoMart.Properties {
         internal static System.Drawing.Bitmap down {
             get {
                 object obj = ResourceManager.GetObject("down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder__gray_ {
+            get {
+                object obj = ResourceManager.GetObject("folder (gray)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

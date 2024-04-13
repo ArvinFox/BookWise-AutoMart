@@ -70,6 +70,12 @@
     <Compile Include="AdminAddNewCategoryForm.Designer.cs">
       <DependentUpon>AdminAddNewCategoryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAddNewItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddNewItemForm.Designer.cs">
+      <DependentUpon>AdminAddNewItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </Compile>
     <EmbeddedResource Include="AdminAddNewCategoryForm.resx">
       <DependentUpon>AdminAddNewCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddNewItemForm.resx">
+      <DependentUpon>AdminAddNewItemForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminControlForm.resx">
       <DependentUpon>AdminControlForm.cs</DependentUpon>
@@ -330,6 +339,7 @@
     </Content>
     <None Include="Resources\uncolored-circle.jpg" />
     <None Include="Resources\backward.jpg" />
+    <None Include="Resources\add-new-item %28navy%29.png" />
     <Content Include="Resources\bar-chart.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\Gold_Star_Colored_1.png" />
@@ -339,6 +349,7 @@
     <None Include="Resources\delete %28blue%29.png" />
     <None Include="Resources\delete %28gray%29.png" />
     <None Include="Resources\delete %28white%29.png" />
+    <None Include="Resources\folder %28gray%29.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

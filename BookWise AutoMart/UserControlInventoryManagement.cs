@@ -276,27 +276,6 @@ namespace BookWise_AutoMart
             }
         }
 
-        private void btnAddNewCategory_MouseEnter(object sender, EventArgs e)
-        {
-            btnAddNewCategory.ForeColor = Color.White;
-            btnAddNewCategory.Image = Properties.Resources.add_new_item__white_;
-        }
-        private void btnAddNewCategory_MouseLeave(object sender, EventArgs e)
-        {
-            btnAddNewCategory.ForeColor = Color.DeepSkyBlue;
-            btnAddNewCategory.Image = Properties.Resources.add_new_item__blue_;
-        }
-
-        private void UserControlInventoryManagement_ParentChanged(object sender, EventArgs e)
-        {
-            if (this.Parent != null)
-            {
-                // To take the entire screen size
-                this.Width = this.Parent.ClientSize.Width;
-                this.Height = this.Parent.ClientSize.Height;
-            }
-        }
-
         private void FilteringConditionsApplied(object sender, EventArgs e)
         {
             searchedItem = txtSearchBar.Text.Trim();
@@ -348,6 +327,61 @@ namespace BookWise_AutoMart
             {
                 AdminAddNewCategoryForm adminAddNewCategoryForm = new AdminAddNewCategoryForm();
                 adminAddNewCategoryForm.ShowDialog();
+            }
+        }
+        private void btnAddNewCategory_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddNewCategory.ForeColor = Color.White;
+            btnAddNewCategory.Image = Properties.Resources.add_new_item__white_;
+            btnAddNewCategory.FlatAppearance.BorderColor = Color.White;
+        }
+        private void btnAddNewCategory_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddNewCategory.ForeColor = Color.DeepSkyBlue;
+            btnAddNewCategory.Image = Properties.Resources.add_new_item__blue_;
+            btnAddNewCategory.FlatAppearance.BorderColor = Color.DeepSkyBlue;
+        }
+
+        private void btnAddNewItem_Click(object sender, EventArgs e)
+        {
+            bool adminAddNewItemFormFound = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is AdminAddNewItemForm)
+                {
+                    form.ShowDialog();
+                    adminAddNewItemFormFound = true;
+                    break;
+                }
+            }
+
+            if (!adminAddNewItemFormFound)
+            {
+                AdminAddNewItemForm adminAddNewItemForm = new AdminAddNewItemForm();
+                adminAddNewItemForm.ShowDialog();
+            }
+        }
+        private void btnAddNewItem_MouseEnter(object sender, EventArgs e)
+        {
+            btnAddNewItem.ForeColor = Color.White;
+            btnAddNewItem.Image = Properties.Resources.add_new_item__white_;
+            btnAddNewItem.FlatAppearance.BorderColor = Color.White;
+        }
+        private void btnAddNewItem_MouseLeave(object sender, EventArgs e)
+        {
+            btnAddNewItem.ForeColor = Color.Navy;
+            btnAddNewItem.Image = Properties.Resources.add_new_item__navy_;
+            btnAddNewItem.FlatAppearance.BorderColor = Color.Navy;
+        }
+
+        private void UserControlInventoryManagement_ParentChanged(object sender, EventArgs e)
+        {
+            if (this.Parent != null)
+            {
+                // To take the entire screen size
+                this.Width = this.Parent.ClientSize.Width;
+                this.Height = this.Parent.ClientSize.Height;
             }
         }
     }

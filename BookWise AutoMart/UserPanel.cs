@@ -135,7 +135,7 @@ namespace BookWise_AutoMart
                         connection.Open();
                         cmd.ExecuteNonQuery();
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         //---------Error-----------
                     }
@@ -163,7 +163,7 @@ namespace BookWise_AutoMart
                             return stock;
                         }
                     }
-                    catch(Exception ex)
+                    catch(Exception)
                     {
                         //-------error---------
                     }

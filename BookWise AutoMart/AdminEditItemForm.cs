@@ -24,8 +24,10 @@ namespace BookWise_AutoMart
         private int id;
         byte[] previousImageData;
         private bool imageChanged = false;
+        private int categoryId;
+        private string subcategoryName;
 
-        string connectionString = DatabaseString.GetUserDatabase();
+        private string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminEditItemForm(int itemId)
         {
@@ -45,11 +47,49 @@ namespace BookWise_AutoMart
             Placeholder("Enter Item Stock", txtStock, null);
         }
 
+        private void PopulateSubCategoriesComboBox()
+        {
+            comboBoxSubcategories.Items.Clear(); // Clear the items in the combo box
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"SELECT subcategory_name
+                                 FROM SubCategories
+                                 WHERE SubCategories.subcategory_category_id = @CategoryId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@CategoryId", categoryId);
+
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string subcategoryName = reader["subcategory_name"].ToString();
+                                comboBoxSubcategories.Items.Add(subcategoryName);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error retrieving categories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
         private void AdminEditItemForm_Load(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT * FROM Items WHERE item_id = @ItemId";
+                string query = @"SELECT Items.*, SubCategories.*
+                                 FROM Items
+                                 LEFT JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
+                                 WHERE item_id = @ItemId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -69,6 +109,20 @@ namespace BookWise_AutoMart
                                 rtbItemDescription.Text = reader["item_description"].ToString();
                                 txtPrice.Text = reader["price"].ToString();
                                 txtStock.Text = reader["stock"].ToString();
+
+                                categoryId = (int)reader["item_category_id"];
+                                subcategoryName = reader["subcategory_name"].ToString();
+
+                                PopulateSubCategoriesComboBox();
+
+                                foreach (var item in comboBoxSubcategories.Items)
+                                {
+                                    if (item.ToString() == subcategoryName)
+                                    {
+                                        comboBoxSubcategories.SelectedItem = item;
+                                        break;
+                                    }
+                                }
 
                                 previousImageData = (byte[])reader["image"];
 
@@ -153,7 +207,6 @@ namespace BookWise_AutoMart
                     lblItemDescriptionRequired.Visible = true;
                     lblPriceRequired.Visible = true;
                     lblStockRequired.Visible = true;
-
                 }
 
                 if (errorMessage.Contains("Please enter item name"))
@@ -254,28 +307,32 @@ namespace BookWise_AutoMart
             // Check for any errors
             if (errors != "")
             {
-                /*MessageBox.Show(errors, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
                 DisplayErrorMessages(errors);
                 return;
             }
-
+            
             UpdateItem();
         }
         private void UpdateItem()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Items SET item_name = @ItemName, item_description = @ItemDescription, price = @Price, stock = @Stock, image = @ImageData WHERE item_id = @ItemId";
+                string query = "UPDATE Items SET item_name = @ItemName, item_description = @ItemDescription, item_subcategory_id = @SubcategoryId, price = @Price, stock = @Stock, image = @ImageData WHERE item_id = @ItemId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     try
                     {
                         command.Parameters.AddWithValue("@ItemId", id);
-                        command.Parameters.AddWithValue("@ItemName", $"{txtItemName.Text}");
-                        command.Parameters.AddWithValue("@ItemDescription", $"{rtbItemDescription.Text}");
-                        command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text));
-                        command.Parameters.AddWithValue("@Stock", Convert.ToInt32(txtStock.Text));
+                        command.Parameters.AddWithValue("@ItemName", $"{txtItemName.Text.Trim()}");
+                        command.Parameters.AddWithValue("@ItemDescription", $"{rtbItemDescription.Text.Trim()}");
+
+                        string selectedSubcategory = comboBoxSubcategories.SelectedItem.ToString();
+                        int subcategoryId = GetSubcategoryId(selectedSubcategory);
+                        command.Parameters.AddWithValue("@SubcategoryId", subcategoryId);
+
+                        command.Parameters.AddWithValue("@Price", Convert.ToDecimal(txtPrice.Text.Trim()));
+                        command.Parameters.AddWithValue("@Stock", Convert.ToInt32(txtStock.Text.Trim()));
 
                         byte[] imageData;
 
@@ -317,6 +374,33 @@ namespace BookWise_AutoMart
                     }
                 }
             }
+        }
+        private int GetSubcategoryId(string subcategoryName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT subcategory_id FROM SubCategories WHERE subcategory_name = @SubcategoryName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@SubcategoryName", subcategoryName);
+
+                        connection.Open();
+
+                        int subcategoryId = (int)command.ExecuteScalar();
+
+                        return subcategoryId;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error retrieving subcategory id: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            return -1;
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -572,45 +656,28 @@ namespace BookWise_AutoMart
 
         private void txtItemName_TextChanged(object sender, EventArgs e)
         {
-            if (IsFieldEmpty(txtItemName))
-            {
-                return;
-            }
-            else
+            if (!IsFieldEmpty(txtItemName))
             {
                 lblItemNameRequired.Visible = false;
             }
-            
         }
         private void rtbItemDescription_TextChanged(object sender, EventArgs e)
         {
-            if (IsFieldEmpty(null, rtbItemDescription))
-            {
-                return;
-            }
-            else
+            if (!IsFieldEmpty(null, rtbItemDescription))
             {
                 lblItemDescriptionRequired.Visible = false;
             }
         }
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
-            if (IsFieldEmpty(txtPrice))
-            {
-                return;
-            }
-            else
+            if (!IsFieldEmpty(txtPrice))
             {
                 lblPriceRequired.Visible = false;
             }
         }
         private void txtStock_TextChanged(object sender, EventArgs e)
         {
-            if (IsFieldEmpty(txtStock))
-            {
-                return;
-            }
-            else
+            if (!IsFieldEmpty(txtStock))
             {
                 lblStockRequired.Visible = false;
             }

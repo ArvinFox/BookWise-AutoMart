@@ -51,7 +51,9 @@
     <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
       <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -93,6 +95,12 @@
     </Compile>
     <Compile Include="AdminEditItemForm.Designer.cs">
       <DependentUpon>AdminEditItemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminEditOfferForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminEditOfferForm.Designer.cs">
+      <DependentUpon>AdminEditOfferForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminLoginForm.cs">
       <SubType>Form</SubType>
@@ -166,6 +174,24 @@
     <Compile Include="UserControlInventoryManagement.Designer.cs">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlOffersPromotions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlOffersPromotions.Designer.cs">
+      <DependentUpon>UserControlOffersPromotions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlReportsAnalytics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlReportsAnalytics.Designer.cs">
+      <DependentUpon>UserControlReportsAnalytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUserManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUserManagement.Designer.cs">
+      <DependentUpon>UserControlUserManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserDisplayItemsPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -204,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminEditItemForm.resx">
       <DependentUpon>AdminEditItemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminEditOfferForm.resx">
+      <DependentUpon>AdminEditOfferForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
@@ -244,6 +273,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlInventoryManagement.resx">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlOffersPromotions.resx">
+      <DependentUpon>UserControlOffersPromotions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReportsAnalytics.resx">
+      <DependentUpon>UserControlReportsAnalytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUserManagement.resx">
+      <DependentUpon>UserControlUserManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserDisplayItemsPanel.resx">
       <DependentUpon>UserDisplayItemsPanel.cs</DependentUpon>

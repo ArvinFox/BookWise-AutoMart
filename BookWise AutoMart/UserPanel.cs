@@ -67,7 +67,7 @@ namespace BookWise_AutoMart
                             {
                                 int categoryId = (int)readCategories["category_id"];
                                 string category = readCategories["category_name"].ToString();
-                                CategoriesButton categoryButton = new CategoriesButton(categoryId, category, false);
+                                CategoriesButton categoryButton = new CategoriesButton(categoryId, category);
                                 pnlCategoryScroll.Controls.Add(categoryButton);
                                 categoryButton.Click += (sender, e) =>
                                 {

@@ -19,7 +19,7 @@ namespace BookWise_AutoMart
         private bool isAdminView = false;
         private bool isDeleteIconWhite = false;
 
-        public CategoriesButton(int categoryId, string category, bool isAdmin)
+        public CategoriesButton(int categoryId, string category, bool isAdmin = false)
         {
             isAdminView = isAdmin;
 

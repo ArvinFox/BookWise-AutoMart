@@ -411,7 +411,7 @@
             this.comboBoxCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCategories.Font = new System.Drawing.Font("Gadugi", 15F);
-            this.comboBoxCategories.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.comboBoxCategories.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCategories.FormattingEnabled = true;
             this.comboBoxCategories.Location = new System.Drawing.Point(263, 253);
             this.comboBoxCategories.MaxDropDownItems = 20;

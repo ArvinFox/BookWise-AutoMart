@@ -12,10 +12,11 @@ namespace BookWise_AutoMart
 {
     public partial class AdminControlForm : Form
     {
-        public static Button btnReloadInventoryManagementForm;  // used to refresh the form
-        /*public static Button btnReloadUserManagementForm;
+        // used to refresh the form
+        public static Button btnReloadInventoryManagementForm;
+        public static Button btnReloadUserManagementForm;
         public static Button btnReloadOffersPromotionsForm;
-        public static Button btnReloadReportsAnalyticsForm;*/
+        public static Button btnReloadReportsAnalyticsForm;
 
         private UserControl currentlyDisplayedControl;  // current instance of UserControl
         string form;
@@ -25,9 +26,9 @@ namespace BookWise_AutoMart
             InitializeComponent();
 
             btnReloadInventoryManagementForm = btnInventoryManagement;
-            /*btnReloadUserManagementForm = btnUserManagement;
+            btnReloadUserManagementForm = btnUserManagement;
             btnReloadOffersPromotionsForm = btnOffersPromotions;
-            btnReloadReportsAnalyticsForm = btnReloadInventoryManagementForm;*/
+            btnReloadReportsAnalyticsForm = btnReloadInventoryManagementForm;
 
             form = formControl;
             lblCurrentControl.Text = formControl.ToUpper();
@@ -79,16 +80,16 @@ namespace BookWise_AutoMart
         }
         private void btnUserManagement_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(new UserControlUserManagement());*/
+            NavigateControl(new UserControlUserManagement());
             lblCurrentControl.Text = "USER MANAGEMENT";
 
-            ResetPanelAndButtonColors();
+            ResetPanelAndButtonColors();   
             btnUserManagement.BackColor = Color.FromArgb(21, 101, 192);
             tableLayoutPanelUserManagement.BackColor = Color.FromArgb(255, 255, 192);
         }
         private void btnOffersPromotions_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(new UserControlOffersPromotions());*/
+            NavigateControl(new UserControlOffersPromotions());
             lblCurrentControl.Text = "OFFERS && PROMOTIONS";
 
             ResetPanelAndButtonColors();
@@ -97,7 +98,7 @@ namespace BookWise_AutoMart
         }
         private void btnReportsAnalytics_Click(object sender, EventArgs e)
         {
-            /*NavigateControl(UserControlReportsAnalytics());*/
+            NavigateControl(new UserControlReportsAnalytics());
             lblCurrentControl.Text = "REPORTING && ANALYTICS";
 
             ResetPanelAndButtonColors();

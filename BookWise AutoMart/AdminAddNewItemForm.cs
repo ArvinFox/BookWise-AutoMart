@@ -266,10 +266,8 @@ namespace BookWise_AutoMart
         {
             comboBoxCategories.Items.Clear();
 
-            comboBoxCategories.ForeColor = SystemColors.GrayText;
             comboBoxCategories.Items.Add("Select category");
             comboBoxCategories.SelectedIndex = 0;
-            /*comboBoxCategories.ForeColor = Color.Black;*/
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -593,7 +591,10 @@ namespace BookWise_AutoMart
 
             if (comboBoxCategories.SelectedItem.ToString().Equals("Select category"))
             {
-                comboBoxCategories.ForeColor = SystemColors.GrayText;
+                isCategorySelected = false;
+
+                isSubcategorySelected = false;
+                ResetSubcategoriesComboBox();
             }
             else
             {

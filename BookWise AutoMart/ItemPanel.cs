@@ -228,7 +228,12 @@ namespace BookWise_AutoMart
             btnBuyItem.Click += (sender, e) =>
             {
                 int qty= Convert.ToInt32((txtQty.Text.Trim()));
-                decimal sum = 0;
+                //To Prevent adding "0" items to the cart
+                if (qty <= 0)
+                {
+                    txtQty.Text = "0";
+                    return;
+                }
                 //To display a message when the quantity that enter will exceed the current stock
                 if (qty > stock)
                 {
@@ -237,42 +242,11 @@ namespace BookWise_AutoMart
                 }
                 else
                 {
-                    //Add the items to the cart
-                    DataGridViewRow newRow = new DataGridViewRow();
-
-                    DataGridViewTextBoxCell qtyCell = new DataGridViewTextBoxCell();
-                    qtyCell.Value = qty;
-                    newRow.Cells.Add(qtyCell);
-
-                    DataGridViewTextBoxCell idCell = new DataGridViewTextBoxCell();
-                    idCell.Value = itemId;
-                    newRow.Cells.Add(idCell);
-
-                    DataGridViewTextBoxCell itemCell = new DataGridViewTextBoxCell();
-                    itemCell.Value = itemName;
-                    newRow.Cells.Add(itemCell);
-
-                    DataGridViewTextBoxCell unitAmountCell = new DataGridViewTextBoxCell();
-                    unitAmountCell.Value = price;
-                    newRow.Cells.Add(unitAmountCell);
-
-                    DataGridViewTextBoxCell amountCell = new DataGridViewTextBoxCell();
-                    amountCell.Value = qty * price;
-                    newRow.Cells.Add(amountCell);
-
-                    DataGridViewTextBoxCell deleteCell = new DataGridViewTextBoxCell();
-                    deleteCell.Value = "Delete";
-                    newRow.Cells.Add(deleteCell);
-
-                    UserPanel.cart.Rows.Add(newRow);
+                    //Add items to the cart
+                    AddToCart(qty, itemId, itemName, price);
+                    //Update Total
+                    UpdateTotal();
                 }
-
-                //To display the total amount
-                for (int i = 0; i < UserPanel.cart.Rows.Count; ++i)
-                {
-                    sum += Convert.ToDecimal(UserPanel.cart.Rows[i].Cells["ColumnAmount"].Value);
-                }
-                UserPanel.total.Text = sum.ToString();
 
             };
 
@@ -325,6 +299,51 @@ namespace BookWise_AutoMart
             textBox.Height = Math.Max(newHeight, 35); // Set minimum height
 
             return textBox;
+        }
+
+        private void AddToCart(int selectedQuantity, int selectedId, string selectedName, decimal selectedPrice)
+        {
+            //Add the items to the cart
+            DataGridViewRow newRow = new DataGridViewRow();
+
+            DataGridViewTextBoxCell qtyCell = new DataGridViewTextBoxCell();
+            qtyCell.Value = selectedQuantity;
+            newRow.Cells.Add(qtyCell);
+
+            DataGridViewTextBoxCell idCell = new DataGridViewTextBoxCell();
+            idCell.Value = selectedId;
+            newRow.Cells.Add(idCell);
+
+            DataGridViewTextBoxCell itemCell = new DataGridViewTextBoxCell();
+            itemCell.Value = selectedName;
+            newRow.Cells.Add(itemCell);
+
+            DataGridViewTextBoxCell unitAmountCell = new DataGridViewTextBoxCell();
+            unitAmountCell.Value = selectedPrice;
+            newRow.Cells.Add(unitAmountCell);
+
+            DataGridViewTextBoxCell amountCell = new DataGridViewTextBoxCell();
+            amountCell.Value = selectedQuantity * selectedPrice;
+            newRow.Cells.Add(amountCell);
+
+            DataGridViewTextBoxCell deleteCell = new DataGridViewTextBoxCell();
+            deleteCell.Value = "Delete";
+            newRow.Cells.Add(deleteCell);
+
+            UserPanel.cart.Rows.Add(newRow);
+
+        }
+
+        public static void UpdateTotal()
+        {
+            decimal sum = 0;
+
+            //To display the total amount
+            for (int i = 0; i < UserPanel.cart.Rows.Count; ++i)
+            {
+                sum += Convert.ToDecimal(UserPanel.cart.Rows[i].Cells["ColumnAmount"].Value);
+            }
+            UserPanel.total.Text = sum.ToString();
         }
     }
 }

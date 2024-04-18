@@ -114,12 +114,6 @@
     <Compile Include="AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="CardDesign.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CardDesign.Designer.cs">
-      <DependentUpon>CardDesign.cs</DependentUpon>
-    </Compile>
     <Compile Include="CategoriesButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -138,12 +132,6 @@
     <Compile Include="DatabaseString.cs" />
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FinalProceedFormCard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FinalProceedFormCard.Designer.cs">
-      <DependentUpon>FinalProceedFormCard.cs</DependentUpon>
     </Compile>
     <Compile Include="InformationForm.cs">
       <SubType>Form</SubType>
@@ -276,17 +264,11 @@
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CardDesign.resx">
-      <DependentUpon>CardDesign.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CashDesign.resx">
       <DependentUpon>CashDesign.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FinalProceedFormCard.resx">
-      <DependentUpon>FinalProceedFormCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>

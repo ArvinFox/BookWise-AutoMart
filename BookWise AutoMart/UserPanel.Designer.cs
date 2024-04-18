@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblWindow = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -228,13 +228,13 @@
             this.dataGridViewCart.RowTemplate.Height = 28;
             this.dataGridViewCart.Size = new System.Drawing.Size(515, 707);
             this.dataGridViewCart.TabIndex = 1;
-            this.dataGridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellContentClick);
+            this.dataGridViewCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellClick);
             // 
             // ColumnQty
             // 
             this.ColumnQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnQty.HeaderText = "Qty";
             this.ColumnQty.MinimumWidth = 8;
             this.ColumnQty.Name = "ColumnQty";
@@ -253,8 +253,8 @@
             // ColumnItemName
             // 
             this.ColumnItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnItemName.HeaderText = "Item Name";
             this.ColumnItemName.MinimumWidth = 8;
             this.ColumnItemName.Name = "ColumnItemName";
@@ -263,8 +263,8 @@
             // ColumnUnitPrice
             // 
             this.ColumnUnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnUnitPrice.HeaderText = "Unit Price";
             this.ColumnUnitPrice.MinimumWidth = 8;
             this.ColumnUnitPrice.Name = "ColumnUnitPrice";
@@ -274,8 +274,8 @@
             // ColumnAmount
             // 
             this.ColumnAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnAmount.HeaderText = "Amount";
             this.ColumnAmount.MinimumWidth = 8;
             this.ColumnAmount.Name = "ColumnAmount";
@@ -284,10 +284,10 @@
             // 
             // ColumnDelete
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ColumnDelete.HeaderText = "Delete";
             this.ColumnDelete.MinimumWidth = 8;
@@ -322,13 +322,13 @@
             // 
             // butPay
             // 
-            this.butPay.BackColor = System.Drawing.Color.RoyalBlue;
+            this.butPay.BackColor = System.Drawing.Color.Green;
             this.butPay.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.butPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
-            this.butPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.butPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
+            this.butPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.butPay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butPay.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.butPay.ForeColor = System.Drawing.SystemColors.Control;
+            this.butPay.ForeColor = System.Drawing.Color.White;
             this.butPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.butPay.Location = new System.Drawing.Point(125, 124);
             this.butPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

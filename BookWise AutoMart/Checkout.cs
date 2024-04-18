@@ -36,9 +36,9 @@ namespace BookWise_AutoMart
 
         private void butCard_Click(object sender, EventArgs e)
         {
-            CardDesign cardDesign = new CardDesign();   
-            cardDesign.Show();  
-            this.Hide();
+            //CardDesign cardDesign = new CardDesign();   
+            //cardDesign.Show();  
+            //this.Hide();
         }
     }
 }

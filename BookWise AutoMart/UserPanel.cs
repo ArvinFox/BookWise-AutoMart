@@ -171,12 +171,20 @@ namespace BookWise_AutoMart
             }
             return -1;
         }
-
-        private void dataGridViewCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dataGridViewCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(dataGridViewCart.Rows.Count > 1)
+            // check if the "Delete" column is clicked
+            if (e.ColumnIndex == UserPanel.cart.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
             {
-                dataGridViewCart.Rows.RemoveAt(e.RowIndex);
+                // get the corresponding row that the user clicked
+                DataGridViewRow row = UserPanel.cart.Rows[e.RowIndex];
+
+                // Remove the row from the cart
+                UserPanel.cart.Rows.Remove(row);
+
+                // Update total
+                ItemPanel.UpdateTotal();
             }
         }
     }

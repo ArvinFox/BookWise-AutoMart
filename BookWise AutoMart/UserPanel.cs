@@ -187,6 +187,11 @@ namespace BookWise_AutoMart
                 ItemPanel.UpdateTotal();
             }
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
     
 }

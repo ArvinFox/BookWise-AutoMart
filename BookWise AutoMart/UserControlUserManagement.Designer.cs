@@ -33,9 +33,11 @@
             // UserControlUserManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AutoScroll = true;
             this.Name = "UserControlUserManagement";
-            this.Size = new System.Drawing.Size(1257, 684);
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Size = new System.Drawing.Size(913, 535);
+            this.Load += new System.EventHandler(this.UserControlUserManagement_Load);
             this.ParentChanged += new System.EventHandler(this.UserControlUserManagement_ParentChanged);
             this.ResumeLayout(false);
 

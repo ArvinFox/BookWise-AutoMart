@@ -260,6 +260,10 @@ namespace BookWise_AutoMart
                     amountCell.Value = qty * price;
                     newRow.Cells.Add(amountCell);
 
+                    DataGridViewTextBoxCell deleteCell = new DataGridViewTextBoxCell();
+                    deleteCell.Value = "Delete";
+                    newRow.Cells.Add(deleteCell);
+
                     UserPanel.cart.Rows.Add(newRow);
                 }
 

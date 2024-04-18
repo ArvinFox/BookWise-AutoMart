@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblWindow = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -47,6 +48,7 @@
             this.ColumnItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlTotal = new System.Windows.Forms.Panel();
             this.lblRs = new System.Windows.Forms.Label();
             this.butPay = new System.Windows.Forms.Button();
@@ -169,10 +171,10 @@
             this.panelCart.BackColor = System.Drawing.Color.White;
             this.panelCart.Controls.Add(this.tableLayoutPanelCart);
             this.panelCart.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelCart.Location = new System.Drawing.Point(822, 66);
+            this.panelCart.Location = new System.Drawing.Point(781, 66);
             this.panelCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelCart.Name = "panelCart";
-            this.panelCart.Size = new System.Drawing.Size(480, 1036);
+            this.panelCart.Size = new System.Drawing.Size(521, 1036);
             this.panelCart.TabIndex = 2;
             // 
             // tableLayoutPanelCart
@@ -192,7 +194,7 @@
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.91892F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.139F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCart.Size = new System.Drawing.Size(480, 1036);
+            this.tableLayoutPanelCart.Size = new System.Drawing.Size(521, 1036);
             this.tableLayoutPanelCart.TabIndex = 1;
             // 
             // lblCart
@@ -200,7 +202,7 @@
             this.lblCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCart.Location = new System.Drawing.Point(193, 27);
+            this.lblCart.Location = new System.Drawing.Point(213, 27);
             this.lblCart.Name = "lblCart";
             this.lblCart.Size = new System.Drawing.Size(94, 48);
             this.lblCart.TabIndex = 0;
@@ -216,21 +218,23 @@
             this.ColumnId,
             this.ColumnItemName,
             this.ColumnUnitPrice,
-            this.ColumnAmount});
+            this.ColumnAmount,
+            this.ColumnDelete});
             this.dataGridViewCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewCart.Location = new System.Drawing.Point(3, 106);
             this.dataGridViewCart.Name = "dataGridViewCart";
             this.dataGridViewCart.ReadOnly = true;
             this.dataGridViewCart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewCart.RowTemplate.Height = 28;
-            this.dataGridViewCart.Size = new System.Drawing.Size(474, 707);
+            this.dataGridViewCart.Size = new System.Drawing.Size(515, 707);
             this.dataGridViewCart.TabIndex = 1;
+            this.dataGridViewCart.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellContentClick);
             // 
             // ColumnQty
             // 
             this.ColumnQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle11;
             this.ColumnQty.HeaderText = "Qty";
             this.ColumnQty.MinimumWidth = 8;
             this.ColumnQty.Name = "ColumnQty";
@@ -244,13 +248,13 @@
             this.ColumnId.Name = "ColumnId";
             this.ColumnId.ReadOnly = true;
             this.ColumnId.Visible = false;
-            this.ColumnId.Width = 150;
+            this.ColumnId.Width = 8;
             // 
             // ColumnItemName
             // 
             this.ColumnItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle12;
             this.ColumnItemName.HeaderText = "Item Name";
             this.ColumnItemName.MinimumWidth = 8;
             this.ColumnItemName.Name = "ColumnItemName";
@@ -259,8 +263,8 @@
             // ColumnUnitPrice
             // 
             this.ColumnUnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnUnitPrice.HeaderText = "Unit Price";
             this.ColumnUnitPrice.MinimumWidth = 8;
             this.ColumnUnitPrice.Name = "ColumnUnitPrice";
@@ -270,13 +274,28 @@
             // ColumnAmount
             // 
             this.ColumnAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColumnAmount.HeaderText = "Amount";
             this.ColumnAmount.MinimumWidth = 8;
             this.ColumnAmount.Name = "ColumnAmount";
             this.ColumnAmount.ReadOnly = true;
             this.ColumnAmount.Width = 101;
+            // 
+            // ColumnDelete
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ColumnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ColumnDelete.HeaderText = "Delete";
+            this.ColumnDelete.MinimumWidth = 8;
+            this.ColumnDelete.Name = "ColumnDelete";
+            this.ColumnDelete.ReadOnly = true;
+            this.ColumnDelete.Text = "Delete";
+            this.ColumnDelete.UseColumnTextForButtonValue = true;
+            this.ColumnDelete.Width = 60;
             // 
             // pnlTotal
             // 
@@ -287,7 +306,7 @@
             this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTotal.Location = new System.Drawing.Point(3, 819);
             this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Size = new System.Drawing.Size(474, 214);
+            this.pnlTotal.Size = new System.Drawing.Size(515, 214);
             this.pnlTotal.TabIndex = 2;
             // 
             // lblRs
@@ -295,7 +314,7 @@
             this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblRs.AutoSize = true;
             this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(251, 39);
+            this.lblRs.Location = new System.Drawing.Point(262, 39);
             this.lblRs.Name = "lblRs";
             this.lblRs.Size = new System.Drawing.Size(64, 48);
             this.lblRs.TabIndex = 4;
@@ -325,7 +344,7 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(320, 39);
+            this.lblAmount.Location = new System.Drawing.Point(331, 39);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(58, 48);
             this.lblAmount.TabIndex = 2;
@@ -336,7 +355,7 @@
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(39, 39);
+            this.lblTotal.Location = new System.Drawing.Point(40, 39);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(112, 48);
             this.lblTotal.TabIndex = 1;
@@ -348,7 +367,7 @@
             this.panelItemDisplay.Location = new System.Drawing.Point(363, 66);
             this.panelItemDisplay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelItemDisplay.Name = "panelItemDisplay";
-            this.panelItemDisplay.Size = new System.Drawing.Size(459, 1036);
+            this.panelItemDisplay.Size = new System.Drawing.Size(418, 1036);
             this.panelItemDisplay.TabIndex = 3;
             // 
             // pnlUserButtons
@@ -459,5 +478,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnAmount;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnDelete;
     }
 }

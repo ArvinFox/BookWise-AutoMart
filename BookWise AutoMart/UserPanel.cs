@@ -171,6 +171,14 @@ namespace BookWise_AutoMart
             }
             return -1;
         }
+
+        private void dataGridViewCart_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dataGridViewCart.Rows.Count > 1)
+            {
+                dataGridViewCart.Rows.RemoveAt(e.RowIndex);
+            }
+        }
     }
     
 }

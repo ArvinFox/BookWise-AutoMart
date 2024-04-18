@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -108,12 +108,36 @@
     <Compile Include="AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CardDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CardDesign.Designer.cs">
+      <DependentUpon>CardDesign.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesButton.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CashDesign.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CashDesign.Designer.cs">
+      <DependentUpon>CashDesign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkout.Designer.cs">
+      <DependentUpon>Checkout.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseString.cs" />
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FinalProceedFormCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinalProceedFormCard.Designer.cs">
+      <DependentUpon>FinalProceedFormCard.cs</DependentUpon>
     </Compile>
     <Compile Include="InformationForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +153,12 @@
     </Compile>
     <Compile Include="ItemPanel.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LastCheckoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LastCheckoutForm.Designer.cs">
+      <DependentUpon>LastCheckoutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -237,11 +267,26 @@
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CardDesign.resx">
+      <DependentUpon>CardDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CashDesign.resx">
+      <DependentUpon>CashDesign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkout.resx">
+      <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinalProceedFormCard.resx">
+      <DependentUpon>FinalProceedFormCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LastCheckoutForm.resx">
+      <DependentUpon>LastCheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -361,6 +406,9 @@
     <None Include="Resources\user-management.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\uncolored-circle.jpg" />
+    <None Include="Resources\backward.jpg" />
+    <None Include="Resources\add-new-item %28navy%29.png" />
     <Content Include="Admin_BookWiseAutoMart.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -375,9 +423,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BookWiseAutoMart.mdf</DependentUpon>
     </Content>
-    <None Include="Resources\uncolored-circle.jpg" />
-    <None Include="Resources\backward.jpg" />
-    <None Include="Resources\add-new-item %28navy%29.png" />
     <Content Include="Resources\bar-chart.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\Gold_Star_Colored_1.png" />
@@ -388,6 +433,7 @@
     <None Include="Resources\delete %28gray%29.png" />
     <None Include="Resources\delete %28white%29.png" />
     <None Include="Resources\folder %28gray%29.png" />
+    <None Include="Resources\Checkout_img.jpg" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

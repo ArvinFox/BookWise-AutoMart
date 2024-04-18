@@ -275,10 +275,10 @@ namespace BookWise_AutoMart
                                     tblOffers.Padding = new Padding(5); // Add some padding
                                     tblOffers.Margin = new Padding(5); // Add margin between rows
 
-                                    this.Controls.Add(tblOffers);
+                                    pnlDisplayOffers.Controls.Add(tblOffers);
                                 }
 
-                                this.Controls.Add(tblOffersHeading);
+                                pnlDisplayOffers.Controls.Add(tblOffersHeading);
                             }
                             else
                             {
@@ -290,7 +290,7 @@ namespace BookWise_AutoMart
                                 noOffersLabel.Padding = new Padding(12);
                                 noOffersLabel.AutoSize = true;
 
-                                this.Controls.Add(noOffersLabel);
+                                pnlDisplayOffers.Controls.Add(noOffersLabel);
                             }
                         }
                     }
@@ -350,6 +350,27 @@ namespace BookWise_AutoMart
                         MessageBox.Show("Error delete offer: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
+            }
+        }
+
+        private void btnAddNewOffer_Click(object sender, EventArgs e)
+        {
+            bool adminAddNewOfferFormFound = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is AdminAddNewOfferForm)
+                {
+                    form.ShowDialog();
+                    adminAddNewOfferFormFound = true;
+                    break;
+                }
+            }
+
+            if (!adminAddNewOfferFormFound)
+            {
+                AdminAddNewOfferForm adminAddNewOfferForm = new AdminAddNewOfferForm();
+                adminAddNewOfferForm.ShowDialog();
             }
         }
     }

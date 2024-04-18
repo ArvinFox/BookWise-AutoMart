@@ -5,28 +5,30 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Lifetime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Tab;
 
 namespace BookWise_AutoMart
 {
-    public partial class AdminEditOfferForm : Form
+    public partial class AdminAddNewOfferForm : Form
     {
-        private int id;
         private string applicableItems = "";
 
         private string connectionString = DatabaseString.GetUserDatabase();
 
-        public AdminEditOfferForm(int offerId)
+        public AdminAddNewOfferForm()
         {
             InitializeComponent();
 
-            id = offerId;
-
             PopulateItemsComboBox();
             Placeholder(txtOfferName, "Enter Offer Name");
+            ResetOfferDates();
+            ResetSelectedItems();
             Placeholder(txtDiscountPercentage, "Enter Discount (%)");
+            ResetOfferStatus();
         }
 
         private void PopulateItemsComboBox()
@@ -162,11 +164,11 @@ namespace BookWise_AutoMart
                 }
             }
         }
-        private void UpdateOffer()
+        private void AddOffer()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Offers SET offer_name = @OfferName, offer_start_date = @OfferStartDate, offer_end_date = @OfferEndDate, discount_percentage = @DiscountPercentage, applicable_items = @ApplicableItems, is_active = @IsActive WHERE offer_id = @OfferId";
+                string query = "INSERT INTO Offers (offer_name, offer_start_date, offer_end_date, discount_percentage, applicable_items, is_active) VALUES (@OfferName, @OfferStartDate, @OfferEndDate, @DiscountPercentage, @ApplicableItems, @IsActive)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -178,7 +180,6 @@ namespace BookWise_AutoMart
                         command.Parameters.AddWithValue("@DiscountPercentage", txtDiscountPercentage.Text.Trim());
                         command.Parameters.AddWithValue("@ApplicableItems", applicableItems);
                         command.Parameters.AddWithValue("@IsActive", (radActive.Checked ? true : false));
-                        command.Parameters.AddWithValue("@OfferId", lblId.Text.Trim());
 
                         connection.Open();
 
@@ -186,19 +187,19 @@ namespace BookWise_AutoMart
 
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Offer details updated successfully.", "Update Offer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Offer added successfully.", "Add Offer", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             btnCancel.PerformClick();
                             AdminControlForm.btnReloadOffersPromotionsForm.PerformClick();   // Refresh form
                         }
                         else
                         {
-                            MessageBox.Show("Failed to update offer details.", "Update Offer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Unable to add offer.", "Add Offer", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error updating offer details: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error addng offer: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -246,7 +247,7 @@ namespace BookWise_AutoMart
                                 else
                                 {
                                     applicableItems += ", " + itemId;
-                                }
+                                } 
 
                                 DisplaySelectedItems(applicableItems);  // update the items
                             }
@@ -259,10 +260,8 @@ namespace BookWise_AutoMart
                 }
             }
         }
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            ClearErrorMessages();
-
             string errors = "";
 
             if (IsFieldEmpty(txtOfferName) && IsFieldEmpty(txtDiscountPercentage) && (!radActive.Checked && !radInactive.Checked))
@@ -308,76 +307,28 @@ namespace BookWise_AutoMart
                 return;
             }
 
-            UpdateOffer();
+            AddOffer();
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearErrorMessages();
+
+            Placeholder(txtOfferName, "Enter Offer Name");
+            ResetOfferDates();
+            ResetSelectedItems();
+            Placeholder(txtDiscountPercentage, "Enter Discount (%)");
+            ResetOfferStatus();
         }
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void AdminEditOfferForm_Load(object sender, EventArgs e)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * From Offers WHERE offer_id = @OfferId";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    try
-                    {
-                        command.Parameters.AddWithValue("@OfferId", id);
-
-                        connection.Open();
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.HasRows)
-                            {
-                                reader.Read();
-                                lblId.Text = id.ToString();
-                                txtOfferName.Text = reader["offer_name"].ToString();
-                                dtpStartDate.Value = Convert.ToDateTime(reader["offer_start_date"]);
-                                dtpEndDate.Value = Convert.ToDateTime(reader["offer_end_date"]);
-                                txtDiscountPercentage.Text = reader["discount_percentage"].ToString();
-                                if ((bool)reader["is_active"] == true)
-                                {
-                                    radActive.Checked = true;
-                                }
-                                else
-                                {
-                                    radInactive.Checked = true;
-                                }
-
-                                applicableItems = reader["applicable_items"].ToString();
-
-                                DisplaySelectedItems(applicableItems);
-                            }
-                            else
-                            {
-                                lblId.Text = "Error";
-                                txtOfferName.Text = "Error";
-                                dtpStartDate.Text = "Error";
-                                dtpEndDate.Text = "Error";
-                                txtDiscountPercentage.Text = "Error";
-                                comboBoxApplicableItems.Items.Clear();
-                                pnlSelectedItems.Controls.Clear();
-
-                                MessageBox.Show("Offer does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                                btnCancel.PerformClick();
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error retrieving data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
-
         private void Placeholder(TextBox textBox, string placeholder)
         {
+            textBox.Text = placeholder;
+            textBox.ForeColor = SystemColors.GrayText;
+
             textBox.GotFocus += (sender, e) =>
             {
                 if (textBox.Text == placeholder)
@@ -395,6 +346,11 @@ namespace BookWise_AutoMart
                     textBox.ForeColor = SystemColors.GrayText;
                 }
             };
+        }
+        private void ResetOfferDates()
+        {
+            dtpStartDate.Value = DateTime.Now;
+            dtpEndDate.Value = DateTime.Now.AddMonths(1);
         }
         private void ResetSelectedItems()
         {
@@ -415,6 +371,11 @@ namespace BookWise_AutoMart
             tblNoItems.Controls.Add(lblNoItems, 0, 0);
 
             pnlSelectedItems.Controls.Add(tblNoItems);
+        }
+        private void ResetOfferStatus()
+        {
+            radActive.Checked = false;
+            radInactive.Checked = false;
         }
 
         private void DisplayErrorMessages(string errors)

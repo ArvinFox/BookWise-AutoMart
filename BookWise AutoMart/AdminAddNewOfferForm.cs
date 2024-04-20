@@ -31,6 +31,127 @@ namespace BookWise_AutoMart
             ResetOfferStatus();
         }
 
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            string selectedItem = comboBoxApplicableItems.SelectedItem.ToString();
+
+            if (selectedItem.Equals("Select an Item"))
+            {
+                lblApplicableItemsError.Visible = true;
+                return;
+            }
+            else
+            {
+                lblApplicableItemsError.Visible = false;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT item_id FROM Items WHERE item_name = @ItemName";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        try
+                        {
+                            command.Parameters.AddWithValue("@ItemName", selectedItem);
+
+                            connection.Open();
+
+                            int itemId = (int)command.ExecuteScalar();
+
+                            if (applicableItems.Split(',').Any(s => s.Trim() == itemId.ToString()))
+                            {
+                                lblApplicableItemsError.Text = "Item already added";
+                                lblApplicableItemsError.Visible = true;
+                            }
+                            else
+                            {
+                                // Add selected item id to applicable items
+                                if (applicableItems.Trim() == "")
+                                {
+                                    applicableItems += itemId;
+                                }
+                                else
+                                {
+                                    applicableItems += ", " + itemId;
+                                } 
+
+                                DisplaySelectedItems(applicableItems);  // update the items
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error retrieving item id: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            ClearErrorMessages();
+
+            string errors = "";
+
+            if (IsFieldEmpty(txtOfferName) && IsFieldEmpty(txtDiscountPercentage) && (!radActive.Checked && !radInactive.Checked))
+            {
+                errors += "Please fill out all the fields\n";
+            }
+            else
+            {
+                if (IsFieldEmpty(txtOfferName))
+                {
+                    errors += "Please enter offer name\n";
+                }
+
+                if (!IsValidDate(dtpStartDate, dtpEndDate))
+                {
+                    errors += "Invalid date\n";
+                }
+
+                if (IsFieldEmpty(txtDiscountPercentage))
+                {
+                    errors += "Please enter offer discount (%)\n";
+                }
+                else if (!IsValidDiscount(txtDiscountPercentage))
+                {
+                    errors += "Invalid discount\n";
+                }
+
+                if (applicableItems.Trim() == "" || applicableItems.Trim() == ",")
+                {
+                    errors += "Please add applicable items to the offer\n";
+                }
+
+                if (!radActive.Checked && !radInactive.Checked)
+                {
+                    errors += "Please select the status of the offer\n";
+                }
+            }
+
+            // Check for any errors
+            if (errors != "")
+            {
+                DisplayErrorMessages(errors);
+                return;
+            }
+
+            AddOffer();
+        }
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearErrorMessages();
+
+            Placeholder(txtOfferName, "Enter Offer Name");
+            ResetOfferDates();
+            ResetSelectedItems();
+            Placeholder(txtDiscountPercentage, "Enter Discount (%)");
+            ResetOfferStatus();
+        }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void PopulateItemsComboBox()
         {
             comboBoxApplicableItems.Items.Clear(); // Clear the items in the combo box
@@ -205,125 +326,6 @@ namespace BookWise_AutoMart
             }
         }
 
-        private void btnAddItem_Click(object sender, EventArgs e)
-        {
-            string selectedItem = comboBoxApplicableItems.SelectedItem.ToString();
-
-            if (selectedItem.Equals("Select an Item"))
-            {
-                lblApplicableItemsError.Visible = true;
-                return;
-            }
-            else
-            {
-                lblApplicableItemsError.Visible = false;
-
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    string query = "SELECT item_id FROM Items WHERE item_name = @ItemName";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        try
-                        {
-                            command.Parameters.AddWithValue("@ItemName", selectedItem);
-
-                            connection.Open();
-
-                            int itemId = (int)command.ExecuteScalar();
-
-                            if (applicableItems.Split(',').Any(s => s.Trim() == itemId.ToString()))
-                            {
-                                lblApplicableItemsError.Text = "Item already added";
-                                lblApplicableItemsError.Visible = true;
-                            }
-                            else
-                            {
-                                // Add selected item id to applicable items
-                                if (applicableItems.Trim() == "")
-                                {
-                                    applicableItems += itemId;
-                                }
-                                else
-                                {
-                                    applicableItems += ", " + itemId;
-                                } 
-
-                                DisplaySelectedItems(applicableItems);  // update the items
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("Error retrieving item id: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-            }
-        }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            string errors = "";
-
-            if (IsFieldEmpty(txtOfferName) && IsFieldEmpty(txtDiscountPercentage) && (!radActive.Checked && !radInactive.Checked))
-            {
-                errors += "Please fill out all the fields\n";
-            }
-            else
-            {
-                if (IsFieldEmpty(txtOfferName))
-                {
-                    errors += "Please enter offer name\n";
-                }
-
-                if (!IsValidDate(dtpStartDate, dtpEndDate))
-                {
-                    errors += "Invalid date\n";
-                }
-
-                if (IsFieldEmpty(txtDiscountPercentage))
-                {
-                    errors += "Please enter offer discount (%)\n";
-                }
-                else if (!IsValidDiscount(txtDiscountPercentage))
-                {
-                    errors += "Invalid discount\n";
-                }
-
-                if (applicableItems.Trim() == "" || applicableItems.Trim() == ",")
-                {
-                    errors += "Please add applicable items to the offer\n";
-                }
-
-                if (!radActive.Checked && !radInactive.Checked)
-                {
-                    errors += "Please select the status of the offer\n";
-                }
-            }
-
-            // Check for any errors
-            if (errors != "")
-            {
-                DisplayErrorMessages(errors);
-                return;
-            }
-
-            AddOffer();
-        }
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            ClearErrorMessages();
-
-            Placeholder(txtOfferName, "Enter Offer Name");
-            ResetOfferDates();
-            ResetSelectedItems();
-            Placeholder(txtDiscountPercentage, "Enter Discount (%)");
-            ResetOfferStatus();
-        }
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void Placeholder(TextBox textBox, string placeholder)
         {
             textBox.Text = placeholder;
@@ -449,7 +451,7 @@ namespace BookWise_AutoMart
             lblOfferStatusError.Visible = false;
         }
 
-        private bool IsFieldEmpty(TextBox textBox = null, RichTextBox rtb = null)
+        private bool IsFieldEmpty(TextBox textBox)
         {
             if (textBox == txtOfferName)
             {

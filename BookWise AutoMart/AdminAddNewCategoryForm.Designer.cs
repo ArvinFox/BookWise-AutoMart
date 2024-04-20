@@ -30,13 +30,14 @@
         {
             this.tblBorder = new System.Windows.Forms.TableLayoutPanel();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.btnManageSubcategories = new System.Windows.Forms.Button();
+            this.lblNewCategoryRequired = new System.Windows.Forms.Label();
             this.tableLayoutPaneltxt = new System.Windows.Forms.TableLayoutPanel();
             this.txtNewCategory = new System.Windows.Forms.TextBox();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.lblNewCategoryRequired = new System.Windows.Forms.Label();
             this.tblBorder.SuspendLayout();
             this.pnlContainer.SuspendLayout();
             this.tableLayoutPaneltxt.SuspendLayout();
@@ -64,6 +65,7 @@
             // pnlContainer
             // 
             this.pnlContainer.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContainer.Controls.Add(this.btnManageSubcategories);
             this.pnlContainer.Controls.Add(this.lblNewCategoryRequired);
             this.pnlContainer.Controls.Add(this.tableLayoutPaneltxt);
             this.pnlContainer.Controls.Add(this.tableLayoutPanelTitle);
@@ -74,6 +76,37 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(738, 277);
             this.pnlContainer.TabIndex = 0;
+            // 
+            // btnManageSubcategories
+            // 
+            this.btnManageSubcategories.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnManageSubcategories.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageSubcategories.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnManageSubcategories.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DodgerBlue;
+            this.btnManageSubcategories.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
+            this.btnManageSubcategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnManageSubcategories.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnManageSubcategories.ForeColor = System.Drawing.Color.White;
+            this.btnManageSubcategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnManageSubcategories.Location = new System.Drawing.Point(6, 207);
+            this.btnManageSubcategories.Name = "btnManageSubcategories";
+            this.btnManageSubcategories.Size = new System.Drawing.Size(281, 64);
+            this.btnManageSubcategories.TabIndex = 44;
+            this.btnManageSubcategories.Text = "Manage Subcategories";
+            this.btnManageSubcategories.UseVisualStyleBackColor = false;
+            this.btnManageSubcategories.Click += new System.EventHandler(this.btnManageSubcategories_Click);
+            // 
+            // lblNewCategoryRequired
+            // 
+            this.lblNewCategoryRequired.AutoSize = true;
+            this.lblNewCategoryRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblNewCategoryRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblNewCategoryRequired.Location = new System.Drawing.Point(14, 233);
+            this.lblNewCategoryRequired.Name = "lblNewCategoryRequired";
+            this.lblNewCategoryRequired.Size = new System.Drawing.Size(318, 28);
+            this.lblNewCategoryRequired.TabIndex = 43;
+            this.lblNewCategoryRequired.Text = "*Please enter category name";
+            this.lblNewCategoryRequired.Visible = false;
             // 
             // tableLayoutPaneltxt
             // 
@@ -159,18 +192,6 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lblNewCategoryRequired
-            // 
-            this.lblNewCategoryRequired.AutoSize = true;
-            this.lblNewCategoryRequired.Font = new System.Drawing.Font("Gadugi", 14F);
-            this.lblNewCategoryRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblNewCategoryRequired.Location = new System.Drawing.Point(14, 233);
-            this.lblNewCategoryRequired.Name = "lblNewCategoryRequired";
-            this.lblNewCategoryRequired.Size = new System.Drawing.Size(318, 28);
-            this.lblNewCategoryRequired.TabIndex = 43;
-            this.lblNewCategoryRequired.Text = "*Please enter category name";
-            this.lblNewCategoryRequired.Visible = false;
-            // 
             // AdminAddNewCategoryForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -203,5 +224,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label lblNewCategoryRequired;
+        private System.Windows.Forms.Button btnManageSubcategories;
     }
 }

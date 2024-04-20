@@ -114,6 +114,12 @@
     <Compile Include="AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminManageSubcategoriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminManageSubcategoriesForm.Designer.cs">
+      <DependentUpon>AdminManageSubcategoriesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminManageSubcategoriesForm.resx">
+      <DependentUpon>AdminManageSubcategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CashDesign.resx">
       <DependentUpon>CashDesign.cs</DependentUpon>

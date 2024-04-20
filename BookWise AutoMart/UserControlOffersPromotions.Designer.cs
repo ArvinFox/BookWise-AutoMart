@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlDisplayOffers = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlAddNewOffer = new System.Windows.Forms.Panel();
             this.btnAddNewOffer = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.pnlAddNewOffer.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDisplayOffers
@@ -43,14 +43,14 @@
             this.pnlDisplayOffers.Size = new System.Drawing.Size(1257, 684);
             this.pnlDisplayOffers.TabIndex = 0;
             // 
-            // panel1
+            // pnlAddNewOffer
             // 
-            this.panel1.Controls.Add(this.btnAddNewOffer);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 612);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1257, 72);
-            this.panel1.TabIndex = 4;
+            this.pnlAddNewOffer.Controls.Add(this.btnAddNewOffer);
+            this.pnlAddNewOffer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlAddNewOffer.Location = new System.Drawing.Point(0, 612);
+            this.pnlAddNewOffer.Name = "pnlAddNewOffer";
+            this.pnlAddNewOffer.Size = new System.Drawing.Size(1257, 72);
+            this.pnlAddNewOffer.TabIndex = 4;
             // 
             // btnAddNewOffer
             // 
@@ -78,14 +78,14 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlAddNewOffer);
             this.Controls.Add(this.pnlDisplayOffers);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlOffersPromotions";
             this.Size = new System.Drawing.Size(1257, 684);
             this.Load += new System.EventHandler(this.UserControlOffersPromotions_Load);
             this.ParentChanged += new System.EventHandler(this.UserControlOffersPromotions_ParentChanged);
-            this.panel1.ResumeLayout(false);
+            this.pnlAddNewOffer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -94,6 +94,6 @@
 
         private System.Windows.Forms.Panel pnlDisplayOffers;
         private System.Windows.Forms.Button btnAddNewOffer;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlAddNewOffer;
     }
 }

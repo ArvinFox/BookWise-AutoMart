@@ -19,6 +19,8 @@ namespace BookWise_AutoMart
         private bool isAdminView = false;
         private bool isDeleteIconWhite = false;
 
+        private string connectionString = DatabaseString.GetUserDatabase();
+
         public CategoriesButton(int categoryId, string category, bool isAdmin = false)
         {
             isAdminView = isAdmin;
@@ -52,6 +54,7 @@ namespace BookWise_AutoMart
 
                     if (result == DialogResult.Yes)
                     {
+                        DeleteSubcategories(categoryId);
                         DeleteCategory(categoryId);
                     }
                 };
@@ -91,8 +94,6 @@ namespace BookWise_AutoMart
         }
         private void DeleteCategory(int id)
         {
-            string connectionString = DatabaseString.GetUserDatabase();
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "DELETE FROM Categories WHERE category_id = @CategoryId";
@@ -121,6 +122,29 @@ namespace BookWise_AutoMart
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void DeleteSubcategories(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM SubCategories WHERE subcategory_category_id = @CategoryId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@CategoryId", id);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

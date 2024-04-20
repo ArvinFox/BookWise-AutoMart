@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblWindow = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -50,27 +50,27 @@
             this.ColumnAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlTotal = new System.Windows.Forms.Panel();
-            this.lblRs = new System.Windows.Forms.Label();
+            this.tblPayNowLayout = new System.Windows.Forms.TableLayoutPanel();
             this.butPay = new System.Windows.Forms.Button();
-            this.lblAmount = new System.Windows.Forms.Label();
+            this.tblTotalLayout = new System.Windows.Forms.TableLayoutPanel();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.lblRs = new System.Windows.Forms.Label();
             this.panelItemDisplay = new System.Windows.Forms.Panel();
             this.pnlUserButtons = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pnlCategoryScroll = new System.Windows.Forms.Panel();
-            this.tblTotalLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.tblPayNowLayout = new System.Windows.Forms.TableLayoutPanel();
             this.panel1.SuspendLayout();
             this.panelCart.SuspendLayout();
             this.tableLayoutPanelCart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).BeginInit();
             this.pnlTotal.SuspendLayout();
+            this.tblPayNowLayout.SuspendLayout();
+            this.tblTotalLayout.SuspendLayout();
             this.pnlUserButtons.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.tblTotalLayout.SuspendLayout();
-            this.tblPayNowLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblWindow
@@ -242,8 +242,8 @@
             // ColumnQty
             // 
             this.ColumnQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnQty.HeaderText = "Qty";
             this.ColumnQty.MinimumWidth = 8;
             this.ColumnQty.Name = "ColumnQty";
@@ -262,8 +262,8 @@
             // ColumnItemName
             // 
             this.ColumnItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle7;
             this.ColumnItemName.HeaderText = "Item Name";
             this.ColumnItemName.MinimumWidth = 8;
             this.ColumnItemName.Name = "ColumnItemName";
@@ -272,8 +272,8 @@
             // ColumnUnitPrice
             // 
             this.ColumnUnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle8;
             this.ColumnUnitPrice.HeaderText = "Unit Price";
             this.ColumnUnitPrice.MinimumWidth = 8;
             this.ColumnUnitPrice.Name = "ColumnUnitPrice";
@@ -283,8 +283,8 @@
             // ColumnAmount
             // 
             this.ColumnAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnAmount.HeaderText = "Amount";
             this.ColumnAmount.MinimumWidth = 8;
             this.ColumnAmount.Name = "ColumnAmount";
@@ -293,10 +293,10 @@
             // 
             // ColumnDelete
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ColumnDelete.HeaderText = "Delete";
             this.ColumnDelete.MinimumWidth = 8;
@@ -317,21 +317,24 @@
             this.pnlTotal.Size = new System.Drawing.Size(457, 172);
             this.pnlTotal.TabIndex = 2;
             // 
-            // lblRs
+            // tblPayNowLayout
             // 
-            this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblRs.AutoSize = true;
-            this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(198, 16);
-            this.lblRs.Name = "lblRs";
-            this.lblRs.Size = new System.Drawing.Size(54, 41);
-            this.lblRs.TabIndex = 4;
-            this.lblRs.Text = "Rs.";
+            this.tblPayNowLayout.ColumnCount = 1;
+            this.tblPayNowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPayNowLayout.Controls.Add(this.butPay, 0, 0);
+            this.tblPayNowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 74);
+            this.tblPayNowLayout.Name = "tblPayNowLayout";
+            this.tblPayNowLayout.RowCount = 1;
+            this.tblPayNowLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblPayNowLayout.Size = new System.Drawing.Size(457, 98);
+            this.tblPayNowLayout.TabIndex = 1;
             // 
             // butPay
             // 
             this.butPay.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.butPay.BackColor = System.Drawing.Color.Green;
+            this.butPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butPay.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.butPay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green;
             this.butPay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
@@ -347,16 +350,22 @@
             this.butPay.UseVisualStyleBackColor = false;
             this.butPay.Click += new System.EventHandler(this.butPay_Click);
             // 
-            // lblAmount
+            // tblTotalLayout
             // 
-            this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblAmount.AutoSize = true;
-            this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(258, 16);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(50, 41);
-            this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "00";
+            this.tblTotalLayout.ColumnCount = 3;
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
+            this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
+            this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
+            this.tblTotalLayout.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tblTotalLayout.Location = new System.Drawing.Point(0, 0);
+            this.tblTotalLayout.Name = "tblTotalLayout";
+            this.tblTotalLayout.RowCount = 1;
+            this.tblTotalLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblTotalLayout.Size = new System.Drawing.Size(457, 74);
+            this.tblTotalLayout.TabIndex = 0;
             // 
             // lblTotal
             // 
@@ -369,9 +378,31 @@
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "Total";
             // 
+            // lblAmount
+            // 
+            this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblAmount.AutoSize = true;
+            this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmount.Location = new System.Drawing.Point(257, 16);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(50, 41);
+            this.lblAmount.TabIndex = 2;
+            this.lblAmount.Text = "00";
+            // 
+            // lblRs
+            // 
+            this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblRs.AutoSize = true;
+            this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRs.Location = new System.Drawing.Point(197, 16);
+            this.lblRs.Name = "lblRs";
+            this.lblRs.Size = new System.Drawing.Size(54, 41);
+            this.lblRs.TabIndex = 4;
+            this.lblRs.Text = "Rs.";
+            // 
             // panelItemDisplay
             // 
-            this.panelItemDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelItemDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelItemDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelItemDisplay.Location = new System.Drawing.Point(323, 53);
             this.panelItemDisplay.Name = "panelItemDisplay";
@@ -427,36 +458,6 @@
             this.pnlCategoryScroll.Size = new System.Drawing.Size(317, 348);
             this.pnlCategoryScroll.TabIndex = 3;
             // 
-            // tblTotalLayout
-            // 
-            this.tblTotalLayout.ColumnCount = 3;
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 201F));
-            this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
-            this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
-            this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
-            this.tblTotalLayout.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblTotalLayout.Location = new System.Drawing.Point(0, 0);
-            this.tblTotalLayout.Name = "tblTotalLayout";
-            this.tblTotalLayout.RowCount = 1;
-            this.tblTotalLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblTotalLayout.Size = new System.Drawing.Size(457, 74);
-            this.tblTotalLayout.TabIndex = 0;
-            // 
-            // tblPayNowLayout
-            // 
-            this.tblPayNowLayout.ColumnCount = 1;
-            this.tblPayNowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPayNowLayout.Controls.Add(this.butPay, 0, 0);
-            this.tblPayNowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 74);
-            this.tblPayNowLayout.Name = "tblPayNowLayout";
-            this.tblPayNowLayout.RowCount = 1;
-            this.tblPayNowLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPayNowLayout.Size = new System.Drawing.Size(457, 98);
-            this.tblPayNowLayout.TabIndex = 1;
-            // 
             // UserPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -477,12 +478,12 @@
             this.tableLayoutPanelCart.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCart)).EndInit();
             this.pnlTotal.ResumeLayout(false);
+            this.tblPayNowLayout.ResumeLayout(false);
+            this.tblTotalLayout.ResumeLayout(false);
+            this.tblTotalLayout.PerformLayout();
             this.pnlUserButtons.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.tblTotalLayout.ResumeLayout(false);
-            this.tblTotalLayout.PerformLayout();
-            this.tblPayNowLayout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

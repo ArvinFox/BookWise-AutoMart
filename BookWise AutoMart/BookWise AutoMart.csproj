@@ -142,6 +142,12 @@
     <Compile Include="DisplayUserDetails.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="GuestLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestLogin.Designer.cs">
+      <DependentUpon>GuestLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="InformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +293,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestLogin.resx">
+      <DependentUpon>GuestLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>

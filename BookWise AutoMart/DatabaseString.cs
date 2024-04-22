@@ -10,11 +10,11 @@ namespace BookWise_AutoMart
     {
         public static string GetUserDatabase()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\123ma\OneDrive\Documents\C#\BookWise-AutoMart\BookWise AutoMart\BookWiseAutoMart.mdf"";Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\SASHEN\Desktop\New folder (2)\BookWise-AutoMart\BookWise AutoMart\BookWiseAutoMart.mdf"";Integrated Security=True";
         }
         public static string GetAdminDatabase()
         {
-            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\123ma\OneDrive\Documents\C#\BookWise-AutoMart\BookWise AutoMart\Admin_BookWiseAutoMart.mdf"";Integrated Security=True";
+            return @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\SASHEN\Desktop\New folder (2)\BookWise-AutoMart\BookWise AutoMart\Admin_BookWiseAutoMart.mdf"";Integrated Security=True";
         }
     }
 }

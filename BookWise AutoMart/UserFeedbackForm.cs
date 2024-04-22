@@ -14,15 +14,25 @@ namespace BookWise_AutoMart
 {
     public partial class UserFeedbackForm : Form
     {
+        private Timer loginFormTimer;
+        private int ratingTimer = 10;
+        
         public UserFeedbackForm()
         {
             InitializeComponent();
+            lblRatingTimer.Text = "";
+            loginFormTimer = new Timer();
+            loginFormTimer.Interval = 1000; // 1 second
+            loginFormTimer.Tick += LoginFormTimer_Tick;
         }
 
         private string connectionString = DatabaseString.GetUserDatabase();
 
         private void StarCount(int starCount, bool showLabel = false)
         {
+            ratingTimer = 15;
+            lblStarValidation.Visible = false;
+            
             PictureBox[] stars = new PictureBox[] { pictureBoxStar1, pictureBoxStar2, pictureBoxStar3, pictureBoxStar4, pictureBoxStar5 };
             Label[] starLabels = new Label[] { lblstar1, lblstar2, lblstar3, lblstar4, lblstar5 };
 
@@ -74,9 +84,9 @@ namespace BookWise_AutoMart
             }
         }
 
-        int userStarRating;
+        int userStarRating =0;
         string userFeedback;
-
+        
         private void pictureBoxStar1_Click(object sender, EventArgs e)
         {
             StarCount(1, true);
@@ -112,6 +122,8 @@ namespace BookWise_AutoMart
 
         private void rtbComment_Click(object sender, EventArgs e)
         {
+            ratingTimer = 15;
+
             if (rtbComment.Text.Trim() == "Tell us more about your experience... (optional)")
             {
                 rtbComment.SelectionStart = 1;
@@ -121,6 +133,8 @@ namespace BookWise_AutoMart
 
         private void rtbComment_KeyPress(object sender, KeyPressEventArgs e)
         {
+            ratingTimer = 15;
+            
             if (rtbComment.Text.Trim() == "Tell us more about your experience... (optional)")
             {
                 rtbComment.Text = " ";
@@ -131,8 +145,17 @@ namespace BookWise_AutoMart
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // Verify rating selection --> Unfinished.
-            
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            //string query = "INSERT INTO Feedback (feedback_user_id, star_rating, feedback) VALUES ()"; ------------------- feedback_user_id --> Unfinished.
+            //string query = $"INSERT INTO Feedback (star_rating, feedback) VALUES ({userStarRating} , '{userFeedback}')";
+
+            string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES (1 , {userStarRating} , '{userFeedback}')";
+
+            SqlCommand cmd = new SqlCommand(query, conn);
+
+            //---------------------------
+
             if (rtbComment.Text.Trim() == "Tell us more about your experience... (optional)")
             {
                 userFeedback = null;
@@ -141,33 +164,66 @@ namespace BookWise_AutoMart
             {
                 userFeedback = rtbComment.Text;
             }
-            
-            
-            SqlConnection conn = new SqlConnection(connectionString);
 
-            //string query = "INSERT INTO Feedback (feedback_user_id, star_rating, feedback) VALUES ()"; ------------------- feedback_user_id --> Unfinished.
-            string query = $"INSERT INTO Feedback (star_rating, feedback) VALUES ({userStarRating} , '{userFeedback}')";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
-            
-            try
+            // Verify rating selection.
+            if (userStarRating == 0)
             {
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                ratingTimer = 15;
+                lblStarValidation.Visible = true;
             }
-            catch (Exception) 
+            else
             {
-                //error, error message.
-            }
-            finally 
-            { 
-                conn.Close();
-                
-            }
+                try
+                {
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
 
-            //returning to a new login page (Latter part)
+                    //returning to a new login page.
+                    MainForm mainForm = new MainForm();
+                    mainForm.Show();
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    //error, error message.
+                }
+                finally
+                {
+                    conn.Close();
+
+                }
+            }
             
+        }
 
+        private void UserFeedbackForm_Load(object sender, EventArgs e)
+        {
+            loginFormTimer.Start();
+
+        }
+
+        private void LoginFormTimer_Tick(object sender, EventArgs e)
+        {
+            ratingTimer--;
+
+            if (ratingTimer == 1)
+            {
+                lblRatingTimer.Text = $"Closing in {ratingTimer} second";
+            }
+            else
+            {
+                lblRatingTimer.Text = $"Closing in {ratingTimer} seconds";
+            }
+
+            //returning to a new login page.
+            if (ratingTimer <= 0)
+            {
+                loginFormTimer.Stop();
+
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
+                this.Close();
+            }
         }
     }
 }

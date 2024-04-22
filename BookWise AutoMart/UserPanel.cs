@@ -118,7 +118,7 @@ namespace BookWise_AutoMart
                 int itemStock = GetStock(itemId);
                 UpdateStock(itemId, quantity,itemStock);
             }
-
+            
         }
 
         private void UpdateStock(int itemId, int quantity,int itemStock)

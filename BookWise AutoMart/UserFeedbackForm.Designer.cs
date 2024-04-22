@@ -47,8 +47,12 @@
             this.lblRateDescription = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblStarValidation = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.rtbComment = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblRatingTimer = new System.Windows.Forms.Label();
             this.tblReviewLay.SuspendLayout();
             this.tblStarsContainer.SuspendLayout();
             this.tblStars.SuspendLayout();
@@ -59,7 +63,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStar3)).BeginInit();
             this.tblRateDescriptionContainer.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblReviewLay
@@ -73,7 +79,7 @@
             this.tblReviewLay.Controls.Add(this.tableLayoutPanel3, 0, 3);
             this.tblReviewLay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblReviewLay.Location = new System.Drawing.Point(0, 0);
-            this.tblReviewLay.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tblReviewLay.Margin = new System.Windows.Forms.Padding(4);
             this.tblReviewLay.Name = "tblReviewLay";
             this.tblReviewLay.RowCount = 5;
             this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.38889F));
@@ -81,8 +87,8 @@
             this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.97222F));
             this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.13889F));
             this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.86111F));
-            this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this.tblReviewLay.Size = new System.Drawing.Size(1193, 720);
+            this.tblReviewLay.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tblReviewLay.Size = new System.Drawing.Size(1060, 576);
             this.tblReviewLay.TabIndex = 2;
             // 
             // tblStarsContainer
@@ -94,12 +100,12 @@
             this.tblStarsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tblStarsContainer.Controls.Add(this.tblStars, 1, 0);
             this.tblStarsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblStarsContainer.Location = new System.Drawing.Point(4, 213);
-            this.tblStarsContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tblStarsContainer.Location = new System.Drawing.Point(4, 170);
+            this.tblStarsContainer.Margin = new System.Windows.Forms.Padding(4);
             this.tblStarsContainer.Name = "tblStarsContainer";
             this.tblStarsContainer.RowCount = 1;
             this.tblStarsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblStarsContainer.Size = new System.Drawing.Size(1185, 249);
+            this.tblStarsContainer.Size = new System.Drawing.Size(1052, 199);
             this.tblStarsContainer.TabIndex = 2;
             // 
             // tblStars
@@ -122,13 +128,13 @@
             this.tblStars.Controls.Add(this.pictureBoxStar3, 2, 0);
             this.tblStars.Controls.Add(this.lblstar1, 0, 1);
             this.tblStars.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblStars.Location = new System.Drawing.Point(122, 5);
-            this.tblStars.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tblStars.Location = new System.Drawing.Point(109, 4);
+            this.tblStars.Margin = new System.Windows.Forms.Padding(4);
             this.tblStars.Name = "tblStars";
             this.tblStars.RowCount = 2;
             this.tblStars.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85F));
             this.tblStars.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tblStars.Size = new System.Drawing.Size(940, 239);
+            this.tblStars.Size = new System.Drawing.Size(833, 191);
             this.tblStars.TabIndex = 1;
             // 
             // lblstar5
@@ -137,10 +143,10 @@
             this.lblstar5.AutoSize = true;
             this.lblstar5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstar5.ForeColor = System.Drawing.Color.Green;
-            this.lblstar5.Location = new System.Drawing.Point(791, 205);
+            this.lblstar5.Location = new System.Drawing.Point(702, 162);
             this.lblstar5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstar5.Name = "lblstar5";
-            this.lblstar5.Size = new System.Drawing.Size(109, 32);
+            this.lblstar5.Size = new System.Drawing.Size(92, 28);
             this.lblstar5.TabIndex = 15;
             this.lblstar5.Text = "Excellent";
             this.lblstar5.Visible = false;
@@ -151,10 +157,10 @@
             this.lblstar4.AutoSize = true;
             this.lblstar4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstar4.ForeColor = System.Drawing.Color.YellowGreen;
-            this.lblstar4.Location = new System.Drawing.Point(569, 205);
+            this.lblstar4.Location = new System.Drawing.Point(508, 162);
             this.lblstar4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstar4.Name = "lblstar4";
-            this.lblstar4.Size = new System.Drawing.Size(177, 32);
+            this.lblstar4.Size = new System.Drawing.Size(145, 28);
             this.lblstar4.TabIndex = 14;
             this.lblstar4.Text = "Above Average";
             this.lblstar4.Visible = false;
@@ -165,10 +171,10 @@
             this.lblstar3.AutoSize = true;
             this.lblstar3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstar3.ForeColor = System.Drawing.Color.Gold;
-            this.lblstar3.Location = new System.Drawing.Point(418, 205);
+            this.lblstar3.Location = new System.Drawing.Point(372, 162);
             this.lblstar3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstar3.Name = "lblstar3";
-            this.lblstar3.Size = new System.Drawing.Size(103, 32);
+            this.lblstar3.Size = new System.Drawing.Size(85, 28);
             this.lblstar3.TabIndex = 13;
             this.lblstar3.Text = "Average";
             this.lblstar3.Visible = false;
@@ -179,10 +185,10 @@
             this.lblstar2.AutoSize = true;
             this.lblstar2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstar2.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblstar2.Location = new System.Drawing.Point(194, 205);
+            this.lblstar2.Location = new System.Drawing.Point(177, 162);
             this.lblstar2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstar2.Name = "lblstar2";
-            this.lblstar2.Size = new System.Drawing.Size(175, 32);
+            this.lblstar2.Size = new System.Drawing.Size(144, 28);
             this.lblstar2.TabIndex = 12;
             this.lblstar2.Text = "Below Average";
             this.lblstar2.Visible = false;
@@ -194,10 +200,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxStar5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxStar5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStar5.Image")));
-            this.pictureBoxStar5.Location = new System.Drawing.Point(756, 5);
-            this.pictureBoxStar5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxStar5.Location = new System.Drawing.Point(668, 4);
+            this.pictureBoxStar5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxStar5.Name = "pictureBoxStar5";
-            this.pictureBoxStar5.Size = new System.Drawing.Size(180, 193);
+            this.pictureBoxStar5.Size = new System.Drawing.Size(161, 154);
             this.pictureBoxStar5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStar5.TabIndex = 10;
             this.pictureBoxStar5.TabStop = false;
@@ -210,10 +216,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxStar1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxStar1.Image = global::BookWise_AutoMart.Properties.Resources.Gold_Star_Uncolored_1;
-            this.pictureBoxStar1.Location = new System.Drawing.Point(4, 5);
-            this.pictureBoxStar1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxStar1.Location = new System.Drawing.Point(4, 4);
+            this.pictureBoxStar1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxStar1.Name = "pictureBoxStar1";
-            this.pictureBoxStar1.Size = new System.Drawing.Size(180, 193);
+            this.pictureBoxStar1.Size = new System.Drawing.Size(158, 154);
             this.pictureBoxStar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStar1.TabIndex = 6;
             this.pictureBoxStar1.TabStop = false;
@@ -226,10 +232,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxStar2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxStar2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStar2.Image")));
-            this.pictureBoxStar2.Location = new System.Drawing.Point(192, 5);
-            this.pictureBoxStar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxStar2.Location = new System.Drawing.Point(170, 4);
+            this.pictureBoxStar2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxStar2.Name = "pictureBoxStar2";
-            this.pictureBoxStar2.Size = new System.Drawing.Size(180, 193);
+            this.pictureBoxStar2.Size = new System.Drawing.Size(158, 154);
             this.pictureBoxStar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStar2.TabIndex = 7;
             this.pictureBoxStar2.TabStop = false;
@@ -242,10 +248,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxStar4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxStar4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStar4.Image")));
-            this.pictureBoxStar4.Location = new System.Drawing.Point(568, 5);
-            this.pictureBoxStar4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxStar4.Location = new System.Drawing.Point(502, 4);
+            this.pictureBoxStar4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxStar4.Name = "pictureBoxStar4";
-            this.pictureBoxStar4.Size = new System.Drawing.Size(180, 193);
+            this.pictureBoxStar4.Size = new System.Drawing.Size(158, 154);
             this.pictureBoxStar4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStar4.TabIndex = 9;
             this.pictureBoxStar4.TabStop = false;
@@ -258,10 +264,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBoxStar3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxStar3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxStar3.Image")));
-            this.pictureBoxStar3.Location = new System.Drawing.Point(380, 5);
-            this.pictureBoxStar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxStar3.Location = new System.Drawing.Point(336, 4);
+            this.pictureBoxStar3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxStar3.Name = "pictureBoxStar3";
-            this.pictureBoxStar3.Size = new System.Drawing.Size(180, 193);
+            this.pictureBoxStar3.Size = new System.Drawing.Size(158, 154);
             this.pictureBoxStar3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxStar3.TabIndex = 8;
             this.pictureBoxStar3.TabStop = false;
@@ -273,10 +279,10 @@
             this.lblstar1.AutoSize = true;
             this.lblstar1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstar1.ForeColor = System.Drawing.Color.Red;
-            this.lblstar1.Location = new System.Drawing.Point(62, 205);
+            this.lblstar1.Location = new System.Drawing.Point(56, 162);
             this.lblstar1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstar1.Name = "lblstar1";
-            this.lblstar1.Size = new System.Drawing.Size(63, 32);
+            this.lblstar1.Size = new System.Drawing.Size(54, 28);
             this.lblstar1.TabIndex = 11;
             this.lblstar1.Text = "Poor";
             this.lblstar1.Visible = false;
@@ -287,10 +293,10 @@
             this.lblRateHeading.AutoSize = true;
             this.lblRateHeading.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRateHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.lblRateHeading.Location = new System.Drawing.Point(187, 22);
+            this.lblRateHeading.Location = new System.Drawing.Point(185, 13);
             this.lblRateHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRateHeading.Name = "lblRateHeading";
-            this.lblRateHeading.Size = new System.Drawing.Size(819, 96);
+            this.lblRateHeading.Size = new System.Drawing.Size(689, 81);
             this.lblRateHeading.TabIndex = 3;
             this.lblRateHeading.Text = "Rate Your Experience!";
             // 
@@ -302,12 +308,12 @@
             this.tblRateDescriptionContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tblRateDescriptionContainer.Controls.Add(this.lblRateDescription, 1, 0);
             this.tblRateDescriptionContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblRateDescriptionContainer.Location = new System.Drawing.Point(4, 123);
-            this.tblRateDescriptionContainer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tblRateDescriptionContainer.Location = new System.Drawing.Point(4, 98);
+            this.tblRateDescriptionContainer.Margin = new System.Windows.Forms.Padding(4);
             this.tblRateDescriptionContainer.Name = "tblRateDescriptionContainer";
             this.tblRateDescriptionContainer.RowCount = 1;
             this.tblRateDescriptionContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblRateDescriptionContainer.Size = new System.Drawing.Size(1185, 80);
+            this.tblRateDescriptionContainer.Size = new System.Drawing.Size(1052, 64);
             this.tblRateDescriptionContainer.TabIndex = 4;
             // 
             // lblRateDescription
@@ -315,10 +321,10 @@
             this.lblRateDescription.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblRateDescription.AutoSize = true;
             this.lblRateDescription.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRateDescription.Location = new System.Drawing.Point(81, 4);
+            this.lblRateDescription.Location = new System.Drawing.Point(57, 0);
             this.lblRateDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRateDescription.Name = "lblRateDescription";
-            this.lblRateDescription.Size = new System.Drawing.Size(1022, 76);
+            this.lblRateDescription.Size = new System.Drawing.Size(936, 64);
             this.lblRateDescription.TabIndex = 0;
             this.lblRateDescription.Text = "Please rate your experience! Your feedback is very appreciated and will help impr" +
     "ove your experience in the future.\r\n";
@@ -326,18 +332,21 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Controls.Add(this.btnSubmit, 0, 1);
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel2.Controls.Add(this.btnSubmit, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 581);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(4, 464);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.4F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.6F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1185, 134);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1052, 108);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // btnSubmit
@@ -352,14 +361,35 @@
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(454, 13);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSubmit.Location = new System.Drawing.Point(403, 10);
+            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(276, 89);
-            this.btnSubmit.TabIndex = 0;
+            this.btnSubmit.Size = new System.Drawing.Size(245, 71);
+            this.btnSubmit.TabIndex = 1;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblStarValidation);
+            this.panel1.Location = new System.Drawing.Point(686, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(363, 96);
+            this.panel1.TabIndex = 3;
+            // 
+            // lblStarValidation
+            // 
+            this.lblStarValidation.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblStarValidation.AutoSize = true;
+            this.lblStarValidation.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStarValidation.ForeColor = System.Drawing.Color.Red;
+            this.lblStarValidation.Location = new System.Drawing.Point(3, 21);
+            this.lblStarValidation.Name = "lblStarValidation";
+            this.lblStarValidation.Size = new System.Drawing.Size(229, 31);
+            this.lblStarValidation.TabIndex = 2;
+            this.lblStarValidation.Text = "*Please select a rating.";
+            this.lblStarValidation.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -369,12 +399,12 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel3.Controls.Add(this.rtbComment, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 472);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 377);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1185, 99);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1052, 79);
             this.tableLayoutPanel3.TabIndex = 7;
             // 
             // rtbComment
@@ -384,27 +414,47 @@
             this.rtbComment.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbComment.Font = new System.Drawing.Font("Segoe UI Semilight", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtbComment.ForeColor = System.Drawing.Color.Gray;
-            this.rtbComment.Location = new System.Drawing.Point(81, 5);
-            this.rtbComment.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.rtbComment.Location = new System.Drawing.Point(71, 4);
+            this.rtbComment.Margin = new System.Windows.Forms.Padding(4);
             this.rtbComment.Name = "rtbComment";
-            this.rtbComment.Size = new System.Drawing.Size(1022, 89);
+            this.rtbComment.Size = new System.Drawing.Size(908, 71);
             this.rtbComment.TabIndex = 6;
             this.rtbComment.Text = " Tell us more about your experience... (optional)";
             this.rtbComment.Click += new System.EventHandler(this.rtbComment_Click);
             this.rtbComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbComment_KeyPress);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.lblRatingTimer);
+            this.panel2.Location = new System.Drawing.Point(3, 9);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(362, 96);
+            this.panel2.TabIndex = 4;
+            // 
+            // lblRatingTimer
+            // 
+            this.lblRatingTimer.AutoSize = true;
+            this.lblRatingTimer.Font = new System.Drawing.Font("Segoe UI Semilight", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRatingTimer.ForeColor = System.Drawing.Color.Gray;
+            this.lblRatingTimer.Location = new System.Drawing.Point(5, 71);
+            this.lblRatingTimer.Name = "lblRatingTimer";
+            this.lblRatingTimer.Size = new System.Drawing.Size(97, 23);
+            this.lblRatingTimer.TabIndex = 0;
+            this.lblRatingTimer.Text = "Timer Label";
+            // 
             // UserFeedbackForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1193, 720);
+            this.ClientSize = new System.Drawing.Size(1060, 576);
             this.Controls.Add(this.tblReviewLay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserFeedbackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserFeedbackForm";
+            this.Load += new System.EventHandler(this.UserFeedbackForm_Load);
             this.tblReviewLay.ResumeLayout(false);
             this.tblReviewLay.PerformLayout();
             this.tblStarsContainer.ResumeLayout(false);
@@ -418,7 +468,11 @@
             this.tblRateDescriptionContainer.ResumeLayout(false);
             this.tblRateDescriptionContainer.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -442,8 +496,12 @@
         private System.Windows.Forms.Label lblstar2;
         private System.Windows.Forms.Label lblstar1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.RichTextBox rtbComment;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Label lblStarValidation;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblRatingTimer;
     }
 }

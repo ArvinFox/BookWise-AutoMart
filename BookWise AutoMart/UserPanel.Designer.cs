@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblWindow = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnHome = new System.Windows.Forms.Button();
@@ -77,9 +77,9 @@
             // 
             this.lblWindow.AutoSize = true;
             this.lblWindow.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWindow.Location = new System.Drawing.Point(181, 5);
+            this.lblWindow.Location = new System.Drawing.Point(204, 6);
             this.lblWindow.Name = "lblWindow";
-            this.lblWindow.Size = new System.Drawing.Size(311, 45);
+            this.lblWindow.Size = new System.Drawing.Size(378, 54);
             this.lblWindow.TabIndex = 1;
             this.lblWindow.Text = "BookWise AutoMart";
             this.lblWindow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -90,8 +90,9 @@
             this.panel1.Controls.Add(this.lblWindow);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1157, 53);
+            this.panel1.Size = new System.Drawing.Size(1302, 66);
             this.panel1.TabIndex = 0;
             // 
             // btnHome
@@ -106,9 +107,10 @@
             this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHome.ForeColor = System.Drawing.SystemColors.Control;
             this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(3, 3);
+            this.btnHome.Location = new System.Drawing.Point(3, 4);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(317, 109);
+            this.btnHome.Size = new System.Drawing.Size(357, 136);
             this.btnHome.TabIndex = 2;
             this.btnHome.Text = "Home";
             this.btnHome.UseVisualStyleBackColor = false;
@@ -127,8 +129,9 @@
             this.btnCategories.ForeColor = System.Drawing.SystemColors.Control;
             this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategories.Location = new System.Drawing.Point(0, 0);
+            this.btnCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(317, 115);
+            this.btnCategories.Size = new System.Drawing.Size(357, 144);
             this.btnCategories.TabIndex = 2;
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = false;
@@ -146,9 +149,10 @@
             this.btnOffers.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffers.ForeColor = System.Drawing.SystemColors.Control;
             this.btnOffers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOffers.Location = new System.Drawing.Point(3, 587);
+            this.btnOffers.Location = new System.Drawing.Point(3, 733);
+            this.btnOffers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnOffers.Name = "btnOffers";
-            this.btnOffers.Size = new System.Drawing.Size(317, 109);
+            this.btnOffers.Size = new System.Drawing.Size(357, 136);
             this.btnOffers.TabIndex = 2;
             this.btnOffers.Text = "Offers && Discounts";
             this.btnOffers.UseVisualStyleBackColor = false;
@@ -166,9 +170,10 @@
             this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 702);
+            this.btnLogout.Location = new System.Drawing.Point(3, 877);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(317, 109);
+            this.btnLogout.Size = new System.Drawing.Size(357, 136);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Log Out";
             this.btnLogout.UseVisualStyleBackColor = false;
@@ -179,17 +184,18 @@
             this.panelCart.BackColor = System.Drawing.Color.White;
             this.panelCart.Controls.Add(this.tableLayoutPanelCart);
             this.panelCart.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelCart.Location = new System.Drawing.Point(694, 53);
+            this.panelCart.Location = new System.Drawing.Point(781, 66);
+            this.panelCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelCart.Name = "panelCart";
-            this.panelCart.Size = new System.Drawing.Size(463, 829);
+            this.panelCart.Size = new System.Drawing.Size(521, 1036);
             this.panelCart.TabIndex = 2;
             // 
             // tableLayoutPanelCart
             // 
             this.tableLayoutPanelCart.ColumnCount = 1;
             this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelCart.Controls.Add(this.lblCart, 0, 0);
             this.tableLayoutPanelCart.Controls.Add(this.dataGridViewCart, 0, 1);
             this.tableLayoutPanelCart.Controls.Add(this.pnlTotal, 0, 2);
@@ -201,8 +207,8 @@
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.91892F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.139F));
-            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tableLayoutPanelCart.Size = new System.Drawing.Size(463, 829);
+            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCart.Size = new System.Drawing.Size(521, 1036);
             this.tableLayoutPanelCart.TabIndex = 1;
             // 
             // lblCart
@@ -210,9 +216,9 @@
             this.lblCart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCart.AutoSize = true;
             this.lblCart.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCart.Location = new System.Drawing.Point(191, 20);
+            this.lblCart.Location = new System.Drawing.Point(213, 27);
             this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(80, 41);
+            this.lblCart.Size = new System.Drawing.Size(94, 48);
             this.lblCart.TabIndex = 0;
             this.lblCart.Text = "Cart";
             // 
@@ -229,26 +235,27 @@
             this.ColumnAmount,
             this.ColumnDelete});
             this.dataGridViewCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewCart.Location = new System.Drawing.Point(3, 84);
+            this.dataGridViewCart.Location = new System.Drawing.Point(3, 105);
             this.dataGridViewCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewCart.Name = "dataGridViewCart";
             this.dataGridViewCart.ReadOnly = true;
+            this.dataGridViewCart.RowHeadersVisible = false;
             this.dataGridViewCart.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridViewCart.RowTemplate.Height = 28;
-            this.dataGridViewCart.Size = new System.Drawing.Size(457, 567);
+            this.dataGridViewCart.Size = new System.Drawing.Size(515, 709);
             this.dataGridViewCart.TabIndex = 1;
             this.dataGridViewCart.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCart_CellClick);
             // 
             // ColumnQty
             // 
             this.ColumnQty.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ColumnQty.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColumnQty.HeaderText = "Qty";
             this.ColumnQty.MinimumWidth = 8;
             this.ColumnQty.Name = "ColumnQty";
             this.ColumnQty.ReadOnly = true;
-            this.ColumnQty.Width = 56;
+            this.ColumnQty.Width = 69;
             // 
             // ColumnId
             // 
@@ -262,8 +269,8 @@
             // ColumnItemName
             // 
             this.ColumnItemName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColumnItemName.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColumnItemName.HeaderText = "Item Name";
             this.ColumnItemName.MinimumWidth = 8;
             this.ColumnItemName.Name = "ColumnItemName";
@@ -272,31 +279,31 @@
             // ColumnUnitPrice
             // 
             this.ColumnUnitPrice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnUnitPrice.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnUnitPrice.HeaderText = "Unit Price";
             this.ColumnUnitPrice.MinimumWidth = 8;
             this.ColumnUnitPrice.Name = "ColumnUnitPrice";
             this.ColumnUnitPrice.ReadOnly = true;
-            this.ColumnUnitPrice.Width = 86;
+            this.ColumnUnitPrice.Width = 113;
             // 
             // ColumnAmount
             // 
             this.ColumnAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColumnAmount.DefaultCellStyle = dataGridViewCellStyle4;
             this.ColumnAmount.HeaderText = "Amount";
             this.ColumnAmount.MinimumWidth = 8;
             this.ColumnAmount.Name = "ColumnAmount";
             this.ColumnAmount.ReadOnly = true;
-            this.ColumnAmount.Width = 81;
+            this.ColumnAmount.Width = 101;
             // 
             // ColumnDelete
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.ColumnDelete.DefaultCellStyle = dataGridViewCellStyle5;
             this.ColumnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.ColumnDelete.HeaderText = "Delete";
             this.ColumnDelete.MinimumWidth = 8;
@@ -311,10 +318,10 @@
             this.pnlTotal.Controls.Add(this.tblPayNowLayout);
             this.pnlTotal.Controls.Add(this.tblTotalLayout);
             this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotal.Location = new System.Drawing.Point(3, 655);
+            this.pnlTotal.Location = new System.Drawing.Point(3, 818);
             this.pnlTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Size = new System.Drawing.Size(457, 172);
+            this.pnlTotal.Size = new System.Drawing.Size(515, 216);
             this.pnlTotal.TabIndex = 2;
             // 
             // tblPayNowLayout
@@ -323,11 +330,12 @@
             this.tblPayNowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblPayNowLayout.Controls.Add(this.butPay, 0, 0);
             this.tblPayNowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 74);
+            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 92);
+            this.tblPayNowLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblPayNowLayout.Name = "tblPayNowLayout";
             this.tblPayNowLayout.RowCount = 1;
             this.tblPayNowLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPayNowLayout.Size = new System.Drawing.Size(457, 98);
+            this.tblPayNowLayout.Size = new System.Drawing.Size(515, 124);
             this.tblPayNowLayout.TabIndex = 1;
             // 
             // butPay
@@ -342,9 +350,10 @@
             this.butPay.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butPay.ForeColor = System.Drawing.Color.White;
             this.butPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butPay.Location = new System.Drawing.Point(116, 11);
+            this.butPay.Location = new System.Drawing.Point(131, 15);
+            this.butPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.butPay.Name = "butPay";
-            this.butPay.Size = new System.Drawing.Size(225, 75);
+            this.butPay.Size = new System.Drawing.Size(253, 94);
             this.butPay.TabIndex = 3;
             this.butPay.Text = "Pay Now";
             this.butPay.UseVisualStyleBackColor = false;
@@ -355,16 +364,17 @@
             this.tblTotalLayout.ColumnCount = 3;
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 202F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
             this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
             this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
             this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
             this.tblTotalLayout.Dock = System.Windows.Forms.DockStyle.Top;
             this.tblTotalLayout.Location = new System.Drawing.Point(0, 0);
+            this.tblTotalLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblTotalLayout.Name = "tblTotalLayout";
             this.tblTotalLayout.RowCount = 1;
             this.tblTotalLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblTotalLayout.Size = new System.Drawing.Size(457, 74);
+            this.tblTotalLayout.Size = new System.Drawing.Size(515, 92);
             this.tblTotalLayout.TabIndex = 0;
             // 
             // lblTotal
@@ -372,9 +382,9 @@
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(39, 16);
+            this.lblTotal.Location = new System.Drawing.Point(41, 22);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(95, 41);
+            this.lblTotal.Size = new System.Drawing.Size(112, 48);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "Total";
             // 
@@ -383,9 +393,9 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(257, 16);
+            this.lblAmount.Location = new System.Drawing.Point(289, 22);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(50, 41);
+            this.lblAmount.Size = new System.Drawing.Size(58, 48);
             this.lblAmount.TabIndex = 2;
             this.lblAmount.Text = "00";
             // 
@@ -394,9 +404,9 @@
             this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblRs.AutoSize = true;
             this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(197, 16);
+            this.lblRs.Location = new System.Drawing.Point(219, 22);
             this.lblRs.Name = "lblRs";
-            this.lblRs.Size = new System.Drawing.Size(54, 41);
+            this.lblRs.Size = new System.Drawing.Size(64, 48);
             this.lblRs.TabIndex = 4;
             this.lblRs.Text = "Rs.";
             // 
@@ -404,9 +414,10 @@
             // 
             this.panelItemDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelItemDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelItemDisplay.Location = new System.Drawing.Point(323, 53);
+            this.panelItemDisplay.Location = new System.Drawing.Point(363, 66);
+            this.panelItemDisplay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelItemDisplay.Name = "panelItemDisplay";
-            this.panelItemDisplay.Size = new System.Drawing.Size(371, 829);
+            this.panelItemDisplay.Size = new System.Drawing.Size(418, 1036);
             this.panelItemDisplay.TabIndex = 3;
             // 
             // pnlUserButtons
@@ -414,10 +425,11 @@
             this.pnlUserButtons.AutoScroll = true;
             this.pnlUserButtons.Controls.Add(this.tableLayoutPanel2);
             this.pnlUserButtons.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlUserButtons.Location = new System.Drawing.Point(0, 53);
+            this.pnlUserButtons.Location = new System.Drawing.Point(0, 66);
+            this.pnlUserButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlUserButtons.Name = "pnlUserButtons";
-            this.pnlUserButtons.Padding = new System.Windows.Forms.Padding(0, 15, 0, 0);
-            this.pnlUserButtons.Size = new System.Drawing.Size(323, 829);
+            this.pnlUserButtons.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
+            this.pnlUserButtons.Size = new System.Drawing.Size(363, 1036);
             this.pnlUserButtons.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -429,14 +441,15 @@
             this.tableLayoutPanel2.Controls.Add(this.btnHome, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 15);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 19);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(323, 814);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(363, 1017);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel3
@@ -444,30 +457,33 @@
             this.panel3.Controls.Add(this.pnlCategoryScroll);
             this.panel3.Controls.Add(this.btnCategories);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(3, 118);
+            this.panel3.Location = new System.Drawing.Point(3, 148);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(317, 463);
+            this.panel3.Size = new System.Drawing.Size(357, 577);
             this.panel3.TabIndex = 0;
             // 
             // pnlCategoryScroll
             // 
             this.pnlCategoryScroll.AutoScroll = true;
             this.pnlCategoryScroll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCategoryScroll.Location = new System.Drawing.Point(0, 115);
+            this.pnlCategoryScroll.Location = new System.Drawing.Point(0, 144);
+            this.pnlCategoryScroll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlCategoryScroll.Name = "pnlCategoryScroll";
-            this.pnlCategoryScroll.Size = new System.Drawing.Size(317, 348);
+            this.pnlCategoryScroll.Size = new System.Drawing.Size(357, 433);
             this.pnlCategoryScroll.TabIndex = 3;
             // 
             // UserPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 882);
+            this.ClientSize = new System.Drawing.Size(1302, 1102);
             this.Controls.Add(this.panelItemDisplay);
             this.Controls.Add(this.pnlUserButtons);
             this.Controls.Add(this.panelCart);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserPanel";
             this.Text = "UserPanel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

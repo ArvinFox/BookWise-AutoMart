@@ -114,9 +114,12 @@ namespace BookWise_AutoMart
             foreach(DataGridViewRow row in dataGridViewCart.Rows)
             {
                 int itemId = Convert.ToInt32(row.Cells["ColumnId"].Value);
-                int quantity = Convert.ToInt32(row.Cells["ColumnQty"].Value);
+                int quantity = Convert.ToInt32(row.Cells["ColumnQty"].Value); 
+                decimal price = Convert.ToDecimal(row.Cells["ColumnUnitPrice"].Value);
                 int itemStock = GetStock(itemId);
-                UpdateStock(itemId, quantity,itemStock);
+                UpdateStock(itemId, quantity, itemStock);
+                UpdateOrders(itemId, quantity, price);
+                payment();
             }
             
         }
@@ -171,7 +174,7 @@ namespace BookWise_AutoMart
             }
             return -1;
         }
-        
+
         private void dataGridViewCart_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // check if the "Delete" column is clicked
@@ -188,6 +191,33 @@ namespace BookWise_AutoMart
             }
         }
 
+        private void UpdateOrders(int itemId, int quantity, decimal price)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = $"INSERT INTO Order_Items(order_items_order_id,order_items_item_id,quantity,unit_price) VALUES ({itemId},{quantity},{price}) FROM ;";
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        //---------Error-----------
+                    }
+                }
+            }
+        }
+
+        public void payment()
+        {
+            Checkout checkout = new Checkout();
+            checkout.Show();
+        }
+
+        
         private void btnLogout_Click(object sender, EventArgs e)
         {
             

@@ -119,12 +119,7 @@ namespace BookWise_AutoMart
             txtQty.Anchor = AnchorStyles.None;
             txtQty.KeyPress += (sender, e) =>
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
-                }
-
-                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                 {
                     e.Handled = true;
                 }
@@ -227,7 +222,7 @@ namespace BookWise_AutoMart
             btnBuyItem.Cursor = Cursors.Hand;
             btnBuyItem.Click += (sender, e) =>
             {
-                int qty= Convert.ToInt32((txtQty.Text.Trim()));
+                int qty = Convert.ToInt32((txtQty.Text.Trim()));
                 //To Prevent adding "0" items to the cart
                 if (qty <= 0)
                 {
@@ -244,10 +239,16 @@ namespace BookWise_AutoMart
                 {
                     //Add items to the cart
                     AddToCart(qty, itemId, itemName, price);
+
+                    stock -= qty;
+                    if (stock == 0)
+                    {
+                        txtItemStock.Text = "Out of stock";
+                        txtItemStock.ForeColor = Color.Red;
+                    }
                     //Update Total
                     UpdateTotal();
                 }
-
             };
 
             // Add labels and "Add to Cart" button to details panel

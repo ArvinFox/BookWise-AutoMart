@@ -16,7 +16,7 @@ namespace BookWise_AutoMart
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserPanel());
+            Application.Run(new AdminControlForm("User Management"));
         }
     }
 }

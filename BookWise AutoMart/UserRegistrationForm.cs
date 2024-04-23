@@ -133,9 +133,9 @@ namespace BookWise_AutoMart
 
                     if (rowsAffected > 0)
                     {
-                        //UserLogin userLogin = new UserLogin();
-                        //userLogin.Show();
-                        this.Hide();
+                        UserLogin userLogin = new UserLogin();
+                        userLogin.Show();
+                        this.Close();
                     }
                 }
             }
@@ -187,9 +187,9 @@ namespace BookWise_AutoMart
 
         private void lblBacktologin_Click(object sender, EventArgs e)
         {
-            //UserLogin userLogin = new UserLogin();
-            //userLogin.Show();
-            this.Hide();
+            UserLogin userLogin = new UserLogin();
+            userLogin.Show();
+            this.Close();
         }
     }
 }

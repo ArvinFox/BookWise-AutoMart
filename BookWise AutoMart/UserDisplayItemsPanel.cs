@@ -24,7 +24,7 @@ namespace BookWise_AutoMart
         {
             categoryName = category;
             InitializeComponent();
-            PopulateCategoriesComboBox();
+            PopulateSubCategoriesComboBox();
             Placeholder(txtItemName, "Enter item name...");
             
         }
@@ -55,8 +55,7 @@ namespace BookWise_AutoMart
                     // not filtered item and not searched item (filterOption == null && searchedItemName == null)
                     if (string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
                     {
-                        query = @"SELECT Items.*,
-                             (SELECT TOP 1 discount_percentage FROM Offers WHERE applicable_items LIKE '%' + CAST(Items.item_id AS  VARCHAR) + '%') AS item_discount_percentage 
+                        query = @"SELECT Items.*
                               FROM Items
                               INNER JOIN Categories ON Items.item_category_id = Categories.category_id
                               WHERE Categories.category_name = @CategoryName";
@@ -65,8 +64,7 @@ namespace BookWise_AutoMart
                     // filtered item but not searched item (filterOption != null && searchedItemName == null)
                     else if (!string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedItemName))
                     {
-                        query = @"SELECT Items.*,
-                             (SELECT TOP 1 discount_percentage FROM Offers WHERE applicable_items LIKE '%' + CAST(Items.item_id AS  VARCHAR) + '%') AS item_discount_percentage 
+                        query = @"SELECT Items.* 
                               FROM Items
                               INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
                               WHERE SubCategories.subcategory_name = @FilterOption";
@@ -75,8 +73,7 @@ namespace BookWise_AutoMart
                     // not filtered item but searched item (filterOption == null && searchedItemName != null)
                     else if (string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
                     {
-                        query = @"SELECT Items.*,
-                             (SELECT TOP 1 discount_percentage FROM Offers WHERE applicable_items LIKE '%' + CAST(Items.item_id AS  VARCHAR) + '%') AS item_discount_percentage 
+                        query = @"SELECT Items.* 
                               FROM Items
                               INNER JOIN Categories ON Items.item_category_id = Categories.category_id
                               INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
@@ -86,8 +83,7 @@ namespace BookWise_AutoMart
                     // filtered item and searched item (filterOption != null && searchedItemName != null)
                     else if (!string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
                     {
-                        query = @"SELECT Items.*,
-                             (SELECT TOP 1 discount_percentage FROM Offers WHERE applicable_items LIKE '%' + CAST(Items.item_id AS  VARCHAR) + '%') AS item_discount_percentage 
+                        query = @"SELECT Items.
                               FROM Items
                               INNER JOIN Categories ON Items.item_category_id = Categories.category_id
                               INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
@@ -128,7 +124,7 @@ namespace BookWise_AutoMart
 
                             using (SqlDataReader reader = command.ExecuteReader())
                             {
-                                if(reader.HasRows)
+                                if (reader.HasRows)
                                 {
                                     while (reader.Read())
                                     {
@@ -138,7 +134,7 @@ namespace BookWise_AutoMart
                                         decimal price = (decimal)reader["price"];
                                         int stock = (int)reader["stock"];
                                         byte[] imageData = (byte[])reader["image"];
-                                        int discount;
+                                        int discount = GetItemDiscount(itemId);
 
                                         // Convert byte array to image
                                         Image image;
@@ -147,15 +143,7 @@ namespace BookWise_AutoMart
                                             image = Image.FromStream(ms);
                                         }
 
-                                        //checking whether the discount is null
-                                        if (reader["item_discount_percentage"] is DBNull)
-                                        {
-                                            discount = 0;
-                                        }
-                                        else
-                                        {
-                                            discount = (int)reader["item_discount_percentage"];
-                                        }
+
 
                                         ItemPanel newItem = new ItemPanel(itemId, itemName, itemDescription, price, stock, image, discount);
 
@@ -174,7 +162,7 @@ namespace BookWise_AutoMart
                                     noItemsLabel.AutoSize = true;
                                     flpItemCardsContainer.Controls.Add(noItemsLabel);
                                 }
-                                
+
                             }
                         }
                         catch (Exception ex)
@@ -216,13 +204,13 @@ namespace BookWise_AutoMart
             };
         }
 
-        private void PopulateCategoriesComboBox()
+        private void PopulateSubCategoriesComboBox()
         {
-            comboBoxFilterCategories.Items.Clear(); // Clear the items in the combo box
+            comboBoxFilterSubCategories.Items.Clear(); // Clear the items in the combo box
 
-            comboBoxFilterCategories.Items.Add("All " + categoryName);  // Add "All items" option
+            comboBoxFilterSubCategories.Items.Add("All " + categoryName);  // Add "All items" option
 
-            comboBoxFilterCategories.SelectedIndex = 0;
+            comboBoxFilterSubCategories.SelectedIndex = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -244,13 +232,13 @@ namespace BookWise_AutoMart
                             while (reader.Read())
                             {
                                 string subcategoryName = reader["subcategory_name"].ToString();
-                                comboBoxFilterCategories.Items.Add(subcategoryName);
+                                comboBoxFilterSubCategories.Items.Add(subcategoryName);
                             }
                         }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error retrieving categories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Error retrieving Subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -259,7 +247,7 @@ namespace BookWise_AutoMart
         private void FilteringConditionsApplied(object sender, EventArgs e)
         {
             searchedItem = txtItemName.Text.Trim();
-            selectedCategory = comboBoxFilterCategories.SelectedItem?.ToString();
+            selectedCategory = comboBoxFilterSubCategories.SelectedItem?.ToString();
             //  If whatever before the '?' sign exists (is not empty), then do what comes after it. Otherwise, just stop and don't do anything.
 
             if (!string.IsNullOrEmpty(selectedCategory))
@@ -288,6 +276,55 @@ namespace BookWise_AutoMart
                 }
             }
         }
+
+        private int GetItemDiscount(int itemId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Offers WHERE is_active = @isactive";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@isactive", true);
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    string applicableItems = reader["applicable_items"].ToString();
+                                    int discount = (int)reader["discount_percentage"];
+
+                                    string[] items = applicableItems.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                                    foreach (string item in items)
+                                    {
+                                        if (itemId.ToString() == item.Trim())
+                                        {
+                                            return discount;
+                                        }
+                                    }
+                                }
+                                return -1;
+                            }
+                            else
+                            {
+                                return -1;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        //---------Error-----------
+                        return -1;
+                    }
+                }
+            }
+        }
     }
 
 }
+

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BookWise_AutoMart
 {
@@ -19,9 +21,10 @@ namespace BookWise_AutoMart
         public static int id;
         public static string categoryName;
         private UserDisplayItemsPanel UserDisplayItemsPanel;
-        public static DataGridView cart;
+        public static Panel pnl;
         public static Label total;
         public static TextBox Qty;
+        public static Checkout checkoutForm;
         private string connectionString = DatabaseString.GetUserDatabase();
 
         //SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
@@ -30,26 +33,10 @@ namespace BookWise_AutoMart
         {
             InitializeComponent();
             DisplayCategories();
-            cart = dataGridViewCart;
             total = lblAmount;
+            pnl = pnlCart;
+            checkoutForm = new Checkout();
         }
-
-        /*private void ShowMenu(Panel menu)
-        {
-            if (menu.Visible == false)
-            {
-                HideMenu();
-                menu.Visible = true;
-            }
-            else
-            {
-                menu.Visible = false;
-            }
-        }
-        private void HideMenu()
-        {
-            pnlCategoryScroll.Visible = false;
-        }*/
 
         private void DisplayCategories()
         {
@@ -106,22 +93,20 @@ namespace BookWise_AutoMart
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
-            /* ShowMenu(pnlCategoryScroll);*/
+            
         }
 
         private void butPay_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow row in dataGridViewCart.Rows)
-            {
-                int itemId = Convert.ToInt32(row.Cells["ColumnId"].Value);
-                int quantity = Convert.ToInt32(row.Cells["ColumnQty"].Value); 
-                decimal price = Convert.ToDecimal(row.Cells["ColumnUnitPrice"].Value);
-                int itemStock = GetStock(itemId);
-                UpdateStock(itemId, quantity, itemStock);
-                UpdateOrders(itemId, quantity, price);
-                payment();
-            }
-            
+            /*int itemId = Convert.ToInt32(ItemPanel.cart.label);
+            int quantity = Convert.ToInt32();
+            int itemStock = GetStock(itemId);
+            UpdateStock(itemId, quantity, itemStock);*/
+            checkoutForm.BillValue = this.lblAmount.Text;
+            checkoutForm.Show();
+            this.Hide();
+
+
         }
 
         private void UpdateStock(int itemId, int quantity,int itemStock)
@@ -149,7 +134,7 @@ namespace BookWise_AutoMart
 
         private int GetStock(int ItemId)
         {
-            int stock = 0;
+            int stock;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT * FROM Items WHERE item_id = @ItemId";
@@ -174,49 +159,6 @@ namespace BookWise_AutoMart
             }
             return -1;
         }
-
-        private void dataGridViewCart_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // check if the "Delete" column is clicked
-            if (e.ColumnIndex == UserPanel.cart.Columns["ColumnDelete"].Index && e.RowIndex >= 0)
-            {
-                // get the corresponding row that the user clicked
-                DataGridViewRow row = UserPanel.cart.Rows[e.RowIndex];
-
-                // Remove the row from the cart
-                UserPanel.cart.Rows.Remove(row);
-
-                // Update total
-                ItemPanel.UpdateTotal();
-            }
-        }
-
-        private void UpdateOrders(int itemId, int quantity, decimal price)
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = $"INSERT INTO Order_Items(order_items_order_id,order_items_item_id,quantity,unit_price) VALUES ({itemId},{quantity},{price}) FROM ;";
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    try
-                    {
-                        connection.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception)
-                    {
-                        //---------Error-----------
-                    }
-                }
-            }
-        }
-
-        public void payment()
-        {
-            Checkout checkout = new Checkout();
-            checkout.Show();
-        }
-
         
         private void btnLogout_Click(object sender, EventArgs e)
         {

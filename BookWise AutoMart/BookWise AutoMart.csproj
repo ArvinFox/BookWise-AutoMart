@@ -123,12 +123,6 @@
     <Compile Include="CategoriesButton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CashDesign.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CashDesign.Designer.cs">
-      <DependentUpon>CashDesign.cs</DependentUpon>
-    </Compile>
     <Compile Include="Checkout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,20 +148,8 @@
     <Compile Include="InformationForm.Designer.cs">
       <DependentUpon>InformationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Item.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Item.Designer.cs">
-      <DependentUpon>Item.cs</DependentUpon>
-    </Compile>
     <Compile Include="ItemPanel.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LastCheckoutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LastCheckoutForm.Designer.cs">
-      <DependentUpon>LastCheckoutForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -294,9 +276,6 @@
     <EmbeddedResource Include="AdminManageSubcategoriesForm.resx">
       <DependentUpon>AdminManageSubcategoriesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CashDesign.resx">
-      <DependentUpon>CashDesign.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,12 +284,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InformationForm.resx">
       <DependentUpon>InformationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Item.resx">
-      <DependentUpon>Item.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LastCheckoutForm.resx">
-      <DependentUpon>LastCheckoutForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

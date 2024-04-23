@@ -34,7 +34,7 @@
             this.flpItemCardsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tblFilterSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.comboBoxFilterCategories = new System.Windows.Forms.ComboBox();
+            this.comboBoxFilterSubCategories = new System.Windows.Forms.ComboBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.tblSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
@@ -112,7 +112,7 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.63779F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.36221F));
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxFilterCategories, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxFilterSubCategories, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblFilter, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
@@ -122,19 +122,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(517, 94);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
-            // comboBoxFilterCategories
+            // comboBoxFilterSubCategories
             // 
-            this.comboBoxFilterCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxFilterCategories.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxFilterCategories.FormattingEnabled = true;
-            this.comboBoxFilterCategories.Location = new System.Drawing.Point(197, 24);
-            this.comboBoxFilterCategories.MaxDropDownItems = 20;
-            this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
-            this.comboBoxFilterCategories.Size = new System.Drawing.Size(317, 46);
-            this.comboBoxFilterCategories.TabIndex = 8;
-            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
+            this.comboBoxFilterSubCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxFilterSubCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterSubCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFilterSubCategories.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxFilterSubCategories.FormattingEnabled = true;
+            this.comboBoxFilterSubCategories.Location = new System.Drawing.Point(197, 24);
+            this.comboBoxFilterSubCategories.MaxDropDownItems = 20;
+            this.comboBoxFilterSubCategories.Name = "comboBoxFilterSubCategories";
+            this.comboBoxFilterSubCategories.Size = new System.Drawing.Size(317, 46);
+            this.comboBoxFilterSubCategories.TabIndex = 8;
+            this.comboBoxFilterSubCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
             // lblFilter
             // 
@@ -206,6 +206,6 @@
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.ComboBox comboBoxFilterCategories;
+        private System.Windows.Forms.ComboBox comboBoxFilterSubCategories;
     }
 }

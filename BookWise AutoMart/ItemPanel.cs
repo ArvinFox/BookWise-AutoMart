@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace BookWise_AutoMart
 {
@@ -119,7 +121,12 @@ namespace BookWise_AutoMart
             txtQty.Anchor = AnchorStyles.None;
             txtQty.KeyPress += (sender, e) =>
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+                {
+                    e.Handled = true;
+                }
+
+                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
                 {
                     e.Handled = true;
                 }
@@ -222,7 +229,7 @@ namespace BookWise_AutoMart
             btnBuyItem.Cursor = Cursors.Hand;
             btnBuyItem.Click += (sender, e) =>
             {
-                int qty = Convert.ToInt32((txtQty.Text.Trim()));
+                int qty= Convert.ToInt32((txtQty.Text.Trim()));
                 //To Prevent adding "0" items to the cart
                 if (qty <= 0)
                 {
@@ -237,9 +244,12 @@ namespace BookWise_AutoMart
                 }
                 else
                 {
-                    //Add items to the cart
-                    AddToCart(qty, itemId, itemName, price);
-
+                    if(!ItemExists(itemName,qty))
+                    {
+                        //Add items to the cart
+                        AddToCart(qty, itemName, price);
+                        UserPanel.checkoutForm.AddToBill(qty,itemName,price);
+                    }
                     stock -= qty;
                     if (stock == 0)
                     {
@@ -249,6 +259,8 @@ namespace BookWise_AutoMart
                     //Update Total
                     UpdateTotal();
                 }
+
+
             };
 
             // Add labels and "Add to Cart" button to details panel
@@ -302,47 +314,114 @@ namespace BookWise_AutoMart
             return textBox;
         }
 
-        private void AddToCart(int selectedQuantity, int selectedId, string selectedName, decimal selectedPrice)
+        public void AddToCart(int qty,string itemName, decimal price)
         {
-            //Add the items to the cart
-            DataGridViewRow newRow = new DataGridViewRow();
+            TableLayoutPanel tblCartItem = new TableLayoutPanel();
 
-            DataGridViewTextBoxCell qtyCell = new DataGridViewTextBoxCell();
-            qtyCell.Value = selectedQuantity;
-            newRow.Cells.Add(qtyCell);
+            tblCartItem.ColumnCount = 5;
+            tblCartItem.RowCount = 1;
+            tblCartItem.Width = this.Width;
+            tblCartItem.Height = 55;
+            tblCartItem.BackColor = Color.White;
+            tblCartItem.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.17F));
+            tblCartItem.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.29F));
+            tblCartItem.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.09F));
+            tblCartItem.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.59F));
+            tblCartItem.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.86F));
+            tblCartItem.Dock = DockStyle.Top;
 
-            DataGridViewTextBoxCell idCell = new DataGridViewTextBoxCell();
-            idCell.Value = selectedId;
-            newRow.Cells.Add(idCell);
+            Label lblQty = new Label();
+            lblQty.Text = qty.ToString();
+            lblQty.Dock = DockStyle.Fill;
+            lblQty.TextAlign = ContentAlignment.MiddleCenter;
+            lblQty.Font = new Font("Segoe UI", 10);
+            tblCartItem.Controls.Add(lblQty, 0, 0);
 
-            DataGridViewTextBoxCell itemCell = new DataGridViewTextBoxCell();
-            itemCell.Value = selectedName;
-            newRow.Cells.Add(itemCell);
+            Label lblItemName = new Label();
+            lblItemName.Text = itemName;
+            lblItemName.Dock = DockStyle.Fill;
+            lblItemName.TextAlign = ContentAlignment.MiddleLeft;
+            lblItemName.Font = new Font("Segoe UI", 8);
+            tblCartItem.Controls.Add(lblItemName, 1, 0);
 
-            DataGridViewTextBoxCell unitAmountCell = new DataGridViewTextBoxCell();
-            unitAmountCell.Value = selectedPrice;
-            newRow.Cells.Add(unitAmountCell);
+            Label lblUnitPrice = new Label();
+            lblUnitPrice.Text = price.ToString();
+            lblUnitPrice.Dock = DockStyle.Fill;
+            lblUnitPrice.TextAlign = ContentAlignment.MiddleCenter;
+            lblUnitPrice.Font = new Font("Segoe UI", 10);
+            tblCartItem.Controls.Add(lblUnitPrice, 2, 0);
 
-            DataGridViewTextBoxCell amountCell = new DataGridViewTextBoxCell();
-            amountCell.Value = selectedQuantity * selectedPrice;
-            newRow.Cells.Add(amountCell);
+            Label lblAmount = new Label();
+            lblAmount.Text = (price * qty).ToString();
+            lblAmount.Dock = DockStyle.Fill;
+            lblAmount.TextAlign = ContentAlignment.MiddleCenter;
+            lblAmount.Font = new Font("Segoe UI", 10);
+            tblCartItem.Controls.Add(lblAmount, 3, 0);
 
-            DataGridViewTextBoxCell deleteCell = new DataGridViewTextBoxCell();
-            deleteCell.Value = "Delete";
-            newRow.Cells.Add(deleteCell);
+            PictureBox picDeleteItem = new PictureBox();
+            picDeleteItem.SizeMode = PictureBoxSizeMode.Zoom;
+            picDeleteItem.Cursor = Cursors.Hand;
+            picDeleteItem.Size = new Size(20,20);
+            picDeleteItem.Image = Properties.Resources.delete__blue_;
+            picDeleteItem.Dock = DockStyle.Fill;
+            tblCartItem.Controls.Add(picDeleteItem, 4, 0);
+            picDeleteItem.Click += (sender, e) =>
+            {
+                UserPanel.pnl.Controls.Remove(tblCartItem);
+                UserPanel.checkoutForm.DeleteItem(itemName);
+                UpdateTotal();
+            };
 
-            UserPanel.cart.Rows.Add(newRow);
-
+            UserPanel.pnl.Controls.Add(tblCartItem);
         }
 
-        public static void UpdateTotal()
+        private bool ItemExists(string itemName,int quantity)
+        {
+            foreach (Control control in UserPanel.pnl.Controls)
+            {
+                if (control is TableLayoutPanel tblItem)
+                {
+                    if (tblItem.Controls[1] is Label lblItemName)
+                    {
+                        if(lblItemName.Text.Trim() == itemName.Trim())
+                        {
+                            if(tblItem.Controls[0] is Label lblQty)
+                            {
+                                int currentQty = Convert.ToInt32(lblQty.Text);
+                                lblQty.Text = (currentQty + quantity).ToString();
+
+                                if(tblItem.Controls[3] is Label lblAmount)
+                                {
+                                    decimal price = Convert.ToDecimal(lblAmount.Text);
+                                    lblAmount.Text = (price * Convert.ToDecimal(lblQty.Text)).ToString();
+                                }
+                            }
+                            UserPanel.checkoutForm.UpdateQuantity(itemName, quantity);
+                            return true;
+                        }
+                    }
+                    
+                }
+            }
+            return false;
+        }
+
+
+
+        private void UpdateTotal()
         {
             decimal sum = 0;
 
             //To display the total amount
-            for (int i = 0; i < UserPanel.cart.Rows.Count; ++i)
+            foreach (Control control in UserPanel.pnl.Controls)
             {
-                sum += Convert.ToDecimal(UserPanel.cart.Rows[i].Cells["ColumnAmount"].Value);
+                if(control is TableLayoutPanel tblSum)
+                {
+                    if(tblSum.Controls[3] is Label lblAmount)
+                    {
+                        sum += Convert.ToDecimal(lblAmount.Text);
+                    }
+                }
             }
             UserPanel.total.Text = sum.ToString();
         }

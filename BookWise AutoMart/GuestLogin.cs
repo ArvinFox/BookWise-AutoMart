@@ -147,5 +147,25 @@ namespace BookWise_AutoMart
                 e.Handled = true;
             }
         }
+
+        private void lblBacktologin_Click(object sender, EventArgs e)
+        {
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+            this.Close();
+        }
     }
 }

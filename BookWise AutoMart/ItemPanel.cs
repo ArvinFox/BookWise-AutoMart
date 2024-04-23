@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -13,12 +14,16 @@ namespace BookWise_AutoMart
 {
     public partial class ItemPanel : Panel
     {
+        private string connectionString = DatabaseString.GetUserDatabase();
+
         // Import the HideCaret function (to hide the cursor in the custom text box)
         [DllImport("user32.dll")]
         static extern bool HideCaret(IntPtr hWnd);
 
-        public ItemPanel(int itemId, string itemName, string itemDescription, decimal price, int stock, Image image, int discount)
+        public ItemPanel(string itemName, string itemDescription, decimal price, Image image, int discount)
         {
+            int tempStock = GetTempStock(itemName);
+
             // TableLayoutPanel to align everything 
             TableLayoutPanel tableLayoutItemPanel = new TableLayoutPanel();
             tableLayoutItemPanel.Dock = DockStyle.Fill;
@@ -51,19 +56,10 @@ namespace BookWise_AutoMart
             TextBox txtItemPrice = CreateTextBox("Rs. " + price.ToString(), new Font("Segoe UI", 12), false);
 
             // Textbox for Item Stock
-            TextBox txtItemStock = CreateTextBox("Stock: " + stock.ToString(), new Font("Segoe UI", 12, FontStyle.Bold), false);
+            TextBox txtItemStock = CreateTextBox("Stock: " + tempStock.ToString(), new Font("Segoe UI", 12, FontStyle.Bold), false);
 
             //check stock status
-            if (stock == 0)
-            {
-                txtItemStock.Text = "Out of stock";
-                txtItemStock.ForeColor = Color.Red;
-            }
-            else
-            {
-                txtItemStock.Text = "In stock";
-                txtItemStock.ForeColor = Color.Green;
-            }
+            UpdateStockStatus(txtItemStock, GetTempStock(itemName));
 
             //Textbox to display discounts
             TextBox txtDiscount = new TextBox();
@@ -229,6 +225,7 @@ namespace BookWise_AutoMart
             btnBuyItem.Cursor = Cursors.Hand;
             btnBuyItem.Click += (sender, e) =>
             {
+                tempStock = GetTempStock(itemName);
                 int qty= Convert.ToInt32((txtQty.Text.Trim()));
                 //To Prevent adding "0" items to the cart
                 if (qty <= 0)
@@ -237,9 +234,9 @@ namespace BookWise_AutoMart
                     return;
                 }
                 //To display a message when the quantity that enter will exceed the current stock
-                if (qty > stock)
+                if (qty > tempStock)
                 {
-                    OutOfStockForm outOfStockForm = new OutOfStockForm(stock, txtQty);
+                    OutOfStockForm outOfStockForm = new OutOfStockForm(tempStock, txtQty);
                     outOfStockForm.ShowDialog();
                 }
                 else
@@ -247,20 +244,14 @@ namespace BookWise_AutoMart
                     if(!ItemExists(itemName,qty))
                     {
                         //Add items to the cart
-                        AddToCart(qty, itemName, price);
+                        AddToCart(qty, itemName, price,txtItemStock,tempStock);
+                        UpdateTempStock(itemName,-qty,GetTempStock(itemName));
                         UserPanel.checkoutForm.AddToBill(qty,itemName,price);
                     }
-                    stock -= qty;
-                    if (stock == 0)
-                    {
-                        txtItemStock.Text = "Out of stock";
-                        txtItemStock.ForeColor = Color.Red;
-                    }
+                    UpdateStockStatus(txtItemStock, GetTempStock(itemName));
                     //Update Total
                     UpdateTotal();
                 }
-
-
             };
 
             // Add labels and "Add to Cart" button to details panel
@@ -314,7 +305,88 @@ namespace BookWise_AutoMart
             return textBox;
         }
 
-        public void AddToCart(int qty,string itemName, decimal price)
+        private void UpdateTempStock(string Name,int quantity,int tempStock)
+        {
+            if(quantity > 0)
+            {
+                foreach (Control control in UserPanel.pnl.Controls)
+                {
+                    if (control is TableLayoutPanel tblItem)
+                    {
+                        if (tblItem.Controls[0] is Label lblQty)
+                        {
+                            quantity = Convert.ToInt32(lblQty.Text);
+                        }
+                    }
+                }
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Items SET temporary_stock = @tempStock WHERE item_name = @itemName";
+
+                using(SqlCommand cmd = new SqlCommand(query,connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@tempStock",tempStock + quantity );
+                        cmd.Parameters.AddWithValue("@itemName", Name);
+
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch(Exception)
+                    {
+                        //---------------
+                    }
+                }
+            }
+        }
+
+        private int GetTempStock(string itemName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT temporary_stock FROM Items WHERE item_name = @itemName ";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@itemName", itemName);
+
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+
+                        if(result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        //---------------
+                    }
+                }
+            }
+            return -1;
+        }
+
+        private void UpdateStockStatus(TextBox text,int stock)
+        {
+            if (stock == 0)
+            {
+                text.Text = "Out of stock";
+                text.ForeColor = Color.Red;
+            }
+            else
+            {
+                text.Text = "In stock";
+                text.ForeColor = Color.Green;
+            }
+        }
+
+        public void AddToCart(int qty,string itemName, decimal price,TextBox text,int tempStock)
         {
             TableLayoutPanel tblCartItem = new TableLayoutPanel();
 
@@ -367,6 +439,8 @@ namespace BookWise_AutoMart
             tblCartItem.Controls.Add(picDeleteItem, 4, 0);
             picDeleteItem.Click += (sender, e) =>
             {
+                UpdateTempStock(itemName, qty, GetTempStock(itemName));
+                UpdateStockStatus(text, GetTempStock(itemName));
                 UserPanel.pnl.Controls.Remove(tblCartItem);
                 UserPanel.checkoutForm.DeleteItem(itemName);
                 UpdateTotal();
@@ -400,7 +474,6 @@ namespace BookWise_AutoMart
                             return true;
                         }
                     }
-                    
                 }
             }
             return false;

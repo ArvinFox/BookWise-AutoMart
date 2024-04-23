@@ -43,7 +43,6 @@
             this.lblUnitPrice = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblQty = new System.Windows.Forms.Label();
-            this.lblCart = new System.Windows.Forms.Label();
             this.pnlTotal = new System.Windows.Forms.Panel();
             this.tblPayNowLayout = new System.Windows.Forms.TableLayoutPanel();
             this.butPay = new System.Windows.Forms.Button();
@@ -193,15 +192,14 @@
             this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelCart.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanelCart.Controls.Add(this.lblCart, 0, 0);
             this.tableLayoutPanelCart.Controls.Add(this.pnlTotal, 0, 2);
             this.tableLayoutPanelCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelCart.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanelCart.Name = "tableLayoutPanelCart";
             this.tableLayoutPanelCart.RowCount = 3;
-            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.91892F));
+            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.660232F));
+            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.10425F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.139F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelCart.Size = new System.Drawing.Size(521, 1036);
@@ -212,9 +210,9 @@
             this.panel1.Controls.Add(this.pnlCart);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 106);
+            this.panel1.Location = new System.Drawing.Point(3, 72);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 707);
+            this.panel1.Size = new System.Drawing.Size(515, 741);
             this.panel1.TabIndex = 2;
             // 
             // pnlCart
@@ -223,7 +221,7 @@
             this.pnlCart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCart.Location = new System.Drawing.Point(0, 78);
             this.pnlCart.Name = "pnlCart";
-            this.pnlCart.Size = new System.Drawing.Size(515, 629);
+            this.pnlCart.Size = new System.Drawing.Size(515, 663);
             this.pnlCart.TabIndex = 5;
             // 
             // tableLayoutPanel1
@@ -295,17 +293,6 @@
             this.lblQty.Text = "Qty";
             this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblCart
-            // 
-            this.lblCart.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblCart.AutoSize = true;
-            this.lblCart.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCart.Location = new System.Drawing.Point(213, 27);
-            this.lblCart.Name = "lblCart";
-            this.lblCart.Size = new System.Drawing.Size(94, 48);
-            this.lblCart.TabIndex = 0;
-            this.lblCart.Text = "Cart";
-            // 
             // pnlTotal
             // 
             this.pnlTotal.Controls.Add(this.tblPayNowLayout);
@@ -357,7 +344,7 @@
             this.tblTotalLayout.ColumnCount = 3;
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 231F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 232F));
             this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
             this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
             this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
@@ -386,7 +373,7 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(286, 22);
+            this.lblAmount.Location = new System.Drawing.Point(285, 22);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(58, 48);
             this.lblAmount.TabIndex = 2;
@@ -397,7 +384,7 @@
             this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblRs.AutoSize = true;
             this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(216, 22);
+            this.lblRs.Location = new System.Drawing.Point(215, 22);
             this.lblRs.Name = "lblRs";
             this.lblRs.Size = new System.Drawing.Size(64, 48);
             this.lblRs.TabIndex = 4;
@@ -484,7 +471,6 @@
             this.panelHeading.PerformLayout();
             this.panelCart.ResumeLayout(false);
             this.tableLayoutPanelCart.ResumeLayout(false);
-            this.tableLayoutPanelCart.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -513,7 +499,6 @@
         private System.Windows.Forms.Panel panelCategories;
         private System.Windows.Forms.Panel pnlCategoryScroll;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCart;
-        private System.Windows.Forms.Label lblCart;
         private System.Windows.Forms.Panel pnlTotal;
         private System.Windows.Forms.Label lblRs;
         private System.Windows.Forms.Button butPay;

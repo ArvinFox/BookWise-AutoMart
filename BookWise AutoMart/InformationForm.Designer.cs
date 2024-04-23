@@ -55,6 +55,7 @@
             // 
             // formContainer
             // 
+            this.formContainer.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.formContainer.ColumnCount = 3;
             this.formContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.formContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -62,22 +63,24 @@
             this.formContainer.Controls.Add(this.formContainer2, 1, 1);
             this.formContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.formContainer.Location = new System.Drawing.Point(0, 0);
+            this.formContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.formContainer.Name = "formContainer";
             this.formContainer.RowCount = 3;
-            this.formContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
+            this.formContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.formContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.formContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.formContainer.Size = new System.Drawing.Size(705, 946);
+            this.formContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 4F));
+            this.formContainer.Size = new System.Drawing.Size(793, 1178);
             this.formContainer.TabIndex = 0;
             // 
             // formContainer2
             // 
+            this.formContainer2.BackColor = System.Drawing.SystemColors.Control;
             this.formContainer2.ColumnCount = 5;
-            this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
             this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.78188F));
             this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.43624F));
             this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.78188F));
-            this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.formContainer2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.formContainer2.Controls.Add(this.lblStep, 2, 1);
             this.formContainer2.Controls.Add(this.imageBackward, 1, 2);
             this.formContainer2.Controls.Add(this.imageForward, 3, 2);
@@ -85,16 +88,17 @@
             this.formContainer2.Controls.Add(this.tblPages, 2, 4);
             this.formContainer2.Controls.Add(this.pnlStepContainer, 2, 2);
             this.formContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.formContainer2.Location = new System.Drawing.Point(6, 6);
+            this.formContainer2.Location = new System.Drawing.Point(6, 8);
+            this.formContainer2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.formContainer2.Name = "formContainer2";
             this.formContainer2.RowCount = 6;
-            this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.83743F));
             this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.17057F));
             this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.20396F));
             this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.788043F));
-            this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.formContainer2.Size = new System.Drawing.Size(693, 934);
+            this.formContainer2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
+            this.formContainer2.Size = new System.Drawing.Size(781, 1162);
             this.formContainer2.TabIndex = 0;
             // 
             // lblStep
@@ -102,9 +106,9 @@
             this.lblStep.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblStep.AutoSize = true;
             this.lblStep.Font = new System.Drawing.Font("Segoe UI Black", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStep.Location = new System.Drawing.Point(300, 100);
+            this.lblStep.Location = new System.Drawing.Point(336, 126);
             this.lblStep.Name = "lblStep";
-            this.lblStep.Size = new System.Drawing.Size(79, 38);
+            this.lblStep.Size = new System.Drawing.Size(92, 45);
             this.lblStep.TabIndex = 0;
             this.lblStep.Text = "Step";
             // 
@@ -112,9 +116,10 @@
             // 
             this.imageBackward.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imageBackward.Image = global::BookWise_AutoMart.Properties.Resources.backward;
-            this.imageBackward.Location = new System.Drawing.Point(22, 333);
+            this.imageBackward.Location = new System.Drawing.Point(24, 414);
+            this.imageBackward.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.imageBackward.Name = "imageBackward";
-            this.imageBackward.Size = new System.Drawing.Size(100, 50);
+            this.imageBackward.Size = new System.Drawing.Size(112, 62);
             this.imageBackward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imageBackward.TabIndex = 2;
             this.imageBackward.TabStop = false;
@@ -125,9 +130,10 @@
             // 
             this.imageForward.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imageForward.Image = global::BookWise_AutoMart.Properties.Resources.forward;
-            this.imageForward.Location = new System.Drawing.Point(558, 333);
+            this.imageForward.Location = new System.Drawing.Point(627, 414);
+            this.imageForward.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.imageForward.Name = "imageForward";
-            this.imageForward.Size = new System.Drawing.Size(100, 50);
+            this.imageForward.Size = new System.Drawing.Size(112, 62);
             this.imageForward.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.imageForward.TabIndex = 3;
             this.imageForward.TabStop = false;
@@ -138,14 +144,15 @@
             this.lblInformation.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInformation.AutoSize = true;
             this.lblInformation.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformation.Location = new System.Drawing.Point(264, 652);
+            this.lblInformation.Location = new System.Drawing.Point(289, 812);
             this.lblInformation.Name = "lblInformation";
-            this.lblInformation.Size = new System.Drawing.Size(152, 28);
+            this.lblInformation.Size = new System.Drawing.Size(186, 32);
             this.lblInformation.TabIndex = 4;
             this.lblInformation.Text = "brief Explanation";
             // 
             // tblPages
             // 
+            this.tblPages.BackColor = System.Drawing.SystemColors.Control;
             this.tblPages.ColumnCount = 5;
             this.tblPages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblPages.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -158,21 +165,23 @@
             this.tblPages.Controls.Add(this.pictureBoxPage2, 1, 0);
             this.tblPages.Controls.Add(this.pictureBoxPage1, 0, 0);
             this.tblPages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPages.Location = new System.Drawing.Point(137, 790);
+            this.tblPages.Location = new System.Drawing.Point(153, 982);
+            this.tblPages.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblPages.Name = "tblPages";
             this.tblPages.RowCount = 1;
             this.tblPages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
-            this.tblPages.Size = new System.Drawing.Size(406, 72);
+            this.tblPages.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tblPages.Size = new System.Drawing.Size(458, 89);
             this.tblPages.TabIndex = 5;
             // 
             // pictureBoxPage5
             // 
             this.pictureBoxPage5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPage5.Image = global::BookWise_AutoMart.Properties.Resources.uncolored_circle;
-            this.pictureBoxPage5.Location = new System.Drawing.Point(327, 3);
+            this.pictureBoxPage5.Location = new System.Drawing.Point(367, 4);
+            this.pictureBoxPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxPage5.Name = "pictureBoxPage5";
-            this.pictureBoxPage5.Size = new System.Drawing.Size(76, 66);
+            this.pictureBoxPage5.Size = new System.Drawing.Size(88, 81);
             this.pictureBoxPage5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPage5.TabIndex = 4;
             this.pictureBoxPage5.TabStop = false;
@@ -181,9 +190,10 @@
             // 
             this.pictureBoxPage4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPage4.Image = global::BookWise_AutoMart.Properties.Resources.uncolored_circle;
-            this.pictureBoxPage4.Location = new System.Drawing.Point(246, 3);
+            this.pictureBoxPage4.Location = new System.Drawing.Point(276, 4);
+            this.pictureBoxPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxPage4.Name = "pictureBoxPage4";
-            this.pictureBoxPage4.Size = new System.Drawing.Size(75, 66);
+            this.pictureBoxPage4.Size = new System.Drawing.Size(85, 81);
             this.pictureBoxPage4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPage4.TabIndex = 3;
             this.pictureBoxPage4.TabStop = false;
@@ -192,9 +202,10 @@
             // 
             this.pictureBoxPage3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPage3.Image = global::BookWise_AutoMart.Properties.Resources.uncolored_circle;
-            this.pictureBoxPage3.Location = new System.Drawing.Point(165, 3);
+            this.pictureBoxPage3.Location = new System.Drawing.Point(185, 4);
+            this.pictureBoxPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxPage3.Name = "pictureBoxPage3";
-            this.pictureBoxPage3.Size = new System.Drawing.Size(75, 66);
+            this.pictureBoxPage3.Size = new System.Drawing.Size(85, 81);
             this.pictureBoxPage3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPage3.TabIndex = 2;
             this.pictureBoxPage3.TabStop = false;
@@ -203,9 +214,10 @@
             // 
             this.pictureBoxPage2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPage2.Image = global::BookWise_AutoMart.Properties.Resources.uncolored_circle;
-            this.pictureBoxPage2.Location = new System.Drawing.Point(84, 3);
+            this.pictureBoxPage2.Location = new System.Drawing.Point(94, 4);
+            this.pictureBoxPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxPage2.Name = "pictureBoxPage2";
-            this.pictureBoxPage2.Size = new System.Drawing.Size(75, 66);
+            this.pictureBoxPage2.Size = new System.Drawing.Size(85, 81);
             this.pictureBoxPage2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPage2.TabIndex = 1;
             this.pictureBoxPage2.TabStop = false;
@@ -214,9 +226,10 @@
             // 
             this.pictureBoxPage1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBoxPage1.Image = global::BookWise_AutoMart.Properties.Resources.colored_circle;
-            this.pictureBoxPage1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxPage1.Location = new System.Drawing.Point(3, 4);
+            this.pictureBoxPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBoxPage1.Name = "pictureBoxPage1";
-            this.pictureBoxPage1.Size = new System.Drawing.Size(75, 66);
+            this.pictureBoxPage1.Size = new System.Drawing.Size(85, 81);
             this.pictureBoxPage1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBoxPage1.TabIndex = 0;
             this.pictureBoxPage1.TabStop = false;
@@ -224,18 +237,20 @@
             // pnlStepContainer
             // 
             this.pnlStepContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlStepContainer.Location = new System.Drawing.Point(137, 173);
+            this.pnlStepContainer.Location = new System.Drawing.Point(153, 216);
+            this.pnlStepContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlStepContainer.Name = "pnlStepContainer";
-            this.pnlStepContainer.Size = new System.Drawing.Size(406, 370);
+            this.pnlStepContainer.Size = new System.Drawing.Size(458, 459);
             this.pnlStepContainer.TabIndex = 6;
             // 
             // InformationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 946);
+            this.ClientSize = new System.Drawing.Size(793, 1178);
             this.Controls.Add(this.formContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "InformationForm";
             this.Text = "InformationForm";
             this.Load += new System.EventHandler(this.InformationForm_Load);

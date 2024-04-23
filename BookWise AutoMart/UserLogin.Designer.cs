@@ -70,7 +70,7 @@
             this.tblMainFormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.63281F));
             this.tblMainFormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.6875F));
             this.tblMainFormLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.67969F));
-            this.tblMainFormLayout.Size = new System.Drawing.Size(1118, 774);
+            this.tblMainFormLayout.Size = new System.Drawing.Size(1258, 968);
             this.tblMainFormLayout.TabIndex = 1;
             // 
             // lblTopic
@@ -81,7 +81,7 @@
             this.lblTopic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.lblTopic.Location = new System.Drawing.Point(3, 0);
             this.lblTopic.Name = "lblTopic";
-            this.lblTopic.Size = new System.Drawing.Size(1112, 182);
+            this.lblTopic.Size = new System.Drawing.Size(1252, 228);
             this.lblTopic.TabIndex = 47;
             this.lblTopic.Text = "WELCOME";
             this.lblTopic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -89,18 +89,18 @@
             // tblPictureLayout
             // 
             this.tblPictureLayout.ColumnCount = 2;
-            this.tblPictureLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 650F));
+            this.tblPictureLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 731F));
             this.tblPictureLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblPictureLayout.Controls.Add(this.pictureBox1, 0, 0);
             this.tblPictureLayout.Controls.Add(this.tblInformationContainer, 1, 0);
             this.tblPictureLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPictureLayout.Location = new System.Drawing.Point(3, 184);
+            this.tblPictureLayout.Location = new System.Drawing.Point(3, 230);
             this.tblPictureLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblPictureLayout.Name = "tblPictureLayout";
             this.tblPictureLayout.RowCount = 1;
             this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 418F));
-            this.tblPictureLayout.Size = new System.Drawing.Size(1112, 419);
+            this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 525F));
+            this.tblPictureLayout.Size = new System.Drawing.Size(1252, 525);
             this.tblPictureLayout.TabIndex = 2;
             // 
             // pictureBox1
@@ -110,7 +110,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(3, 2);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(644, 415);
+            this.pictureBox1.Size = new System.Drawing.Size(725, 521);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -123,14 +123,14 @@
             this.tblInformationContainer.Controls.Add(this.tblPhoneLayout, 0, 0);
             this.tblInformationContainer.Controls.Add(this.tblButtonsLayout, 0, 2);
             this.tblInformationContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblInformationContainer.Location = new System.Drawing.Point(653, 2);
+            this.tblInformationContainer.Location = new System.Drawing.Point(734, 2);
             this.tblInformationContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblInformationContainer.Name = "tblInformationContainer";
             this.tblInformationContainer.RowCount = 3;
             this.tblInformationContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 64.40238F));
             this.tblInformationContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.25612F));
             this.tblInformationContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.3415F));
-            this.tblInformationContainer.Size = new System.Drawing.Size(456, 415);
+            this.tblInformationContainer.Size = new System.Drawing.Size(515, 521);
             this.tblInformationContainer.TabIndex = 2;
             // 
             // lblNotification
@@ -138,9 +138,9 @@
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotification.Location = new System.Drawing.Point(140, 280);
+            this.lblNotification.Location = new System.Drawing.Point(154, 354);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(176, 36);
+            this.lblNotification.Size = new System.Drawing.Size(207, 40);
             this.lblNotification.TabIndex = 46;
             this.lblNotification.Text = "Notification";
             this.lblNotification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,9 +150,9 @@
             // 
             this.tblPhoneLayout.ColumnCount = 2;
             this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
-            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblPhoneLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tblPhoneLayout.Controls.Add(this.lblNumber, 0, 0);
             this.tblPhoneLayout.Controls.Add(this.txtPhone, 0, 1);
             this.tblPhoneLayout.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,7 +162,7 @@
             this.tblPhoneLayout.RowCount = 2;
             this.tblPhoneLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblPhoneLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPhoneLayout.Size = new System.Drawing.Size(450, 263);
+            this.tblPhoneLayout.Size = new System.Drawing.Size(509, 331);
             this.tblPhoneLayout.TabIndex = 0;
             // 
             // lblNumber
@@ -173,7 +173,7 @@
             this.lblNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.lblNumber.Location = new System.Drawing.Point(11, 0);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(370, 131);
+            this.lblNumber.Size = new System.Drawing.Size(423, 165);
             this.lblNumber.TabIndex = 48;
             this.lblNumber.Text = "Enter Your Phone Number";
             // 
@@ -183,11 +183,11 @@
             this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhone.ForeColor = System.Drawing.Color.Black;
-            this.txtPhone.Location = new System.Drawing.Point(3, 133);
+            this.txtPhone.Location = new System.Drawing.Point(3, 167);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.MaxLength = 10;
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(387, 114);
+            this.txtPhone.Size = new System.Drawing.Size(439, 135);
             this.txtPhone.TabIndex = 1;
             this.txtPhone.TabStop = false;
             this.txtPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -196,19 +196,19 @@
             // 
             this.tblButtonsLayout.ColumnCount = 4;
             this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 62F));
+            this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tblButtonsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tblButtonsLayout.Controls.Add(this.btnGuestLogin, 2, 0);
             this.tblButtonsLayout.Controls.Add(this.butLogin, 0, 0);
             this.tblButtonsLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblButtonsLayout.Location = new System.Drawing.Point(3, 332);
+            this.tblButtonsLayout.Location = new System.Drawing.Point(3, 416);
             this.tblButtonsLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblButtonsLayout.Name = "tblButtonsLayout";
             this.tblButtonsLayout.RowCount = 1;
             this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tblButtonsLayout.Size = new System.Drawing.Size(450, 81);
+            this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tblButtonsLayout.Size = new System.Drawing.Size(509, 103);
             this.tblButtonsLayout.TabIndex = 1;
             // 
             // btnGuestLogin
@@ -219,10 +219,10 @@
             this.btnGuestLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuestLogin.Font = new System.Drawing.Font("Segoe UI", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuestLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.btnGuestLogin.Location = new System.Drawing.Point(230, 2);
+            this.btnGuestLogin.Location = new System.Drawing.Point(260, 2);
             this.btnGuestLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuestLogin.Name = "btnGuestLogin";
-            this.btnGuestLogin.Size = new System.Drawing.Size(159, 77);
+            this.btnGuestLogin.Size = new System.Drawing.Size(181, 99);
             this.btnGuestLogin.TabIndex = 4;
             this.btnGuestLogin.TabStop = false;
             this.btnGuestLogin.Text = "GUEST LOGIN";
@@ -240,7 +240,7 @@
             this.butLogin.Location = new System.Drawing.Point(3, 2);
             this.butLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.butLogin.Name = "butLogin";
-            this.butLogin.Size = new System.Drawing.Size(159, 77);
+            this.butLogin.Size = new System.Drawing.Size(181, 99);
             this.butLogin.TabIndex = 2;
             this.butLogin.TabStop = false;
             this.butLogin.Text = "LOGIN";
@@ -253,13 +253,13 @@
             this.tblBottomLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblBottomLayout.Controls.Add(this.tblCreateAccountLayout, 0, 1);
             this.tblBottomLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblBottomLayout.Location = new System.Drawing.Point(3, 607);
+            this.tblBottomLayout.Location = new System.Drawing.Point(3, 759);
             this.tblBottomLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblBottomLayout.Name = "tblBottomLayout";
             this.tblBottomLayout.RowCount = 2;
             this.tblBottomLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.09217F));
             this.tblBottomLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.90783F));
-            this.tblBottomLayout.Size = new System.Drawing.Size(1112, 165);
+            this.tblBottomLayout.Size = new System.Drawing.Size(1252, 207);
             this.tblBottomLayout.TabIndex = 48;
             // 
             // tblCreateAccountLayout
@@ -271,12 +271,12 @@
             this.tblCreateAccountLayout.Controls.Add(this.lblNoacc, 0, 0);
             this.tblCreateAccountLayout.Controls.Add(this.lblCreateacc, 2, 0);
             this.tblCreateAccountLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblCreateAccountLayout.Location = new System.Drawing.Point(3, 68);
+            this.tblCreateAccountLayout.Location = new System.Drawing.Point(3, 84);
             this.tblCreateAccountLayout.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblCreateAccountLayout.Name = "tblCreateAccountLayout";
             this.tblCreateAccountLayout.RowCount = 1;
             this.tblCreateAccountLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblCreateAccountLayout.Size = new System.Drawing.Size(1106, 95);
+            this.tblCreateAccountLayout.Size = new System.Drawing.Size(1246, 121);
             this.tblCreateAccountLayout.TabIndex = 2;
             // 
             // lblNoacc
@@ -285,9 +285,9 @@
             this.lblNoacc.AutoSize = true;
             this.lblNoacc.Font = new System.Drawing.Font("Segoe UI Semilight", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.lblNoacc.Location = new System.Drawing.Point(190, 0);
+            this.lblNoacc.Location = new System.Drawing.Point(185, 0);
             this.lblNoacc.Name = "lblNoacc";
-            this.lblNoacc.Size = new System.Drawing.Size(354, 45);
+            this.lblNoacc.Size = new System.Drawing.Size(428, 54);
             this.lblNoacc.TabIndex = 47;
             this.lblNoacc.Text = "Don\'t Have an Account?";
             this.lblNoacc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,9 +298,9 @@
             this.lblCreateacc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblCreateacc.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreateacc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.lblCreateacc.Location = new System.Drawing.Point(561, 0);
+            this.lblCreateacc.Location = new System.Drawing.Point(631, 0);
             this.lblCreateacc.Name = "lblCreateacc";
-            this.lblCreateacc.Size = new System.Drawing.Size(247, 45);
+            this.lblCreateacc.Size = new System.Drawing.Size(296, 54);
             this.lblCreateacc.TabIndex = 5;
             this.lblCreateacc.Text = "Create Account";
             this.lblCreateacc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -308,9 +308,9 @@
             // 
             // UserLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 774);
+            this.ClientSize = new System.Drawing.Size(1258, 968);
             this.Controls.Add(this.tblMainFormLayout);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

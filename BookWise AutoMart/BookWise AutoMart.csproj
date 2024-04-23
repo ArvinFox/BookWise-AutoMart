@@ -426,6 +426,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>BookWiseAutoMart.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Back Arrow.png" />
     <Content Include="Resources\bar-chart.png" />
     <None Include="Resources\home.png" />
     <None Include="Resources\Gold_Star_Colored_1.png" />

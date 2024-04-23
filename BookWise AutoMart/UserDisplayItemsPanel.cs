@@ -145,7 +145,7 @@ namespace BookWise_AutoMart
 
 
 
-                                        ItemPanel newItem = new ItemPanel(itemId, itemName, itemDescription, price, stock, image, discount);
+                                        ItemPanel newItem = new ItemPanel(itemName, itemDescription, price, image, discount);
 
                                         // Add item (panel) to FlowLayoutPanel
                                         flpItemCardsContainer.Controls.Add(newItem);

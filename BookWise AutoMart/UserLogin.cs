@@ -108,8 +108,21 @@ namespace BookWise_AutoMart
 
         private void lblCreateacc_Click(object sender, EventArgs e)
         {
-            UserRegistrationForm userRegistration = new UserRegistrationForm();
-            userRegistration.Show();
+            bool userRegistrationFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserRegistrationForm)
+                {
+                    userRegistrationFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userRegistrationFound)
+            {
+                UserRegistrationForm userRegistration = new UserRegistrationForm();
+                userRegistration.Show();
+            }
             this.Hide();
         }
 

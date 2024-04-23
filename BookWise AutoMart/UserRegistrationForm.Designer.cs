@@ -80,6 +80,7 @@
             this.tlpSignupMainLayout.Controls.Add(this.tlpButtonContainer, 0, 8);
             this.tlpSignupMainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpSignupMainLayout.Location = new System.Drawing.Point(0, 0);
+            this.tlpSignupMainLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpSignupMainLayout.Name = "tlpSignupMainLayout";
             this.tlpSignupMainLayout.RowCount = 10;
             this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.09416F));
@@ -92,8 +93,8 @@
             this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.027455F));
             this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.75949F));
             this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.499096F));
-            this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpSignupMainLayout.Size = new System.Drawing.Size(1282, 882);
+            this.tlpSignupMainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpSignupMainLayout.Size = new System.Drawing.Size(1442, 1102);
             this.tlpSignupMainLayout.TabIndex = 0;
             // 
             // tlpLogiContainer
@@ -105,12 +106,13 @@
             this.tlpLogiContainer.Controls.Add(this.lblBacktologin, 2, 0);
             this.tlpLogiContainer.Controls.Add(this.lblHaveacc, 0, 0);
             this.tlpLogiContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpLogiContainer.Location = new System.Drawing.Point(3, 804);
+            this.tlpLogiContainer.Location = new System.Drawing.Point(3, 1007);
+            this.tlpLogiContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpLogiContainer.Name = "tlpLogiContainer";
             this.tlpLogiContainer.RowCount = 2;
             this.tlpLogiContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 77.5F));
             this.tlpLogiContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.5F));
-            this.tlpLogiContainer.Size = new System.Drawing.Size(1276, 75);
+            this.tlpLogiContainer.Size = new System.Drawing.Size(1436, 91);
             this.tlpLogiContainer.TabIndex = 55;
             // 
             // lblBacktologin
@@ -120,9 +122,9 @@
             this.lblBacktologin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBacktologin.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBacktologin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.lblBacktologin.Location = new System.Drawing.Point(653, 13);
+            this.lblBacktologin.Location = new System.Drawing.Point(735, 16);
             this.lblBacktologin.Name = "lblBacktologin";
-            this.lblBacktologin.Size = new System.Drawing.Size(239, 45);
+            this.lblBacktologin.Size = new System.Drawing.Size(287, 54);
             this.lblBacktologin.TabIndex = 51;
             this.lblBacktologin.Text = "Back to LOGIN";
             this.lblBacktologin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -133,9 +135,9 @@
             this.lblHaveacc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lblHaveacc.AutoSize = true;
             this.lblHaveacc.Font = new System.Drawing.Font("Segoe UI Light", 19.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHaveacc.Location = new System.Drawing.Point(248, 13);
+            this.lblHaveacc.Location = new System.Drawing.Point(244, 16);
             this.lblHaveacc.Name = "lblHaveacc";
-            this.lblHaveacc.Size = new System.Drawing.Size(374, 45);
+            this.lblHaveacc.Size = new System.Drawing.Size(456, 54);
             this.lblHaveacc.TabIndex = 50;
             this.lblHaveacc.Text = "Already Have an Account?";
             this.lblHaveacc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -152,11 +154,12 @@
             this.tlpNameContainer.Controls.Add(this.txtName, 3, 0);
             this.tlpNameContainer.Controls.Add(this.lblColonName, 2, 0);
             this.tlpNameContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNameContainer.Location = new System.Drawing.Point(3, 155);
+            this.tlpNameContainer.Location = new System.Drawing.Point(3, 194);
+            this.tlpNameContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpNameContainer.Name = "tlpNameContainer";
             this.tlpNameContainer.RowCount = 1;
             this.tlpNameContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNameContainer.Size = new System.Drawing.Size(1276, 108);
+            this.tlpNameContainer.Size = new System.Drawing.Size(1436, 135);
             this.tlpNameContainer.TabIndex = 41;
             // 
             // lblName
@@ -164,9 +167,9 @@
             this.lblName.AutoSize = true;
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblName.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(153, 0);
+            this.lblName.Location = new System.Drawing.Point(172, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(359, 108);
+            this.lblName.Size = new System.Drawing.Size(404, 135);
             this.lblName.TabIndex = 40;
             this.lblName.Text = "Name";
             // 
@@ -175,9 +178,10 @@
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(232)))), ((int)(((byte)(233)))));
             this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtName.Font = new System.Drawing.Font("Segoe UI Semilight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(583, 3);
+            this.txtName.Location = new System.Drawing.Point(656, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(536, 87);
+            this.txtName.Size = new System.Drawing.Size(605, 103);
             this.txtName.TabIndex = 41;
             this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
@@ -186,9 +190,9 @@
             this.lblColonName.AutoSize = true;
             this.lblColonName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblColonName.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonName.Location = new System.Drawing.Point(518, 0);
+            this.lblColonName.Location = new System.Drawing.Point(582, 0);
             this.lblColonName.Name = "lblColonName";
-            this.lblColonName.Size = new System.Drawing.Size(59, 108);
+            this.lblColonName.Size = new System.Drawing.Size(68, 135);
             this.lblColonName.TabIndex = 42;
             this.lblColonName.Text = ":";
             // 
@@ -198,9 +202,9 @@
             this.lblTopic.AutoSize = true;
             this.lblTopic.Font = new System.Drawing.Font("Segoe UI Black", 58.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTopic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.lblTopic.Location = new System.Drawing.Point(344, 0);
+            this.lblTopic.Location = new System.Drawing.Point(360, 0);
             this.lblTopic.Name = "lblTopic";
-            this.lblTopic.Size = new System.Drawing.Size(594, 114);
+            this.lblTopic.Size = new System.Drawing.Size(721, 143);
             this.lblTopic.TabIndex = 42;
             this.lblTopic.Text = "Get Started";
             this.lblTopic.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -217,11 +221,12 @@
             this.tlpGenderContainer.Controls.Add(this.lblGender, 1, 0);
             this.tlpGenderContainer.Controls.Add(this.tblGender, 3, 0);
             this.tlpGenderContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpGenderContainer.Location = new System.Drawing.Point(3, 269);
+            this.tlpGenderContainer.Location = new System.Drawing.Point(3, 337);
+            this.tlpGenderContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpGenderContainer.Name = "tlpGenderContainer";
             this.tlpGenderContainer.RowCount = 1;
             this.tlpGenderContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpGenderContainer.Size = new System.Drawing.Size(1276, 108);
+            this.tlpGenderContainer.Size = new System.Drawing.Size(1436, 135);
             this.tlpGenderContainer.TabIndex = 43;
             // 
             // lblColonGender
@@ -229,9 +234,9 @@
             this.lblColonGender.AutoSize = true;
             this.lblColonGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblColonGender.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonGender.Location = new System.Drawing.Point(519, 0);
+            this.lblColonGender.Location = new System.Drawing.Point(582, 0);
             this.lblColonGender.Name = "lblColonGender";
-            this.lblColonGender.Size = new System.Drawing.Size(60, 108);
+            this.lblColonGender.Size = new System.Drawing.Size(68, 135);
             this.lblColonGender.TabIndex = 43;
             this.lblColonGender.Text = ":";
             // 
@@ -240,9 +245,9 @@
             this.lblGender.AutoSize = true;
             this.lblGender.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblGender.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGender.Location = new System.Drawing.Point(154, 0);
+            this.lblGender.Location = new System.Drawing.Point(172, 0);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(359, 108);
+            this.lblGender.Size = new System.Drawing.Size(404, 135);
             this.lblGender.TabIndex = 42;
             this.lblGender.Text = "Gender";
             // 
@@ -254,11 +259,12 @@
             this.tblGender.Controls.Add(this.radioFemale, 1, 0);
             this.tblGender.Controls.Add(this.radioMale, 0, 0);
             this.tblGender.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblGender.Location = new System.Drawing.Point(585, 3);
+            this.tblGender.Location = new System.Drawing.Point(656, 4);
+            this.tblGender.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblGender.Name = "tblGender";
             this.tblGender.RowCount = 1;
             this.tblGender.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblGender.Size = new System.Drawing.Size(537, 90);
+            this.tblGender.Size = new System.Drawing.Size(605, 112);
             this.tblGender.TabIndex = 43;
             // 
             // radioFemale
@@ -266,9 +272,10 @@
             this.radioFemale.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.radioFemale.AutoSize = true;
             this.radioFemale.Font = new System.Drawing.Font("Segoe UI Semilight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioFemale.Location = new System.Drawing.Point(271, 3);
+            this.radioFemale.Location = new System.Drawing.Point(305, 6);
+            this.radioFemale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioFemale.Name = "radioFemale";
-            this.radioFemale.Size = new System.Drawing.Size(240, 84);
+            this.radioFemale.Size = new System.Drawing.Size(286, 100);
             this.radioFemale.TabIndex = 44;
             this.radioFemale.TabStop = true;
             this.radioFemale.Text = "Female";
@@ -280,9 +287,10 @@
             this.radioMale.AutoSize = true;
             this.radioMale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.radioMale.Font = new System.Drawing.Font("Segoe UI Semilight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioMale.Location = new System.Drawing.Point(3, 3);
+            this.radioMale.Location = new System.Drawing.Point(3, 6);
+            this.radioMale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioMale.Name = "radioMale";
-            this.radioMale.Size = new System.Drawing.Size(182, 84);
+            this.radioMale.Size = new System.Drawing.Size(216, 100);
             this.radioMale.TabIndex = 43;
             this.radioMale.TabStop = true;
             this.radioMale.Text = "Male";
@@ -300,11 +308,12 @@
             this.tlpContactContainer.Controls.Add(this.lblNumber, 1, 0);
             this.tlpContactContainer.Controls.Add(this.lblColonPhone, 2, 0);
             this.tlpContactContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpContactContainer.Location = new System.Drawing.Point(3, 383);
+            this.tlpContactContainer.Location = new System.Drawing.Point(3, 480);
+            this.tlpContactContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpContactContainer.Name = "tlpContactContainer";
             this.tlpContactContainer.RowCount = 1;
             this.tlpContactContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpContactContainer.Size = new System.Drawing.Size(1276, 108);
+            this.tlpContactContainer.Size = new System.Drawing.Size(1436, 135);
             this.tlpContactContainer.TabIndex = 44;
             // 
             // txtPhone
@@ -312,9 +321,10 @@
             this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(232)))), ((int)(((byte)(233)))));
             this.txtPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPhone.Font = new System.Drawing.Font("Segoe UI Semilight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhone.Location = new System.Drawing.Point(583, 3);
+            this.txtPhone.Location = new System.Drawing.Point(656, 4);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(536, 87);
+            this.txtPhone.Size = new System.Drawing.Size(605, 103);
             this.txtPhone.TabIndex = 47;
             this.txtPhone.TextChanged += new System.EventHandler(this.txtPhone_TextChanged);
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
@@ -324,9 +334,9 @@
             this.lblNumber.AutoSize = true;
             this.lblNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblNumber.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumber.Location = new System.Drawing.Point(153, 0);
+            this.lblNumber.Location = new System.Drawing.Point(172, 0);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(359, 108);
+            this.lblNumber.Size = new System.Drawing.Size(404, 135);
             this.lblNumber.TabIndex = 46;
             this.lblNumber.Text = "Phone No";
             // 
@@ -335,9 +345,9 @@
             this.lblColonPhone.AutoSize = true;
             this.lblColonPhone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblColonPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonPhone.Location = new System.Drawing.Point(518, 0);
+            this.lblColonPhone.Location = new System.Drawing.Point(582, 0);
             this.lblColonPhone.Name = "lblColonPhone";
-            this.lblColonPhone.Size = new System.Drawing.Size(59, 108);
+            this.lblColonPhone.Size = new System.Drawing.Size(68, 135);
             this.lblColonPhone.TabIndex = 49;
             this.lblColonPhone.Text = ":";
             // 
@@ -353,11 +363,12 @@
             this.tlpEmailContainer.Controls.Add(this.lblColonEmail, 2, 0);
             this.tlpEmailContainer.Controls.Add(this.lblEmail, 1, 0);
             this.tlpEmailContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpEmailContainer.Location = new System.Drawing.Point(3, 497);
+            this.tlpEmailContainer.Location = new System.Drawing.Point(3, 623);
+            this.tlpEmailContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpEmailContainer.Name = "tlpEmailContainer";
             this.tlpEmailContainer.RowCount = 1;
             this.tlpEmailContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpEmailContainer.Size = new System.Drawing.Size(1276, 108);
+            this.tlpEmailContainer.Size = new System.Drawing.Size(1436, 135);
             this.tlpEmailContainer.TabIndex = 45;
             // 
             // txtEmail
@@ -365,9 +376,10 @@
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(232)))), ((int)(((byte)(233)))));
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI Semilight", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(583, 3);
+            this.txtEmail.Location = new System.Drawing.Point(656, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(536, 87);
+            this.txtEmail.Size = new System.Drawing.Size(605, 103);
             this.txtEmail.TabIndex = 49;
             // 
             // lblColonEmail
@@ -375,9 +387,9 @@
             this.lblColonEmail.AutoSize = true;
             this.lblColonEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblColonEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonEmail.Location = new System.Drawing.Point(518, 0);
+            this.lblColonEmail.Location = new System.Drawing.Point(582, 0);
             this.lblColonEmail.Name = "lblColonEmail";
-            this.lblColonEmail.Size = new System.Drawing.Size(59, 108);
+            this.lblColonEmail.Size = new System.Drawing.Size(68, 135);
             this.lblColonEmail.TabIndex = 50;
             this.lblColonEmail.Text = ":";
             // 
@@ -386,27 +398,27 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI Semibold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(153, 0);
+            this.lblEmail.Location = new System.Drawing.Point(172, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(359, 108);
+            this.lblEmail.Size = new System.Drawing.Size(404, 135);
             this.lblEmail.TabIndex = 48;
             this.lblEmail.Text = "Email";
             // 
             // tlpNotificationContainer
             // 
             this.tlpNotificationContainer.ColumnCount = 3;
-            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 89F));
-            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tlpNotificationContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpNotificationContainer.Controls.Add(this.lblNotification, 1, 0);
             this.tlpNotificationContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpNotificationContainer.Location = new System.Drawing.Point(3, 648);
+            this.tlpNotificationContainer.Location = new System.Drawing.Point(3, 811);
             this.tlpNotificationContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tlpNotificationContainer.Name = "tlpNotificationContainer";
             this.tlpNotificationContainer.RowCount = 1;
             this.tlpNotificationContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpNotificationContainer.Size = new System.Drawing.Size(1276, 57);
+            this.tlpNotificationContainer.Size = new System.Drawing.Size(1436, 73);
             this.tlpNotificationContainer.TabIndex = 53;
             // 
             // lblNotification
@@ -414,9 +426,9 @@
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotification.Location = new System.Drawing.Point(550, 10);
+            this.lblNotification.Location = new System.Drawing.Point(614, 16);
             this.lblNotification.Name = "lblNotification";
-            this.lblNotification.Size = new System.Drawing.Size(176, 36);
+            this.lblNotification.Size = new System.Drawing.Size(207, 40);
             this.lblNotification.TabIndex = 45;
             this.lblNotification.Text = "Notification";
             this.lblNotification.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -430,12 +442,13 @@
             this.tlpButtonContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpButtonContainer.Controls.Add(this.butRegister, 1, 0);
             this.tlpButtonContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpButtonContainer.Location = new System.Drawing.Point(3, 710);
+            this.tlpButtonContainer.Location = new System.Drawing.Point(3, 890);
+            this.tlpButtonContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpButtonContainer.Name = "tlpButtonContainer";
             this.tlpButtonContainer.RowCount = 1;
             this.tlpButtonContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpButtonContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
-            this.tlpButtonContainer.Size = new System.Drawing.Size(1276, 88);
+            this.tlpButtonContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpButtonContainer.Size = new System.Drawing.Size(1436, 109);
             this.tlpButtonContainer.TabIndex = 54;
             // 
             // butRegister
@@ -446,9 +459,10 @@
             this.butRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.butRegister.Font = new System.Drawing.Font("Segoe UI Black", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butRegister.ForeColor = System.Drawing.Color.White;
-            this.butRegister.Location = new System.Drawing.Point(428, 3);
+            this.butRegister.Location = new System.Drawing.Point(481, 4);
+            this.butRegister.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.butRegister.Name = "butRegister";
-            this.butRegister.Size = new System.Drawing.Size(419, 82);
+            this.butRegister.Size = new System.Drawing.Size(472, 101);
             this.butRegister.TabIndex = 49;
             this.butRegister.Text = "Register";
             this.butRegister.UseVisualStyleBackColor = false;
@@ -456,12 +470,13 @@
             // 
             // UserRegistrationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1282, 882);
+            this.ClientSize = new System.Drawing.Size(1442, 1102);
             this.Controls.Add(this.tlpSignupMainLayout);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserRegistrationForm";
             this.Text = "FrmSignup";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

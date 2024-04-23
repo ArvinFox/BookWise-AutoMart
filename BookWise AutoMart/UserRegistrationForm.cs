@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -31,7 +32,6 @@ namespace BookWise_AutoMart
             string contact = txtPhone.Text.Trim();
             string email = txtEmail.Text.Trim();
             DateTime date = DateTime.Now;
-
 
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
             {
@@ -77,10 +77,14 @@ namespace BookWise_AutoMart
                 gender = radioFemale.Text.Trim();
             }
 
+            ExistsPhoneNo();
+            Existsemail();
+
             if (lblNotification.Visible == false)
             {
                 InsertData(name, gender, contact, email, date);
             }
+           
         }
 
         private bool ValidateName(string name) 
@@ -111,6 +115,70 @@ namespace BookWise_AutoMart
             string regex = @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$";
             // Check if the email matches the pattern
             return Regex.IsMatch(email.ToString(), regex);
+        }
+
+        private void ExistsPhoneNo()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "SELECT Count(*) FROM Users WHERE contact_number = @phone";
+                    SqlCommand command = new SqlCommand(sql, connection);
+
+                    command.Parameters.AddWithValue("@phone", txtPhone.Text.Trim());
+
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        lblNotification.Visible = true;
+                        lblNotification.ForeColor = Color.Red;
+                        lblNotification.Text = "The phone number already exists.";
+                    }
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Existsemail()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    string sql = "SELECT Count(*) FROM Users WHERE email = @email";
+                    SqlCommand command = new SqlCommand(sql, connection);
+
+                    command.Parameters.AddWithValue("@email", txtEmail.Text.Trim());
+
+                    connection.Open();
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    
+                    if(count > 0 )
+                    {
+                        lblNotification.Visible = true;
+                        lblNotification.ForeColor = Color.Red;
+                        lblNotification.Text = "The email already exists.";
+                    }
+                }
+            }
+            catch (SqlException sqlex)
+            {
+                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void InsertData(string name, string gender, string contact, string email, DateTime date)
@@ -187,8 +255,21 @@ namespace BookWise_AutoMart
 
         private void lblBacktologin_Click(object sender, EventArgs e)
         {
-            UserLogin userLogin = new UserLogin();
-            userLogin.Show();
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
             this.Close();
         }
     }

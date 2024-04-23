@@ -98,71 +98,48 @@ namespace BookWise_AutoMart
 
         private void butPay_Click(object sender, EventArgs e)
         {
-            /*int itemId = Convert.ToInt32(ItemPanel.cart.label);
-            int quantity = Convert.ToInt32();
-            int itemStock = GetStock(itemId);
-            UpdateStock(itemId, quantity, itemStock);*/
-            checkoutForm.BillValue = this.lblAmount.Text;
-            checkoutForm.Show();
-            this.Hide();
+            bool hasTable = false;
+             foreach(Control control in pnlCart.Controls)
+             {
+                 if(control is TableLayoutPanel)
+                 {
+                     hasTable = true;
+                     break;
+                 }
+             }
+             if(hasTable)
+             {
+                 checkoutForm.BillValue = this.lblAmount.Text;
+                 checkoutForm.Show();
+                 this.Hide();
+             }
 
-
-        }
-
-        private void UpdateStock(int itemId, int quantity,int itemStock)
-        {
-            using(SqlConnection connection = new SqlConnection(connectionString))
+            /*if(pnl.Controls.Count != 0)
             {
-                string query = "UPDATE Items SET stock = @Stock WHERE item_id = @ItemId";
-                using(SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    try
-                    {
-                        cmd.Parameters.AddWithValue("@Stock", itemStock-quantity);
-                        cmd.Parameters.AddWithValue("@ItemId", itemId);
-                        connection.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-                    catch (Exception)
-                    {
-                        //---------Error-----------
-                    }
-                }
-                 
-            }
+                checkoutForm.BillValue = this.lblAmount.Text;
+                checkoutForm.Show();
+                this.Hide();
+            }*/
         }
 
-        private int GetStock(int ItemId)
-        {
-            int stock;
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                string query = "SELECT * FROM Items WHERE item_id = @ItemId";
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    try
-                    {
-                        cmd.Parameters.AddWithValue("@ItemId", ItemId);
-                        connection.Open();
-                        using(SqlDataReader stockReader = cmd.ExecuteReader())
-                        {
-                            stockReader.Read();
-                            stock = (int)stockReader["stock"];
-                            return stock;
-                        }
-                    }
-                    catch(Exception)
-                    {
-                        //-------error---------
-                    }
-                }
-            }
-            return -1;
-        }
-        
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+            this.Close();
         }
     }
     

@@ -28,12 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblWindow = new System.Windows.Forms.Label();
-            this.panelHeading = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.btnCategories = new System.Windows.Forms.Button();
-            this.btnOffers = new System.Windows.Forms.Button();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.panelCart = new System.Windows.Forms.Panel();
             this.tableLayoutPanelCart = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,9 +47,13 @@
             this.panelItemDisplay = new System.Windows.Forms.Panel();
             this.pnlUserButtons = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.lblUserGreet = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCategories = new System.Windows.Forms.Panel();
             this.pnlCategoryScroll = new System.Windows.Forms.Panel();
-            this.panelHeading.SuspendLayout();
+            this.btnCategories = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.panelCart.SuspendLayout();
             this.tableLayoutPanelCart.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -65,132 +63,27 @@
             this.tblTotalLayout.SuspendLayout();
             this.pnlUserButtons.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCategories.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblWindow
-            // 
-            this.lblWindow.AutoSize = true;
-            this.lblWindow.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWindow.Location = new System.Drawing.Point(204, 6);
-            this.lblWindow.Name = "lblWindow";
-            this.lblWindow.Size = new System.Drawing.Size(378, 54);
-            this.lblWindow.TabIndex = 1;
-            this.lblWindow.Text = "BookWise AutoMart";
-            this.lblWindow.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // panelHeading
-            // 
-            this.panelHeading.BackColor = System.Drawing.Color.White;
-            this.panelHeading.Controls.Add(this.lblWindow);
-            this.panelHeading.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHeading.Location = new System.Drawing.Point(0, 0);
-            this.panelHeading.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panelHeading.Name = "panelHeading";
-            this.panelHeading.Size = new System.Drawing.Size(1315, 66);
-            this.panelHeading.TabIndex = 0;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(3, 4);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(357, 136);
-            this.btnHome.TabIndex = 2;
-            this.btnHome.Text = "Home";
-            this.btnHome.UseVisualStyleBackColor = false;
-            // 
-            // btnCategories
-            // 
-            this.btnCategories.BackColor = System.Drawing.Color.DimGray;
-            this.btnCategories.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategories.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCategories.FlatAppearance.BorderSize = 0;
-            this.btnCategories.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.btnCategories.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCategories.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategories.Location = new System.Drawing.Point(0, 0);
-            this.btnCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCategories.Name = "btnCategories";
-            this.btnCategories.Size = new System.Drawing.Size(357, 144);
-            this.btnCategories.TabIndex = 2;
-            this.btnCategories.Text = "Categories";
-            this.btnCategories.UseVisualStyleBackColor = false;
-            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
-            // 
-            // btnOffers
-            // 
-            this.btnOffers.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnOffers.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOffers.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnOffers.FlatAppearance.BorderSize = 0;
-            this.btnOffers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.MidnightBlue;
-            this.btnOffers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnOffers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOffers.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOffers.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnOffers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOffers.Location = new System.Drawing.Point(3, 733);
-            this.btnOffers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnOffers.Name = "btnOffers";
-            this.btnOffers.Size = new System.Drawing.Size(357, 136);
-            this.btnOffers.TabIndex = 2;
-            this.btnOffers.Text = "Offers && Discounts";
-            this.btnOffers.UseVisualStyleBackColor = false;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnLogout.BackColor = System.Drawing.Color.Firebrick;
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
-            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(3, 877);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(357, 136);
-            this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Log Out";
-            this.btnLogout.UseVisualStyleBackColor = false;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // panelCart
             // 
             this.panelCart.BackColor = System.Drawing.Color.White;
             this.panelCart.Controls.Add(this.tableLayoutPanelCart);
             this.panelCart.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelCart.Location = new System.Drawing.Point(794, 66);
-            this.panelCart.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelCart.Location = new System.Drawing.Point(706, 0);
             this.panelCart.Name = "panelCart";
-            this.panelCart.Size = new System.Drawing.Size(521, 1036);
+            this.panelCart.Size = new System.Drawing.Size(463, 882);
             this.panelCart.TabIndex = 2;
             // 
             // tableLayoutPanelCart
             // 
             this.tableLayoutPanelCart.ColumnCount = 1;
             this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
+            this.tableLayoutPanelCart.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 18F));
             this.tableLayoutPanelCart.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanelCart.Controls.Add(this.pnlTotal, 0, 2);
             this.tableLayoutPanelCart.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -201,8 +94,8 @@
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.660232F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.10425F));
             this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.139F));
-            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelCart.Size = new System.Drawing.Size(521, 1036);
+            this.tableLayoutPanelCart.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 16F));
+            this.tableLayoutPanelCart.Size = new System.Drawing.Size(463, 882);
             this.tableLayoutPanelCart.TabIndex = 1;
             // 
             // panel1
@@ -210,18 +103,20 @@
             this.panel1.Controls.Add(this.pnlCart);
             this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 72);
+            this.panel1.Location = new System.Drawing.Point(3, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(515, 741);
+            this.panel1.Size = new System.Drawing.Size(457, 632);
             this.panel1.TabIndex = 2;
             // 
             // pnlCart
             // 
             this.pnlCart.AutoScroll = true;
             this.pnlCart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCart.Location = new System.Drawing.Point(0, 78);
+            this.pnlCart.Location = new System.Drawing.Point(0, 62);
+            this.pnlCart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlCart.Name = "pnlCart";
-            this.pnlCart.Size = new System.Drawing.Size(515, 663);
+            this.pnlCart.Size = new System.Drawing.Size(457, 570);
             this.pnlCart.TabIndex = 5;
             // 
             // tableLayoutPanel1
@@ -239,10 +134,11 @@
             this.tableLayoutPanel1.Controls.Add(this.lblQty, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(515, 78);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(457, 62);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lblPrice
@@ -250,9 +146,9 @@
             this.lblPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrice.Location = new System.Drawing.Point(362, 25);
+            this.lblPrice.Location = new System.Drawing.Point(323, 19);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(88, 28);
+            this.lblPrice.Size = new System.Drawing.Size(75, 23);
             this.lblPrice.TabIndex = 3;
             this.lblPrice.Text = "Amount";
             this.lblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,9 +158,9 @@
             this.lblUnitPrice.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnitPrice.AutoSize = true;
             this.lblUnitPrice.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnitPrice.Location = new System.Drawing.Point(267, 11);
+            this.lblUnitPrice.Location = new System.Drawing.Point(220, 19);
             this.lblUnitPrice.Name = "lblUnitPrice";
-            this.lblUnitPrice.Size = new System.Drawing.Size(59, 56);
+            this.lblUnitPrice.Size = new System.Drawing.Size(88, 23);
             this.lblUnitPrice.TabIndex = 2;
             this.lblUnitPrice.Text = "Unit Price";
             this.lblUnitPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -274,9 +170,9 @@
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(122, 25);
+            this.lblName.Location = new System.Drawing.Point(110, 19);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(55, 28);
+            this.lblName.Size = new System.Drawing.Size(47, 23);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Item";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,9 +182,9 @@
             this.lblQty.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblQty.AutoSize = true;
             this.lblQty.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQty.Location = new System.Drawing.Point(5, 25);
+            this.lblQty.Location = new System.Drawing.Point(6, 19);
             this.lblQty.Name = "lblQty";
-            this.lblQty.Size = new System.Drawing.Size(46, 28);
+            this.lblQty.Size = new System.Drawing.Size(39, 23);
             this.lblQty.TabIndex = 0;
             this.lblQty.Text = "Qty";
             this.lblQty.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,10 +194,10 @@
             this.pnlTotal.Controls.Add(this.tblPayNowLayout);
             this.pnlTotal.Controls.Add(this.tblTotalLayout);
             this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlTotal.Location = new System.Drawing.Point(3, 818);
+            this.pnlTotal.Location = new System.Drawing.Point(3, 696);
             this.pnlTotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTotal.Name = "pnlTotal";
-            this.pnlTotal.Size = new System.Drawing.Size(515, 216);
+            this.pnlTotal.Size = new System.Drawing.Size(457, 184);
             this.pnlTotal.TabIndex = 2;
             // 
             // tblPayNowLayout
@@ -310,12 +206,11 @@
             this.tblPayNowLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblPayNowLayout.Controls.Add(this.butPay, 0, 0);
             this.tblPayNowLayout.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 92);
-            this.tblPayNowLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tblPayNowLayout.Location = new System.Drawing.Point(0, 74);
             this.tblPayNowLayout.Name = "tblPayNowLayout";
             this.tblPayNowLayout.RowCount = 1;
             this.tblPayNowLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblPayNowLayout.Size = new System.Drawing.Size(515, 124);
+            this.tblPayNowLayout.Size = new System.Drawing.Size(457, 110);
             this.tblPayNowLayout.TabIndex = 1;
             // 
             // butPay
@@ -330,10 +225,9 @@
             this.butPay.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.butPay.ForeColor = System.Drawing.Color.White;
             this.butPay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.butPay.Location = new System.Drawing.Point(131, 15);
-            this.butPay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.butPay.Location = new System.Drawing.Point(116, 17);
             this.butPay.Name = "butPay";
-            this.butPay.Size = new System.Drawing.Size(253, 94);
+            this.butPay.Size = new System.Drawing.Size(225, 75);
             this.butPay.TabIndex = 3;
             this.butPay.Text = "Pay Now";
             this.butPay.UseVisualStyleBackColor = false;
@@ -344,17 +238,16 @@
             this.tblTotalLayout.ColumnCount = 3;
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 232F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
             this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
             this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
             this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
             this.tblTotalLayout.Dock = System.Windows.Forms.DockStyle.Top;
             this.tblTotalLayout.Location = new System.Drawing.Point(0, 0);
-            this.tblTotalLayout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblTotalLayout.Name = "tblTotalLayout";
             this.tblTotalLayout.RowCount = 1;
             this.tblTotalLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblTotalLayout.Size = new System.Drawing.Size(515, 92);
+            this.tblTotalLayout.Size = new System.Drawing.Size(457, 74);
             this.tblTotalLayout.TabIndex = 0;
             // 
             // lblTotal
@@ -362,9 +255,9 @@
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(40, 22);
+            this.lblTotal.Location = new System.Drawing.Point(36, 16);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(112, 48);
+            this.lblTotal.Size = new System.Drawing.Size(95, 41);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "Total";
             // 
@@ -373,9 +266,9 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(285, 22);
+            this.lblAmount.Location = new System.Drawing.Point(249, 16);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(58, 48);
+            this.lblAmount.Size = new System.Drawing.Size(50, 41);
             this.lblAmount.TabIndex = 2;
             this.lblAmount.Text = "00";
             // 
@@ -384,9 +277,9 @@
             this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblRs.AutoSize = true;
             this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(215, 22);
+            this.lblRs.Location = new System.Drawing.Point(189, 16);
             this.lblRs.Name = "lblRs";
-            this.lblRs.Size = new System.Drawing.Size(64, 48);
+            this.lblRs.Size = new System.Drawing.Size(54, 41);
             this.lblRs.TabIndex = 4;
             this.lblRs.Text = "Rs.";
             // 
@@ -394,10 +287,9 @@
             // 
             this.panelItemDisplay.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelItemDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelItemDisplay.Location = new System.Drawing.Point(363, 66);
-            this.panelItemDisplay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelItemDisplay.Location = new System.Drawing.Point(323, 0);
             this.panelItemDisplay.Name = "panelItemDisplay";
-            this.panelItemDisplay.Size = new System.Drawing.Size(431, 1036);
+            this.panelItemDisplay.Size = new System.Drawing.Size(383, 882);
             this.panelItemDisplay.TabIndex = 3;
             // 
             // pnlUserButtons
@@ -405,70 +297,145 @@
             this.pnlUserButtons.AutoScroll = true;
             this.pnlUserButtons.Controls.Add(this.tableLayoutPanel2);
             this.pnlUserButtons.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlUserButtons.Location = new System.Drawing.Point(0, 66);
-            this.pnlUserButtons.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlUserButtons.Location = new System.Drawing.Point(0, 0);
             this.pnlUserButtons.Name = "pnlUserButtons";
-            this.pnlUserButtons.Padding = new System.Windows.Forms.Padding(0, 19, 0, 0);
-            this.pnlUserButtons.Size = new System.Drawing.Size(363, 1036);
+            this.pnlUserButtons.Size = new System.Drawing.Size(323, 882);
             this.pnlUserButtons.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.btnLogout, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.btnOffers, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.btnHome, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.panelCategories, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.pictureBox1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.panelCategories, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.btnLogout, 0, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 19);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
+            this.tableLayoutPanel2.RowCount = 6;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 196F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 85F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 144F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(363, 1017);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 115F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(323, 882);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.lblUserGreet, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 240);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.82278F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.17722F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(317, 79);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // lblUserGreet
+            // 
+            this.lblUserGreet.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblUserGreet.AutoSize = true;
+            this.lblUserGreet.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserGreet.Location = new System.Drawing.Point(38, 6);
+            this.lblUserGreet.Name = "lblUserGreet";
+            this.lblUserGreet.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.lblUserGreet.Size = new System.Drawing.Size(241, 38);
+            this.lblUserGreet.TabIndex = 3;
+            this.lblUserGreet.Text = "Hi, (@Username)";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::BookWise_AutoMart.Properties.Resources.MainLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 44);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(317, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // panelCategories
             // 
             this.panelCategories.Controls.Add(this.pnlCategoryScroll);
             this.panelCategories.Controls.Add(this.btnCategories);
             this.panelCategories.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCategories.Location = new System.Drawing.Point(3, 148);
-            this.panelCategories.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelCategories.Location = new System.Drawing.Point(3, 325);
             this.panelCategories.Name = "panelCategories";
-            this.panelCategories.Size = new System.Drawing.Size(357, 577);
+            this.panelCategories.Size = new System.Drawing.Size(317, 417);
             this.panelCategories.TabIndex = 0;
             // 
             // pnlCategoryScroll
             // 
             this.pnlCategoryScroll.AutoScroll = true;
             this.pnlCategoryScroll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCategoryScroll.Location = new System.Drawing.Point(0, 144);
-            this.pnlCategoryScroll.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlCategoryScroll.Location = new System.Drawing.Point(0, 115);
             this.pnlCategoryScroll.Name = "pnlCategoryScroll";
-            this.pnlCategoryScroll.Size = new System.Drawing.Size(357, 433);
+            this.pnlCategoryScroll.Size = new System.Drawing.Size(317, 302);
             this.pnlCategoryScroll.TabIndex = 3;
+            // 
+            // btnCategories
+            // 
+            this.btnCategories.BackColor = System.Drawing.Color.DimGray;
+            this.btnCategories.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategories.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCategories.FlatAppearance.BorderSize = 0;
+            this.btnCategories.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.btnCategories.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DimGray;
+            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategories.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategories.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnCategories.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategories.Location = new System.Drawing.Point(0, 0);
+            this.btnCategories.Name = "btnCategories";
+            this.btnCategories.Size = new System.Drawing.Size(317, 115);
+            this.btnCategories.TabIndex = 2;
+            this.btnCategories.Text = "Categories";
+            this.btnCategories.UseVisualStyleBackColor = false;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnLogout.BackColor = System.Drawing.Color.Firebrick;
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Maroon;
+            this.btnLogout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightCoral;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Segoe UI Semibold", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 770);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(317, 109);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Log Out";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // UserPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1315, 1102);
+            this.ClientSize = new System.Drawing.Size(1169, 882);
             this.Controls.Add(this.panelItemDisplay);
             this.Controls.Add(this.pnlUserButtons);
             this.Controls.Add(this.panelCart);
-            this.Controls.Add(this.panelHeading);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "UserPanel";
             this.Text = "UserPanel";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panelHeading.ResumeLayout(false);
-            this.panelHeading.PerformLayout();
+            this.Load += new System.EventHandler(this.UserPanel_Load);
             this.panelCart.ResumeLayout(false);
             this.tableLayoutPanelCart.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -480,24 +447,18 @@
             this.tblTotalLayout.PerformLayout();
             this.pnlUserButtons.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelCategories.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label lblWindow;
-        private System.Windows.Forms.Panel panelHeading;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Panel panelCart;
-        private System.Windows.Forms.Button btnCategories;
-        private System.Windows.Forms.Button btnOffers;
-        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Panel panelItemDisplay;
         private System.Windows.Forms.Panel pnlUserButtons;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Panel panelCategories;
-        private System.Windows.Forms.Panel pnlCategoryScroll;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCart;
         private System.Windows.Forms.Panel pnlTotal;
         private System.Windows.Forms.Label lblRs;
@@ -513,5 +474,13 @@
         private System.Windows.Forms.Label lblUnitPrice;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblQty;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Panel panelCategories;
+        private System.Windows.Forms.Panel pnlCategoryScroll;
+        private System.Windows.Forms.Button btnCategories;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUserGreet;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
     }
 }

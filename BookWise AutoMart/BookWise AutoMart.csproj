@@ -439,6 +439,7 @@
     <None Include="Resources\folder %28gray%29.png" />
     <None Include="Resources\Checkout_img.jpg" />
     <None Include="Resources\Login_pic.jpg" />
+    <None Include="Resources\MainLogo.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

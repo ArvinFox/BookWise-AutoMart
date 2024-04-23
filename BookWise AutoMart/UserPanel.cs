@@ -141,6 +141,23 @@ namespace BookWise_AutoMart
             }
             this.Close();
         }
+
+        private void UserPanel_Load(object sender, EventArgs e)
+        {
+            CategoriesButton lastButton = null;    //Actually getting the first button
+            foreach (Control control in pnlCategoryScroll.Controls)
+            {
+                if (control is CategoriesButton btn)
+                {
+                    lastButton = btn;
+                }
+            }
+
+            if (lastButton != null)
+            {
+                lastButton.PerformClick();
+            }
+        }
     }
     
 }

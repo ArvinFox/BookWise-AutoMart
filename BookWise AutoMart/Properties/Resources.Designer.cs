@@ -313,6 +313,16 @@ namespace BookWise_AutoMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap MainLogo {
+            get {
+                object obj = ResourceManager.GetObject("MainLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maximize__20px_ {
             get {
                 object obj = ResourceManager.GetObject("maximize (20px)", resourceCulture);

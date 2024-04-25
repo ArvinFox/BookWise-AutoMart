@@ -150,7 +150,7 @@ namespace BookWise_AutoMart
             //string query = "INSERT INTO Feedback (feedback_user_id, star_rating, feedback) VALUES ()"; ------------------- feedback_user_id --> Unfinished.
             //string query = $"INSERT INTO Feedback (star_rating, feedback) VALUES ({userStarRating} , '{userFeedback}')";
 
-            string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES (1 , {userStarRating} , '{userFeedback}')";
+            string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES ({UserPanel.id} , {userStarRating} , '{userFeedback}')";
 
             SqlCommand cmd = new SqlCommand(query, conn);
 
@@ -179,8 +179,8 @@ namespace BookWise_AutoMart
                     cmd.ExecuteNonQuery();
 
                     //returning to a new login page.
-                    MainForm mainForm = new MainForm();
-                    mainForm.Show();
+                    UserLogin userLogin = new UserLogin();
+                    userLogin.Show();
                     this.Close();
                 }
                 catch (Exception)
@@ -220,8 +220,8 @@ namespace BookWise_AutoMart
             {
                 loginFormTimer.Stop();
 
-                MainForm mainForm = new MainForm();
-                mainForm.Show();
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
                 this.Close();
             }
         }

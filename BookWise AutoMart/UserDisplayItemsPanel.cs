@@ -165,9 +165,9 @@ namespace BookWise_AutoMart
 
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            MessageBox.Show("Error retrieving data: " + ex.Message);
+                            // Error
                         }
 
                     }
@@ -236,9 +236,9 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Error retrieving Subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Error
                     }
                 }
             }
@@ -316,7 +316,7 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         //---------Error-----------
                         return -1;

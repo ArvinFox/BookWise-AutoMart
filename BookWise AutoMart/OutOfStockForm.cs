@@ -17,7 +17,6 @@ namespace BookWise_AutoMart
 
         public OutOfStockForm(int Qty, TextBox textQty)
         {
-
             InitializeComponent();
             stock = Qty;
             textBoxQty = textQty;
@@ -25,26 +24,8 @@ namespace BookWise_AutoMart
 
         private void butOk_Click(object sender, EventArgs e)
         {
-            
             textBoxQty.Text = stock.ToString();
-            bool userPanelFound = false;
-
-            foreach(Form form in Application.OpenForms)
-            {
-                if(form is UserPanel)
-                {
-                    form.Show();
-                    userPanelFound = true;
-                    break;
-                }
-            }
-
-            if(!userPanelFound)
-            {
-                UserPanel userPanel = new UserPanel();
-                userPanel.Show();
-            }
-            this.Hide();
+            this.Close();
         }
 
         private void OutOfStockForm_Load(object sender, EventArgs e)

@@ -88,28 +88,56 @@ namespace BookWise_AutoMart
                     string sql = "INSERT INTO Guests (guest_name, guest_contact_number) VALUES (@name, @contactNo)";
                     SqlCommand command = new SqlCommand(sql, connection);
 
-                    command.Parameters.AddWithValue("@name", name);
-                    command.Parameters.AddWithValue("@contactNo", contact);
+                    command.Parameters.AddWithValue("@name", name.Trim());
+                    command.Parameters.AddWithValue("@contactNo", contact.Trim());
 
                     connection.Open();
                     int rowsAffected = command.ExecuteNonQuery();
 
                     if (rowsAffected > 0)
                     {
-                        UserPanel userPanel = new UserPanel();
+                        UserPanel userPanel = new UserPanel(GetGuestId(contact), "Guest");
                         userPanel.Show();
                         this.Hide();
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
-            catch (Exception ex)
+        }
+        private int GetGuestId(string contactNo)
+        {
+            int lastGuestId = -1;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string query = "SELECT guest_id FROM Guests WHERE guest_contact_number = @ContactNumber";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@ContactNumber", contactNo.Trim());
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            lastGuestId = (int)result;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // error
+                    }
+                }
             }
+
+            return lastGuestId;
         }
 
         //To prevent entering letters and characters in the phone no textbox

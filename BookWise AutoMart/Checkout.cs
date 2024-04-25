@@ -27,6 +27,48 @@ namespace BookWise_AutoMart
             feedbackFormTimer = new Timer();
             feedbackFormTimer.Interval = 1000;
             feedbackFormTimer.Tick += FeedbackFormTimer_Tick;
+
+            lblUserName.Text = GetUsername(UserPanel.id);
+        }
+
+        private string GetUsername(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "";
+
+                if (UserPanel.user == "Customer")
+                {
+                    query = "SELECT name FROM Users WHERE user_id = @UserId";
+                }
+                else
+                {
+                    query = "SELECT guest_name FROM Guests WHERE guest_id = @UserId";
+                }
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@UserId", id);
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // error
+                    }
+                }
+            }
+
+            return "User";
         }
 
         private void butCash_Click(object sender, EventArgs e)
@@ -231,10 +273,10 @@ namespace BookWise_AutoMart
             }
             if(!userPanelFound)
             {
-                UserPanel userPanel = new UserPanel();
+                UserPanel userPanel = new UserPanel(UserPanel.id, UserPanel.user);
                 userPanel.Show();
             }
-            this.Close();
+            this.Hide();
         }
 
         private void FeedbackFormTimer_Tick(object sender, EventArgs e)
@@ -250,16 +292,15 @@ namespace BookWise_AutoMart
                     if (form is UserFeedbackForm)
                     {
                         feedbackFormFound = true;
-                        form.Show();
+                        form.ShowDialog();
                         break;
                     }
                 }
                 if (!feedbackFormFound)
                 {
                     UserFeedbackForm userFeedbackForm = new UserFeedbackForm();
-                    userFeedbackForm.Show();
+                    userFeedbackForm.ShowDialog();
                 }
-                this.Close();
             }
         }
     }

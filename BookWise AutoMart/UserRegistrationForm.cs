@@ -139,13 +139,9 @@ namespace BookWise_AutoMart
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
         }
 
@@ -171,13 +167,9 @@ namespace BookWise_AutoMart
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
         }
 
@@ -207,13 +199,9 @@ namespace BookWise_AutoMart
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
         }
 

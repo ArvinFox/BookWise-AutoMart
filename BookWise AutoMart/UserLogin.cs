@@ -84,7 +84,7 @@ namespace BookWise_AutoMart
 
                     if(result == 1)
                     {
-                        UserPanel userPanel = new UserPanel();
+                        UserPanel userPanel = new UserPanel(GetCustomerId(contact), "Customer");
                         userPanel.Show();
                         this.Hide();
                     }
@@ -96,14 +96,42 @@ namespace BookWise_AutoMart
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
-            catch (Exception ex)
+        }
+        private int GetCustomerId(string contactNo)
+        {
+            int customerId = -1;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string query = "SELECT user_id FROM Users WHERE contact_number = @ContactNumber";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@ContactNumber", contactNo.Trim());
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            customerId = (int)result;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // error
+                    }
+                }
             }
+
+            return customerId;
         }
 
         private void lblCreateacc_Click(object sender, EventArgs e)

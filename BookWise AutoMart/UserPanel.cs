@@ -19,6 +19,8 @@ namespace BookWise_AutoMart
     public partial class UserPanel : Form
     {
         public static int id;
+        public static string user;
+
         public static string categoryName;
         private UserDisplayItemsPanel UserDisplayItemsPanel;
         public static Panel pnl;
@@ -29,13 +31,59 @@ namespace BookWise_AutoMart
 
         //SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
 
-        public UserPanel()
+        public UserPanel(int userId, string userType)
         {
             InitializeComponent();
+
+            id = userId;
+            user = userType;
+
+            lblUserGreet.Text = $"Hi, {GetUsername(id)}";
+
             DisplayCategories();
             total = lblAmount;
             pnl = pnlCart;
             checkoutForm = new Checkout();
+        }
+
+        private string GetUsername(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "";
+
+                if (user == "Customer")
+                {
+                    query = "SELECT name FROM Users WHERE user_id = @UserId";
+                }
+                else
+                {
+                    query = "SELECT guest_name FROM Guests WHERE guest_id = @UserId";
+                }
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@UserId", id);
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // error
+                    }
+                }
+            }
+
+            return "User";
         }
 
         private void DisplayCategories()
@@ -68,13 +116,9 @@ namespace BookWise_AutoMart
                     }
                 }
             }
-            catch (SqlException sqlex)
+            catch (Exception)
             {
-                MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // Error
             }
         }
 

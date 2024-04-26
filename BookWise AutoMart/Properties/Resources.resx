@@ -157,6 +157,9 @@
   <data name="folder (gray)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\folder (gray).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Gold_Star_Colored_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gold_Star_Colored_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,6 +208,9 @@
   <data name="uncolored-circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uncolored-circle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="MainLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MainLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="offers-promotions" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\offers-promotions.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,7 +229,19 @@
   <data name="admin-avatar (20px)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\admin-avatar (20px).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MainLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MainLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Guide_AddItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Guide_AddItem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Guide_Cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Guide_Cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Guide_Categories" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Guide_Categories.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Guide_Search&amp;Filter" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Guide_Search&amp;Filter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="information-button" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information-button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

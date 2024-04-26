@@ -38,10 +38,12 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.tblSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
             this.tblCategoryNameContainer.SuspendLayout();
             this.tblFilterSearchContainer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tblSearchContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtItemName
@@ -58,27 +60,30 @@
             // tblCategoryNameContainer
             // 
             this.tblCategoryNameContainer.BackColor = System.Drawing.SystemColors.Control;
-            this.tblCategoryNameContainer.ColumnCount = 1;
-            this.tblCategoryNameContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblCategoryNameContainer.Controls.Add(this.lblCategoryName, 0, 0);
+            this.tblCategoryNameContainer.ColumnCount = 3;
+            this.tblCategoryNameContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCategoryNameContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tblCategoryNameContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
+            this.tblCategoryNameContainer.Controls.Add(this.lblCategoryName, 1, 0);
+            this.tblCategoryNameContainer.Controls.Add(this.pictureBoxInfo, 2, 0);
             this.tblCategoryNameContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblCategoryNameContainer.Location = new System.Drawing.Point(0, 0);
+            this.tblCategoryNameContainer.Location = new System.Drawing.Point(0, 12);
             this.tblCategoryNameContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblCategoryNameContainer.Name = "tblCategoryNameContainer";
             this.tblCategoryNameContainer.RowCount = 1;
-            this.tblCategoryNameContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblCategoryNameContainer.Size = new System.Drawing.Size(1035, 116);
+            this.tblCategoryNameContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblCategoryNameContainer.Size = new System.Drawing.Size(1035, 80);
             this.tblCategoryNameContainer.TabIndex = 11;
             // 
             // lblCategoryName
             // 
             this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryName.AutoSize = true;
-            this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI Black", 34F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(288, 20);
+            this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI Black", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoryName.Location = new System.Drawing.Point(339, 10);
             this.lblCategoryName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(459, 76);
+            this.lblCategoryName.Size = new System.Drawing.Size(355, 60);
             this.lblCategoryName.TabIndex = 1;
             this.lblCategoryName.Text = "category Name";
             this.lblCategoryName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -88,10 +93,10 @@
             this.flpItemCardsContainer.AutoScroll = true;
             this.flpItemCardsContainer.BackColor = System.Drawing.SystemColors.Control;
             this.flpItemCardsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpItemCardsContainer.Location = new System.Drawing.Point(0, 196);
+            this.flpItemCardsContainer.Location = new System.Drawing.Point(0, 172);
             this.flpItemCardsContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flpItemCardsContainer.Name = "flpItemCardsContainer";
-            this.flpItemCardsContainer.Size = new System.Drawing.Size(1035, 416);
+            this.flpItemCardsContainer.Size = new System.Drawing.Size(1035, 440);
             this.flpItemCardsContainer.TabIndex = 10;
             // 
             // tblFilterSearchContainer
@@ -103,7 +108,7 @@
             this.tblFilterSearchContainer.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this.tblFilterSearchContainer.Controls.Add(this.tblSearchContainer, 1, 0);
             this.tblFilterSearchContainer.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tblFilterSearchContainer.Location = new System.Drawing.Point(0, 116);
+            this.tblFilterSearchContainer.Location = new System.Drawing.Point(0, 92);
             this.tblFilterSearchContainer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tblFilterSearchContainer.Name = "tblFilterSearchContainer";
             this.tblFilterSearchContainer.RowCount = 1;
@@ -181,16 +186,30 @@
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search :";
             // 
+            // pictureBoxInfo
+            // 
+            this.pictureBoxInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxInfo.Image = global::BookWise_AutoMart.Properties.Resources.information_button;
+            this.pictureBoxInfo.Location = new System.Drawing.Point(934, 3);
+            this.pictureBoxInfo.Name = "pictureBoxInfo";
+            this.pictureBoxInfo.Size = new System.Drawing.Size(98, 74);
+            this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInfo.TabIndex = 2;
+            this.pictureBoxInfo.TabStop = false;
+            this.pictureBoxInfo.Click += new System.EventHandler(this.pictureBoxInfo_Click);
+            // 
             // UserDisplayItemsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.flpItemCardsContainer);
             this.Controls.Add(this.tblFilterSearchContainer);
             this.Controls.Add(this.tblCategoryNameContainer);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserDisplayItemsPanel";
+            this.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.Size = new System.Drawing.Size(1035, 612);
             this.Load += new System.EventHandler(this.displayItem_load);
             this.tblCategoryNameContainer.ResumeLayout(false);
@@ -200,6 +219,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tblSearchContainer.ResumeLayout(false);
             this.tblSearchContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +235,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label lblFilter;
         private System.Windows.Forms.ComboBox comboBoxFilterSubCategories;
+        private System.Windows.Forms.PictureBox pictureBoxInfo;
     }
 }

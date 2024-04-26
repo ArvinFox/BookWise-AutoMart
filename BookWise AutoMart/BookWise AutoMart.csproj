@@ -159,29 +159,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControl1.cs">
+    <Compile Include="UserControlGuide1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="UserControlGuide1.Designer.cs">
+      <DependentUpon>UserControlGuide1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl2.cs">
+    <Compile Include="UserControlGuide2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl2.Designer.cs">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <Compile Include="UserControlGuide2.Designer.cs">
+      <DependentUpon>UserControlGuide2.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl3.cs">
+    <Compile Include="UserControlGuide3.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl3.Designer.cs">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <Compile Include="UserControlGuide3.Designer.cs">
+      <DependentUpon>UserControlGuide3.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControl4.cs">
+    <Compile Include="UserControlGuide4.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl4.Designer.cs">
-      <DependentUpon>UserControl4.cs</DependentUpon>
+    <Compile Include="UserControlGuide4.Designer.cs">
+      <DependentUpon>UserControlGuide4.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlInventoryManagement.cs">
       <SubType>UserControl</SubType>
@@ -292,17 +292,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlGuide1.resx">
+      <DependentUpon>UserControlGuide1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl2.resx">
-      <DependentUpon>UserControl2.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlGuide2.resx">
+      <DependentUpon>UserControlGuide2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl3.resx">
-      <DependentUpon>UserControl3.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlGuide3.resx">
+      <DependentUpon>UserControlGuide3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl4.resx">
-      <DependentUpon>UserControl4.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlGuide4.resx">
+      <DependentUpon>UserControlGuide4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlInventoryManagement.resx">
       <DependentUpon>UserControlInventoryManagement.cs</DependentUpon>
@@ -431,6 +431,12 @@
     <None Include="Resources\Checkout_img.jpg" />
     <None Include="Resources\Login_pic.jpg" />
     <None Include="Resources\MainLogo.png" />
+    <None Include="Resources\close.png" />
+    <None Include="Resources\Guide_AddItem.png" />
+    <None Include="Resources\Guide_Cart.png" />
+    <None Include="Resources\Guide_Categories.png" />
+    <None Include="Resources\Guide_Search&amp;Filter.png" />
+    <None Include="Resources\information-button.png" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

@@ -145,7 +145,7 @@ namespace BookWise_AutoMart
 
 
 
-                                        ItemPanel newItem = new ItemPanel(itemName, itemDescription, price, image, discount);
+                                        ItemPanel newItem = new ItemPanel( itemName, itemDescription, price, image, discount);
 
                                         // Add item (panel) to FlowLayoutPanel
                                         flpItemCardsContainer.Controls.Add(newItem);
@@ -165,9 +165,9 @@ namespace BookWise_AutoMart
 
                             }
                         }
-                        catch (Exception)
+                        catch (Exception ex)
                         {
-                            // Error
+                            MessageBox.Show("Error retrieving data: " + ex.Message);
                         }
 
                     }
@@ -236,9 +236,9 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        // Error
+                        MessageBox.Show("Error retrieving Subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -316,13 +316,19 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         //---------Error-----------
                         return -1;
                     }
                 }
             }
+        }
+
+        private void pictureBoxInfo_Click(object sender, EventArgs e)
+        {
+            InformationForm form = new InformationForm();
+            form.Show();
         }
     }
 

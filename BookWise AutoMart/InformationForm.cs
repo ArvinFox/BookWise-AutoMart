@@ -13,18 +13,20 @@ namespace BookWise_AutoMart
     public partial class InformationForm : Form
     {
         private int currentStep = 0;
+        private string[] stepsInfo = { "Categories", "Search && Filter Items", "Add Items to Cart", "Proceed to Checkout" };
         PictureBox[] pages;
         UserControl[] userControls;
         public InformationForm()
         {
             InitializeComponent();
+            lblStep.Text = stepsInfo[currentStep];
             userControls=new UserControl[]
             {
-                new UserControl1(),new UserControl2(),new UserControl3(),new UserControl4()
+                new UserControlGuide1(),new UserControlGuide2(),new UserControlGuide3(),new UserControlGuide4()
             };
             pages  = new PictureBox[]
             {
-                pictureBoxPage1 , pictureBoxPage2 , pictureBoxPage3 , pictureBoxPage4 ,pictureBoxPage5
+                pictureBoxPage1 , pictureBoxPage2 , pictureBoxPage3 , pictureBoxPage4 
             };
         }
         private void steps(int steps)
@@ -32,6 +34,7 @@ namespace BookWise_AutoMart
             
             for (int i = 0;i<pages.Length;i++)
             {
+                lblStep.Text = stepsInfo[currentStep];
                 if(i==steps)
                 {
                     pages[i].Image = Properties.Resources.colored_circle;
@@ -91,6 +94,16 @@ namespace BookWise_AutoMart
         private void InformationForm_Load(object sender, EventArgs e)
         {
             switchPages(userControls[currentStep]);
+        }
+
+        private void pictureBoxClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void InformationForm_Deactivate(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

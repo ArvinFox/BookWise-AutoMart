@@ -18,6 +18,7 @@ namespace BookWise_AutoMart
         public Panel panelBill;
         private Timer feedbackFormTimer;
         private int feedbackTimer = 0;
+        private string payment;
         private string connectionString = DatabaseString.GetUserDatabase();
 
         public Checkout()
@@ -73,12 +74,18 @@ namespace BookWise_AutoMart
 
         private void butCash_Click(object sender, EventArgs e)
         {
+            payment = "Cash";
             StockUpdate();
+            InsertOrderData();
+            OrderItems();
         }
 
         private void butCard_Click(object sender, EventArgs e)
         {
+            payment = "Credit Card";
             StockUpdate();
+            InsertOrderData();
+            OrderItems();
         }
 
         private void UpdateStock(string itemName, int quantity, int itemStock)
@@ -247,6 +254,7 @@ namespace BookWise_AutoMart
             }
         }
 
+        //Get total from userpanel to display total amount
         public string BillValue
         {
             get
@@ -257,6 +265,144 @@ namespace BookWise_AutoMart
             {
                 this.lblAmount.Text = value;
             }
+        }
+
+        private void InsertOrderData()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                int userId = UserPanel.id;
+                DateTime orderDate = DateTime.Now;
+                double total = Convert.ToDouble(lblAmount.Text.Trim());
+
+                string query = "";
+                if (UserPanel.user == "Customer")
+                {
+                    query = @" INSERT INTO Orders (order_user_id,order_date,total_price,payment_method) VALUES (@UserId, @OrderDate,@total, @payment)";
+                }
+                else
+                {
+                    query = @" INSERT INTO Orders (order_guest_id, order_date,total_price,payment_method) VALUES (@UserId, @OrderDate,@total, @payment)";
+                }
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@OrderDate", orderDate);
+                    cmd.Parameters.AddWithValue("@total", total);
+                    cmd.Parameters.AddWithValue("@payment", payment);
+
+                    try
+                    {
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        //--------error---------
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void OrderItems()
+        {
+            foreach (Control control in pnlBill.Controls)
+            {
+                if (control is TableLayoutPanel tblItem)
+                {
+                    if (tblItem.Controls[0] is Label lblQty && tblItem.Controls[1] is Label lblItemName && tblItem.Controls[2] is Label lblUnitPrice)
+                    {
+                        int quantity = Convert.ToInt32(lblQty.Text.Trim());
+                        string itemName = lblItemName.Text.Trim();
+                        double unitPrice = Convert.ToDouble(lblUnitPrice.Text.Trim());
+
+                        InsertOrderItemsData(GetOrderId(), GetItemId(itemName), quantity, unitPrice);
+                    }
+                }
+            }
+        }
+
+        private void InsertOrderItemsData(int orderId, int itemId, int quantity, double unitPrice)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Order_Items VALUES (@OrderId, @ItemId, @Quantity, @UnitPrice)";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@OrderId", orderId);
+                        cmd.Parameters.AddWithValue("@ItemId", itemId);
+                        cmd.Parameters.AddWithValue("@Quantity", quantity);
+                        cmd.Parameters.AddWithValue("@UnitPrice", unitPrice);
+
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch (Exception)
+                    {
+                        //----------Error--------------
+                    }
+                }
+            }
+        }
+
+        private int GetItemId(string itemName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT item_id FROM Items WHERE item_name = @ItemName";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@ItemName", itemName);
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return (int)result;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        //--------Error------------
+                    }
+                }
+            }
+            return -1;
+        }
+
+        private int GetOrderId()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT TOP 1 order_id FROM Orders ORDER BY order_id DESC";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            return (int)result;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        //--------Error------------
+                    }
+                }
+            }
+            return -1;
         }
 
         private void pictureBoxBack_Click(object sender, EventArgs e)
@@ -279,6 +425,7 @@ namespace BookWise_AutoMart
             this.Hide();
         }
 
+        //To display feedback form at the end
         private void FeedbackFormTimer_Tick(object sender, EventArgs e)
         {
             feedbackTimer++;

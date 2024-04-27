@@ -136,6 +136,24 @@
     <Compile Include="DisplayUserDetails.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormForgotPassword.Designer.cs">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewPassword.Designer.cs">
+      <DependentUpon>FormNewPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="GuestLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +290,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Checkout.resx">
       <DependentUpon>Checkout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormForgotPassword.resx">
+      <DependentUpon>FormForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewPassword.resx">
+      <DependentUpon>FormNewPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GuestLogin.resx">
       <DependentUpon>GuestLogin.cs</DependentUpon>

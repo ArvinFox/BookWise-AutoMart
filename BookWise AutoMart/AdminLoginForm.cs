@@ -170,5 +170,10 @@ namespace BookWise_AutoMart
                 btnAdminLogin.PerformClick();
             }
         }
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
     }
 }

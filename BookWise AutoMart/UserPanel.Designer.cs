@@ -238,7 +238,7 @@
             this.tblTotalLayout.ColumnCount = 3;
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.85714F));
             this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.14286F));
-            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 210F));
+            this.tblTotalLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 211F));
             this.tblTotalLayout.Controls.Add(this.lblTotal, 0, 0);
             this.tblTotalLayout.Controls.Add(this.lblAmount, 2, 0);
             this.tblTotalLayout.Controls.Add(this.lblRs, 1, 0);
@@ -255,7 +255,7 @@
             this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(36, 16);
+            this.lblTotal.Location = new System.Drawing.Point(35, 16);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(95, 41);
             this.lblTotal.TabIndex = 1;
@@ -266,7 +266,7 @@
             this.lblAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmount.Location = new System.Drawing.Point(249, 16);
+            this.lblAmount.Location = new System.Drawing.Point(248, 16);
             this.lblAmount.Name = "lblAmount";
             this.lblAmount.Size = new System.Drawing.Size(50, 41);
             this.lblAmount.TabIndex = 2;
@@ -277,7 +277,7 @@
             this.lblRs.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblRs.AutoSize = true;
             this.lblRs.Font = new System.Drawing.Font("Segoe UI Semilight", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRs.Location = new System.Drawing.Point(189, 16);
+            this.lblRs.Location = new System.Drawing.Point(188, 16);
             this.lblRs.Name = "lblRs";
             this.lblRs.Size = new System.Drawing.Size(54, 41);
             this.lblRs.TabIndex = 4;
@@ -400,7 +400,6 @@
             this.btnCategories.TabIndex = 2;
             this.btnCategories.Text = "Categories";
             this.btnCategories.UseVisualStyleBackColor = false;
-            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
             // btnLogout
             // 

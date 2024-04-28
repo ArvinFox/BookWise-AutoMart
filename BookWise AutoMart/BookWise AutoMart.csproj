@@ -464,6 +464,7 @@
     <None Include="Resources\Guide_Categories.png" />
     <None Include="Resources\Guide_Search&amp;Filter.png" />
     <None Include="Resources\information-button.png" />
+    <None Include="Resources\colored-circle %28blue%29.jpg" />
     <Content Include="Resources\menu.png" />
   </ItemGroup>
   <ItemGroup>

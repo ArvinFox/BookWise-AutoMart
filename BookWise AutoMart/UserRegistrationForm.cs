@@ -28,7 +28,7 @@ namespace BookWise_AutoMart
         private void butRegister_Click(object sender, EventArgs e)
         {
             string name = txtName.Text.Trim();
-            string gender = "";
+            string gender;
             string contact = txtPhone.Text.Trim();
             string email = txtEmail.Text.Trim();
             DateTime date = DateTime.Now;
@@ -193,8 +193,23 @@ namespace BookWise_AutoMart
 
                     if (rowsAffected > 0)
                     {
-                        UserLogin userLogin = new UserLogin();
-                        userLogin.Show();
+                        bool userLoginFound = false;
+                        foreach (Form form in Application.OpenForms)
+                        {
+                            if (form is UserLogin)
+                            {
+                                userLoginFound = true;
+                                form.Show();
+                                break;
+                            }
+                        }
+                        if (!userLoginFound)
+                        {
+                            UserLogin userLogin = new UserLogin();
+                            userLogin.Show();
+                        }
+
+                        ClearUserRegistrationFormData();    // Reset user input
                         this.Close();
                     }
                 }
@@ -207,7 +222,7 @@ namespace BookWise_AutoMart
 
         private void txtName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //validating whether the name is a letter, a control character and the field is not empty
+            // validating whether the name is a letter, a control character and the field is not empty
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
@@ -216,7 +231,7 @@ namespace BookWise_AutoMart
 
         private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //validating whether the phone number is a control character and a digit 
+            // validating whether the phone number is a control character and a digit 
             try
             {
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
@@ -232,11 +247,11 @@ namespace BookWise_AutoMart
 
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {
-            //validating whether the phone number contains only ten digits
+            // validating whether the phone number contains only ten digits
             if (txtPhone.Text.Length >= 10)
             {
                 txtPhone.Text = txtPhone.Text.Substring(0, 10);
-                //SelectionStart --> To prevent cursor to go to the begining
+                // SelectionStart --> To prevent cursor to go to the begining
                 txtPhone.SelectionStart = txtPhone.Text.Length;
             }
         }
@@ -258,7 +273,19 @@ namespace BookWise_AutoMart
                 UserLogin userLogin = new UserLogin();
                 userLogin.Show();
             }
+
+            ClearUserRegistrationFormData();    // Reset user input
             this.Close();
+        }
+
+        private void ClearUserRegistrationFormData()
+        {
+            txtName.Text = "";
+            radioMale.Checked = false;
+            radioFemale.Checked = false;
+            txtPhone.Text = "";
+            txtEmail.Text = "";
+            lblNotification.Visible = false;
         }
     }
 }

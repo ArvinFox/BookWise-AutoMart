@@ -203,6 +203,16 @@ namespace BookWise_AutoMart.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap colored_circle__blue_ {
+            get {
+                object obj = ResourceManager.GetObject("colored-circle (blue)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap delete__blue_ {
             get {
                 object obj = ResourceManager.GetObject("delete (blue)", resourceCulture);

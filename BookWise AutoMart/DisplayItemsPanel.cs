@@ -11,7 +11,7 @@ namespace BookWise_AutoMart
 {
     public class DisplayItemsPanel : Panel
     {
-        // Import the HideCaret function
+        // Import the HideCaret function (to hide the cursor in the custom text box)
         [DllImport("user32.dll")]
         static extern bool HideCaret(IntPtr hWnd);
 

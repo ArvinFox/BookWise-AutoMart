@@ -42,7 +42,6 @@ namespace BookWise_AutoMart
             {
                 if (showLabel && count == starCount)
                 {
-                    
                     lbl.Visible = true;
                 }
                 else
@@ -52,13 +51,11 @@ namespace BookWise_AutoMart
                 count++;
             }*/
             //---------------------------------------
-            
 
             for (int j = 0; j < starLabels.Length; j++)
             {
                 if (showLabel && j == starCount-1)
                 {
-
                     starLabels[j].Visible = true;
                 }
                 else
@@ -71,16 +68,12 @@ namespace BookWise_AutoMart
             {
                 stars[i].Image = Properties.Resources.Gold_Star_Colored_1;
                 //starLabels[i].Visible = true;
-                
 
                 for (int x=4; x >= starCount; x--)
                 {
                     stars[x].Image = Properties.Resources.Gold_Star_Uncolored_1;
                     //starLabels[x].Visible = false;
-                    
-
                 }
-                
             }
         }
 
@@ -103,21 +96,18 @@ namespace BookWise_AutoMart
         {
             StarCount(3, true);
             userStarRating = 3;
-
         }
 
         private void pictureBoxStar4_Click(object sender, EventArgs e)
         {
             StarCount(4, true);
             userStarRating = 4;
-
         }
 
         private void pictureBoxStar5_Click(object sender, EventArgs e)
         {
             StarCount(5, true);
             userStarRating = 5;
-
         }
 
         private void rtbComment_Click(object sender, EventArgs e)
@@ -128,7 +118,6 @@ namespace BookWise_AutoMart
             {
                 rtbComment.SelectionStart = 1;
             }
-
         }
 
         private void rtbComment_KeyPress(object sender, KeyPressEventArgs e)
@@ -139,7 +128,6 @@ namespace BookWise_AutoMart
             {
                 rtbComment.Text = " ";
                 rtbComment.SelectionStart = 1;
-
             }
         }
 
@@ -149,10 +137,6 @@ namespace BookWise_AutoMart
 
             //string query = "INSERT INTO Feedback (feedback_user_id, star_rating, feedback) VALUES ()"; ------------------- feedback_user_id --> Unfinished.
             //string query = $"INSERT INTO Feedback (star_rating, feedback) VALUES ({userStarRating} , '{userFeedback}')";
-
-            string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES ({UserPanel.id} , {userStarRating} , '{userFeedback}')";
-
-            SqlCommand cmd = new SqlCommand(query, conn);
 
             //---------------------------
 
@@ -175,13 +159,38 @@ namespace BookWise_AutoMart
             {
                 try
                 {
+                    loginFormTimer.Stop();
+
+                    string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES ({UserPanel.id}, {userStarRating}, '{userFeedback}')";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
                     //returning to a new login page.
-                    UserLogin userLogin = new UserLogin();
-                    userLogin.Show();
+                    bool userLoginFound = false;
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form is UserLogin)
+                        {
+                            form.Show();
+                            userLoginFound = true;
+                            break;
+                        }
+                    }
+
+                    if (!userLoginFound)
+                    {
+                        UserLogin userLogin = new UserLogin();
+                        userLogin.Show();
+                    }
+
                     this.Close();
+                    UserPanel.checkoutForm.Close();   // Reset the user bill data
+
+                    // Reset the previous user's data (close previous UserPanel instance)
+                    UserLogin.userPanel.Close();
                 }
                 catch (Exception)
                 {
@@ -190,16 +199,13 @@ namespace BookWise_AutoMart
                 finally
                 {
                     conn.Close();
-
                 }
             }
-            
         }
 
         private void UserFeedbackForm_Load(object sender, EventArgs e)
         {
             loginFormTimer.Start();
-
         }
 
         private void LoginFormTimer_Tick(object sender, EventArgs e)
@@ -220,9 +226,28 @@ namespace BookWise_AutoMart
             {
                 loginFormTimer.Stop();
 
-                UserLogin userLogin = new UserLogin();
-                userLogin.Show();
+                bool userLoginFound = false;
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form is UserLogin)
+                    {
+                        form.Show();
+                        userLoginFound = true;
+                        break;
+                    }
+                }
+
+                if (!userLoginFound)
+                {
+                    UserLogin userLogin = new UserLogin();
+                    userLogin.Show();
+                }
+
                 this.Close();
+                UserPanel.checkoutForm.Close();   // Reset the user bill data
+
+                // Reset the previous user's data (close previous UserPanel instance)
+                UserLogin.userPanel.Close();
             }
         }
     }

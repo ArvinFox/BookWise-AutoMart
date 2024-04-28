@@ -33,8 +33,8 @@
             this.tableLayoutPanelForm = new System.Windows.Forms.TableLayoutPanel();
             this.lblFormName = new System.Windows.Forms.Label();
             this.tableLayoutPanelStock = new System.Windows.Forms.TableLayoutPanel();
-            this.lblStock = new System.Windows.Forms.Label();
             this.lblAvailableStock = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
             this.tableLayoutPanelButton = new System.Windows.Forms.TableLayoutPanel();
             this.butOk = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
@@ -120,20 +120,9 @@
             this.tableLayoutPanelStock.Name = "tableLayoutPanelStock";
             this.tableLayoutPanelStock.RowCount = 1;
             this.tableLayoutPanelStock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelStock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelStock.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanelStock.Size = new System.Drawing.Size(481, 73);
             this.tableLayoutPanelStock.TabIndex = 2;
-            // 
-            // lblStock
-            // 
-            this.lblStock.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblStock.AutoSize = true;
-            this.lblStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStock.Location = new System.Drawing.Point(335, 16);
-            this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(90, 41);
-            this.lblStock.TabIndex = 1;
-            this.lblStock.Text = "Stock";
             // 
             // lblAvailableStock
             // 
@@ -145,6 +134,17 @@
             this.lblAvailableStock.Size = new System.Drawing.Size(233, 41);
             this.lblAvailableStock.TabIndex = 0;
             this.lblAvailableStock.Text = "Available Stock:";
+            // 
+            // lblStock
+            // 
+            this.lblStock.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblStock.AutoSize = true;
+            this.lblStock.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.Location = new System.Drawing.Point(335, 16);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(90, 41);
+            this.lblStock.TabIndex = 1;
+            this.lblStock.Text = "Stock";
             // 
             // tableLayoutPanelButton
             // 
@@ -166,6 +166,7 @@
             // 
             this.butOk.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.butOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.butOk.Cursor = System.Windows.Forms.Cursors.Hand;
             this.butOk.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.butOk.FlatAppearance.BorderSize = 0;
             this.butOk.FlatAppearance.MouseDownBackColor = System.Drawing.Color.RoyalBlue;
@@ -191,6 +192,7 @@
             this.Name = "OutOfStockForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "OutOfStockForm";
+            this.Deactivate += new System.EventHandler(this.OutOfStockForm_Deactivate);
             this.Load += new System.EventHandler(this.OutOfStockForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

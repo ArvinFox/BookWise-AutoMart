@@ -27,9 +27,8 @@ namespace BookWise_AutoMart
         public static Label total;
         public static TextBox Qty;
         public static Checkout checkoutForm;
-        private string connectionString = DatabaseString.GetUserDatabase();
 
-        //SqlConnection connectionString = new SqlConnection(DatabaseString.GetUserDatabase());
+        private string connectionString = DatabaseString.GetUserDatabase();
 
         public UserPanel(int userId, string userType)
         {
@@ -135,11 +134,6 @@ namespace BookWise_AutoMart
             AddUserControl(newControl);
         }
 
-        private void btnCategories_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void butPay_Click(object sender, EventArgs e)
         {
             bool hasTable = false;
@@ -153,7 +147,7 @@ namespace BookWise_AutoMart
              }
              if(hasTable)
              {
-                 checkoutForm.BillValue = this.lblAmount.Text;
+                 checkoutForm.BillValue = lblAmount.Text;
                  checkoutForm.Show();
                  this.Hide();
              }
@@ -183,6 +177,8 @@ namespace BookWise_AutoMart
                 UserLogin userLogin = new UserLogin();
                 userLogin.Show();
             }
+
+            checkoutForm.Close();
             this.Close();
         }
 
@@ -203,5 +199,4 @@ namespace BookWise_AutoMart
             }
         }
     }
-    
 }

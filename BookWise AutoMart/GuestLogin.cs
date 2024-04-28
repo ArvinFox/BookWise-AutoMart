@@ -16,6 +16,8 @@ namespace BookWise_AutoMart
 {
     public partial class GuestLogin : Form
     {
+        public static UserPanel userPanel;  // to track the current UserPanel instance (current user)
+
         private string connectionString = DatabaseString.GetUserDatabase();
 
         public GuestLogin()
@@ -96,9 +98,11 @@ namespace BookWise_AutoMart
 
                     if (rowsAffected > 0)
                     {
-                        UserPanel userPanel = new UserPanel(GetGuestId(contact), "Guest");
+                        userPanel = new UserPanel(GetGuestId(contact), "Guest");
                         userPanel.Show();
-                        this.Hide();
+
+                        ClearGuestLoginData();  // Reset user input
+                        this.Close();
                     }
                 }
             }
@@ -113,7 +117,7 @@ namespace BookWise_AutoMart
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT guest_id FROM Guests WHERE guest_contact_number = @ContactNumber";
+                string query = "SELECT TOP 1 guest_id FROM Guests WHERE guest_contact_number = @ContactNumber ORDER BY guest_id DESC";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -193,7 +197,16 @@ namespace BookWise_AutoMart
                 UserLogin userLogin = new UserLogin();
                 userLogin.Show();
             }
+
+            ClearGuestLoginData();  // Reset user input
             this.Close();
+        }
+
+        private void ClearGuestLoginData()
+        {
+            txtName.Text = "";
+            txtPhone.Text = "";
+            lblNotification.Visible = false;
         }
     }
 }

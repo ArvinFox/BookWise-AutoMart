@@ -16,8 +16,8 @@ namespace BookWise_AutoMart
     public partial class Checkout : Form
     {
         public Panel panelBill;
-        private Timer feedbackFormTimer;
-        private int feedbackTimer = 0;
+        private Timer nextFormTimer;
+        private int formTimer = 0;
         private string payment;
         private string connectionString = DatabaseString.GetUserDatabase();
 
@@ -25,9 +25,9 @@ namespace BookWise_AutoMart
         {
             InitializeComponent();
             panelBill = pnlBill;
-            feedbackFormTimer = new Timer();
-            feedbackFormTimer.Interval = 1000;
-            feedbackFormTimer.Tick += FeedbackFormTimer_Tick;
+            nextFormTimer = new Timer();
+            nextFormTimer.Interval = 500;
+            nextFormTimer.Tick += NextFormTimer_Tick;
 
             lblUserName.Text = GetUsername(UserPanel.id);
         }
@@ -108,7 +108,6 @@ namespace BookWise_AutoMart
                         //---------Error-----------
                     }
                 }
-
             }
         }
 
@@ -142,7 +141,7 @@ namespace BookWise_AutoMart
 
         private void StockUpdate()
         {
-            feedbackFormTimer.Start();
+            nextFormTimer.Start();
 
             foreach (Control control in panelBill.Controls)
             {
@@ -257,14 +256,7 @@ namespace BookWise_AutoMart
         //Get total from userpanel to display total amount
         public string BillValue
         {
-            get
-            {
-                return this.lblAmount.Text;
-            }
-            set
-            {
-                this.lblAmount.Text = value;
-            }
+            set { lblAmount.Text = value; }
         }
 
         private void InsertOrderData()
@@ -422,31 +414,59 @@ namespace BookWise_AutoMart
                 UserPanel userPanel = new UserPanel(UserPanel.id, UserPanel.user);
                 userPanel.Show();
             }
+
             this.Hide();
         }
 
         //To display feedback form at the end
-        private void FeedbackFormTimer_Tick(object sender, EventArgs e)
+        private void NextFormTimer_Tick(object sender, EventArgs e)
         {
-            feedbackTimer++;
-            if(feedbackTimer >= 3)
+            formTimer++;
+            if (formTimer >= 2)
             {
-                feedbackFormTimer.Stop();   
+                nextFormTimer.Stop();
 
-                bool feedbackFormFound = false;
-                foreach (Form form in Application.OpenForms)
+                // only display rating form if the user is a Customer (registered user)
+                if (UserPanel.user == "Customer")
                 {
-                    if (form is UserFeedbackForm)
+                    bool feedbackFormFound = false;
+                    foreach (Form form in Application.OpenForms)
                     {
-                        feedbackFormFound = true;
-                        form.ShowDialog();
-                        break;
+                        if (form is UserFeedbackForm)
+                        {
+                            feedbackFormFound = true;
+                            form.ShowDialog();
+                            break;
+                        }
+                    }
+                    if (!feedbackFormFound)
+                    {
+                        UserFeedbackForm userFeedbackForm = new UserFeedbackForm();
+                        userFeedbackForm.ShowDialog();
                     }
                 }
-                if (!feedbackFormFound)
+                else
                 {
-                    UserFeedbackForm userFeedbackForm = new UserFeedbackForm();
-                    userFeedbackForm.ShowDialog();
+                    bool userLoginFormFound = false;
+                    foreach (Form form in Application.OpenForms)
+                    {
+                        if (form is UserLogin)
+                        {
+                            userLoginFormFound = true;
+                            form.Show();
+                            break;
+                        }
+                    }
+                    if (!userLoginFormFound)
+                    {
+                        UserLogin userLoginForm = new UserLogin();
+                        userLoginForm.Show();
+                    }
+
+                    this.Close();
+
+                    // Reset the previous user's data (close previous UserPanel instance)
+                    GuestLogin.userPanel.Close();
                 }
             }
         }

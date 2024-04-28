@@ -56,9 +56,9 @@
             // 
             this.btnAddNewOffer.BackColor = System.Drawing.Color.DarkOrange;
             this.btnAddNewOffer.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddNewOffer.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnAddNewOffer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
-            this.btnAddNewOffer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnAddNewOffer.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAddNewOffer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Coral;
+            this.btnAddNewOffer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Chocolate;
             this.btnAddNewOffer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddNewOffer.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewOffer.ForeColor = System.Drawing.Color.White;

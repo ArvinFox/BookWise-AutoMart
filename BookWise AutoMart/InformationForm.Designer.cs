@@ -200,7 +200,7 @@
             // pictureBoxPage1
             // 
             this.pictureBoxPage1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxPage1.Image = global::BookWise_AutoMart.Properties.Resources.colored_circle;
+            this.pictureBoxPage1.Image = global::BookWise_AutoMart.Properties.Resources.colored_circle__blue_;
             this.pictureBoxPage1.Location = new System.Drawing.Point(3, 3);
             this.pictureBoxPage1.Name = "pictureBoxPage1";
             this.pictureBoxPage1.Size = new System.Drawing.Size(129, 118);

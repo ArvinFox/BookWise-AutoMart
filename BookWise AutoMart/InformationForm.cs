@@ -16,6 +16,7 @@ namespace BookWise_AutoMart
         private string[] stepsInfo = { "Categories", "Search && Filter Items", "Add Items to Cart", "Proceed to Checkout" };
         PictureBox[] pages;
         UserControl[] userControls;
+
         public InformationForm()
         {
             InitializeComponent();
@@ -37,7 +38,7 @@ namespace BookWise_AutoMart
                 lblStep.Text = stepsInfo[currentStep];
                 if(i==steps)
                 {
-                    pages[i].Image = Properties.Resources.colored_circle;
+                    pages[i].Image = Properties.Resources.colored_circle__blue_;
                 }
                 else
                 {
@@ -55,16 +56,14 @@ namespace BookWise_AutoMart
                 steps(currentStep);
                 imageForward.Visible = true;
             }
-           if (currentStep>0)
+           if (currentStep > 0)
             {
                 imageBackward.Visible = true;
             }
            else
             {
                 imageBackward.Visible = false;
-
             }
-
         }
 
         private void imageForward_Click(object sender, EventArgs e)

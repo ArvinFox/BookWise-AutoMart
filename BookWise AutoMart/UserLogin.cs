@@ -19,6 +19,8 @@ namespace BookWise_AutoMart
         private string passcode = "admin123";
         private int currentIndex = 0;
 
+        public static UserPanel userPanel;  // to track the current UserPanel instance (current user)
+
         public UserLogin()
         {
             InitializeComponent();
@@ -26,9 +28,26 @@ namespace BookWise_AutoMart
 
         private void btnGuestLogin_Click(object sender, EventArgs e)
         {
-            GuestLogin guestLogin = new GuestLogin();
-            guestLogin.Show();
-            this.Show();
+            bool guestLoginFormFound = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is GuestLogin)
+                {
+                    form.Show();
+                    guestLoginFormFound = true;
+                    break;
+                }
+            }
+
+            if (!guestLoginFormFound)
+            {
+                GuestLogin guestLoginForm = new GuestLogin();
+                guestLoginForm.Show();
+            }
+
+            ClearUserLoginData();   // Reset user input
+            this.Hide();
         }
 
         private void butLogin_Click(object sender, EventArgs e)
@@ -84,8 +103,10 @@ namespace BookWise_AutoMart
 
                     if(result == 1)
                     {
-                        UserPanel userPanel = new UserPanel(GetCustomerId(contact), "Customer");
+                        userPanel = new UserPanel(GetCustomerId(contact), "Customer");
                         userPanel.Show();
+
+                        ClearUserLoginData();   // Reset user input
                         this.Hide();
                     }
                     else
@@ -151,6 +172,8 @@ namespace BookWise_AutoMart
                 UserRegistrationForm userRegistration = new UserRegistrationForm();
                 userRegistration.Show();
             }
+
+            ClearUserLoginData();   // Reset user input
             this.Hide();
         }
 
@@ -185,6 +208,7 @@ namespace BookWise_AutoMart
                         adminLoginForm.Show();
                     }
 
+                    ClearUserLoginData();   // Reset user input
                     this.Hide();
                 }
             }
@@ -198,6 +222,21 @@ namespace BookWise_AutoMart
         private void UserLogin_Load(object sender, EventArgs e)
         {
             this.Activate();
+        }
+
+        private void ClearUserLoginData()
+        {
+            txtPhone.Text = "";
+            lblNotification.Visible = false;
+        }
+
+        // allow the user to only enter numbers
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

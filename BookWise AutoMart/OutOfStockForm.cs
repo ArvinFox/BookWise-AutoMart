@@ -32,5 +32,11 @@ namespace BookWise_AutoMart
         {
             lblStock.Text = Convert.ToString(stock).ToString();
         }
+
+        private void OutOfStockForm_Deactivate(object sender, EventArgs e)
+        {
+            textBoxQty.Text = stock.ToString();
+            this.Close();
+        }
     }
 }

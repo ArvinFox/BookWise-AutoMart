@@ -61,31 +61,36 @@ namespace BookWise_AutoMart
             //check stock status
             UpdateStockStatus(txtItemStock, GetTempStock(itemName));
 
-            //Textbox to display discounts
-            TextBox txtDiscount = new TextBox();
-            txtDiscount.Height = 20;
-            txtDiscount.Width = 60;
-            txtDiscount.TextAlign = HorizontalAlignment.Center;
-            txtDiscount.BorderStyle = BorderStyle.None;
-            txtDiscount.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-            txtDiscount.Dock = DockStyle.Right;
-            txtDiscount.ReadOnly = true;
-            txtDiscount.GotFocus += (sender, e) =>
+            // Check if the current user is a Customer (registered user)
+            if (UserPanel.user.Equals("Customer"))
             {
-                HideCaret(((TextBox)sender).Handle);
-            };
-            this.Controls.Add(txtDiscount);
+                //Textbox to display discounts
+                TextBox txtDiscount = new TextBox();
+                txtDiscount.Height = 20;
+                txtDiscount.Width = 60;
+                txtDiscount.TextAlign = HorizontalAlignment.Center;
+                txtDiscount.BorderStyle = BorderStyle.None;
+                txtDiscount.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+                txtDiscount.Dock = DockStyle.Right;
+                txtDiscount.ReadOnly = true;
+                txtDiscount.GotFocus += (sender, e) =>
+                {
+                    HideCaret(((TextBox)sender).Handle);
+                };
+                this.Controls.Add(txtDiscount);
 
-            //Check the item discount status 
-            if (discount > 0)
-            {
-                txtDiscount.ForeColor = Color.White;
-                txtDiscount.BackColor = Color.Red;
-                txtDiscount.Text = discount.ToString() + "%";
-            }
-            else
-            {
-                txtDiscount.Visible = false;
+
+                //Check the item discount status 
+                if (discount > 0)
+                {
+                    txtDiscount.ForeColor = Color.White;
+                    txtDiscount.BackColor = Color.Red;
+                    txtDiscount.Text = discount.ToString() + "%";
+                }
+                else
+                {
+                    txtDiscount.Visible = false;
+                }
             }
 
             //Panel to store Add Remove buttons with qty textbox
@@ -117,12 +122,7 @@ namespace BookWise_AutoMart
             txtQty.Anchor = AnchorStyles.None;
             txtQty.KeyPress += (sender, e) =>
             {
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-                {
-                    e.Handled = true;
-                }
-
-                if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
                 {
                     e.Handled = true;
                 }
@@ -249,8 +249,7 @@ namespace BookWise_AutoMart
                         UserPanel.checkoutForm.AddToBill(qty,itemName,price);
                     }
                     UpdateStockStatus(txtItemStock, GetTempStock(itemName));
-                    //Update Total
-                    UpdateTotal();
+                    UpdateTotal();  // Update Total
                 }
             };
 
@@ -479,8 +478,6 @@ namespace BookWise_AutoMart
             return false;
         }
 
-
-
         private void UpdateTotal()
         {
             decimal sum = 0;
@@ -500,4 +497,3 @@ namespace BookWise_AutoMart
         }
     }
 }
-

@@ -83,7 +83,7 @@ namespace BookWise_AutoMart
                     // filtered item and searched item (filterOption != null && searchedItemName != null)
                     else if (!string.IsNullOrEmpty(filterOption) && !string.IsNullOrEmpty(searchedItemName))
                     {
-                        query = @"SELECT Items.
+                        query = @"SELECT Items.*
                               FROM Items
                               INNER JOIN Categories ON Items.item_category_id = Categories.category_id
                               INNER JOIN SubCategories ON Items.item_subcategory_id = SubCategories.subcategory_id
@@ -143,8 +143,6 @@ namespace BookWise_AutoMart
                                             image = Image.FromStream(ms);
                                         }
 
-
-
                                         ItemPanel newItem = new ItemPanel( itemName, itemDescription, price, image, discount);
 
                                         // Add item (panel) to FlowLayoutPanel
@@ -162,20 +160,18 @@ namespace BookWise_AutoMart
                                     noItemsLabel.AutoSize = true;
                                     flpItemCardsContainer.Controls.Add(noItemsLabel);
                                 }
-
                             }
                         }
-                        catch (Exception ex)
+                        catch (Exception)
                         {
-                            MessageBox.Show("Error retrieving data: " + ex.Message);
+                            // Error
                         }
-
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error retrieving data: " + ex.Message);
+                // Error
             }
         }
 
@@ -236,9 +232,9 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
-                        MessageBox.Show("Error retrieving Subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        // Error
                     }
                 }
             }
@@ -316,7 +312,7 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         //---------Error-----------
                         return -1;
@@ -327,10 +323,8 @@ namespace BookWise_AutoMart
 
         private void pictureBoxInfo_Click(object sender, EventArgs e)
         {
-            InformationForm form = new InformationForm();
-            form.Show();
+            InformationForm informationForm = new InformationForm();
+            informationForm.Show();
         }
     }
-
 }
-

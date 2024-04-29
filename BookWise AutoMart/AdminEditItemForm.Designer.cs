@@ -30,6 +30,9 @@
         {
             this.tblBorder = new System.Windows.Forms.TableLayoutPanel();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.comboBoxSubcategories = new System.Windows.Forms.ComboBox();
+            this.lblSubcategoryRequired = new System.Windows.Forms.Label();
+            this.lblSubcategory = new System.Windows.Forms.Label();
             this.rtbItemDescription = new System.Windows.Forms.RichTextBox();
             this.lblRequiredFields = new System.Windows.Forms.Label();
             this.lblImageRequired = new System.Windows.Forms.Label();
@@ -56,9 +59,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubcategoryRequired = new System.Windows.Forms.Label();
-            this.lblSubcategory = new System.Windows.Forms.Label();
-            this.comboBoxSubcategories = new System.Windows.Forms.ComboBox();
             this.tblBorder.SuspendLayout();
             this.pnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDecrementStock)).BeginInit();
@@ -121,6 +121,42 @@
             this.pnlContainer.Name = "pnlContainer";
             this.pnlContainer.Size = new System.Drawing.Size(742, 792);
             this.pnlContainer.TabIndex = 0;
+            // 
+            // comboBoxSubcategories
+            // 
+            this.comboBoxSubcategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxSubcategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSubcategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSubcategories.Font = new System.Drawing.Font("Gadugi", 15F);
+            this.comboBoxSubcategories.FormattingEnabled = true;
+            this.comboBoxSubcategories.Location = new System.Drawing.Point(263, 298);
+            this.comboBoxSubcategories.MaxDropDownItems = 20;
+            this.comboBoxSubcategories.Name = "comboBoxSubcategories";
+            this.comboBoxSubcategories.Size = new System.Drawing.Size(228, 37);
+            this.comboBoxSubcategories.TabIndex = 81;
+            // 
+            // lblSubcategoryRequired
+            // 
+            this.lblSubcategoryRequired.AutoSize = true;
+            this.lblSubcategoryRequired.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblSubcategoryRequired.ForeColor = System.Drawing.Color.Red;
+            this.lblSubcategoryRequired.Location = new System.Drawing.Point(497, 298);
+            this.lblSubcategoryRequired.Name = "lblSubcategoryRequired";
+            this.lblSubcategoryRequired.Size = new System.Drawing.Size(22, 28);
+            this.lblSubcategoryRequired.TabIndex = 78;
+            this.lblSubcategoryRequired.Text = "*";
+            this.lblSubcategoryRequired.Visible = false;
+            // 
+            // lblSubcategory
+            // 
+            this.lblSubcategory.AutoSize = true;
+            this.lblSubcategory.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
+            this.lblSubcategory.ForeColor = System.Drawing.Color.Black;
+            this.lblSubcategory.Location = new System.Drawing.Point(33, 303);
+            this.lblSubcategory.Name = "lblSubcategory";
+            this.lblSubcategory.Size = new System.Drawing.Size(162, 28);
+            this.lblSubcategory.TabIndex = 77;
+            this.lblSubcategory.Text = "Subcategory:";
             // 
             // rtbItemDescription
             // 
@@ -256,7 +292,7 @@
             this.pictureBoxImage.Location = new System.Drawing.Point(263, 455);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(206, 178);
-            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxImage.TabIndex = 61;
             this.pictureBoxImage.TabStop = false;
             // 
@@ -450,42 +486,6 @@
             this.lblTitle.Size = new System.Drawing.Size(306, 44);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Edit Item Details";
-            // 
-            // lblSubcategoryRequired
-            // 
-            this.lblSubcategoryRequired.AutoSize = true;
-            this.lblSubcategoryRequired.Font = new System.Drawing.Font("Gadugi", 14F);
-            this.lblSubcategoryRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblSubcategoryRequired.Location = new System.Drawing.Point(497, 298);
-            this.lblSubcategoryRequired.Name = "lblSubcategoryRequired";
-            this.lblSubcategoryRequired.Size = new System.Drawing.Size(22, 28);
-            this.lblSubcategoryRequired.TabIndex = 78;
-            this.lblSubcategoryRequired.Text = "*";
-            this.lblSubcategoryRequired.Visible = false;
-            // 
-            // lblSubcategory
-            // 
-            this.lblSubcategory.AutoSize = true;
-            this.lblSubcategory.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
-            this.lblSubcategory.ForeColor = System.Drawing.Color.Black;
-            this.lblSubcategory.Location = new System.Drawing.Point(33, 303);
-            this.lblSubcategory.Name = "lblSubcategory";
-            this.lblSubcategory.Size = new System.Drawing.Size(162, 28);
-            this.lblSubcategory.TabIndex = 77;
-            this.lblSubcategory.Text = "Subcategory:";
-            // 
-            // comboBoxSubcategories
-            // 
-            this.comboBoxSubcategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxSubcategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSubcategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxSubcategories.Font = new System.Drawing.Font("Gadugi", 15F);
-            this.comboBoxSubcategories.FormattingEnabled = true;
-            this.comboBoxSubcategories.Location = new System.Drawing.Point(263, 298);
-            this.comboBoxSubcategories.MaxDropDownItems = 20;
-            this.comboBoxSubcategories.Name = "comboBoxSubcategories";
-            this.comboBoxSubcategories.Size = new System.Drawing.Size(228, 37);
-            this.comboBoxSubcategories.TabIndex = 81;
             // 
             // AdminEditItemForm
             // 

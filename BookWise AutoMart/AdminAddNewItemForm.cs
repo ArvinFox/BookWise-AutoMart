@@ -168,7 +168,7 @@ namespace BookWise_AutoMart
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Items (item_name, item_description, item_category_id, item_subcategory_id, price, stock, image) VALUES (@ItemName, @ItemDescription, @ItemCategoryId, @ItemSucategoryId, @Price, @Stock, @ImageData)";
+                string query = "INSERT INTO Items (item_name, item_description, item_category_id, item_subcategory_id, price, stock, temporary_stock, image) VALUES (@ItemName, @ItemDescription, @ItemCategoryId, @ItemSucategoryId, @Price, @Stock, @Stock, @ImageData)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

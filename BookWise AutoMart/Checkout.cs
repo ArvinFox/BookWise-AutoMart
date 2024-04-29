@@ -217,7 +217,7 @@ namespace BookWise_AutoMart
         }
 
 
-        public void UpdateQuantity(string itemName, int quantity)
+        public void UpdateItem(string itemName, int quantity, int itemDiscount)
         {
             foreach (Control control in panelBill.Controls)
             {
@@ -234,8 +234,18 @@ namespace BookWise_AutoMart
 
                                 if (tblItem.Controls[3] is Label lblAmount)
                                 {
-                                    decimal price = Convert.ToDecimal(lblAmount.Text);
-                                    lblAmount.Text = (price * Convert.ToDecimal(lblQty.Text)).ToString();
+                                    decimal price = Convert.ToDecimal(tblItem.Controls[2].Text);
+                                    int qty = Convert.ToInt32(lblQty.Text);
+
+                                    if (itemDiscount != -1 && UserPanel.user.Equals("Customer"))
+                                    {
+                                        decimal discountedPrice = price - (price * itemDiscount / 100);
+                                        lblAmount.Text = (discountedPrice * qty).ToString();
+                                    }
+                                    else
+                                    {
+                                        lblAmount.Text = (price * qty).ToString();
+                                    }
                                 }
                             }
                         }

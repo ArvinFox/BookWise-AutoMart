@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -423,9 +424,9 @@ namespace BookWise_AutoMart
             tblCartItem.Controls.Add(lblUnitPrice, 2, 0);
 
             Label lblAmount = new Label();
-            if(itemDiscount != -1)
+            if(itemDiscount != -1 && UserPanel.user.Equals("Customer"))
             {
-                decimal discountedPrice = price - ((price * itemDiscount) / 100);
+                decimal discountedPrice = price - (price * itemDiscount / 100);
                 lblAmount.Text = (discountedPrice * qty).ToString();
             }
             else
@@ -544,10 +545,21 @@ namespace BookWise_AutoMart
                                 if(tblItem.Controls[3] is Label lblAmount)
                                 {
                                     decimal price = Convert.ToDecimal(tblItem.Controls[2].Text);
-                                    lblAmount.Text = (price * Convert.ToDecimal(lblQty.Text)).ToString();
+                                    int qty = Convert.ToInt32(lblQty.Text);
+                                    int itemDiscount = GetItemDiscount(itemName);
+
+                                    if (itemDiscount != -1 && UserPanel.user.Equals("Customer"))
+                                    {
+                                        decimal discountedPrice = price - (price * itemDiscount / 100);
+                                        lblAmount.Text = (discountedPrice * qty).ToString();
+                                    }
+                                    else
+                                    {
+                                        lblAmount.Text = (price * qty).ToString();
+                                    }
                                 }
                             }
-                            UserPanel.checkoutForm.UpdateQuantity(itemName, quantity);
+                            UserPanel.checkoutForm.UpdateItem(itemName, quantity, GetItemDiscount(itemName));
                             return true;
                         }
                     }

@@ -352,11 +352,11 @@
             // 
             this.lblRateDescription.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblRateDescription.AutoSize = true;
-            this.lblRateDescription.Font = new System.Drawing.Font("Segoe UI Semilight", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRateDescription.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblRateDescription.Location = new System.Drawing.Point(76, 0);
             this.lblRateDescription.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRateDescription.Name = "lblRateDescription";
-            this.lblRateDescription.Size = new System.Drawing.Size(883, 62);
+            this.lblRateDescription.Size = new System.Drawing.Size(884, 62);
             this.lblRateDescription.TabIndex = 0;
             this.lblRateDescription.Text = "Please rate your experience! Your feedback is very appreciated and will help impr" +
     "ove your experience in the future.\r\n";

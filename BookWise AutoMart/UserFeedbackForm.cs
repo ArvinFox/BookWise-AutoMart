@@ -14,9 +14,13 @@ namespace BookWise_AutoMart
 {
     public partial class UserFeedbackForm : Form
     {
+        int userStarRating = 0;
+        string userFeedback;
         private Timer loginFormTimer;
         private int ratingTimer = 10;
-        
+
+        private string connectionString = DatabaseString.GetUserDatabase();
+
         public UserFeedbackForm()
         {
             InitializeComponent();
@@ -24,9 +28,10 @@ namespace BookWise_AutoMart
             loginFormTimer = new Timer();
             loginFormTimer.Interval = 1000; // 1 second
             loginFormTimer.Tick += LoginFormTimer_Tick;
-        }
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+            // Display a random question to the user each time
+            lblRateDescription.Text = GetRandomQuestion();
+        }
 
         private void StarCount(int starCount, bool showLabel = false)
         {
@@ -76,9 +81,6 @@ namespace BookWise_AutoMart
                 }
             }
         }
-
-        int userStarRating =0;
-        string userFeedback;
         
         private void pictureBoxStar1_Click(object sender, EventArgs e)
         {
@@ -131,6 +133,64 @@ namespace BookWise_AutoMart
             }
         }
 
+        private string GetRandomQuestion()
+        {
+            string randomQuestion = "Please rate your experience! Your feedback is very appreciated and will help improve your experience in the future.";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT TOP 1 question FROM Feedback_Questions ORDER BY NEWID()";
+                // 'NEWID()' generates a unique identifier (GUID) for each row in the table
+                // 'ORDER BY NEWID()' sorts the rows based on these random values
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        randomQuestion = command.ExecuteScalar().ToString();
+                    }
+                    catch (Exception)
+                    {
+                        // Error
+                    }
+                }
+            }
+
+            return randomQuestion;
+        }
+
+        private int GetQuestionId()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT question_id FROM Feedback_Questions WHERE question = @Question";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@Question", lblRateDescription.Text.Trim());
+
+                        connection.Open();
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return (int)result;
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        // Error
+                    }
+                }
+            }
+
+            return -1;
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -161,7 +221,7 @@ namespace BookWise_AutoMart
                 {
                     loginFormTimer.Stop();
 
-                    string query = $"INSERT INTO Feedback (feedback_user_id, rating, comment) VALUES ({UserPanel.id}, {userStarRating}, '{userFeedback}')";
+                    string query = $"INSERT INTO Feedback (feedback_user_id, feedback_question_id, rating, comment) VALUES ({UserPanel.id}, {GetQuestionId()}, {userStarRating}, '{userFeedback}')";
 
                     SqlCommand cmd = new SqlCommand(query, conn);
 

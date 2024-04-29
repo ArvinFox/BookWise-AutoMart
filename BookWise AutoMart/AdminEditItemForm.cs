@@ -317,7 +317,7 @@ namespace BookWise_AutoMart
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "UPDATE Items SET item_name = @ItemName, item_description = @ItemDescription, item_subcategory_id = @SubcategoryId, price = @Price, stock = @Stock, image = @ImageData WHERE item_id = @ItemId";
+                string query = "UPDATE Items SET item_name = @ItemName, item_description = @ItemDescription, item_subcategory_id = @SubcategoryId, price = @Price, stock = @Stock, temporary_stock = @Stock, image = @ImageData WHERE item_id = @ItemId";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

@@ -84,7 +84,7 @@ namespace BookWise_AutoMart
             {
                 if (newSubcategories.Trim() == "" || newSubcategories.Trim() == ",")
                 {
-                    errors += "Please add subcategories to the selected category\n";
+                    errors += "Please add at least one subcategory\n";
                 }
             }
 
@@ -657,11 +657,11 @@ namespace BookWise_AutoMart
 
             foreach (string errorMessage in errorMessages)
             {
-                if (errorMessage.Contains("Please add subcategories to the selected category"))
+                if (errorMessage.Contains("Please add at least one subcategory"))
                 {
                     lblSubcategoriesError.Visible = true;
 
-                    lblErrors.Text = "Please add subcategories to the selected category";
+                    lblErrors.Text = "Please add at least one subcategory";
                     lblErrors.Visible = true;
                 }
 

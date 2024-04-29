@@ -36,7 +36,23 @@ namespace BookWise_AutoMart
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+
+            this.Close();
         }
         private void btnMinimize_Click(object sender, EventArgs e)
         {

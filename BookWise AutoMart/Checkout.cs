@@ -162,7 +162,7 @@ namespace BookWise_AutoMart
             lblMessage.Text = "Thank you";
         }
 
-        public void AddToBill(int quantity, string itemName, decimal price)
+        public void AddToBill(int quantity, string itemName, decimal price,int itemDiscount)
         {
             TableLayoutPanel tblBillItem = new TableLayoutPanel();
 
@@ -199,7 +199,15 @@ namespace BookWise_AutoMart
             tblBillItem.Controls.Add(lblUnitPrice, 2, 0);
 
             Label lblAmount = new Label();
-            lblAmount.Text = (price * quantity).ToString();
+            if (itemDiscount != -1)
+            {
+                decimal discountedPrice = price - ((price * itemDiscount) / 100);
+                lblAmount.Text = (discountedPrice * quantity).ToString();
+            }
+            else
+            {
+                lblAmount.Text = (price * quantity).ToString();
+            }
             lblAmount.Dock = DockStyle.Fill;
             lblAmount.TextAlign = ContentAlignment.MiddleCenter;
             lblAmount.Font = new Font("Segoe UI", 13);
@@ -207,6 +215,7 @@ namespace BookWise_AutoMart
 
             pnlBill.Controls.Add(tblBillItem);
         }
+
 
         public void UpdateQuantity(string itemName, int quantity)
         {

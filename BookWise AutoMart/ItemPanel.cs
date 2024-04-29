@@ -244,10 +244,10 @@ namespace BookWise_AutoMart
                     if(!ItemExists(itemName,qty))
                     {
                         //Add items to the cart
-                        AddToCart(qty, itemName, price,txtItemStock,tempStock);
-                        UpdateTempStock(itemName,-qty,GetTempStock(itemName));
-                        UserPanel.checkoutForm.AddToBill(qty,itemName,price);
+                        AddToCart(qty, itemName, price,GetItemDiscount(itemName),txtItemStock);
+                        UserPanel.checkoutForm.AddToBill(qty,itemName,price, GetItemDiscount(itemName));
                     }
+                    UpdateTempStock(itemName, -qty, GetTempStock(itemName));
                     UpdateStockStatus(txtItemStock, GetTempStock(itemName));
                     UpdateTotal();  // Update Total
                 }
@@ -385,7 +385,7 @@ namespace BookWise_AutoMart
             }
         }
 
-        public void AddToCart(int qty,string itemName, decimal price,TextBox text,int tempStock)
+        public void AddToCart(int qty,string itemName, decimal price,int itemDiscount,TextBox text)
         {
             TableLayoutPanel tblCartItem = new TableLayoutPanel();
 
@@ -423,7 +423,15 @@ namespace BookWise_AutoMart
             tblCartItem.Controls.Add(lblUnitPrice, 2, 0);
 
             Label lblAmount = new Label();
-            lblAmount.Text = (price * qty).ToString();
+            if(itemDiscount != -1)
+            {
+                decimal discountedPrice = price - ((price * itemDiscount) / 100);
+                lblAmount.Text = (discountedPrice * qty).ToString();
+            }
+            else
+            {
+                lblAmount.Text = (price * qty).ToString();
+            }
             lblAmount.Dock = DockStyle.Fill;
             lblAmount.TextAlign = ContentAlignment.MiddleCenter;
             lblAmount.Font = new Font("Segoe UI", 10);
@@ -448,6 +456,76 @@ namespace BookWise_AutoMart
             UserPanel.pnl.Controls.Add(tblCartItem);
         }
 
+        private int GetItemId(string itemName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString)) 
+            {
+                string query = "SELECT item_id FROM Items WHERE item_name = @itemName";
+
+                using(SqlCommand cmd = new SqlCommand(query,connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.AddWithValue("@itemName", itemName);
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+
+                        if(result != null)
+                        {
+                            return (int)result;
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        //-----------Error----------
+                    }
+                }
+            }
+            return -1;
+        }
+
+        private int GetItemDiscount(string itemName)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT * FROM Offers WHERE is_active= @IsActive";
+
+                using(SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@IsActive", true);
+                        connection.Open();
+
+                        using(SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if(reader.HasRows)
+                            {
+                                while(reader.Read())
+                                {
+                                    string applicableItems = reader["applicable_items"].ToString();
+                                    int discount = (int)reader["discount_percentage"];
+                                    string[] items = applicableItems.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                                    foreach(String item in items)
+                                    {
+                                        if(GetItemId(itemName).ToString() == item.Trim())
+                                        {
+                                            return discount;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        //-----------Error------------
+                    }
+                }
+            }
+            return -1;
+        }
         private bool ItemExists(string itemName,int quantity)
         {
             foreach (Control control in UserPanel.pnl.Controls)
@@ -465,7 +543,7 @@ namespace BookWise_AutoMart
 
                                 if(tblItem.Controls[3] is Label lblAmount)
                                 {
-                                    decimal price = Convert.ToDecimal(lblAmount.Text);
+                                    decimal price = Convert.ToDecimal(tblItem.Controls[2].Text);
                                     lblAmount.Text = (price * Convert.ToDecimal(lblQty.Text)).ToString();
                                 }
                             }

@@ -78,7 +78,7 @@
             this.tlpCheckoutContainer.Controls.Add(this.pnlPaymentMethod, 3, 1);
             this.tlpCheckoutContainer.Controls.Add(this.tableLayoutPanelCart, 1, 1);
             this.tlpCheckoutContainer.Controls.Add(this.pictureBoxBack, 0, 1);
-            this.tlpCheckoutContainer.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpCheckoutContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpCheckoutContainer.Location = new System.Drawing.Point(0, 0);
             this.tlpCheckoutContainer.Name = "tlpCheckoutContainer";
             this.tlpCheckoutContainer.RowCount = 3;

@@ -162,6 +162,18 @@ namespace BookWise_AutoMart
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
+            //return items in cart
+            foreach(Control control in pnlCart.Controls)
+            {
+                if(control is TableLayoutPanel tbl)
+                {
+                    if (tbl.Controls[1] is Label lblItemName)
+                    {
+                        UpdateTempStock(lblItemName.Text);
+                    }
+                }
+            }
+
             bool userLoginFound = false;
             foreach (Form form in Application.OpenForms)
             {
@@ -180,6 +192,59 @@ namespace BookWise_AutoMart
 
             checkoutForm.Close();
             this.Close();
+        }
+
+        private void UpdateTempStock(string itemName)
+        {
+            using(SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "UPDATE Items SET temporary_stock = @Stock WHERE item_name = @ItemName";
+
+                using(SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@Stock",GetItemStock(itemName));
+                        cmd.Parameters.AddWithValue("@ItemName", itemName.Trim());
+                        connection.Open();
+                        cmd.ExecuteNonQuery();
+                    }
+                    catch(Exception)
+                    {
+                        //-------Error------------
+                    }
+                }
+            }
+        }
+
+        private int GetItemStock(string itemName)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT stock FROM Items WHERE item_name = @ItemName";
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@ItemName", itemName.Trim());
+                        connection.Open();
+                        object result = cmd.ExecuteScalar();
+
+                        if(result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        //-------Error------------
+                    }
+                }
+            }
+            return -1;
         }
 
         private void UserPanel_Load(object sender, EventArgs e)

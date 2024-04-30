@@ -33,9 +33,12 @@
             this.tblNoDataAvailable = new System.Windows.Forms.TableLayoutPanel();
             this.lblNoDataAvailable = new System.Windows.Forms.Label();
             this.tblButtons = new System.Windows.Forms.TableLayoutPanel();
-            this.btnDeleteUser = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lblRequiredFields = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnViewUserFeedbacks = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.tblDetailsLayout = new System.Windows.Forms.TableLayoutPanel();
             this.lblContactRequired = new System.Windows.Forms.Label();
             this.lblEmailRequired = new System.Windows.Forms.Label();
@@ -55,23 +58,21 @@
             this.lblGender = new System.Windows.Forms.Label();
             this.lblContact = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.radioBtnFemale = new System.Windows.Forms.RadioButton();
+            this.radioBtnMale = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tblBorder = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.radioBtnMale = new System.Windows.Forms.RadioButton();
-            this.radioBtnFemale = new System.Windows.Forms.RadioButton();
             this.pnlContainer.SuspendLayout();
             this.pnlTable.SuspendLayout();
             this.tblNoDataAvailable.SuspendLayout();
             this.tblButtons.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tblDetailsLayout.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanelTitle.SuspendLayout();
             this.tblBorder.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlContainer
@@ -84,7 +85,7 @@
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(6, 6);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1014, 806);
+            this.pnlContainer.Size = new System.Drawing.Size(1325, 806);
             this.pnlContainer.TabIndex = 0;
             // 
             // pnlTable
@@ -94,7 +95,7 @@
             this.pnlTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTable.Location = new System.Drawing.Point(0, 381);
             this.pnlTable.Name = "pnlTable";
-            this.pnlTable.Size = new System.Drawing.Size(1014, 318);
+            this.pnlTable.Size = new System.Drawing.Size(1325, 318);
             this.pnlTable.TabIndex = 81;
             // 
             // tblNoDataAvailable
@@ -107,7 +108,7 @@
             this.tblNoDataAvailable.Name = "tblNoDataAvailable";
             this.tblNoDataAvailable.RowCount = 1;
             this.tblNoDataAvailable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblNoDataAvailable.Size = new System.Drawing.Size(1014, 318);
+            this.tblNoDataAvailable.Size = new System.Drawing.Size(1325, 318);
             this.tblNoDataAvailable.TabIndex = 4;
             // 
             // lblNoDataAvailable
@@ -116,7 +117,7 @@
             this.lblNoDataAvailable.AutoSize = true;
             this.lblNoDataAvailable.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblNoDataAvailable.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.lblNoDataAvailable.Location = new System.Drawing.Point(282, 143);
+            this.lblNoDataAvailable.Location = new System.Drawing.Point(437, 143);
             this.lblNoDataAvailable.Name = "lblNoDataAvailable";
             this.lblNoDataAvailable.Size = new System.Drawing.Size(450, 32);
             this.lblNoDataAvailable.TabIndex = 3;
@@ -135,8 +136,57 @@
             this.tblButtons.RowCount = 2;
             this.tblButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.1028F));
             this.tblButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.8972F));
-            this.tblButtons.Size = new System.Drawing.Size(1014, 107);
+            this.tblButtons.Size = new System.Drawing.Size(1325, 107);
             this.tblButtons.TabIndex = 80;
+            // 
+            // lblRequiredFields
+            // 
+            this.lblRequiredFields.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblRequiredFields.AutoSize = true;
+            this.lblRequiredFields.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.lblRequiredFields.ForeColor = System.Drawing.Color.Red;
+            this.lblRequiredFields.Location = new System.Drawing.Point(525, 0);
+            this.lblRequiredFields.Name = "lblRequiredFields";
+            this.lblRequiredFields.Size = new System.Drawing.Size(274, 28);
+            this.lblRequiredFields.TabIndex = 70;
+            this.lblRequiredFields.Text = "* All fields must be filled";
+            this.lblRequiredFields.Visible = false;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.7725F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.45302F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.77448F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tableLayoutPanel1.Controls.Add(this.btnViewUserFeedbacks, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnDeleteUser, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnUpdate, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnClose, 2, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 31);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1319, 73);
+            this.tableLayoutPanel1.TabIndex = 72;
+            // 
+            // btnViewUserFeedbacks
+            // 
+            this.btnViewUserFeedbacks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnViewUserFeedbacks.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnViewUserFeedbacks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewUserFeedbacks.FlatAppearance.BorderSize = 0;
+            this.btnViewUserFeedbacks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewUserFeedbacks.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewUserFeedbacks.ForeColor = System.Drawing.Color.White;
+            this.btnViewUserFeedbacks.Location = new System.Drawing.Point(317, 6);
+            this.btnViewUserFeedbacks.Name = "btnViewUserFeedbacks";
+            this.btnViewUserFeedbacks.Size = new System.Drawing.Size(192, 61);
+            this.btnViewUserFeedbacks.TabIndex = 72;
+            this.btnViewUserFeedbacks.Text = "User Feedbacks";
+            this.btnViewUserFeedbacks.UseVisualStyleBackColor = false;
+            this.btnViewUserFeedbacks.Click += new System.EventHandler(this.btnViewUserFeedbacks_Click);
             // 
             // btnDeleteUser
             // 
@@ -149,13 +199,30 @@
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteUser.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteUser.Location = new System.Drawing.Point(72, 6);
+            this.btnDeleteUser.Location = new System.Drawing.Point(54, 6);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(192, 61);
             this.btnDeleteUser.TabIndex = 71;
             this.btnDeleteUser.Text = "Remove User";
             this.btnDeleteUser.UseVisualStyleBackColor = false;
             this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnUpdate.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(1068, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(192, 61);
+            this.btnUpdate.TabIndex = 48;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClose
             // 
@@ -166,7 +233,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(513, 6);
+            this.btnClose.Location = new System.Drawing.Point(815, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(192, 61);
             this.btnClose.TabIndex = 50;
@@ -174,26 +241,13 @@
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblRequiredFields
-            // 
-            this.lblRequiredFields.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRequiredFields.AutoSize = true;
-            this.lblRequiredFields.Font = new System.Drawing.Font("Gadugi", 14F);
-            this.lblRequiredFields.ForeColor = System.Drawing.Color.Red;
-            this.lblRequiredFields.Location = new System.Drawing.Point(370, 0);
-            this.lblRequiredFields.Name = "lblRequiredFields";
-            this.lblRequiredFields.Size = new System.Drawing.Size(274, 28);
-            this.lblRequiredFields.TabIndex = 70;
-            this.lblRequiredFields.Text = "* All fields must be filled";
-            this.lblRequiredFields.Visible = false;
-            // 
             // tblDetailsLayout
             // 
             this.tblDetailsLayout.ColumnCount = 4;
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.76923F));
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.23077F));
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 678F));
-            this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tblDetailsLayout.Controls.Add(this.lblContactRequired, 3, 3);
             this.tblDetailsLayout.Controls.Add(this.lblEmailRequired, 3, 2);
             this.tblDetailsLayout.Controls.Add(this.lblGenderRequired, 3, 1);
@@ -223,7 +277,7 @@
             this.tblDetailsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblDetailsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblDetailsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tblDetailsLayout.Size = new System.Drawing.Size(1014, 309);
+            this.tblDetailsLayout.Size = new System.Drawing.Size(1325, 309);
             this.tblDetailsLayout.TabIndex = 79;
             // 
             // lblContactRequired
@@ -232,7 +286,7 @@
             this.lblContactRequired.AutoSize = true;
             this.lblContactRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblContactRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblContactRequired.Location = new System.Drawing.Point(975, 205);
+            this.lblContactRequired.Location = new System.Drawing.Point(1284, 205);
             this.lblContactRequired.Name = "lblContactRequired";
             this.lblContactRequired.Size = new System.Drawing.Size(22, 28);
             this.lblContactRequired.TabIndex = 86;
@@ -245,7 +299,7 @@
             this.lblEmailRequired.AutoSize = true;
             this.lblEmailRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblEmailRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblEmailRequired.Location = new System.Drawing.Point(975, 148);
+            this.lblEmailRequired.Location = new System.Drawing.Point(1284, 148);
             this.lblEmailRequired.Name = "lblEmailRequired";
             this.lblEmailRequired.Size = new System.Drawing.Size(22, 28);
             this.lblEmailRequired.TabIndex = 85;
@@ -258,7 +312,7 @@
             this.lblGenderRequired.AutoSize = true;
             this.lblGenderRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblGenderRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblGenderRequired.Location = new System.Drawing.Point(975, 91);
+            this.lblGenderRequired.Location = new System.Drawing.Point(1284, 91);
             this.lblGenderRequired.Name = "lblGenderRequired";
             this.lblGenderRequired.Size = new System.Drawing.Size(22, 28);
             this.lblGenderRequired.TabIndex = 84;
@@ -271,7 +325,7 @@
             this.colon4.AutoSize = true;
             this.colon4.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon4.ForeColor = System.Drawing.Color.Black;
-            this.colon4.Location = new System.Drawing.Point(252, 264);
+            this.colon4.Location = new System.Drawing.Point(537, 264);
             this.colon4.Name = "colon4";
             this.colon4.Size = new System.Drawing.Size(19, 28);
             this.colon4.TabIndex = 83;
@@ -283,7 +337,7 @@
             this.colon3.AutoSize = true;
             this.colon3.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon3.ForeColor = System.Drawing.Color.Black;
-            this.colon3.Location = new System.Drawing.Point(252, 205);
+            this.colon3.Location = new System.Drawing.Point(537, 205);
             this.colon3.Name = "colon3";
             this.colon3.Size = new System.Drawing.Size(19, 28);
             this.colon3.TabIndex = 82;
@@ -295,7 +349,7 @@
             this.lblNameRequired.AutoSize = true;
             this.lblNameRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblNameRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblNameRequired.Location = new System.Drawing.Point(975, 34);
+            this.lblNameRequired.Location = new System.Drawing.Point(1284, 34);
             this.lblNameRequired.Name = "lblNameRequired";
             this.lblNameRequired.Size = new System.Drawing.Size(22, 28);
             this.lblNameRequired.TabIndex = 65;
@@ -308,7 +362,7 @@
             this.colon2.AutoSize = true;
             this.colon2.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon2.ForeColor = System.Drawing.Color.Black;
-            this.colon2.Location = new System.Drawing.Point(252, 148);
+            this.colon2.Location = new System.Drawing.Point(537, 148);
             this.colon2.Name = "colon2";
             this.colon2.Size = new System.Drawing.Size(19, 28);
             this.colon2.TabIndex = 81;
@@ -320,7 +374,7 @@
             this.colon1.AutoSize = true;
             this.colon1.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon1.ForeColor = System.Drawing.Color.Black;
-            this.colon1.Location = new System.Drawing.Point(252, 91);
+            this.colon1.Location = new System.Drawing.Point(537, 91);
             this.colon1.Name = "colon1";
             this.colon1.Size = new System.Drawing.Size(19, 28);
             this.colon1.TabIndex = 80;
@@ -332,7 +386,7 @@
             this.colon.AutoSize = true;
             this.colon.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon.ForeColor = System.Drawing.Color.Black;
-            this.colon.Location = new System.Drawing.Point(252, 34);
+            this.colon.Location = new System.Drawing.Point(537, 34);
             this.colon.Name = "colon";
             this.colon.Size = new System.Drawing.Size(19, 28);
             this.colon.TabIndex = 79;
@@ -357,7 +411,7 @@
             this.txtRegisterDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRegisterDate.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtRegisterDate.ForeColor = System.Drawing.Color.Black;
-            this.txtRegisterDate.Location = new System.Drawing.Point(295, 260);
+            this.txtRegisterDate.Location = new System.Drawing.Point(602, 260);
             this.txtRegisterDate.Multiline = true;
             this.txtRegisterDate.Name = "txtRegisterDate";
             this.txtRegisterDate.ReadOnly = true;
@@ -383,7 +437,7 @@
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContact.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtContact.ForeColor = System.Drawing.Color.Black;
-            this.txtContact.Location = new System.Drawing.Point(295, 201);
+            this.txtContact.Location = new System.Drawing.Point(602, 201);
             this.txtContact.MaxLength = 10;
             this.txtContact.Multiline = true;
             this.txtContact.Name = "txtContact";
@@ -397,7 +451,7 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(295, 30);
+            this.txtName.Location = new System.Drawing.Point(602, 30);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(648, 37);
@@ -410,7 +464,7 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(295, 144);
+            this.txtEmail.Location = new System.Drawing.Point(602, 144);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(648, 37);
@@ -452,6 +506,47 @@
             this.lblEmail.TabIndex = 74;
             this.lblEmail.Text = "Email";
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.radioBtnFemale, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.radioBtnMale, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(590, 80);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(672, 51);
+            this.tableLayoutPanel2.TabIndex = 87;
+            // 
+            // radioBtnFemale
+            // 
+            this.radioBtnFemale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioBtnFemale.AutoSize = true;
+            this.radioBtnFemale.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnFemale.Location = new System.Drawing.Point(447, 9);
+            this.radioBtnFemale.Name = "radioBtnFemale";
+            this.radioBtnFemale.Size = new System.Drawing.Size(113, 33);
+            this.radioBtnFemale.TabIndex = 1;
+            this.radioBtnFemale.TabStop = true;
+            this.radioBtnFemale.Text = "Female";
+            this.radioBtnFemale.UseVisualStyleBackColor = true;
+            // 
+            // radioBtnMale
+            // 
+            this.radioBtnMale.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.radioBtnMale.AutoSize = true;
+            this.radioBtnMale.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBtnMale.Location = new System.Drawing.Point(124, 9);
+            this.radioBtnMale.Name = "radioBtnMale";
+            this.radioBtnMale.Size = new System.Drawing.Size(88, 33);
+            this.radioBtnMale.TabIndex = 0;
+            this.radioBtnMale.TabStop = true;
+            this.radioBtnMale.Text = "Male";
+            this.radioBtnMale.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanelTitle
             // 
             this.tableLayoutPanelTitle.BackColor = System.Drawing.Color.IndianRed;
@@ -463,7 +558,7 @@
             this.tableLayoutPanelTitle.Name = "tableLayoutPanelTitle";
             this.tableLayoutPanelTitle.RowCount = 1;
             this.tableLayoutPanelTitle.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(1014, 72);
+            this.tableLayoutPanelTitle.Size = new System.Drawing.Size(1325, 72);
             this.tableLayoutPanelTitle.TabIndex = 47;
             // 
             // lblTitle
@@ -472,7 +567,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Gadugi", 22F, System.Drawing.FontStyle.Bold);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(342, 14);
+            this.lblTitle.Location = new System.Drawing.Point(498, 14);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(329, 44);
             this.lblTitle.TabIndex = 0;
@@ -493,89 +588,14 @@
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tblBorder.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tblBorder.Size = new System.Drawing.Size(1026, 818);
+            this.tblBorder.Size = new System.Drawing.Size(1337, 818);
             this.tblBorder.TabIndex = 2;
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpdate.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(762, 6);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(192, 61);
-            this.btnUpdate.TabIndex = 48;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.90476F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.76191F));
-            this.tableLayoutPanel1.Controls.Add(this.btnDeleteUser, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnUpdate, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnClose, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 31);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 73);
-            this.tableLayoutPanel1.TabIndex = 72;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.radioBtnFemale, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.radioBtnMale, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(283, 80);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(672, 51);
-            this.tableLayoutPanel2.TabIndex = 87;
-            // 
-            // radioBtnMale
-            // 
-            this.radioBtnMale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioBtnMale.AutoSize = true;
-            this.radioBtnMale.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnMale.Location = new System.Drawing.Point(124, 9);
-            this.radioBtnMale.Name = "radioBtnMale";
-            this.radioBtnMale.Size = new System.Drawing.Size(88, 33);
-            this.radioBtnMale.TabIndex = 0;
-            this.radioBtnMale.TabStop = true;
-            this.radioBtnMale.Text = "Male";
-            this.radioBtnMale.UseVisualStyleBackColor = true;
-            // 
-            // radioBtnFemale
-            // 
-            this.radioBtnFemale.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.radioBtnFemale.AutoSize = true;
-            this.radioBtnFemale.Font = new System.Drawing.Font("Gadugi", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBtnFemale.Location = new System.Drawing.Point(447, 9);
-            this.radioBtnFemale.Name = "radioBtnFemale";
-            this.radioBtnFemale.Size = new System.Drawing.Size(113, 33);
-            this.radioBtnFemale.TabIndex = 1;
-            this.radioBtnFemale.TabStop = true;
-            this.radioBtnFemale.Text = "Female";
-            this.radioBtnFemale.UseVisualStyleBackColor = true;
             // 
             // UserViewMoreDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 818);
+            this.ClientSize = new System.Drawing.Size(1337, 818);
             this.Controls.Add(this.tblBorder);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserViewMoreDetailsForm";
@@ -588,14 +608,14 @@
             this.tblNoDataAvailable.PerformLayout();
             this.tblButtons.ResumeLayout(false);
             this.tblButtons.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.tblDetailsLayout.ResumeLayout(false);
             this.tblDetailsLayout.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanelTitle.ResumeLayout(false);
             this.tableLayoutPanelTitle.PerformLayout();
             this.tblBorder.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -637,5 +657,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.RadioButton radioBtnFemale;
         private System.Windows.Forms.RadioButton radioBtnMale;
+        private System.Windows.Forms.Button btnViewUserFeedbacks;
     }
 }

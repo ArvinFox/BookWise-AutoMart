@@ -45,6 +45,7 @@ namespace BookWise_AutoMart
             tblHeading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
             tblHeading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
             tblHeading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
+
             tblHeading.Dock = DockStyle.Top;
             tblHeading.BackColor = Color.IndianRed;
             tblHeading.ForeColor = Color.White;
@@ -118,6 +119,9 @@ namespace BookWise_AutoMart
             if (userType == "Guest")
             {
                 orderHistoryQuery += $"Orders.order_guest_id = {id}";
+
+                //Disable the visibility of Feedbackbutton for Guests
+                btnViewUserFeedbacks.Visible = false;
             }
             else
             {
@@ -555,6 +559,12 @@ namespace BookWise_AutoMart
                     textBox.ForeColor = SystemColors.GrayText;
                 }
             };
+        }
+
+        private void btnViewUserFeedbacks_Click(object sender, EventArgs e)
+        {
+            UserViewAllFeedbacks userViewAllFeedbacks = new UserViewAllFeedbacks(id);
+            userViewAllFeedbacks.ShowDialog();
         }
     }
 }

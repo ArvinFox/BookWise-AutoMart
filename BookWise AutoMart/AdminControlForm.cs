@@ -16,7 +16,6 @@ namespace BookWise_AutoMart
         public static Button btnReloadInventoryManagementForm;
         public static Button btnReloadUserManagementForm;
         public static Button btnReloadOffersPromotionsForm;
-        public static Button btnReloadReportsAnalyticsForm;
 
         private UserControl currentlyDisplayedControl;  // current instance of UserControl
         string form;
@@ -28,7 +27,6 @@ namespace BookWise_AutoMart
             btnReloadInventoryManagementForm = btnInventoryManagement;
             btnReloadUserManagementForm = btnUserManagement;
             btnReloadOffersPromotionsForm = btnOffersPromotions;
-            btnReloadReportsAnalyticsForm = btnReloadInventoryManagementForm;
 
             form = formControl;
             lblCurrentControl.Text = formControl.ToUpper();
@@ -77,12 +75,10 @@ namespace BookWise_AutoMart
             btnInventoryManagement.BackColor = Color.FromArgb(76, 175, 80);
             btnUserManagement.BackColor = Color.FromArgb(33, 150, 243);
             btnOffersPromotions.BackColor = Color.FromArgb(255, 152, 0);
-            btnReportsAnalytics.BackColor = Color.FromArgb(156, 39, 176);
 
             tableLayoutPanelInventoryManagement.BackColor = SystemColors.Control;
             tableLayoutPanelUserManagement.BackColor = SystemColors.Control;
             tableLayoutPanelOffersPromotions.BackColor = SystemColors.Control;
-            tableLayoutPanelReportsAnalytics.BackColor = SystemColors.Control;
         }
 
         private void btnInventoryManagement_Click(object sender, EventArgs e)
@@ -112,16 +108,7 @@ namespace BookWise_AutoMart
             btnOffersPromotions.BackColor = Color.FromArgb(230, 74, 25);
             tableLayoutPanelOffersPromotions.BackColor = Color.FromArgb(255, 255, 192);
         }
-        private void btnReportsAnalytics_Click(object sender, EventArgs e)
-        {
-            NavigateControl(new UserControlReportsAnalytics());
-            lblCurrentControl.Text = "REPORTING && ANALYTICS";
-
-            ResetPanelAndButtonColors();
-            btnReportsAnalytics.BackColor = Color.FromArgb(106, 27, 154);
-            tableLayoutPanelReportsAnalytics.BackColor = Color.FromArgb(255, 255, 192);
-        }
-
+        
         private void AdminControlForm_Load(object sender, EventArgs e)
         {
             if (form == "Inventory Management")
@@ -135,10 +122,6 @@ namespace BookWise_AutoMart
             else if (form == "Offers && Promotions")
             {
                 btnOffersPromotions.PerformClick();
-            }
-            else if (form == "Reporting && Analytics")
-            {
-                btnReportsAnalytics.PerformClick();
             }
         }
     }

@@ -41,26 +41,27 @@
             this.picBoxUserManagement = new System.Windows.Forms.PictureBox();
             this.btnMaximize = new System.Windows.Forms.Button();
             this.tableLayoutPanelAdminDashboard = new System.Windows.Forms.TableLayoutPanel();
-            this.pnlReportsAnalytics = new System.Windows.Forms.Panel();
-            this.btnReportsAnalytics = new System.Windows.Forms.Button();
-            this.picBoxReportsAnalytics = new System.Windows.Forms.PictureBox();
             this.pnlOffersPromotions = new System.Windows.Forms.Panel();
             this.btnOffersPromotions = new System.Windows.Forms.Button();
             this.picBoxOffersPromotions = new System.Windows.Forms.PictureBox();
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.picBoxAdminDashboard = new System.Windows.Forms.PictureBox();
+            this.tblInventoryManagementContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tblUserManagementContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tblOffersContainer = new System.Windows.Forms.TableLayoutPanel();
             this.pnlInventoryManegement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxInventoryManagement)).BeginInit();
             this.tableLayoutPanelWelcomeAdmin.SuspendLayout();
             this.pnlUserManagement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).BeginInit();
             this.tableLayoutPanelAdminDashboard.SuspendLayout();
-            this.pnlReportsAnalytics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxReportsAnalytics)).BeginInit();
             this.pnlOffersPromotions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxOffersPromotions)).BeginInit();
             this.pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminDashboard)).BeginInit();
+            this.tblInventoryManagementContainer.SuspendLayout();
+            this.tblUserManagementContainer.SuspendLayout();
+            this.tblOffersContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAdminDashboardTitle
@@ -108,16 +109,16 @@
             // 
             this.pnlInventoryManegement.AutoSize = true;
             this.pnlInventoryManegement.BackColor = System.Drawing.Color.White;
-            this.pnlInventoryManegement.Controls.Add(this.btnInventoryManagement);
-            this.pnlInventoryManegement.Controls.Add(this.picBoxInventoryManagement);
+            this.pnlInventoryManegement.Controls.Add(this.tblInventoryManagementContainer);
             this.pnlInventoryManegement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlInventoryManegement.Location = new System.Drawing.Point(3, 3);
             this.pnlInventoryManegement.Name = "pnlInventoryManegement";
-            this.pnlInventoryManegement.Size = new System.Drawing.Size(268, 365);
+            this.pnlInventoryManegement.Size = new System.Drawing.Size(359, 365);
             this.pnlInventoryManegement.TabIndex = 0;
             // 
             // btnInventoryManagement
             // 
+            this.btnInventoryManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnInventoryManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(175)))), ((int)(((byte)(80)))));
             this.btnInventoryManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInventoryManagement.FlatAppearance.BorderSize = 0;
@@ -125,7 +126,7 @@
             this.btnInventoryManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInventoryManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventoryManagement.ForeColor = System.Drawing.Color.White;
-            this.btnInventoryManagement.Location = new System.Drawing.Point(32, 257);
+            this.btnInventoryManagement.Location = new System.Drawing.Point(80, 271);
             this.btnInventoryManagement.Name = "btnInventoryManagement";
             this.btnInventoryManagement.Size = new System.Drawing.Size(199, 87);
             this.btnInventoryManagement.TabIndex = 2;
@@ -135,8 +136,9 @@
             // 
             // picBoxInventoryManagement
             // 
+            this.picBoxInventoryManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxInventoryManagement.Image = global::BookWise_AutoMart.Properties.Resources.inventory_management;
-            this.picBoxInventoryManagement.Location = new System.Drawing.Point(32, 27);
+            this.picBoxInventoryManagement.Location = new System.Drawing.Point(80, 36);
             this.picBoxInventoryManagement.Name = "picBoxInventoryManagement";
             this.picBoxInventoryManagement.Size = new System.Drawing.Size(199, 192);
             this.picBoxInventoryManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -171,16 +173,16 @@
             // 
             this.pnlUserManagement.AutoSize = true;
             this.pnlUserManagement.BackColor = System.Drawing.Color.White;
-            this.pnlUserManagement.Controls.Add(this.btnUserManagement);
-            this.pnlUserManagement.Controls.Add(this.picBoxUserManagement);
+            this.pnlUserManagement.Controls.Add(this.tblUserManagementContainer);
             this.pnlUserManagement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUserManagement.Location = new System.Drawing.Point(277, 3);
+            this.pnlUserManagement.Location = new System.Drawing.Point(368, 3);
             this.pnlUserManagement.Name = "pnlUserManagement";
-            this.pnlUserManagement.Size = new System.Drawing.Size(268, 365);
+            this.pnlUserManagement.Size = new System.Drawing.Size(359, 365);
             this.pnlUserManagement.TabIndex = 1;
             // 
             // btnUserManagement
             // 
+            this.btnUserManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnUserManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(150)))), ((int)(((byte)(243)))));
             this.btnUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUserManagement.FlatAppearance.BorderSize = 0;
@@ -188,7 +190,7 @@
             this.btnUserManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUserManagement.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUserManagement.ForeColor = System.Drawing.Color.White;
-            this.btnUserManagement.Location = new System.Drawing.Point(28, 257);
+            this.btnUserManagement.Location = new System.Drawing.Point(80, 271);
             this.btnUserManagement.Name = "btnUserManagement";
             this.btnUserManagement.Size = new System.Drawing.Size(199, 87);
             this.btnUserManagement.TabIndex = 3;
@@ -198,8 +200,9 @@
             // 
             // picBoxUserManagement
             // 
+            this.picBoxUserManagement.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxUserManagement.Image = global::BookWise_AutoMart.Properties.Resources.user_management;
-            this.picBoxUserManagement.Location = new System.Drawing.Point(32, 27);
+            this.picBoxUserManagement.Location = new System.Drawing.Point(82, 36);
             this.picBoxUserManagement.Name = "picBoxUserManagement";
             this.picBoxUserManagement.Size = new System.Drawing.Size(195, 192);
             this.picBoxUserManagement.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,12 +227,11 @@
             // tableLayoutPanelAdminDashboard
             // 
             this.tableLayoutPanelAdminDashboard.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tableLayoutPanelAdminDashboard.ColumnCount = 4;
-            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelAdminDashboard.Controls.Add(this.pnlReportsAnalytics, 3, 0);
+            this.tableLayoutPanelAdminDashboard.ColumnCount = 3;
+            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelAdminDashboard.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelAdminDashboard.Controls.Add(this.pnlOffersPromotions, 2, 0);
             this.tableLayoutPanelAdminDashboard.Controls.Add(this.pnlUserManagement, 1, 0);
             this.tableLayoutPanelAdminDashboard.Controls.Add(this.pnlInventoryManegement, 0, 0);
@@ -240,59 +242,20 @@
             this.tableLayoutPanelAdminDashboard.Size = new System.Drawing.Size(1096, 371);
             this.tableLayoutPanelAdminDashboard.TabIndex = 15;
             // 
-            // pnlReportsAnalytics
-            // 
-            this.pnlReportsAnalytics.AutoSize = true;
-            this.pnlReportsAnalytics.BackColor = System.Drawing.Color.White;
-            this.pnlReportsAnalytics.Controls.Add(this.btnReportsAnalytics);
-            this.pnlReportsAnalytics.Controls.Add(this.picBoxReportsAnalytics);
-            this.pnlReportsAnalytics.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlReportsAnalytics.Location = new System.Drawing.Point(825, 3);
-            this.pnlReportsAnalytics.Name = "pnlReportsAnalytics";
-            this.pnlReportsAnalytics.Size = new System.Drawing.Size(268, 365);
-            this.pnlReportsAnalytics.TabIndex = 3;
-            // 
-            // btnReportsAnalytics
-            // 
-            this.btnReportsAnalytics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(39)))), ((int)(((byte)(176)))));
-            this.btnReportsAnalytics.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnReportsAnalytics.FlatAppearance.BorderSize = 0;
-            this.btnReportsAnalytics.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(27)))), ((int)(((byte)(154)))));
-            this.btnReportsAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportsAnalytics.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportsAnalytics.ForeColor = System.Drawing.Color.White;
-            this.btnReportsAnalytics.Location = new System.Drawing.Point(32, 257);
-            this.btnReportsAnalytics.Name = "btnReportsAnalytics";
-            this.btnReportsAnalytics.Size = new System.Drawing.Size(199, 87);
-            this.btnReportsAnalytics.TabIndex = 3;
-            this.btnReportsAnalytics.Text = "Reporting && Analytics";
-            this.btnReportsAnalytics.UseVisualStyleBackColor = false;
-            this.btnReportsAnalytics.Click += new System.EventHandler(this.btnControl_Click);
-            // 
-            // picBoxReportsAnalytics
-            // 
-            this.picBoxReportsAnalytics.Image = global::BookWise_AutoMart.Properties.Resources.reports_analytics;
-            this.picBoxReportsAnalytics.Location = new System.Drawing.Point(32, 27);
-            this.picBoxReportsAnalytics.Name = "picBoxReportsAnalytics";
-            this.picBoxReportsAnalytics.Size = new System.Drawing.Size(199, 192);
-            this.picBoxReportsAnalytics.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBoxReportsAnalytics.TabIndex = 0;
-            this.picBoxReportsAnalytics.TabStop = false;
-            // 
             // pnlOffersPromotions
             // 
             this.pnlOffersPromotions.AutoSize = true;
             this.pnlOffersPromotions.BackColor = System.Drawing.Color.White;
-            this.pnlOffersPromotions.Controls.Add(this.btnOffersPromotions);
-            this.pnlOffersPromotions.Controls.Add(this.picBoxOffersPromotions);
+            this.pnlOffersPromotions.Controls.Add(this.tblOffersContainer);
             this.pnlOffersPromotions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOffersPromotions.Location = new System.Drawing.Point(551, 3);
+            this.pnlOffersPromotions.Location = new System.Drawing.Point(733, 3);
             this.pnlOffersPromotions.Name = "pnlOffersPromotions";
-            this.pnlOffersPromotions.Size = new System.Drawing.Size(268, 365);
+            this.pnlOffersPromotions.Size = new System.Drawing.Size(360, 365);
             this.pnlOffersPromotions.TabIndex = 2;
             // 
             // btnOffersPromotions
             // 
+            this.btnOffersPromotions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnOffersPromotions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(0)))));
             this.btnOffersPromotions.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOffersPromotions.FlatAppearance.BorderSize = 0;
@@ -300,7 +263,7 @@
             this.btnOffersPromotions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOffersPromotions.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOffersPromotions.ForeColor = System.Drawing.Color.White;
-            this.btnOffersPromotions.Location = new System.Drawing.Point(32, 257);
+            this.btnOffersPromotions.Location = new System.Drawing.Point(80, 271);
             this.btnOffersPromotions.Name = "btnOffersPromotions";
             this.btnOffersPromotions.Size = new System.Drawing.Size(199, 87);
             this.btnOffersPromotions.TabIndex = 3;
@@ -310,8 +273,9 @@
             // 
             // picBoxOffersPromotions
             // 
+            this.picBoxOffersPromotions.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.picBoxOffersPromotions.Image = global::BookWise_AutoMart.Properties.Resources.offers_promotions;
-            this.picBoxOffersPromotions.Location = new System.Drawing.Point(32, 27);
+            this.picBoxOffersPromotions.Location = new System.Drawing.Point(80, 36);
             this.picBoxOffersPromotions.Name = "picBoxOffersPromotions";
             this.picBoxOffersPromotions.Size = new System.Drawing.Size(199, 192);
             this.picBoxOffersPromotions.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -342,6 +306,51 @@
             this.picBoxAdminDashboard.TabIndex = 3;
             this.picBoxAdminDashboard.TabStop = false;
             // 
+            // tblInventoryManagementContainer
+            // 
+            this.tblInventoryManagementContainer.ColumnCount = 1;
+            this.tblInventoryManagementContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblInventoryManagementContainer.Controls.Add(this.picBoxInventoryManagement, 0, 0);
+            this.tblInventoryManagementContainer.Controls.Add(this.btnInventoryManagement, 0, 1);
+            this.tblInventoryManagementContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblInventoryManagementContainer.Location = new System.Drawing.Point(0, 0);
+            this.tblInventoryManagementContainer.Name = "tblInventoryManagementContainer";
+            this.tblInventoryManagementContainer.RowCount = 2;
+            this.tblInventoryManagementContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.32877F));
+            this.tblInventoryManagementContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.67123F));
+            this.tblInventoryManagementContainer.Size = new System.Drawing.Size(359, 365);
+            this.tblInventoryManagementContainer.TabIndex = 4;
+            // 
+            // tblUserManagementContainer
+            // 
+            this.tblUserManagementContainer.ColumnCount = 1;
+            this.tblUserManagementContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblUserManagementContainer.Controls.Add(this.picBoxUserManagement, 0, 0);
+            this.tblUserManagementContainer.Controls.Add(this.btnUserManagement, 0, 1);
+            this.tblUserManagementContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblUserManagementContainer.Location = new System.Drawing.Point(0, 0);
+            this.tblUserManagementContainer.Name = "tblUserManagementContainer";
+            this.tblUserManagementContainer.RowCount = 2;
+            this.tblUserManagementContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.32877F));
+            this.tblUserManagementContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.67123F));
+            this.tblUserManagementContainer.Size = new System.Drawing.Size(359, 365);
+            this.tblUserManagementContainer.TabIndex = 5;
+            // 
+            // tblOffersContainer
+            // 
+            this.tblOffersContainer.ColumnCount = 1;
+            this.tblOffersContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblOffersContainer.Controls.Add(this.btnOffersPromotions, 0, 1);
+            this.tblOffersContainer.Controls.Add(this.picBoxOffersPromotions, 0, 0);
+            this.tblOffersContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblOffersContainer.Location = new System.Drawing.Point(0, 0);
+            this.tblOffersContainer.Name = "tblOffersContainer";
+            this.tblOffersContainer.RowCount = 2;
+            this.tblOffersContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.32877F));
+            this.tblOffersContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.67123F));
+            this.tblOffersContainer.Size = new System.Drawing.Size(360, 365);
+            this.tblOffersContainer.TabIndex = 5;
+            // 
             // AdminDashboardForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -353,7 +362,7 @@
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1280, 1024);
+            this.MinimumSize = new System.Drawing.Size(1280, 1018);
             this.Name = "AdminDashboardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDashboardForm";
@@ -366,13 +375,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.picBoxUserManagement)).EndInit();
             this.tableLayoutPanelAdminDashboard.ResumeLayout(false);
             this.tableLayoutPanelAdminDashboard.PerformLayout();
-            this.pnlReportsAnalytics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picBoxReportsAnalytics)).EndInit();
             this.pnlOffersPromotions.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBoxOffersPromotions)).EndInit();
             this.pnlAdmin.ResumeLayout(false);
             this.pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminDashboard)).EndInit();
+            this.tblInventoryManagementContainer.ResumeLayout(false);
+            this.tblUserManagementContainer.ResumeLayout(false);
+            this.tblOffersContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -393,12 +403,12 @@
         private System.Windows.Forms.Button btnUserManagement;
         private System.Windows.Forms.Button btnMaximize;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminDashboard;
-        private System.Windows.Forms.Panel pnlReportsAnalytics;
-        private System.Windows.Forms.Button btnReportsAnalytics;
-        private System.Windows.Forms.PictureBox picBoxReportsAnalytics;
         private System.Windows.Forms.Panel pnlOffersPromotions;
         private System.Windows.Forms.Button btnOffersPromotions;
         private System.Windows.Forms.PictureBox picBoxOffersPromotions;
         private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.TableLayoutPanel tblInventoryManagementContainer;
+        private System.Windows.Forms.TableLayoutPanel tblUserManagementContainer;
+        private System.Windows.Forms.TableLayoutPanel tblOffersContainer;
     }
 }

@@ -140,7 +140,6 @@
             this.Controls.Add(this.tableLayoutPanelFunctionalities);
             this.Name = "UserControlUserManagement";
             this.Size = new System.Drawing.Size(913, 535);
-            this.Load += new System.EventHandler(this.UserControlUserManagement_Load);
             this.ParentChanged += new System.EventHandler(this.UserControlUserManagement_ParentChanged);
             this.tableLayoutPanelFunctionalities.ResumeLayout(false);
             this.tableLayoutPanelFilterSearch.ResumeLayout(false);

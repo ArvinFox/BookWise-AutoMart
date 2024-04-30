@@ -42,7 +42,7 @@ namespace BookWise_AutoMart
             tblHeading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
             tblHeading.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
             tblHeading.Dock = DockStyle.Top;
-            tblHeading.BackColor = Color.DodgerBlue;
+            tblHeading.BackColor = Color.FromArgb(21, 101, 192);
 
             Label lblUserID = new Label();
             lblUserID.Text = "ID";
@@ -278,9 +278,15 @@ namespace BookWise_AutoMart
                                     tblData.Controls.Add(lblUserEmailData, 4, count);
 
                                     Button btnViewMore = new Button();
-                                    btnViewMore.Dock = DockStyle.Fill;
+                                    btnViewMore.FlatStyle = FlatStyle.Flat;
+                                    btnViewMore.FlatAppearance.BorderSize = 0;
+                                    btnViewMore.Anchor = AnchorStyles.None;
                                     btnViewMore.Font = new Font("Segoe UI", 15, FontStyle.Bold);
                                     btnViewMore.Text = "View More";
+                                    btnViewMore.Cursor = Cursors.Hand;
+                                    btnViewMore.BackColor = Color.FromArgb(21, 101, 192);
+                                    btnViewMore.ForeColor = Color.White;
+                                    btnViewMore.Size = new Size(240, 90);
                                     btnViewMore.Click += (sender, e) =>
                                     {
                                         string userType = lblUserTypeData.Text;
@@ -340,13 +346,13 @@ namespace BookWise_AutoMart
                             }
                         }
                     }
-                    catch (SqlException ex)
-                    {
-                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    catch (Exception sqlex)
+                    catch (SqlException sqlex)
                     {
                         MessageBox.Show(sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     finally
                     {
@@ -356,10 +362,6 @@ namespace BookWise_AutoMart
             }
         }
 
-        private void UserControlUserManagement_Load(object sender, EventArgs e)
-        {
-            
-        }
 
         private void UserControlUserManagement_ParentChanged(object sender, EventArgs e)
         {

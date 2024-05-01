@@ -12,8 +12,8 @@ namespace BookWise_AutoMart
 {
     public partial class OutOfStockForm : Form
     {
-        private int stock;
-        private TextBox textBoxQty;
+        private readonly int stock;
+        private readonly TextBox textBoxQty;
 
         public OutOfStockForm(int Qty, TextBox textQty)
         {

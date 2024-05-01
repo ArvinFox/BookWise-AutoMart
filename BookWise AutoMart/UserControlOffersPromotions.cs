@@ -13,7 +13,7 @@ namespace BookWise_AutoMart
 {
     public partial class UserControlOffersPromotions : UserControl
     {
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserControlOffersPromotions()
         {
@@ -269,7 +269,6 @@ namespace BookWise_AutoMart
 
                                     count++;
 
-                                    // Add row to UserControl
                                     // Add the row to the UserControl
                                     tblOffers.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                                     tblOffers.Padding = new Padding(5); // Add some padding

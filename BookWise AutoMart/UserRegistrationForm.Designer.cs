@@ -68,6 +68,7 @@
             // 
             // tlpSignupMainLayout
             // 
+            this.tlpSignupMainLayout.BackColor = System.Drawing.Color.White;
             this.tlpSignupMainLayout.ColumnCount = 1;
             this.tlpSignupMainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpSignupMainLayout.Controls.Add(this.tlpLogiContainer, 0, 9);
@@ -414,6 +415,7 @@
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotification.ForeColor = System.Drawing.Color.Red;
             this.lblNotification.Location = new System.Drawing.Point(550, 10);
             this.lblNotification.Name = "lblNotification";
             this.lblNotification.Size = new System.Drawing.Size(176, 36);

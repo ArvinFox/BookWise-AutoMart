@@ -14,7 +14,7 @@ namespace BookWise_AutoMart
 {
     public partial class AdminLoginForm : Form
     {
-        private string connectionString = DatabaseString.GetAdminDatabase();
+        private readonly string connectionString = DatabaseString.GetAdminDatabase();
 
         public AdminLoginForm()
         {
@@ -29,7 +29,7 @@ namespace BookWise_AutoMart
             string adminUsername = txtAdminUsername.Text;
             string adminPassword = txtAdminPassword.Text;
 
-            if (CheckCredentials(adminUsername, adminPassword))
+            if (VerifyCredentials(adminUsername, adminPassword))
             {
                 bool adminDashboardFormFound = false;
 
@@ -49,7 +49,8 @@ namespace BookWise_AutoMart
                     adminDashboardForm.Show();
                 }
 
-                this.Hide();
+                ClearAdminLoginData();
+                this.Close();
             }
             else
             {
@@ -80,7 +81,7 @@ namespace BookWise_AutoMart
                 }
             };
         }
-        private bool CheckCredentials(string username, string password)
+        private bool VerifyCredentials(string username, string password)
         {
             string query = "SELECT admin_password FROM Admins WHERE BINARY_CHECKSUM(admin_username) = BINARY_CHECKSUM(@Username)";
             // BINARY_CHECKSUM is used for comparing the checksums of two sets of data to determine if they are identical (in this case, it is used to check the letter-case of the data)
@@ -137,6 +138,7 @@ namespace BookWise_AutoMart
                 userLogin.Show();
             }
 
+            ClearAdminLoginData();
             this.Close();
         }
         private void btnMinimize_Click(object sender, EventArgs e)
@@ -190,6 +192,12 @@ namespace BookWise_AutoMart
         private void btnMaximize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
+        }
+
+        private void ClearAdminLoginData()
+        {
+            txtAdminUsername.Text = "";
+            txtAdminPassword.Text = "";
         }
     }
 }

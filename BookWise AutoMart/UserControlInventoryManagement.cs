@@ -18,7 +18,7 @@ namespace BookWise_AutoMart
         private string searchedItem;
         private string categoryName = "Books";
 
-        string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserControlInventoryManagement()
         {
@@ -81,7 +81,7 @@ namespace BookWise_AutoMart
                                 string category = reader["category_name"].ToString();
                                 CategoriesButton categoryButton = new CategoriesButton(categoryId, category, true);
 
-                                // Add the button to a container control (panel)
+                                // Add the button to the panel
                                 pnlDisplayCategories.Controls.Add(categoryButton);
 
                                 categoryButton.Click += (sender, e) =>
@@ -225,6 +225,7 @@ namespace BookWise_AutoMart
                                 noItemsLabel.TextAlign = ContentAlignment.MiddleCenter;
                                 noItemsLabel.Padding = new Padding(12);
                                 noItemsLabel.AutoSize = true;
+
                                 flowLayoutPanelDisplayItems.Controls.Add(noItemsLabel);
                             }
                         }

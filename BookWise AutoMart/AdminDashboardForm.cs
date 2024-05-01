@@ -68,7 +68,7 @@ namespace BookWise_AutoMart
                 adminControlForm.Show();
             }
 
-            this.Hide();
+            this.Close();
         }
     }
 }

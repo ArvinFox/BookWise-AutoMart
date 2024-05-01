@@ -31,6 +31,7 @@
             this.txtItemName = new System.Windows.Forms.TextBox();
             this.tblCategoryNameContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblCategoryName = new System.Windows.Forms.Label();
+            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
             this.flpItemCardsContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.tblFilterSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -38,12 +39,11 @@
             this.lblFilter = new System.Windows.Forms.Label();
             this.tblSearchContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblSearch = new System.Windows.Forms.Label();
-            this.pictureBoxInfo = new System.Windows.Forms.PictureBox();
             this.tblCategoryNameContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
             this.tblFilterSearchContainer.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tblSearchContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtItemName
@@ -80,13 +80,26 @@
             this.lblCategoryName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCategoryName.AutoSize = true;
             this.lblCategoryName.Font = new System.Drawing.Font("Segoe UI Black", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoryName.Location = new System.Drawing.Point(339, 10);
+            this.lblCategoryName.Location = new System.Drawing.Point(336, 10);
             this.lblCategoryName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoryName.Name = "lblCategoryName";
-            this.lblCategoryName.Size = new System.Drawing.Size(355, 60);
+            this.lblCategoryName.Size = new System.Drawing.Size(361, 60);
             this.lblCategoryName.TabIndex = 1;
-            this.lblCategoryName.Text = "category Name";
+            this.lblCategoryName.Text = "Category Name";
             this.lblCategoryName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBoxInfo
+            // 
+            this.pictureBoxInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxInfo.Image = global::BookWise_AutoMart.Properties.Resources.information_button;
+            this.pictureBoxInfo.Location = new System.Drawing.Point(934, 3);
+            this.pictureBoxInfo.Name = "pictureBoxInfo";
+            this.pictureBoxInfo.Size = new System.Drawing.Size(98, 74);
+            this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxInfo.TabIndex = 2;
+            this.pictureBoxInfo.TabStop = false;
+            this.pictureBoxInfo.Click += new System.EventHandler(this.pictureBoxInfo_Click);
             // 
             // flpItemCardsContainer
             // 
@@ -186,19 +199,6 @@
             this.lblSearch.TabIndex = 7;
             this.lblSearch.Text = "Search :";
             // 
-            // pictureBoxInfo
-            // 
-            this.pictureBoxInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxInfo.Image = global::BookWise_AutoMart.Properties.Resources.information_button;
-            this.pictureBoxInfo.Location = new System.Drawing.Point(934, 3);
-            this.pictureBoxInfo.Name = "pictureBoxInfo";
-            this.pictureBoxInfo.Size = new System.Drawing.Size(98, 74);
-            this.pictureBoxInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxInfo.TabIndex = 2;
-            this.pictureBoxInfo.TabStop = false;
-            this.pictureBoxInfo.Click += new System.EventHandler(this.pictureBoxInfo_Click);
-            // 
             // UserDisplayItemsPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -211,15 +211,14 @@
             this.Name = "UserDisplayItemsPanel";
             this.Padding = new System.Windows.Forms.Padding(0, 12, 0, 0);
             this.Size = new System.Drawing.Size(1035, 612);
-            this.Load += new System.EventHandler(this.displayItem_load);
             this.tblCategoryNameContainer.ResumeLayout(false);
             this.tblCategoryNameContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
             this.tblFilterSearchContainer.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tblSearchContainer.ResumeLayout(false);
             this.tblSearchContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxInfo)).EndInit();
             this.ResumeLayout(false);
 
         }

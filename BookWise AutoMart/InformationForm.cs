@@ -13,15 +13,15 @@ namespace BookWise_AutoMart
     public partial class InformationForm : Form
     {
         private int currentStep = 0;
-        private string[] stepsInfo = { "Categories", "Search && Filter Items", "Add Items to Cart", "Proceed to Checkout" };
-        PictureBox[] pages;
-        UserControl[] userControls;
+        private readonly string[] stepsInfo = { "Categories", "Search && Filter Items", "Add Items to Cart", "Proceed to Checkout" };
+        private readonly PictureBox[] pages;
+        private readonly UserControl[] userControls;
 
         public InformationForm()
         {
             InitializeComponent();
             lblStep.Text = stepsInfo[currentStep];
-            userControls=new UserControl[]
+            userControls = new UserControl[]
             {
                 new UserControlGuide1(),new UserControlGuide2(),new UserControlGuide3(),new UserControlGuide4()
             };
@@ -30,13 +30,12 @@ namespace BookWise_AutoMart
                 pictureBoxPage1 , pictureBoxPage2 , pictureBoxPage3 , pictureBoxPage4 
             };
         }
-        private void steps(int steps)
+        private void Steps(int step)
         {
-            
             for (int i = 0;i<pages.Length;i++)
             {
                 lblStep.Text = stepsInfo[currentStep];
-                if(i==steps)
+                if(i== step)
                 {
                     pages[i].Image = Properties.Resources.colored_circle__blue_;
                 }
@@ -47,13 +46,19 @@ namespace BookWise_AutoMart
             }
         }
 
+        private void SwitchStep(UserControl userControl)
+        {
+            pnlStepContainer.Controls.Clear();
+            pnlStepContainer.Controls.Add(userControl);
+        }
+
         private void imageBackward_Click(object sender, EventArgs e)
         {
            if (currentStep > 0)
             {
                 currentStep--;
-                switchPages(userControls[currentStep]);
-                steps(currentStep);
+                SwitchStep(userControls[currentStep]);
+                Steps(currentStep);
                 imageForward.Visible = true;
             }
            if (currentStep > 0)
@@ -71,8 +76,8 @@ namespace BookWise_AutoMart
            if (currentStep < pages.Length-1) 
             { 
                 currentStep++;
-                switchPages(userControls[currentStep]);
-                steps(currentStep);
+                SwitchStep(userControls[currentStep]);
+                Steps(currentStep);
                 imageBackward.Visible = true;
             }
            if (currentStep < pages.Length - 1)
@@ -84,15 +89,10 @@ namespace BookWise_AutoMart
                 imageForward.Visible = false;
             }
         }
-        private void switchPages(UserControl userControl)
-        {
-            pnlStepContainer.Controls.Clear();
-            pnlStepContainer.Controls.Add(userControl);
-        }
 
         private void InformationForm_Load(object sender, EventArgs e)
         {
-            switchPages(userControls[currentStep]);
+            SwitchStep(userControls[currentStep]);
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)

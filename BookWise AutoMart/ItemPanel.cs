@@ -15,7 +15,7 @@ namespace BookWise_AutoMart
 {
     public partial class ItemPanel : Panel
     {
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         // Import the HideCaret function (to hide the cursor in the custom text box)
         [DllImport("user32.dll")]

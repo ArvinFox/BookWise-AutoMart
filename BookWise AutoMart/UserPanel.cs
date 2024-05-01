@@ -18,17 +18,16 @@ namespace BookWise_AutoMart
 {
     public partial class UserPanel : Form
     {
-        public static int id;
-        public static string user;
+        public static int id;   // current user id
+        public static string user;  // current user type (guest/customer)
 
         public static string categoryName;
         private UserDisplayItemsPanel UserDisplayItemsPanel;
         public static Panel pnl;
         public static Label total;
-        public static TextBox Qty;
         public static Checkout checkoutForm;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserPanel(int userId, string userType)
         {
@@ -162,7 +161,7 @@ namespace BookWise_AutoMart
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            //return items in cart
+            //return items in cart (if any)
             foreach(Control control in pnlCart.Controls)
             {
                 if(control is TableLayoutPanel tbl)

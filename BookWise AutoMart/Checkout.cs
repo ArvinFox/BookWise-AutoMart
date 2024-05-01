@@ -16,10 +16,11 @@ namespace BookWise_AutoMart
     public partial class Checkout : Form
     {
         public Panel panelBill;
-        private Timer nextFormTimer;
+        private readonly Timer nextFormTimer;
         private int formTimer = 0;
         private string payment;
-        private string connectionString = DatabaseString.GetUserDatabase();
+
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public Checkout()
         {
@@ -75,7 +76,7 @@ namespace BookWise_AutoMart
         private void butCash_Click(object sender, EventArgs e)
         {
             payment = "Cash";
-            StockUpdate();
+            UserCheckout();
             InsertOrderData();
             OrderItems();
         }
@@ -83,7 +84,7 @@ namespace BookWise_AutoMart
         private void butCard_Click(object sender, EventArgs e)
         {
             payment = "Credit Card";
-            StockUpdate();
+            UserCheckout();
             InsertOrderData();
             OrderItems();
         }
@@ -139,7 +140,7 @@ namespace BookWise_AutoMart
             return -1;
         }
 
-        private void StockUpdate()
+        private void UserCheckout()
         {
             nextFormTimer.Start();
 
@@ -215,7 +216,6 @@ namespace BookWise_AutoMart
 
             pnlBill.Controls.Add(tblBillItem);
         }
-
 
         public void UpdateItem(string itemName, int quantity, int itemDiscount)
         {

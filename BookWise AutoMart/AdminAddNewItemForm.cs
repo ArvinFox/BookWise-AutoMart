@@ -15,15 +15,15 @@ namespace BookWise_AutoMart
     public partial class AdminAddNewItemForm : Form
     {
         // Timer for incrementing stock
-        private Timer incrementTimer = new Timer();
+        private readonly Timer incrementTimer = new Timer();
         // Timer for decrementing stock
-        private Timer decrementTimer = new Timer();
+        private readonly Timer decrementTimer = new Timer();
 
         private bool imageChanged = false;
         private bool isCategorySelected = false;
         private bool isSubcategorySelected = false;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminAddNewItemForm()
         {

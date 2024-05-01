@@ -14,25 +14,19 @@ namespace BookWise_AutoMart
 {
     public partial class UserDisplayItemsPanel : UserControl
     {
-        private string categoryName ;
+        private readonly string categoryName;
         string searchedItem;
         string selectedCategory;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserDisplayItemsPanel(string category)
         {
-            categoryName = category;
             InitializeComponent();
+            categoryName = category;
+            lblCategoryName.Text = categoryName;
             PopulateSubCategoriesComboBox();
-            Placeholder(txtItemName, "Enter item name...");
-            
-        }
-
-        private void displayItem_load(object sender, EventArgs e)
-        {
-            Items();
-            lblCategoryName.Text = UserPanel.categoryName;
+            Placeholder(txtItemName, "Enter item name..."); 
         }
 
         private void Items(string filterOption = null, string searchedItemName = null)
@@ -143,7 +137,7 @@ namespace BookWise_AutoMart
                                             image = Image.FromStream(ms);
                                         }
 
-                                        ItemPanel newItem = new ItemPanel( itemName, itemDescription, price, image, discount);
+                                        ItemPanel newItem = new ItemPanel(itemName, itemDescription, price, image, discount);
 
                                         // Add item (panel) to FlowLayoutPanel
                                         flpItemCardsContainer.Controls.Add(newItem);
@@ -304,21 +298,17 @@ namespace BookWise_AutoMart
                                         }
                                     }
                                 }
-                                return -1;
-                            }
-                            else
-                            {
-                                return -1;
                             }
                         }
                     }
                     catch (Exception)
                     {
                         //---------Error-----------
-                        return -1;
                     }
                 }
             }
+
+            return -1;
         }
 
         private void pictureBoxInfo_Click(object sender, EventArgs e)

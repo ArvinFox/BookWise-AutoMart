@@ -17,17 +17,17 @@ namespace BookWise_AutoMart
     public partial class AdminEditItemForm : Form
     {
         // Timer for incrementing stock
-        private Timer incrementTimer = new Timer();
+        private readonly Timer incrementTimer = new Timer();
         // Timer for decrementing stock
-        private Timer decrementTimer = new Timer();
+        private readonly Timer decrementTimer = new Timer();
 
-        private int id;
+        private readonly int id;
         byte[] previousImageData;
         private bool imageChanged = false;
         private int categoryId;
         private string subcategoryName;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminEditItemForm(int itemId)
         {

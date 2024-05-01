@@ -15,7 +15,7 @@ namespace BookWise_AutoMart
 {
     public partial class AdminManageSubcategoriesForm : Form
     {
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         private bool isCategorySelected = false;
         private string oldSubcategories = "";   // subcategories existing in the database
@@ -236,7 +236,6 @@ namespace BookWise_AutoMart
             foreach (string subcategoryName in subcategoryNames)
             {
                 string subcategory = subcategoryName.Trim();
-                /*int subcategoryId = GetSubcategoryIdByName(subcategory);*/
 
                 // Subcategory container
                 TableLayoutPanel tblSubcategory = new TableLayoutPanel();

@@ -13,7 +13,7 @@ namespace BookWise_AutoMart
 {
     public partial class AdminAddNewCategoryForm : Form
     {
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminAddNewCategoryForm()
         {

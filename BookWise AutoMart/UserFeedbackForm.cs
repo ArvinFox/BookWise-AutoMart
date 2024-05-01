@@ -16,10 +16,10 @@ namespace BookWise_AutoMart
     {
         int userStarRating = 0;
         string userFeedback;
-        private Timer loginFormTimer;
+        private readonly Timer loginFormTimer;
         private int ratingTimer = 10;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserFeedbackForm()
         {

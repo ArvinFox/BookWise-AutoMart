@@ -13,10 +13,10 @@ namespace BookWise_AutoMart
 {
     public partial class AdminEditOfferForm : Form
     {
-        private int id;
+        private readonly int id;
         private string applicableItems = "";
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminEditOfferForm(int offerId)
         {
@@ -177,7 +177,7 @@ namespace BookWise_AutoMart
                         command.Parameters.AddWithValue("@OfferEndDate", Convert.ToDateTime(dtpEndDate.Value).ToShortDateString());
                         command.Parameters.AddWithValue("@DiscountPercentage", txtDiscountPercentage.Text.Trim());
                         command.Parameters.AddWithValue("@ApplicableItems", applicableItems);
-                        command.Parameters.AddWithValue("@IsActive", (radActive.Checked ? true : false));
+                        command.Parameters.AddWithValue("@IsActive", radActive.Checked ? true : false);
                         command.Parameters.AddWithValue("@OfferId", lblId.Text.Trim());
 
                         connection.Open();

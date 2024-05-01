@@ -133,9 +133,6 @@
     <Compile Include="DisplayItemsPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DisplayUserDetails.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="GuestLogin.cs">
       <SubType>Form</SubType>
     </Compile>

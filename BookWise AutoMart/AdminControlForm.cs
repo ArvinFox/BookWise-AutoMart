@@ -18,7 +18,7 @@ namespace BookWise_AutoMart
         public static Button btnReloadOffersPromotionsForm;
 
         private UserControl currentlyDisplayedControl;  // current instance of UserControl
-        string form;
+        private readonly string form;
 
         public AdminControlForm(string formControl)
         {

@@ -15,8 +15,8 @@ namespace BookWise_AutoMart
 {
     public partial class UserLogin : Form
     {
-        private string connectionString = DatabaseString.GetUserDatabase();
-        private string passcode = "admin123";
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string passcode = "admin123";
         private int currentIndex = 0;
 
         public static UserPanel userPanel;  // to track the current UserPanel instance (current user)
@@ -24,6 +24,9 @@ namespace BookWise_AutoMart
         public UserLogin()
         {
             InitializeComponent();
+
+            butLogin.KeyPress += UserLogin_KeyPress;
+            btnGuestLogin.KeyPress += UserLogin_KeyPress;
         }
 
         private void btnGuestLogin_Click(object sender, EventArgs e)
@@ -58,13 +61,11 @@ namespace BookWise_AutoMart
             {
                 lblNotification.Visible = true;
                 lblNotification.Text = "Please enter your phone number";
-                lblNotification.ForeColor = Color.Red;
             }
             else if (!ValidatePhoneNumber(contact))
             {
                 lblNotification.Visible = true;
                 lblNotification.Text = "Invalid phone number";
-                lblNotification.ForeColor = Color.Red;
             }
             else
             {
@@ -113,7 +114,6 @@ namespace BookWise_AutoMart
                     {
                         lblNotification.Visible = true;
                         lblNotification.Text = "Invalid mobile number";
-                        lblNotification.ForeColor = Color.Red;
                     }
                 }
             }
@@ -221,7 +221,7 @@ namespace BookWise_AutoMart
 
         private void UserLogin_Load(object sender, EventArgs e)
         {
-            this.Activate();
+            this.Activate();    // Focus the form
         }
 
         private void ClearUserLoginData()

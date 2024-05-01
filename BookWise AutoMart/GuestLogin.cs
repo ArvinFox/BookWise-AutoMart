@@ -18,7 +18,7 @@ namespace BookWise_AutoMart
     {
         public static UserPanel userPanel;  // to track the current UserPanel instance (current user)
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public GuestLogin()
         {
@@ -34,19 +34,16 @@ namespace BookWise_AutoMart
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(contact))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "All the fields must be filled";
             }
             else if (!ValidateName(name))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Invalid name format.";
             }
             else if (!ValidatePhoneNumber(contact))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Invalid phone number format.";
             }
             else
@@ -159,7 +156,6 @@ namespace BookWise_AutoMart
                 //--------------
             }
         }
-
         
         private void txtPhone_TextChanged(object sender, EventArgs e)
         {

@@ -18,7 +18,7 @@ namespace BookWise_AutoMart
     public partial class UserRegistrationForm : Form
     {
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public UserRegistrationForm()
         {
@@ -36,31 +36,26 @@ namespace BookWise_AutoMart
             if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(contact) || string.IsNullOrWhiteSpace(email))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "All the fields must be filled";
             }
             else if (!ValidateName(name))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Invalid name format.";
             }
             else if (!radioMale.Checked && !radioFemale.Checked)
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Select your gender";
             }
             else if (!ValidatePhoneNumber(contact))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Invalid phone number format.";
             }
             else if (!ValidateEmail(email))
             {
                 lblNotification.Visible = true;
-                lblNotification.ForeColor = Color.Red;
                 lblNotification.Text = "Invalid email format.";
             }
             else
@@ -84,7 +79,6 @@ namespace BookWise_AutoMart
             {
                 InsertData(name, gender, contact, email, date);
             }
-           
         }
 
         private bool ValidateName(string name) 
@@ -134,7 +128,6 @@ namespace BookWise_AutoMart
                     if (count > 0)
                     {
                         lblNotification.Visible = true;
-                        lblNotification.ForeColor = Color.Red;
                         lblNotification.Text = "The phone number already exists.";
                     }
                 }
@@ -162,7 +155,6 @@ namespace BookWise_AutoMart
                     if(count > 0 )
                     {
                         lblNotification.Visible = true;
-                        lblNotification.ForeColor = Color.Red;
                         lblNotification.Text = "The email already exists.";
                     }
                 }

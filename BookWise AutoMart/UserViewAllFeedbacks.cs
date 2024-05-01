@@ -13,9 +13,9 @@ namespace BookWise_AutoMart
 {
     public partial class UserViewAllFeedbacks : Form
     {
-        int id;
+        private readonly int id;
 
-        SqlConnection conn = new SqlConnection(DatabaseString.GetUserDatabase());
+        private readonly SqlConnection conn = new SqlConnection(DatabaseString.GetUserDatabase());
         public UserViewAllFeedbacks(int userID)
         {
             InitializeComponent();
@@ -90,7 +90,6 @@ namespace BookWise_AutoMart
                             int count = 0;
                             while (reader.Read()) 
                             {
-
                                 TableLayoutPanel tblData = new TableLayoutPanel();
 
                                 tblData.ColumnCount = 5;
@@ -100,7 +99,6 @@ namespace BookWise_AutoMart
                                 tblData.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
                                 tblData.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20));
                                 tblData.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10));
-
                                 tblData.Dock = DockStyle.Top;
 
                                 Label lblFeedbackIDData = new Label();
@@ -148,7 +146,6 @@ namespace BookWise_AutoMart
                                 lblFeedbackRateData.Text = reader["rating"].ToString() + "/5";
                                 lblCommentData.Text = reader["comment"].ToString();
                                 lblFeedbackQuestionData.Text = reader["question"].ToString().Trim();
-                                
 
                                 if (count % 2 == 0)
                                 {

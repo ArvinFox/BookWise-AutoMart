@@ -17,7 +17,7 @@ namespace BookWise_AutoMart
     {
         private string applicableItems = "";
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public AdminAddNewOfferForm()
         {
@@ -272,18 +272,15 @@ namespace BookWise_AutoMart
                         {
                             return result.ToString();
                         }
-                        else
-                        {
-                            return "Unknown item";
-                        }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error retrieving item name: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return "Unknown item";
                     }
                 }
             }
+
+            return "Unknown item";
         }
         private void AddOffer()
         {

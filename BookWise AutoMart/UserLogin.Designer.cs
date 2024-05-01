@@ -99,7 +99,7 @@
             this.tblPictureLayout.Name = "tblPictureLayout";
             this.tblPictureLayout.RowCount = 1;
             this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 420F));
+            this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 419F));
             this.tblPictureLayout.Size = new System.Drawing.Size(1112, 419);
             this.tblPictureLayout.TabIndex = 2;
             // 
@@ -138,6 +138,7 @@
             this.lblNotification.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotification.AutoSize = true;
             this.lblNotification.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotification.ForeColor = System.Drawing.Color.Red;
             this.lblNotification.Location = new System.Drawing.Point(140, 280);
             this.lblNotification.Name = "lblNotification";
             this.lblNotification.Size = new System.Drawing.Size(176, 36);
@@ -208,7 +209,7 @@
             this.tblButtonsLayout.Name = "tblButtonsLayout";
             this.tblButtonsLayout.RowCount = 1;
             this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tblButtonsLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
             this.tblButtonsLayout.Size = new System.Drawing.Size(450, 81);
             this.tblButtonsLayout.TabIndex = 1;
             // 

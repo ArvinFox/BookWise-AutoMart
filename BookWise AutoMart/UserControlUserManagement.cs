@@ -24,7 +24,7 @@ namespace BookWise_AutoMart
             DisplayUserDetails();
         }
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         private void DisplayUserDetails(string filterOption = null, string searchedUser = null)
         {
@@ -130,7 +130,7 @@ namespace BookWise_AutoMart
                             FROM Guests
                             ORDER BY userId DESC";
                 }
-
+                
                 // filtered item but not searched user (filterOption != null && searchedusername == null)
                 else if (!string.IsNullOrEmpty(filterOption) && string.IsNullOrEmpty(searchedUser))
                 {

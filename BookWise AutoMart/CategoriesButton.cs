@@ -15,11 +15,11 @@ namespace BookWise_AutoMart
     public class CategoriesButton : Button
     {
         private static CategoriesButton currentlyClickedButton = null;  // track the currently selected button
-        private PictureBox picDeleteCategory;
-        private bool isAdminView = false;
+        private readonly PictureBox picDeleteCategory;
+        private readonly bool isAdminView = false;
         private bool isDeleteIconWhite = false;
 
-        private string connectionString = DatabaseString.GetUserDatabase();
+        private readonly string connectionString = DatabaseString.GetUserDatabase();
 
         public CategoriesButton(int categoryId, string category, bool isAdmin = false)
         {

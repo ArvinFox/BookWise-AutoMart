@@ -16,10 +16,10 @@ namespace BookWise_AutoMart
 {
     public partial class UserViewMoreDetailsForm : Form
     {
-        int id;
-        string userType;
+        private readonly int id;
+        private readonly string userType;
 
-        SqlConnection conn = new SqlConnection(DatabaseString.GetUserDatabase());
+        private readonly SqlConnection conn = new SqlConnection(DatabaseString.GetUserDatabase());
 
         public UserViewMoreDetailsForm(int userID, string user)
         {
@@ -264,7 +264,6 @@ namespace BookWise_AutoMart
             }
                 
             //Showing more details of the user
-
             string query = $"SELECT * FROM Users WHERE user_id={id}";
             bool isGuest = false;
 
@@ -349,7 +348,6 @@ namespace BookWise_AutoMart
                 DeleteUserDetails();
             } 
         }
-
         
         private void DeleteUserDetails() //To delete user's details
         {
@@ -537,8 +535,7 @@ namespace BookWise_AutoMart
             if (!ValidateDetails())
                 return;
 
-            UpdateUserDetails();
-           
+            UpdateUserDetails();         
         }
         private void Placeholder(TextBox textBox, string placeholder)
         {

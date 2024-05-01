@@ -31,12 +31,15 @@
             this.pnlDisplayOffers = new System.Windows.Forms.Panel();
             this.pnlAddNewOffer = new System.Windows.Forms.Panel();
             this.btnAddNewOffer = new System.Windows.Forms.Button();
+            this.pnlDivider = new System.Windows.Forms.Panel();
+            this.pnlDisplayOffers.SuspendLayout();
             this.pnlAddNewOffer.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDisplayOffers
             // 
             this.pnlDisplayOffers.AutoScroll = true;
+            this.pnlDisplayOffers.Controls.Add(this.pnlDivider);
             this.pnlDisplayOffers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDisplayOffers.Location = new System.Drawing.Point(0, 0);
             this.pnlDisplayOffers.Name = "pnlDisplayOffers";
@@ -74,6 +77,14 @@
             this.btnAddNewOffer.UseVisualStyleBackColor = false;
             this.btnAddNewOffer.Click += new System.EventHandler(this.btnAddNewOffer_Click);
             // 
+            // pnlDivider
+            // 
+            this.pnlDivider.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlDivider.Location = new System.Drawing.Point(0, 592);
+            this.pnlDivider.Name = "pnlDivider";
+            this.pnlDivider.Size = new System.Drawing.Size(1257, 92);
+            this.pnlDivider.TabIndex = 0;
+            // 
             // UserControlOffersPromotions
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -85,6 +96,7 @@
             this.Size = new System.Drawing.Size(1257, 684);
             this.Load += new System.EventHandler(this.UserControlOffersPromotions_Load);
             this.ParentChanged += new System.EventHandler(this.UserControlOffersPromotions_ParentChanged);
+            this.pnlDisplayOffers.ResumeLayout(false);
             this.pnlAddNewOffer.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -95,5 +107,6 @@
         private System.Windows.Forms.Panel pnlDisplayOffers;
         private System.Windows.Forms.Button btnAddNewOffer;
         private System.Windows.Forms.Panel pnlAddNewOffer;
+        private System.Windows.Forms.Panel pnlDivider;
     }
 }

@@ -53,7 +53,22 @@ namespace BookWise_AutoMart
 
             if(lblNotification.Visible == false)
             {
-                InsertData(name, contact);
+                // check if guest is already in the database
+                int guestId = GetGuestId(name, contact);
+
+                if (guestId != -1)
+                {
+                    userPanel = new UserPanel(guestId, "Guest");
+                    userPanel.Show();
+
+                    ClearGuestLoginData();  // Reset user input
+                    this.Close();
+                }
+                else
+                {
+                    // add new guest
+                    InsertData(name, contact);
+                }
             }
         }
 
@@ -95,7 +110,7 @@ namespace BookWise_AutoMart
 
                     if (rowsAffected > 0)
                     {
-                        userPanel = new UserPanel(GetGuestId(contact), "Guest");
+                        userPanel = new UserPanel(GetGuestId(name, contact), "Guest");
                         userPanel.Show();
 
                         ClearGuestLoginData();  // Reset user input
@@ -108,18 +123,19 @@ namespace BookWise_AutoMart
                 // Error
             }
         }
-        private int GetGuestId(string contactNo)
+        private int GetGuestId(string guestName, string contactNo)
         {
             int lastGuestId = -1;
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT TOP 1 guest_id FROM Guests WHERE guest_contact_number = @ContactNumber ORDER BY guest_id DESC";
+                string query = "SELECT guest_id FROM Guests WHERE guest_name = @GuestName AND guest_contact_number = @ContactNumber";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     try
                     {
+                        command.Parameters.AddWithValue("@GuestName", guestName.Trim());
                         command.Parameters.AddWithValue("@ContactNumber", contactNo.Trim());
 
                         connection.Open();
@@ -149,6 +165,12 @@ namespace BookWise_AutoMart
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
                 {
                     e.Handled = true;
+
+                    // login when the user presses the 'Enter' key
+                    if (e.KeyChar == (char)Keys.Enter)
+                    {
+                        butLogin.PerformClick();
+                    }
                 }
             }
             catch(Exception)
@@ -173,6 +195,12 @@ namespace BookWise_AutoMart
             if(!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+
+                // go to the next input field when the user presses the 'Enter' key
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    txtPhone.Focus();
+                }
             }
         }
 

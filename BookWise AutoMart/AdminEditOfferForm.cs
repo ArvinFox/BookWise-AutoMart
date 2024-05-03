@@ -565,5 +565,62 @@ namespace BookWise_AutoMart
         {
             lblOfferStatusError.Visible = false;
         }
+
+        private void txtOfferName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                dtpStartDate.Focus();
+            }
+        }
+        private void dtpStartDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                dtpEndDate.Focus();
+            }
+        }
+        private void dtpEndDate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtDiscountPercentage.Focus();
+            }
+        }
+        private void txtDiscountPercentage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                comboBoxApplicableItems.Focus();
+            }
+        }
+        private void comboBoxApplicableItems_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnAddItem.PerformClick();
+            }
+        }
+        private void radActive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnSave.PerformClick();
+            }
+        }
+        private void radInactive_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnSave.PerformClick();
+            }
+        }
     }
 }

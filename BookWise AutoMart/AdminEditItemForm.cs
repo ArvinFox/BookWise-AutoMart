@@ -682,5 +682,54 @@ namespace BookWise_AutoMart
                 lblStockRequired.Visible = false;
             }
         }
+
+        private void txtItemName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                rtbItemDescription.Focus();
+            }
+        }
+        private void rtbItemDescription_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                comboBoxSubcategories.Focus();
+            }
+        }
+        private void comboBoxSubcategories_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtPrice.Focus();
+            }
+        }
+        private void txtPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtStock.Focus();
+            }
+        }
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnChooseImage.Focus();
+            }
+        }
+        private void btnChooseImage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnSave.PerformClick();
+            }
+        }
     }
 }

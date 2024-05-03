@@ -218,6 +218,12 @@ namespace BookWise_AutoMart
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+
+                // go to the next input field when the user presses the 'Enter' key
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    txtPhone.Focus();
+                }
             }
         }
 
@@ -229,6 +235,12 @@ namespace BookWise_AutoMart
                 if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
                 {
                     e.Handled = true;
+
+                    // go to the next input field when the user presses the 'Enter' key
+                    if (e.KeyChar == (char)Keys.Enter)
+                    {
+                        txtEmail.Focus();
+                    }
                 }
             }
             catch (Exception)
@@ -278,6 +290,16 @@ namespace BookWise_AutoMart
             txtPhone.Text = "";
             txtEmail.Text = "";
             lblNotification.Visible = false;
+        }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // register when the user presses the 'Enter' key
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                butRegister.PerformClick();
+            }
         }
     }
 }

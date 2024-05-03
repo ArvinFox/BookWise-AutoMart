@@ -158,7 +158,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.7725F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22.45302F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.77448F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 309F));
             this.tableLayoutPanel1.Controls.Add(this.btnViewUserFeedbacks, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnDeleteUser, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnUpdate, 3, 0);
@@ -216,7 +216,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(1068, 6);
+            this.btnUpdate.Location = new System.Drawing.Point(1067, 6);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(192, 61);
             this.btnUpdate.TabIndex = 48;
@@ -233,7 +233,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.Black;
-            this.btnClose.Location = new System.Drawing.Point(815, 6);
+            this.btnClose.Location = new System.Drawing.Point(813, 6);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(192, 61);
             this.btnClose.TabIndex = 50;
@@ -247,7 +247,7 @@
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 85.76923F));
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.23077F));
             this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 678F));
-            this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tblDetailsLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tblDetailsLayout.Controls.Add(this.lblContactRequired, 3, 3);
             this.tblDetailsLayout.Controls.Add(this.lblEmailRequired, 3, 2);
             this.tblDetailsLayout.Controls.Add(this.lblGenderRequired, 3, 1);
@@ -286,7 +286,7 @@
             this.lblContactRequired.AutoSize = true;
             this.lblContactRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblContactRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblContactRequired.Location = new System.Drawing.Point(1284, 205);
+            this.lblContactRequired.Location = new System.Drawing.Point(1283, 205);
             this.lblContactRequired.Name = "lblContactRequired";
             this.lblContactRequired.Size = new System.Drawing.Size(22, 28);
             this.lblContactRequired.TabIndex = 86;
@@ -299,7 +299,7 @@
             this.lblEmailRequired.AutoSize = true;
             this.lblEmailRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblEmailRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblEmailRequired.Location = new System.Drawing.Point(1284, 148);
+            this.lblEmailRequired.Location = new System.Drawing.Point(1283, 148);
             this.lblEmailRequired.Name = "lblEmailRequired";
             this.lblEmailRequired.Size = new System.Drawing.Size(22, 28);
             this.lblEmailRequired.TabIndex = 85;
@@ -312,7 +312,7 @@
             this.lblGenderRequired.AutoSize = true;
             this.lblGenderRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblGenderRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblGenderRequired.Location = new System.Drawing.Point(1284, 91);
+            this.lblGenderRequired.Location = new System.Drawing.Point(1283, 91);
             this.lblGenderRequired.Name = "lblGenderRequired";
             this.lblGenderRequired.Size = new System.Drawing.Size(22, 28);
             this.lblGenderRequired.TabIndex = 84;
@@ -325,7 +325,7 @@
             this.colon4.AutoSize = true;
             this.colon4.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon4.ForeColor = System.Drawing.Color.Black;
-            this.colon4.Location = new System.Drawing.Point(537, 264);
+            this.colon4.Location = new System.Drawing.Point(536, 264);
             this.colon4.Name = "colon4";
             this.colon4.Size = new System.Drawing.Size(19, 28);
             this.colon4.TabIndex = 83;
@@ -337,7 +337,7 @@
             this.colon3.AutoSize = true;
             this.colon3.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon3.ForeColor = System.Drawing.Color.Black;
-            this.colon3.Location = new System.Drawing.Point(537, 205);
+            this.colon3.Location = new System.Drawing.Point(536, 205);
             this.colon3.Name = "colon3";
             this.colon3.Size = new System.Drawing.Size(19, 28);
             this.colon3.TabIndex = 82;
@@ -349,7 +349,7 @@
             this.lblNameRequired.AutoSize = true;
             this.lblNameRequired.Font = new System.Drawing.Font("Gadugi", 14F);
             this.lblNameRequired.ForeColor = System.Drawing.Color.Red;
-            this.lblNameRequired.Location = new System.Drawing.Point(1284, 34);
+            this.lblNameRequired.Location = new System.Drawing.Point(1283, 34);
             this.lblNameRequired.Name = "lblNameRequired";
             this.lblNameRequired.Size = new System.Drawing.Size(22, 28);
             this.lblNameRequired.TabIndex = 65;
@@ -362,7 +362,7 @@
             this.colon2.AutoSize = true;
             this.colon2.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon2.ForeColor = System.Drawing.Color.Black;
-            this.colon2.Location = new System.Drawing.Point(537, 148);
+            this.colon2.Location = new System.Drawing.Point(536, 148);
             this.colon2.Name = "colon2";
             this.colon2.Size = new System.Drawing.Size(19, 28);
             this.colon2.TabIndex = 81;
@@ -374,7 +374,7 @@
             this.colon1.AutoSize = true;
             this.colon1.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon1.ForeColor = System.Drawing.Color.Black;
-            this.colon1.Location = new System.Drawing.Point(537, 91);
+            this.colon1.Location = new System.Drawing.Point(536, 91);
             this.colon1.Name = "colon1";
             this.colon1.Size = new System.Drawing.Size(19, 28);
             this.colon1.TabIndex = 80;
@@ -386,7 +386,7 @@
             this.colon.AutoSize = true;
             this.colon.Font = new System.Drawing.Font("Gadugi", 14F, System.Drawing.FontStyle.Bold);
             this.colon.ForeColor = System.Drawing.Color.Black;
-            this.colon.Location = new System.Drawing.Point(537, 34);
+            this.colon.Location = new System.Drawing.Point(536, 34);
             this.colon.Name = "colon";
             this.colon.Size = new System.Drawing.Size(19, 28);
             this.colon.TabIndex = 79;
@@ -411,7 +411,7 @@
             this.txtRegisterDate.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRegisterDate.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtRegisterDate.ForeColor = System.Drawing.Color.Black;
-            this.txtRegisterDate.Location = new System.Drawing.Point(602, 260);
+            this.txtRegisterDate.Location = new System.Drawing.Point(601, 260);
             this.txtRegisterDate.Multiline = true;
             this.txtRegisterDate.Name = "txtRegisterDate";
             this.txtRegisterDate.ReadOnly = true;
@@ -437,12 +437,13 @@
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContact.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtContact.ForeColor = System.Drawing.Color.Black;
-            this.txtContact.Location = new System.Drawing.Point(602, 201);
+            this.txtContact.Location = new System.Drawing.Point(601, 201);
             this.txtContact.MaxLength = 10;
             this.txtContact.Multiline = true;
             this.txtContact.Name = "txtContact";
             this.txtContact.Size = new System.Drawing.Size(648, 37);
             this.txtContact.TabIndex = 75;
+            this.txtContact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContact_KeyPress);
             // 
             // txtName
             // 
@@ -451,11 +452,12 @@
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtName.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(602, 30);
+            this.txtName.Location = new System.Drawing.Point(601, 30);
             this.txtName.Multiline = true;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(648, 37);
             this.txtName.TabIndex = 52;
+            this.txtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtName_KeyPress);
             // 
             // txtEmail
             // 
@@ -464,11 +466,12 @@
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Gadugi", 15F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
-            this.txtEmail.Location = new System.Drawing.Point(602, 144);
+            this.txtEmail.Location = new System.Drawing.Point(601, 144);
             this.txtEmail.Multiline = true;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(648, 37);
             this.txtEmail.TabIndex = 73;
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             // 
             // lblGender
             // 
@@ -514,7 +517,7 @@
             this.tableLayoutPanel2.Controls.Add(this.radioBtnFemale, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.radioBtnMale, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(590, 80);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(589, 80);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));

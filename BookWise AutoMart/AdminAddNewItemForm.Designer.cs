@@ -90,6 +90,7 @@
             this.rtbItemDescription.TabIndex = 71;
             this.rtbItemDescription.Text = "";
             this.rtbItemDescription.TextChanged += new System.EventHandler(this.rtbItemDescription_TextChanged);
+            this.rtbItemDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbItemDescription_KeyPress);
             // 
             // lblRequiredFields
             // 
@@ -176,6 +177,7 @@
             this.btnChooseImage.Text = "Choose Image";
             this.btnChooseImage.UseVisualStyleBackColor = false;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            this.btnChooseImage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnChooseImage_KeyPress);
             // 
             // lblImage
             // 
@@ -212,6 +214,7 @@
             this.txtStock.TabIndex = 58;
             this.txtStock.Text = "0";
             this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // lblPrice
             // 
@@ -236,6 +239,7 @@
             this.txtPrice.Size = new System.Drawing.Size(228, 37);
             this.txtPrice.TabIndex = 56;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lblItemDescription
             // 
@@ -271,6 +275,7 @@
             this.txtItemName.Size = new System.Drawing.Size(419, 37);
             this.txtItemName.TabIndex = 52;
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
+            this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
             // btnCancel
             // 
@@ -404,6 +409,7 @@
             this.comboBoxSubCategories.Size = new System.Drawing.Size(228, 37);
             this.comboBoxSubCategories.TabIndex = 76;
             this.comboBoxSubCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxSubCategories_SelectedIndexChanged);
+            this.comboBoxSubCategories.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxSubCategories_KeyPress);
             // 
             // comboBoxCategories
             // 
@@ -419,6 +425,7 @@
             this.comboBoxCategories.Size = new System.Drawing.Size(228, 37);
             this.comboBoxCategories.TabIndex = 77;
             this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
+            this.comboBoxCategories.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxCategories_KeyPress);
             // 
             // lblSubcategoryRequired
             // 

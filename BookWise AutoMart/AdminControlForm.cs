@@ -32,31 +32,6 @@ namespace BookWise_AutoMart
             lblCurrentControl.Text = formControl.ToUpper();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            bool userLoginFound = false;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is UserLogin)
-                {
-                    userLoginFound = true;
-                    form.Show();
-                    break;
-                }
-            }
-            if (!userLoginFound)
-            {
-                UserLogin userLogin = new UserLogin();
-                userLogin.Show();
-            }
-
-            this.Close();
-        }
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void NavigateControl(UserControl userControl)
         {
             // Dispose of the currently displayed control, if it exists

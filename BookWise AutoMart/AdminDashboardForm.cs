@@ -12,36 +12,13 @@ namespace BookWise_AutoMart
 {
     public partial class AdminDashboardForm : Form
     {
+        public static AdminControlForm adminControlForm;
+
         public AdminDashboardForm(string username)
         {
             InitializeComponent();
 
             lblWelcomeAdmin.Text = $"Welcome, Admin ({username})";
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            bool userLoginFound = false;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is UserLogin)
-                {
-                    userLoginFound = true;
-                    form.Show();
-                    break;
-                }
-            }
-            if (!userLoginFound)
-            {
-                UserLogin userLogin = new UserLogin();
-                userLogin.Show();
-            }
-
-            this.Close();
-        }
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnControl_Click(object sender, EventArgs e)
@@ -64,8 +41,29 @@ namespace BookWise_AutoMart
 
             if (!adminControlFormFound)
             {
-                AdminControlForm adminControlForm = new AdminControlForm(formControl);
+                adminControlForm = new AdminControlForm(formControl);
                 adminControlForm.Show();
+            }
+
+            this.Close();
+        }
+
+        private void btnAdminLogout_Click(object sender, EventArgs e)
+        {
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
             }
 
             this.Close();

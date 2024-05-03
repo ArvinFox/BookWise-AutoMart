@@ -28,31 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLoginForm));
+            this.pnlAdmin = new System.Windows.Forms.Panel();
+            this.lblAdminLoginTitle = new System.Windows.Forms.Label();
+            this.tblContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tblAdminContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelAdminLoginBtn = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdminLogin = new System.Windows.Forms.Button();
             this.tableLayoutPanelAdminCredentials = new System.Windows.Forms.TableLayoutPanel();
             this.lblAdminUsername = new System.Windows.Forms.Label();
             this.lblAdminPassword = new System.Windows.Forms.Label();
             this.txtAdminUsername = new System.Windows.Forms.TextBox();
             this.pnlPassword = new System.Windows.Forms.Panel();
-            this.btnPasswordToggleVisibility = new System.Windows.Forms.Button();
             this.txtAdminPassword = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanelAdminLoginBtn = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdminLogin = new System.Windows.Forms.Button();
-            this.pnlAdmin = new System.Windows.Forms.Panel();
-            this.lblAdminLoginTitle = new System.Windows.Forms.Label();
+            this.picGoBack = new System.Windows.Forms.PictureBox();
+            this.btnPasswordToggleVisibility = new System.Windows.Forms.Button();
             this.picBoxAdminLogin = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.tblAdminContainer = new System.Windows.Forms.TableLayoutPanel();
-            this.tblContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.pnlAdmin.SuspendLayout();
+            this.tblContainer.SuspendLayout();
+            this.tblAdminContainer.SuspendLayout();
+            this.tableLayoutPanelAdminLoginBtn.SuspendLayout();
             this.tableLayoutPanelAdminCredentials.SuspendLayout();
             this.pnlPassword.SuspendLayout();
-            this.tableLayoutPanelAdminLoginBtn.SuspendLayout();
-            this.pnlAdmin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminLogin)).BeginInit();
-            this.tblAdminContainer.SuspendLayout();
-            this.tblContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // pnlAdmin
+            // 
+            this.pnlAdmin.BackColor = System.Drawing.Color.White;
+            this.pnlAdmin.Controls.Add(this.lblAdminLoginTitle);
+            this.pnlAdmin.Controls.Add(this.picBoxAdminLogin);
+            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pnlAdmin.Name = "pnlAdmin";
+            this.pnlAdmin.Size = new System.Drawing.Size(1280, 40);
+            this.pnlAdmin.TabIndex = 13;
+            // 
+            // lblAdminLoginTitle
+            // 
+            this.lblAdminLoginTitle.AutoSize = true;
+            this.lblAdminLoginTitle.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdminLoginTitle.Location = new System.Drawing.Point(43, 11);
+            this.lblAdminLoginTitle.Name = "lblAdminLoginTitle";
+            this.lblAdminLoginTitle.Size = new System.Drawing.Size(122, 24);
+            this.lblAdminLoginTitle.TabIndex = 4;
+            this.lblAdminLoginTitle.Text = "Admin Login";
+            // 
+            // tblContainer
+            // 
+            this.tblContainer.ColumnCount = 1;
+            this.tblContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblContainer.Controls.Add(this.picGoBack, 0, 2);
+            this.tblContainer.Controls.Add(this.tblAdminContainer, 0, 1);
+            this.tblContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblContainer.Location = new System.Drawing.Point(0, 40);
+            this.tblContainer.Name = "tblContainer";
+            this.tblContainer.RowCount = 3;
+            this.tblContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tblContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tblContainer.Size = new System.Drawing.Size(1280, 984);
+            this.tblContainer.TabIndex = 15;
+            // 
+            // tblAdminContainer
+            // 
+            this.tblAdminContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tblAdminContainer.ColumnCount = 1;
+            this.tblAdminContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblAdminContainer.Controls.Add(this.tableLayoutPanelAdminLoginBtn, 0, 1);
+            this.tblAdminContainer.Controls.Add(this.tableLayoutPanelAdminCredentials, 0, 0);
+            this.tblAdminContainer.Location = new System.Drawing.Point(198, 307);
+            this.tblAdminContainer.Name = "tblAdminContainer";
+            this.tblAdminContainer.RowCount = 2;
+            this.tblAdminContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblAdminContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblAdminContainer.Size = new System.Drawing.Size(884, 370);
+            this.tblAdminContainer.TabIndex = 17;
+            // 
+            // tableLayoutPanelAdminLoginBtn
+            // 
+            this.tableLayoutPanelAdminLoginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelAdminLoginBtn.ColumnCount = 1;
+            this.tableLayoutPanelAdminLoginBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelAdminLoginBtn.Controls.Add(this.btnAdminLogin, 0, 0);
+            this.tableLayoutPanelAdminLoginBtn.Location = new System.Drawing.Point(3, 225);
+            this.tableLayoutPanelAdminLoginBtn.Name = "tableLayoutPanelAdminLoginBtn";
+            this.tableLayoutPanelAdminLoginBtn.RowCount = 1;
+            this.tableLayoutPanelAdminLoginBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelAdminLoginBtn.Size = new System.Drawing.Size(878, 105);
+            this.tableLayoutPanelAdminLoginBtn.TabIndex = 12;
+            // 
+            // btnAdminLogin
+            // 
+            this.btnAdminLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAdminLogin.BackColor = System.Drawing.Color.White;
+            this.btnAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminLogin.FlatAppearance.BorderSize = 0;
+            this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminLogin.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminLogin.Location = new System.Drawing.Point(355, 18);
+            this.btnAdminLogin.Name = "btnAdminLogin";
+            this.btnAdminLogin.Size = new System.Drawing.Size(168, 69);
+            this.btnAdminLogin.TabIndex = 0;
+            this.btnAdminLogin.Text = "Login";
+            this.btnAdminLogin.UseVisualStyleBackColor = false;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
             // 
             // tableLayoutPanelAdminCredentials
             // 
@@ -117,6 +198,32 @@
             this.pnlPassword.Size = new System.Drawing.Size(433, 81);
             this.pnlPassword.TabIndex = 3;
             // 
+            // txtAdminPassword
+            // 
+            this.txtAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtAdminPassword.Font = new System.Drawing.Font("Gadugi", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdminPassword.Location = new System.Drawing.Point(0, 18);
+            this.txtAdminPassword.MaxLength = 20;
+            this.txtAdminPassword.Multiline = true;
+            this.txtAdminPassword.Name = "txtAdminPassword";
+            this.txtAdminPassword.Size = new System.Drawing.Size(398, 44);
+            this.txtAdminPassword.TabIndex = 3;
+            this.txtAdminPassword.TextChanged += new System.EventHandler(this.txtAdminPassword_TextChanged);
+            this.txtAdminPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdminPassword_KeyPress);
+            // 
+            // picGoBack
+            // 
+            this.picGoBack.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.picGoBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picGoBack.Image = ((System.Drawing.Image)(resources.GetObject("picGoBack.Image")));
+            this.picGoBack.Location = new System.Drawing.Point(3, 897);
+            this.picGoBack.Name = "picGoBack";
+            this.picGoBack.Size = new System.Drawing.Size(85, 73);
+            this.picGoBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGoBack.TabIndex = 15;
+            this.picGoBack.TabStop = false;
+            this.picGoBack.Click += new System.EventHandler(this.picGoBack_Click);
+            // 
             // btnPasswordToggleVisibility
             // 
             this.btnPasswordToggleVisibility.BackColor = System.Drawing.Color.White;
@@ -134,74 +241,9 @@
             this.btnPasswordToggleVisibility.Visible = false;
             this.btnPasswordToggleVisibility.Click += new System.EventHandler(this.btnPasswordToggleVisibility_Click);
             // 
-            // txtAdminPassword
-            // 
-            this.txtAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtAdminPassword.Font = new System.Drawing.Font("Gadugi", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdminPassword.Location = new System.Drawing.Point(0, 18);
-            this.txtAdminPassword.MaxLength = 20;
-            this.txtAdminPassword.Multiline = true;
-            this.txtAdminPassword.Name = "txtAdminPassword";
-            this.txtAdminPassword.Size = new System.Drawing.Size(398, 44);
-            this.txtAdminPassword.TabIndex = 3;
-            this.txtAdminPassword.TextChanged += new System.EventHandler(this.txtAdminPassword_TextChanged);
-            this.txtAdminPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdminPassword_KeyPress);
-            // 
-            // tableLayoutPanelAdminLoginBtn
-            // 
-            this.tableLayoutPanelAdminLoginBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanelAdminLoginBtn.ColumnCount = 1;
-            this.tableLayoutPanelAdminLoginBtn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelAdminLoginBtn.Controls.Add(this.btnAdminLogin, 0, 0);
-            this.tableLayoutPanelAdminLoginBtn.Location = new System.Drawing.Point(3, 225);
-            this.tableLayoutPanelAdminLoginBtn.Name = "tableLayoutPanelAdminLoginBtn";
-            this.tableLayoutPanelAdminLoginBtn.RowCount = 1;
-            this.tableLayoutPanelAdminLoginBtn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelAdminLoginBtn.Size = new System.Drawing.Size(878, 105);
-            this.tableLayoutPanelAdminLoginBtn.TabIndex = 12;
-            // 
-            // btnAdminLogin
-            // 
-            this.btnAdminLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAdminLogin.BackColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminLogin.FlatAppearance.BorderSize = 0;
-            this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminLogin.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdminLogin.Location = new System.Drawing.Point(355, 18);
-            this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(168, 69);
-            this.btnAdminLogin.TabIndex = 0;
-            this.btnAdminLogin.Text = "Login";
-            this.btnAdminLogin.UseVisualStyleBackColor = false;
-            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
-            // 
-            // pnlAdmin
-            // 
-            this.pnlAdmin.BackColor = System.Drawing.Color.White;
-            this.pnlAdmin.Controls.Add(this.lblAdminLoginTitle);
-            this.pnlAdmin.Controls.Add(this.picBoxAdminLogin);
-            this.pnlAdmin.Controls.Add(this.btnMinimize);
-            this.pnlAdmin.Controls.Add(this.btnMaximize);
-            this.pnlAdmin.Controls.Add(this.btnClose);
-            this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
-            this.pnlAdmin.Name = "pnlAdmin";
-            this.pnlAdmin.Size = new System.Drawing.Size(1280, 40);
-            this.pnlAdmin.TabIndex = 13;
-            // 
-            // lblAdminLoginTitle
-            // 
-            this.lblAdminLoginTitle.AutoSize = true;
-            this.lblAdminLoginTitle.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdminLoginTitle.Location = new System.Drawing.Point(43, 11);
-            this.lblAdminLoginTitle.Name = "lblAdminLoginTitle";
-            this.lblAdminLoginTitle.Size = new System.Drawing.Size(122, 24);
-            this.lblAdminLoginTitle.TabIndex = 4;
-            this.lblAdminLoginTitle.Text = "Admin Login";
-            // 
             // picBoxAdminLogin
             // 
+            this.picBoxAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picBoxAdminLogin.Image = global::BookWise_AutoMart.Properties.Resources.admin_avatar__20px_;
             this.picBoxAdminLogin.Location = new System.Drawing.Point(10, 8);
             this.picBoxAdminLogin.Name = "picBoxAdminLogin";
@@ -209,80 +251,6 @@
             this.picBoxAdminLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAdminLogin.TabIndex = 3;
             this.picBoxAdminLogin.TabStop = false;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::BookWise_AutoMart.Properties.Resources.minimize__20px_;
-            this.btnMinimize.Location = new System.Drawing.Point(1115, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(55, 40);
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.Enabled = false;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Image = global::BookWise_AutoMart.Properties.Resources.maximize__20px_;
-            this.btnMaximize.Location = new System.Drawing.Point(1170, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(55, 40);
-            this.btnMaximize.TabIndex = 1;
-            this.btnMaximize.TabStop = false;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::BookWise_AutoMart.Properties.Resources.close__20px_;
-            this.btnClose.Location = new System.Drawing.Point(1225, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 40);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.TabStop = false;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // tblAdminContainer
-            // 
-            this.tblAdminContainer.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tblAdminContainer.ColumnCount = 1;
-            this.tblAdminContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblAdminContainer.Controls.Add(this.tableLayoutPanelAdminLoginBtn, 0, 1);
-            this.tblAdminContainer.Controls.Add(this.tableLayoutPanelAdminCredentials, 0, 0);
-            this.tblAdminContainer.Location = new System.Drawing.Point(198, 307);
-            this.tblAdminContainer.Name = "tblAdminContainer";
-            this.tblAdminContainer.RowCount = 2;
-            this.tblAdminContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblAdminContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblAdminContainer.Size = new System.Drawing.Size(884, 370);
-            this.tblAdminContainer.TabIndex = 14;
-            // 
-            // tblContainer
-            // 
-            this.tblContainer.ColumnCount = 1;
-            this.tblContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblContainer.Controls.Add(this.tblAdminContainer, 0, 0);
-            this.tblContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tblContainer.Location = new System.Drawing.Point(0, 40);
-            this.tblContainer.Name = "tblContainer";
-            this.tblContainer.RowCount = 1;
-            this.tblContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblContainer.Size = new System.Drawing.Size(1280, 984);
-            this.tblContainer.TabIndex = 15;
             // 
             // AdminLoginForm
             // 
@@ -300,22 +268,30 @@
             this.Text = "AdminLoginForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AdminLoginForm_Load);
+            this.pnlAdmin.ResumeLayout(false);
+            this.pnlAdmin.PerformLayout();
+            this.tblContainer.ResumeLayout(false);
+            this.tblAdminContainer.ResumeLayout(false);
+            this.tableLayoutPanelAdminLoginBtn.ResumeLayout(false);
             this.tableLayoutPanelAdminCredentials.ResumeLayout(false);
             this.tableLayoutPanelAdminCredentials.PerformLayout();
             this.pnlPassword.ResumeLayout(false);
             this.pnlPassword.PerformLayout();
-            this.tableLayoutPanelAdminLoginBtn.ResumeLayout(false);
-            this.pnlAdmin.ResumeLayout(false);
-            this.pnlAdmin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picGoBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBoxAdminLogin)).EndInit();
-            this.tblAdminContainer.ResumeLayout(false);
-            this.tblContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
+        private System.Windows.Forms.Panel pnlAdmin;
+        private System.Windows.Forms.Label lblAdminLoginTitle;
+        private System.Windows.Forms.PictureBox picBoxAdminLogin;
+        private System.Windows.Forms.TableLayoutPanel tblContainer;
+        private System.Windows.Forms.PictureBox picGoBack;
+        private System.Windows.Forms.TableLayoutPanel tblAdminContainer;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminLoginBtn;
+        private System.Windows.Forms.Button btnAdminLogin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminCredentials;
         private System.Windows.Forms.Label lblAdminUsername;
         private System.Windows.Forms.Label lblAdminPassword;
@@ -323,15 +299,5 @@
         private System.Windows.Forms.Panel pnlPassword;
         private System.Windows.Forms.Button btnPasswordToggleVisibility;
         private System.Windows.Forms.TextBox txtAdminPassword;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminLoginBtn;
-        private System.Windows.Forms.Button btnAdminLogin;
-        private System.Windows.Forms.Panel pnlAdmin;
-        private System.Windows.Forms.Label lblAdminLoginTitle;
-        private System.Windows.Forms.PictureBox picBoxAdminLogin;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnMaximize;
-        private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.TableLayoutPanel tblAdminContainer;
-        private System.Windows.Forms.TableLayoutPanel tblContainer;
     }
 }

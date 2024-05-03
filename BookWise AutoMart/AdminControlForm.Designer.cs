@@ -31,9 +31,6 @@
             this.pnlAdmin = new System.Windows.Forms.Panel();
             this.lblAdminControlTitle = new System.Windows.Forms.Label();
             this.picBoxAdminControl = new System.Windows.Forms.PictureBox();
-            this.btnMinimize = new System.Windows.Forms.Button();
-            this.btnMaximize = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanelAdminNavigation = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelOffersPromotions = new System.Windows.Forms.TableLayoutPanel();
             this.btnOffersPromotions = new System.Windows.Forms.Button();
@@ -58,9 +55,6 @@
             this.pnlAdmin.BackColor = System.Drawing.Color.White;
             this.pnlAdmin.Controls.Add(this.lblAdminControlTitle);
             this.pnlAdmin.Controls.Add(this.picBoxAdminControl);
-            this.pnlAdmin.Controls.Add(this.btnMinimize);
-            this.pnlAdmin.Controls.Add(this.btnMaximize);
-            this.pnlAdmin.Controls.Add(this.btnClose);
             this.pnlAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlAdmin.Location = new System.Drawing.Point(0, 0);
             this.pnlAdmin.Name = "pnlAdmin";
@@ -86,52 +80,6 @@
             this.picBoxAdminControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBoxAdminControl.TabIndex = 3;
             this.picBoxAdminControl.TabStop = false;
-            // 
-            // btnMinimize
-            // 
-            this.btnMinimize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMinimize.FlatAppearance.BorderSize = 0;
-            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimize.Image = global::BookWise_AutoMart.Properties.Resources.minimize__20px_;
-            this.btnMinimize.Location = new System.Drawing.Point(1753, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(55, 40);
-            this.btnMinimize.TabIndex = 2;
-            this.btnMinimize.TabStop = false;
-            this.btnMinimize.UseVisualStyleBackColor = true;
-            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
-            // 
-            // btnMaximize
-            // 
-            this.btnMaximize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMaximize.Enabled = false;
-            this.btnMaximize.FlatAppearance.BorderSize = 0;
-            this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximize.Image = global::BookWise_AutoMart.Properties.Resources.maximize__20px_;
-            this.btnMaximize.Location = new System.Drawing.Point(1808, 0);
-            this.btnMaximize.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(55, 40);
-            this.btnMaximize.TabIndex = 1;
-            this.btnMaximize.TabStop = false;
-            this.btnMaximize.UseVisualStyleBackColor = true;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::BookWise_AutoMart.Properties.Resources.close__20px_;
-            this.btnClose.Location = new System.Drawing.Point(1863, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 40);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.TabStop = false;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // tableLayoutPanelAdminNavigation
             // 
@@ -317,9 +265,6 @@
         private System.Windows.Forms.Panel pnlAdmin;
         private System.Windows.Forms.Label lblAdminControlTitle;
         private System.Windows.Forms.PictureBox picBoxAdminControl;
-        private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Button btnMaximize;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAdminNavigation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelOffersPromotions;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelUserManagement;

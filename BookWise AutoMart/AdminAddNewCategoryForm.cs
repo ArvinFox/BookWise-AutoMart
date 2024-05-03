@@ -222,5 +222,14 @@ namespace BookWise_AutoMart
                 lblNewCategoryRequired.Visible = false;
             }
         }
+
+        private void txtNewCategory_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnSave.PerformClick();
+            }
+        }
     }
 }

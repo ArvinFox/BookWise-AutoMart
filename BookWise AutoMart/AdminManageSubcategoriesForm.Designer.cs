@@ -112,6 +112,7 @@
             this.comboBoxCategories.Size = new System.Drawing.Size(318, 37);
             this.comboBoxCategories.TabIndex = 98;
             this.comboBoxCategories.SelectedIndexChanged += new System.EventHandler(this.comboBoxCategories_SelectedIndexChanged);
+            this.comboBoxCategories.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxCategories_KeyPress);
             // 
             // btnCancel
             // 

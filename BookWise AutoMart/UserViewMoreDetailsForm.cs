@@ -563,5 +563,30 @@ namespace BookWise_AutoMart
             UserViewAllFeedbacks userViewAllFeedbacks = new UserViewAllFeedbacks(id);
             userViewAllFeedbacks.ShowDialog();
         }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtEmail.Focus();
+            }
+        }
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtContact.Focus();
+            }
+        }
+        private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                btnUpdate.PerformClick();
+            }
+        }
     }
 }

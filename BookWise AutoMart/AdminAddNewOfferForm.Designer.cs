@@ -53,11 +53,11 @@
             this.tableLayoutPanelTitle = new System.Windows.Forms.TableLayoutPanel();
             this.tblBorder = new System.Windows.Forms.TableLayoutPanel();
             this.pnlContainer = new System.Windows.Forms.Panel();
+            this.comboBoxApplicableItems = new System.Windows.Forms.ComboBox();
             this.lblFieldsError = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.comboBoxApplicableItems = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelTitle.SuspendLayout();
             this.tblBorder.SuspendLayout();
             this.pnlContainer.SuspendLayout();
@@ -135,6 +135,7 @@
             this.radInactive.Text = "Inactive";
             this.radInactive.UseVisualStyleBackColor = true;
             this.radInactive.CheckedChanged += new System.EventHandler(this.radInactive_CheckedChanged);
+            this.radInactive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.radInactive_KeyPress);
             // 
             // radActive
             // 
@@ -147,6 +148,7 @@
             this.radActive.Text = "Active";
             this.radActive.UseVisualStyleBackColor = true;
             this.radActive.CheckedChanged += new System.EventHandler(this.radActive_CheckedChanged);
+            this.radActive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.radActive_KeyPress);
             // 
             // lblDisplaySelectedItemsError
             // 
@@ -192,6 +194,7 @@
             this.dtpEndDate.Size = new System.Drawing.Size(419, 36);
             this.dtpEndDate.TabIndex = 82;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
+            this.dtpEndDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEndDate_KeyPress);
             // 
             // dtpStartDate
             // 
@@ -201,6 +204,7 @@
             this.dtpStartDate.Size = new System.Drawing.Size(419, 36);
             this.dtpStartDate.TabIndex = 82;
             this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            this.dtpStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpStartDate_KeyPress);
             // 
             // lblApplicableItems
             // 
@@ -260,6 +264,7 @@
             this.txtDiscountPercentage.Size = new System.Drawing.Size(228, 37);
             this.txtDiscountPercentage.TabIndex = 56;
             this.txtDiscountPercentage.TextChanged += new System.EventHandler(this.txtDiscountPercentage_TextChanged);
+            this.txtDiscountPercentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountPercentage_KeyPress);
             // 
             // lblEndDate
             // 
@@ -317,6 +322,7 @@
             this.txtOfferName.Size = new System.Drawing.Size(419, 37);
             this.txtOfferName.TabIndex = 52;
             this.txtOfferName.TextChanged += new System.EventHandler(this.txtOfferName_TextChanged);
+            this.txtOfferName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOfferName_KeyPress);
             // 
             // tableLayoutPanelTitle
             // 
@@ -386,6 +392,21 @@
             this.pnlContainer.Size = new System.Drawing.Size(742, 712);
             this.pnlContainer.TabIndex = 0;
             // 
+            // comboBoxApplicableItems
+            // 
+            this.comboBoxApplicableItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxApplicableItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxApplicableItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxApplicableItems.Font = new System.Drawing.Font("Gadugi", 15F);
+            this.comboBoxApplicableItems.FormattingEnabled = true;
+            this.comboBoxApplicableItems.Location = new System.Drawing.Point(271, 331);
+            this.comboBoxApplicableItems.MaxDropDownItems = 20;
+            this.comboBoxApplicableItems.Name = "comboBoxApplicableItems";
+            this.comboBoxApplicableItems.Size = new System.Drawing.Size(228, 37);
+            this.comboBoxApplicableItems.TabIndex = 97;
+            this.comboBoxApplicableItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxApplicableItems_SelectedIndexChanged);
+            this.comboBoxApplicableItems.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxApplicableItems_KeyPress);
+            // 
             // lblFieldsError
             // 
             this.lblFieldsError.AutoSize = true;
@@ -445,20 +466,6 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // comboBoxApplicableItems
-            // 
-            this.comboBoxApplicableItems.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxApplicableItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxApplicableItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxApplicableItems.Font = new System.Drawing.Font("Gadugi", 15F);
-            this.comboBoxApplicableItems.FormattingEnabled = true;
-            this.comboBoxApplicableItems.Location = new System.Drawing.Point(271, 331);
-            this.comboBoxApplicableItems.MaxDropDownItems = 20;
-            this.comboBoxApplicableItems.Name = "comboBoxApplicableItems";
-            this.comboBoxApplicableItems.Size = new System.Drawing.Size(228, 37);
-            this.comboBoxApplicableItems.TabIndex = 97;
-            this.comboBoxApplicableItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxApplicableItems_SelectedIndexChanged);
             // 
             // AdminAddNewOfferForm
             // 

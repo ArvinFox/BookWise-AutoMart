@@ -169,6 +169,7 @@
             this.comboBoxApplicableItems.Size = new System.Drawing.Size(228, 37);
             this.comboBoxApplicableItems.TabIndex = 89;
             this.comboBoxApplicableItems.SelectedIndexChanged += new System.EventHandler(this.comboBoxApplicableItems_SelectedIndexChanged);
+            this.comboBoxApplicableItems.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxApplicableItems_KeyPress);
             // 
             // lblOfferStatusError
             // 
@@ -193,6 +194,7 @@
             this.radInactive.Text = "Inactive";
             this.radInactive.UseVisualStyleBackColor = true;
             this.radInactive.CheckedChanged += new System.EventHandler(this.radInactive_CheckedChanged);
+            this.radInactive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.radInactive_KeyPress);
             // 
             // radActive
             // 
@@ -205,6 +207,7 @@
             this.radActive.Text = "Active";
             this.radActive.UseVisualStyleBackColor = true;
             this.radActive.CheckedChanged += new System.EventHandler(this.radActive_CheckedChanged);
+            this.radActive.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.radActive_KeyPress);
             // 
             // lblDisplaySelectedItemsError
             // 
@@ -250,6 +253,7 @@
             this.dtpEndDate.Size = new System.Drawing.Size(419, 36);
             this.dtpEndDate.TabIndex = 82;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.dtpEndDate_ValueChanged);
+            this.dtpEndDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpEndDate_KeyPress);
             // 
             // dtpStartDate
             // 
@@ -259,6 +263,7 @@
             this.dtpStartDate.Size = new System.Drawing.Size(419, 36);
             this.dtpStartDate.TabIndex = 82;
             this.dtpStartDate.ValueChanged += new System.EventHandler(this.dtpStartDate_ValueChanged);
+            this.dtpStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpStartDate_KeyPress);
             // 
             // lblApplicableItems
             // 
@@ -330,6 +335,7 @@
             this.txtDiscountPercentage.Size = new System.Drawing.Size(228, 37);
             this.txtDiscountPercentage.TabIndex = 56;
             this.txtDiscountPercentage.TextChanged += new System.EventHandler(this.txtDiscountPercentage_TextChanged);
+            this.txtDiscountPercentage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiscountPercentage_KeyPress);
             // 
             // lblEndDate
             // 
@@ -398,6 +404,7 @@
             this.txtOfferName.Size = new System.Drawing.Size(419, 37);
             this.txtOfferName.TabIndex = 52;
             this.txtOfferName.TextChanged += new System.EventHandler(this.txtOfferName_TextChanged);
+            this.txtOfferName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOfferName_KeyPress);
             // 
             // lblOfferId
             // 

@@ -16,17 +16,12 @@ namespace BookWise_AutoMart
     public partial class UserLogin : Form
     {
         private readonly string connectionString = DatabaseString.GetUserDatabase();
-        private readonly string passcode = "admin123";
-        private int currentIndex = 0;
 
         public static UserPanel userPanel;  // to track the current UserPanel instance (current user)
 
         public UserLogin()
         {
             InitializeComponent();
-
-            butLogin.KeyPress += UserLogin_KeyPress;
-            btnGuestLogin.KeyPress += UserLogin_KeyPress;
         }
 
         private void btnGuestLogin_Click(object sender, EventArgs e)
@@ -177,53 +172,6 @@ namespace BookWise_AutoMart
             this.Hide();
         }
 
-        private void UserLogin_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (currentIndex < passcode.Length && e.KeyChar == passcode[currentIndex])
-            {
-                // Move to the next character
-                currentIndex++;
-
-                // If the passcode is complete
-                if (currentIndex == passcode.Length)
-                {
-                    currentIndex = 0;   // Reset the passcode
-
-                    bool adminLoginFormFound = false;
-
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        if (form is AdminLoginForm)
-                        {
-                            form.Show();
-                            adminLoginFormFound = true;
-                            break;
-                        }
-                    }
-                    // The above code is used to check whether there already is an instance of the form to be displayed (in this case, AdminLoginForm) currently opened, and if so, it is displayed (rather than creating a new instance of the form every time)
-
-                    if (!adminLoginFormFound)
-                    {
-                        AdminLoginForm adminLoginForm = new AdminLoginForm();
-                        adminLoginForm.Show();
-                    }
-
-                    ClearUserLoginData();   // Reset user input
-                    this.Hide();
-                }
-            }
-            else
-            {
-                // Reset the passcode if the user types an incorrect character
-                currentIndex = 0;
-            }
-        }
-
-        private void UserLogin_Load(object sender, EventArgs e)
-        {
-            this.Activate();    // Focus the form
-        }
-
         private void ClearUserLoginData()
         {
             txtPhone.Text = "";
@@ -236,7 +184,36 @@ namespace BookWise_AutoMart
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) || e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
+
+                // login when the user presses the 'Enter' key
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    butLogin.PerformClick();
+                }
             }
+        }
+
+        private void btnAdminLogin_Click(object sender, EventArgs e)
+        {
+            bool adminLoginFormFound = false;
+
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is AdminLoginForm)
+                {
+                    adminLoginFormFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!adminLoginFormFound)
+            {
+                AdminLoginForm adminLoginForm = new AdminLoginForm();
+                adminLoginForm.Show();
+            }
+
+            ClearUserLoginData();   // Reset user input
+            this.Hide();
         }
     }
 }

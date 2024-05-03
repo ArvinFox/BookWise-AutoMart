@@ -74,7 +74,7 @@
             // 
             // tblFeedbackContainer
             // 
-            this.tblFeedbackContainer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tblFeedbackContainer.BackColor = System.Drawing.Color.Gray;
             this.tblFeedbackContainer.ColumnCount = 3;
             this.tblFeedbackContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 4F));
             this.tblFeedbackContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -486,6 +486,7 @@
             this.Name = "UserFeedbackForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserFeedbackForm";
+            this.Deactivate += new System.EventHandler(this.UserFeedbackForm_Deactivate);
             this.Load += new System.EventHandler(this.UserFeedbackForm_Load);
             this.tblFeedbackContainer.ResumeLayout(false);
             this.pnlFeedbackContainer.ResumeLayout(false);

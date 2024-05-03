@@ -134,6 +134,7 @@
             this.comboBoxSubcategories.Name = "comboBoxSubcategories";
             this.comboBoxSubcategories.Size = new System.Drawing.Size(228, 37);
             this.comboBoxSubcategories.TabIndex = 81;
+            this.comboBoxSubcategories.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.comboBoxSubcategories_KeyPress);
             // 
             // lblSubcategoryRequired
             // 
@@ -168,6 +169,7 @@
             this.rtbItemDescription.TabIndex = 71;
             this.rtbItemDescription.Text = "";
             this.rtbItemDescription.TextChanged += new System.EventHandler(this.rtbItemDescription_TextChanged);
+            this.rtbItemDescription.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbItemDescription_KeyPress);
             // 
             // lblRequiredFields
             // 
@@ -270,6 +272,7 @@
             this.btnChooseImage.Text = "Choose Image";
             this.btnChooseImage.UseVisualStyleBackColor = false;
             this.btnChooseImage.Click += new System.EventHandler(this.btnChooseImage_Click);
+            this.btnChooseImage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.btnChooseImage_KeyPress);
             // 
             // pictureBoxIncrementStock
             // 
@@ -331,6 +334,7 @@
             this.txtStock.TabIndex = 58;
             this.txtStock.Text = "0";
             this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // lblPrice
             // 
@@ -355,6 +359,7 @@
             this.txtPrice.Size = new System.Drawing.Size(228, 37);
             this.txtPrice.TabIndex = 56;
             this.txtPrice.TextChanged += new System.EventHandler(this.txtPrice_TextChanged);
+            this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
             // 
             // lblItemDescription
             // 
@@ -401,6 +406,7 @@
             this.txtItemName.Size = new System.Drawing.Size(419, 37);
             this.txtItemName.TabIndex = 52;
             this.txtItemName.TextChanged += new System.EventHandler(this.txtItemName_TextChanged);
+            this.txtItemName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtItemName_KeyPress);
             // 
             // lblItemId
             // 

@@ -389,7 +389,7 @@ namespace BookWise_AutoMart
                     // check if there are any items which fall under the subcategories to be deleted
                     if (ItemsExistInSubcategoryToDelete(removedSubcategories))
                     {
-                        DialogResult result = MessageBox.Show($"[Category ID: {categoryId}]\n{GetItemDetails(removedSubcategories)}\nThe above mentioned items will be deleted if you proceed. Are you sure you want to continue?", "Delete Subcategory", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult result = MessageBox.Show($"[Category ID: {categoryId}]\n{GetItemDetails(removedSubcategories)}\nThe above mentioned items will be deleted if you proceed (along with the user's order history relating to these items). Are you sure you want to continue?", "Delete Subcategory", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         if (result == DialogResult.Yes)
                         {
@@ -513,9 +513,9 @@ namespace BookWise_AutoMart
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "DELETE FROM Items WHERE item_subcategory_id = @SubcategoryId";
+                string deleteOrderItemQuery = "SELECT item_id FROM Items WHERE item_subcategory_id = @SubcategoryId";
 
-                using (SqlCommand command = new SqlCommand(query, connection))
+                using (SqlCommand deleteOrderItemCommand = new SqlCommand(deleteOrderItemQuery, connection))
                 {
                     try
                     {
@@ -526,14 +526,73 @@ namespace BookWise_AutoMart
 
                         foreach (string subcategoryName in subcategoryNames)
                         {
-                            command.Parameters.Clear();
-                            command.Parameters.AddWithValue("@SubcategoryId", GetSubcategoryIdByName(subcategoryName));
-                            command.ExecuteNonQuery();
+                            deleteOrderItemCommand.Parameters.Clear();
+                            deleteOrderItemCommand.Parameters.AddWithValue("@SubcategoryId", GetSubcategoryIdByName(subcategoryName));
+
+                            using (SqlDataReader reader = deleteOrderItemCommand.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    int itemId = Convert.ToInt32(reader["item_id"]);
+                                    DeleteOrderItems(itemId);
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error in deleting order items data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string deleteItemQuery = "DELETE FROM Items WHERE item_subcategory_id = @SubcategoryId";
+
+                using (SqlCommand deleteItemCommand = new SqlCommand(deleteItemQuery, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        // Split the subcategoriesToDelete (array) into individual subcategories
+                        string[] subcategoryNames = subcategoriesToDelete.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+
+                        foreach (string subcategoryName in subcategoryNames)
+                        {
+                            deleteItemCommand.Parameters.Clear();
+                            deleteItemCommand.Parameters.AddWithValue("@SubcategoryId", GetSubcategoryIdByName(subcategoryName));
+                            deleteItemCommand.ExecuteNonQuery();
                         }
                     }
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error in deleting sucategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void DeleteOrderItems(int itemId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Order_Items WHERE order_items_item_id = @ItemId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.Clear();
+                        command.Parameters.AddWithValue("@ItemId", itemId);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error in deleting order items data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -728,6 +787,15 @@ namespace BookWise_AutoMart
             {
                 e.Handled = true;
                 btnAddNewSubcategory.PerformClick();
+            }
+        }
+
+        private void comboBoxCategories_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true;
+                txtNewSubcategory.Focus();
             }
         }
     }

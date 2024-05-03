@@ -120,32 +120,6 @@ namespace BookWise_AutoMart
             txtAdminUsername.Focus();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            bool userLoginFound = false;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is UserLogin)
-                {
-                    userLoginFound = true;
-                    form.Show();
-                    break;
-                }
-            }
-            if (!userLoginFound)
-            {
-                UserLogin userLogin = new UserLogin();
-                userLogin.Show();
-            }
-
-            ClearAdminLoginData();
-            this.Close();
-        }
-        private void btnMinimize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void txtAdminPassword_TextChanged(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtAdminPassword.Text) && txtAdminPassword.Text != "Enter Password")
@@ -189,15 +163,32 @@ namespace BookWise_AutoMart
             }
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-        }
-
         private void ClearAdminLoginData()
         {
             txtAdminUsername.Text = "";
             txtAdminPassword.Text = "";
+        }
+
+        private void picGoBack_Click(object sender, EventArgs e)
+        {
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+
+            ClearAdminLoginData();
+            this.Close();
         }
     }
 }

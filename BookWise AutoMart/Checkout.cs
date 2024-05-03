@@ -454,14 +454,14 @@ namespace BookWise_AutoMart
                         if (form is UserFeedbackForm)
                         {
                             feedbackFormFound = true;
-                            form.ShowDialog();
+                            form.Show();
                             break;
                         }
                     }
                     if (!feedbackFormFound)
                     {
                         UserFeedbackForm userFeedbackForm = new UserFeedbackForm();
-                        userFeedbackForm.ShowDialog();
+                        userFeedbackForm.Show();
                     }
                 }
                 else

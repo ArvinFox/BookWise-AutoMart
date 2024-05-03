@@ -28,6 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tableLayoutPanelFunctionalities = new System.Windows.Forms.TableLayoutPanel();
+            this.lblSelectedCategory = new System.Windows.Forms.Label();
+            this.tableLayoutPanelFilterSearch = new System.Windows.Forms.TableLayoutPanel();
+            this.txtSearchBar = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.lblFilter = new System.Windows.Forms.Label();
+            this.comboBoxFilterCategories = new System.Windows.Forms.ComboBox();
             this.pnlCategoriesMenu = new System.Windows.Forms.Panel();
             this.pnlDisplayCategories = new System.Windows.Forms.Panel();
             this.pnlAdd = new System.Windows.Forms.Panel();
@@ -37,22 +44,118 @@
             this.pnlCategories = new System.Windows.Forms.Panel();
             this.tableLayoutPanelCategories = new System.Windows.Forms.TableLayoutPanel();
             this.lblCategories = new System.Windows.Forms.Label();
-            this.tableLayoutPanelFunctionalities = new System.Windows.Forms.TableLayoutPanel();
-            this.lblSelectedCategory = new System.Windows.Forms.Label();
-            this.tableLayoutPanelFilterSearch = new System.Windows.Forms.TableLayoutPanel();
-            this.txtSearchBar = new System.Windows.Forms.TextBox();
-            this.lblSearch = new System.Windows.Forms.Label();
-            this.lblFilter = new System.Windows.Forms.Label();
-            this.comboBoxFilterCategories = new System.Windows.Forms.ComboBox();
+            this.pnlLogoutButtonContainer = new System.Windows.Forms.Panel();
+            this.tblButtonsContainer = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdminLogout = new System.Windows.Forms.Button();
             this.flowLayoutPanelDisplayItems = new System.Windows.Forms.FlowLayoutPanel();
+            this.tableLayoutPanelFunctionalities.SuspendLayout();
+            this.tableLayoutPanelFilterSearch.SuspendLayout();
             this.pnlCategoriesMenu.SuspendLayout();
             this.pnlAdd.SuspendLayout();
             this.tableLayoutPanelAddNewButtons.SuspendLayout();
             this.pnlCategories.SuspendLayout();
             this.tableLayoutPanelCategories.SuspendLayout();
-            this.tableLayoutPanelFunctionalities.SuspendLayout();
-            this.tableLayoutPanelFilterSearch.SuspendLayout();
+            this.pnlLogoutButtonContainer.SuspendLayout();
+            this.tblButtonsContainer.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tableLayoutPanelFunctionalities
+            // 
+            this.tableLayoutPanelFunctionalities.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanelFunctionalities.ColumnCount = 2;
+            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanelFunctionalities.Controls.Add(this.lblSelectedCategory, 0, 0);
+            this.tableLayoutPanelFunctionalities.Controls.Add(this.tableLayoutPanelFilterSearch, 1, 0);
+            this.tableLayoutPanelFunctionalities.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelFunctionalities.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelFunctionalities.Name = "tableLayoutPanelFunctionalities";
+            this.tableLayoutPanelFunctionalities.RowCount = 1;
+            this.tableLayoutPanelFunctionalities.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFunctionalities.Size = new System.Drawing.Size(1257, 70);
+            this.tableLayoutPanelFunctionalities.TabIndex = 9;
+            // 
+            // lblSelectedCategory
+            // 
+            this.lblSelectedCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSelectedCategory.AutoSize = true;
+            this.lblSelectedCategory.Font = new System.Drawing.Font("Gadugi", 16F, System.Drawing.FontStyle.Bold);
+            this.lblSelectedCategory.ForeColor = System.Drawing.Color.White;
+            this.lblSelectedCategory.Location = new System.Drawing.Point(46, 19);
+            this.lblSelectedCategory.Name = "lblSelectedCategory";
+            this.lblSelectedCategory.Size = new System.Drawing.Size(159, 32);
+            this.lblSelectedCategory.TabIndex = 0;
+            this.lblSelectedCategory.Text = " (Category)";
+            this.lblSelectedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanelFilterSearch
+            // 
+            this.tableLayoutPanelFilterSearch.ColumnCount = 4;
+            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.54626F));
+            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.34854F));
+            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.22307F));
+            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.75539F));
+            this.tableLayoutPanelFilterSearch.Controls.Add(this.txtSearchBar, 3, 0);
+            this.tableLayoutPanelFilterSearch.Controls.Add(this.lblSearch, 2, 0);
+            this.tableLayoutPanelFilterSearch.Controls.Add(this.lblFilter, 0, 0);
+            this.tableLayoutPanelFilterSearch.Controls.Add(this.comboBoxFilterCategories, 1, 0);
+            this.tableLayoutPanelFilterSearch.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelFilterSearch.Location = new System.Drawing.Point(254, 3);
+            this.tableLayoutPanelFilterSearch.Name = "tableLayoutPanelFilterSearch";
+            this.tableLayoutPanelFilterSearch.RowCount = 1;
+            this.tableLayoutPanelFilterSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelFilterSearch.Size = new System.Drawing.Size(1000, 64);
+            this.tableLayoutPanelFilterSearch.TabIndex = 1;
+            // 
+            // txtSearchBar
+            // 
+            this.txtSearchBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSearchBar.Font = new System.Drawing.Font("Gadugi", 14F);
+            this.txtSearchBar.Location = new System.Drawing.Point(633, 15);
+            this.txtSearchBar.MaximumSize = new System.Drawing.Size(280, 0);
+            this.txtSearchBar.Multiline = true;
+            this.txtSearchBar.Name = "txtSearchBar";
+            this.txtSearchBar.Size = new System.Drawing.Size(280, 34);
+            this.txtSearchBar.TabIndex = 1;
+            this.txtSearchBar.TextChanged += new System.EventHandler(this.FilteringConditionsApplied);
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblSearch.Location = new System.Drawing.Point(532, 18);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(95, 27);
+            this.lblSearch.TabIndex = 0;
+            this.lblSearch.Text = "Search: ";
+            // 
+            // lblFilter
+            // 
+            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblFilter.AutoSize = true;
+            this.lblFilter.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFilter.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblFilter.Location = new System.Drawing.Point(100, 18);
+            this.lblFilter.Name = "lblFilter";
+            this.lblFilter.Size = new System.Drawing.Size(112, 27);
+            this.lblFilter.TabIndex = 0;
+            this.lblFilter.Text = "Filter by: ";
+            // 
+            // comboBoxFilterCategories
+            // 
+            this.comboBoxFilterCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxFilterCategories.FormattingEnabled = true;
+            this.comboBoxFilterCategories.Location = new System.Drawing.Point(218, 20);
+            this.comboBoxFilterCategories.MaxDropDownItems = 20;
+            this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
+            this.comboBoxFilterCategories.Size = new System.Drawing.Size(247, 32);
+            this.comboBoxFilterCategories.TabIndex = 1;
+            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
             // 
             // pnlCategoriesMenu
             // 
@@ -61,10 +164,10 @@
             this.pnlCategoriesMenu.Controls.Add(this.pnlAdd);
             this.pnlCategoriesMenu.Controls.Add(this.pnlCategories);
             this.pnlCategoriesMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlCategoriesMenu.Location = new System.Drawing.Point(0, 0);
+            this.pnlCategoriesMenu.Location = new System.Drawing.Point(0, 70);
             this.pnlCategoriesMenu.Name = "pnlCategoriesMenu";
-            this.pnlCategoriesMenu.Size = new System.Drawing.Size(287, 684);
-            this.pnlCategoriesMenu.TabIndex = 4;
+            this.pnlCategoriesMenu.Size = new System.Drawing.Size(287, 614);
+            this.pnlCategoriesMenu.TabIndex = 10;
             // 
             // pnlDisplayCategories
             // 
@@ -72,14 +175,14 @@
             this.pnlDisplayCategories.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlDisplayCategories.Location = new System.Drawing.Point(0, 70);
             this.pnlDisplayCategories.Name = "pnlDisplayCategories";
-            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 474);
+            this.pnlDisplayCategories.Size = new System.Drawing.Size(287, 404);
             this.pnlDisplayCategories.TabIndex = 1;
             // 
             // pnlAdd
             // 
             this.pnlAdd.Controls.Add(this.tableLayoutPanelAddNewButtons);
             this.pnlAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlAdd.Location = new System.Drawing.Point(0, 544);
+            this.pnlAdd.Location = new System.Drawing.Point(0, 474);
             this.pnlAdd.MaximumSize = new System.Drawing.Size(0, 140);
             this.pnlAdd.Name = "pnlAdd";
             this.pnlAdd.Size = new System.Drawing.Size(287, 140);
@@ -186,103 +289,48 @@
             this.lblCategories.TabIndex = 1;
             this.lblCategories.Text = "CATEGORIES";
             // 
-            // tableLayoutPanelFunctionalities
+            // pnlLogoutButtonContainer
             // 
-            this.tableLayoutPanelFunctionalities.BackColor = System.Drawing.Color.SteelBlue;
-            this.tableLayoutPanelFunctionalities.ColumnCount = 2;
-            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanelFunctionalities.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelFunctionalities.Controls.Add(this.lblSelectedCategory, 0, 0);
-            this.tableLayoutPanelFunctionalities.Controls.Add(this.tableLayoutPanelFilterSearch, 1, 0);
-            this.tableLayoutPanelFunctionalities.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanelFunctionalities.Location = new System.Drawing.Point(287, 0);
-            this.tableLayoutPanelFunctionalities.Name = "tableLayoutPanelFunctionalities";
-            this.tableLayoutPanelFunctionalities.RowCount = 1;
-            this.tableLayoutPanelFunctionalities.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFunctionalities.Size = new System.Drawing.Size(970, 70);
-            this.tableLayoutPanelFunctionalities.TabIndex = 5;
+            this.pnlLogoutButtonContainer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.pnlLogoutButtonContainer.Controls.Add(this.tblButtonsContainer);
+            this.pnlLogoutButtonContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlLogoutButtonContainer.Location = new System.Drawing.Point(287, 594);
+            this.pnlLogoutButtonContainer.Name = "pnlLogoutButtonContainer";
+            this.pnlLogoutButtonContainer.Size = new System.Drawing.Size(970, 90);
+            this.pnlLogoutButtonContainer.TabIndex = 12;
             // 
-            // lblSelectedCategory
+            // tblButtonsContainer
             // 
-            this.lblSelectedCategory.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSelectedCategory.AutoSize = true;
-            this.lblSelectedCategory.Font = new System.Drawing.Font("Gadugi", 16F, System.Drawing.FontStyle.Bold);
-            this.lblSelectedCategory.ForeColor = System.Drawing.Color.White;
-            this.lblSelectedCategory.Location = new System.Drawing.Point(17, 19);
-            this.lblSelectedCategory.Name = "lblSelectedCategory";
-            this.lblSelectedCategory.Size = new System.Drawing.Size(159, 32);
-            this.lblSelectedCategory.TabIndex = 0;
-            this.lblSelectedCategory.Text = " (Category)";
-            this.lblSelectedCategory.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tblButtonsContainer.ColumnCount = 1;
+            this.tblButtonsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblButtonsContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblButtonsContainer.Controls.Add(this.btnAdminLogout, 0, 0);
+            this.tblButtonsContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblButtonsContainer.Location = new System.Drawing.Point(0, 0);
+            this.tblButtonsContainer.Name = "tblButtonsContainer";
+            this.tblButtonsContainer.RowCount = 1;
+            this.tblButtonsContainer.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblButtonsContainer.Size = new System.Drawing.Size(970, 90);
+            this.tblButtonsContainer.TabIndex = 1;
             // 
-            // tableLayoutPanelFilterSearch
+            // btnAdminLogout
             // 
-            this.tableLayoutPanelFilterSearch.ColumnCount = 4;
-            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.54626F));
-            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.34854F));
-            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.22307F));
-            this.tableLayoutPanelFilterSearch.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.75539F));
-            this.tableLayoutPanelFilterSearch.Controls.Add(this.txtSearchBar, 3, 0);
-            this.tableLayoutPanelFilterSearch.Controls.Add(this.lblSearch, 2, 0);
-            this.tableLayoutPanelFilterSearch.Controls.Add(this.lblFilter, 0, 0);
-            this.tableLayoutPanelFilterSearch.Controls.Add(this.comboBoxFilterCategories, 1, 0);
-            this.tableLayoutPanelFilterSearch.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelFilterSearch.Location = new System.Drawing.Point(197, 3);
-            this.tableLayoutPanelFilterSearch.Name = "tableLayoutPanelFilterSearch";
-            this.tableLayoutPanelFilterSearch.RowCount = 1;
-            this.tableLayoutPanelFilterSearch.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelFilterSearch.Size = new System.Drawing.Size(770, 64);
-            this.tableLayoutPanelFilterSearch.TabIndex = 1;
-            // 
-            // txtSearchBar
-            // 
-            this.txtSearchBar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearchBar.Font = new System.Drawing.Font("Gadugi", 14F);
-            this.txtSearchBar.Location = new System.Drawing.Point(489, 15);
-            this.txtSearchBar.MaximumSize = new System.Drawing.Size(280, 0);
-            this.txtSearchBar.Multiline = true;
-            this.txtSearchBar.Name = "txtSearchBar";
-            this.txtSearchBar.Size = new System.Drawing.Size(278, 34);
-            this.txtSearchBar.TabIndex = 1;
-            this.txtSearchBar.TextChanged += new System.EventHandler(this.FilteringConditionsApplied);
-            // 
-            // lblSearch
-            // 
-            this.lblSearch.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblSearch.Location = new System.Drawing.Point(388, 18);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(95, 27);
-            this.lblSearch.TabIndex = 0;
-            this.lblSearch.Text = "Search: ";
-            // 
-            // lblFilter
-            // 
-            this.lblFilter.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblFilter.AutoSize = true;
-            this.lblFilter.Font = new System.Drawing.Font("Gadugi", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilter.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lblFilter.Location = new System.Drawing.Point(51, 18);
-            this.lblFilter.Name = "lblFilter";
-            this.lblFilter.Size = new System.Drawing.Size(112, 27);
-            this.lblFilter.TabIndex = 0;
-            this.lblFilter.Text = "Filter by: ";
-            // 
-            // comboBoxFilterCategories
-            // 
-            this.comboBoxFilterCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxFilterCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxFilterCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxFilterCategories.FormattingEnabled = true;
-            this.comboBoxFilterCategories.Location = new System.Drawing.Point(169, 20);
-            this.comboBoxFilterCategories.MaxDropDownItems = 20;
-            this.comboBoxFilterCategories.Name = "comboBoxFilterCategories";
-            this.comboBoxFilterCategories.Size = new System.Drawing.Size(189, 32);
-            this.comboBoxFilterCategories.TabIndex = 1;
-            this.comboBoxFilterCategories.SelectedIndexChanged += new System.EventHandler(this.FilteringConditionsApplied);
+            this.btnAdminLogout.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnAdminLogout.BackColor = System.Drawing.Color.Firebrick;
+            this.btnAdminLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminLogout.FlatAppearance.BorderSize = 0;
+            this.btnAdminLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminLogout.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.btnAdminLogout.ForeColor = System.Drawing.Color.White;
+            this.btnAdminLogout.Location = new System.Drawing.Point(739, 11);
+            this.btnAdminLogout.Margin = new System.Windows.Forms.Padding(3, 2, 10, 2);
+            this.btnAdminLogout.Name = "btnAdminLogout";
+            this.btnAdminLogout.Size = new System.Drawing.Size(221, 68);
+            this.btnAdminLogout.TabIndex = 21;
+            this.btnAdminLogout.TabStop = false;
+            this.btnAdminLogout.Text = "LOGOUT";
+            this.btnAdminLogout.UseVisualStyleBackColor = false;
+            this.btnAdminLogout.Click += new System.EventHandler(this.btnAdminLogout_Click);
             // 
             // flowLayoutPanelDisplayItems
             // 
@@ -292,52 +340,57 @@
             this.flowLayoutPanelDisplayItems.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanelDisplayItems.Location = new System.Drawing.Point(287, 70);
             this.flowLayoutPanelDisplayItems.Name = "flowLayoutPanelDisplayItems";
-            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(970, 614);
-            this.flowLayoutPanelDisplayItems.TabIndex = 6;
+            this.flowLayoutPanelDisplayItems.Size = new System.Drawing.Size(970, 524);
+            this.flowLayoutPanelDisplayItems.TabIndex = 13;
             // 
             // UserControlInventoryManagement
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.flowLayoutPanelDisplayItems);
-            this.Controls.Add(this.tableLayoutPanelFunctionalities);
+            this.Controls.Add(this.pnlLogoutButtonContainer);
             this.Controls.Add(this.pnlCategoriesMenu);
+            this.Controls.Add(this.tableLayoutPanelFunctionalities);
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UserControlInventoryManagement";
             this.Size = new System.Drawing.Size(1257, 684);
             this.ParentChanged += new System.EventHandler(this.UserControlInventoryManagement_ParentChanged);
+            this.tableLayoutPanelFunctionalities.ResumeLayout(false);
+            this.tableLayoutPanelFunctionalities.PerformLayout();
+            this.tableLayoutPanelFilterSearch.ResumeLayout(false);
+            this.tableLayoutPanelFilterSearch.PerformLayout();
             this.pnlCategoriesMenu.ResumeLayout(false);
             this.pnlAdd.ResumeLayout(false);
             this.tableLayoutPanelAddNewButtons.ResumeLayout(false);
             this.pnlCategories.ResumeLayout(false);
             this.tableLayoutPanelCategories.ResumeLayout(false);
             this.tableLayoutPanelCategories.PerformLayout();
-            this.tableLayoutPanelFunctionalities.ResumeLayout(false);
-            this.tableLayoutPanelFunctionalities.PerformLayout();
-            this.tableLayoutPanelFilterSearch.ResumeLayout(false);
-            this.tableLayoutPanelFilterSearch.PerformLayout();
+            this.pnlLogoutButtonContainer.ResumeLayout(false);
+            this.tblButtonsContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFunctionalities;
+        private System.Windows.Forms.Label lblSelectedCategory;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFilterSearch;
+        private System.Windows.Forms.TextBox txtSearchBar;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label lblFilter;
+        private System.Windows.Forms.ComboBox comboBoxFilterCategories;
         private System.Windows.Forms.Panel pnlCategoriesMenu;
         private System.Windows.Forms.Panel pnlDisplayCategories;
         private System.Windows.Forms.Panel pnlAdd;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAddNewButtons;
         private System.Windows.Forms.Button btnAddNewCategory;
+        private System.Windows.Forms.Button btnAddNewItem;
         private System.Windows.Forms.Panel pnlCategories;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCategories;
         private System.Windows.Forms.Label lblCategories;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFunctionalities;
-        private System.Windows.Forms.Label lblSelectedCategory;
+        private System.Windows.Forms.Panel pnlLogoutButtonContainer;
+        private System.Windows.Forms.TableLayoutPanel tblButtonsContainer;
+        private System.Windows.Forms.Button btnAdminLogout;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelDisplayItems;
-        private System.Windows.Forms.Label lblFilter;
-        private System.Windows.Forms.ComboBox comboBoxFilterCategories;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.TextBox txtSearchBar;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFilterSearch;
-        private System.Windows.Forms.Button btnAddNewItem;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelAddNewButtons;
     }
 }

@@ -31,6 +31,10 @@ namespace BookWise_AutoMart
             DisplayItems();
             PopulateCategoriesComboBox();
             Placeholder(txtSearchBar, "Enter item name...");
+
+            pnlLogoutButtonContainer.Location = new Point(this.Width - pnlLogoutButtonContainer.Width, this.Height - pnlLogoutButtonContainer.Height);
+            pnlLogoutButtonContainer.BringToFront();
+            pnlLogoutButtonContainer.BringToFront();
         }
 
         private void Placeholder(TextBox textBox, string placeholder)
@@ -384,6 +388,27 @@ namespace BookWise_AutoMart
                 this.Width = this.Parent.ClientSize.Width;
                 this.Height = this.Parent.ClientSize.Height;
             }
+        }
+
+        private void btnAdminLogout_Click(object sender, EventArgs e)
+        {
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    userLoginFound = true;
+                    form.Show();
+                    break;
+                }
+            }
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+
+            AdminDashboardForm.adminControlForm.Close();
         }
     }
 }

@@ -133,6 +133,7 @@
             this.txtNewCategory.Size = new System.Drawing.Size(480, 48);
             this.txtNewCategory.TabIndex = 29;
             this.txtNewCategory.TextChanged += new System.EventHandler(this.txtNewCategory_TextChanged);
+            this.txtNewCategory.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNewCategory_KeyPress);
             // 
             // tableLayoutPanelTitle
             // 

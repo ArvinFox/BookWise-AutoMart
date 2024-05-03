@@ -191,6 +191,36 @@ namespace BookWise_AutoMart
             return -1;
         }
 
+        private void ReturnToUserLogin()
+        {
+            loginFormTimer.Stop();
+
+            bool userLoginFound = false;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is UserLogin)
+                {
+                    form.Show();
+                    userLoginFound = true;
+                    break;
+                }
+            }
+
+            if (!userLoginFound)
+            {
+                UserLogin userLogin = new UserLogin();
+                userLogin.Show();
+            }
+
+            this.Close();
+
+            // Reset the user bill data
+            UserPanel.checkoutForm.Close();
+
+            // Reset the previous user's data (close previous UserPanel instance)
+            UserLogin.userPanel.Close();
+        }
+
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(connectionString);
@@ -228,29 +258,8 @@ namespace BookWise_AutoMart
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    //returning to a new login page.
-                    bool userLoginFound = false;
-                    foreach (Form form in Application.OpenForms)
-                    {
-                        if (form is UserLogin)
-                        {
-                            form.Show();
-                            userLoginFound = true;
-                            break;
-                        }
-                    }
-
-                    if (!userLoginFound)
-                    {
-                        UserLogin userLogin = new UserLogin();
-                        userLogin.Show();
-                    }
-
-                    this.Close();
-                    UserPanel.checkoutForm.Close();   // Reset the user bill data
-
-                    // Reset the previous user's data (close previous UserPanel instance)
-                    UserLogin.userPanel.Close();
+                    //returning to login page.
+                    ReturnToUserLogin();
                 }
                 catch (Exception)
                 {
@@ -281,34 +290,16 @@ namespace BookWise_AutoMart
                 lblRatingTimer.Text = $"Closing in {ratingTimer} seconds";
             }
 
-            //returning to a new login page.
+            //returning to login page.
             if (ratingTimer <= 0)
             {
-                loginFormTimer.Stop();
-
-                bool userLoginFound = false;
-                foreach (Form form in Application.OpenForms)
-                {
-                    if (form is UserLogin)
-                    {
-                        form.Show();
-                        userLoginFound = true;
-                        break;
-                    }
-                }
-
-                if (!userLoginFound)
-                {
-                    UserLogin userLogin = new UserLogin();
-                    userLogin.Show();
-                }
-
-                this.Close();
-                UserPanel.checkoutForm.Close();   // Reset the user bill data
-
-                // Reset the previous user's data (close previous UserPanel instance)
-                UserLogin.userPanel.Close();
+                ReturnToUserLogin();
             }
+        }
+
+        private void UserFeedbackForm_Deactivate(object sender, EventArgs e)
+        {
+            ReturnToUserLogin();
         }
     }
 }

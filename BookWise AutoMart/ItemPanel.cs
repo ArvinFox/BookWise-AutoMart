@@ -238,7 +238,7 @@ namespace BookWise_AutoMart
                 if (qty > tempStock)
                 {
                     OutOfStockForm outOfStockForm = new OutOfStockForm(tempStock, txtQty);
-                    outOfStockForm.ShowDialog();
+                    outOfStockForm.Show();
                 }
                 else
                 {

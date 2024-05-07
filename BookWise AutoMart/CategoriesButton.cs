@@ -54,6 +54,7 @@ namespace BookWise_AutoMart
 
                     if (result == DialogResult.Yes)
                     {
+                        DeleteOrderItems(categoryId);
                         DeleteItems(categoryId);
                         DeleteSubcategories(categoryId);
                         DeleteCategory(categoryId);
@@ -146,6 +147,35 @@ namespace BookWise_AutoMart
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error deleting subcategories: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void DeleteOrderItems(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = @"DELETE FROM Order_Items
+                                 WHERE order_items_item_id IN (
+                                     SELECT item_id
+                                     FROM Items
+                                     WHERE item_category_id = @CategoryId
+                                 )";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@CategoryId", id);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error deleting order items data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

@@ -31,6 +31,7 @@
             this.tblMainFormLayout = new System.Windows.Forms.TableLayoutPanel();
             this.lblTopic = new System.Windows.Forms.Label();
             this.tblPictureLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
             this.tblInformationContainer = new System.Windows.Forms.TableLayoutPanel();
             this.lblNotification = new System.Windows.Forms.Label();
             this.tblPhoneLayout = new System.Windows.Forms.TableLayoutPanel();
@@ -40,21 +41,20 @@
             this.btnGuestLogin = new System.Windows.Forms.Button();
             this.butLogin = new System.Windows.Forms.Button();
             this.tblBottomLayout = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnAdminLogin = new System.Windows.Forms.Button();
             this.tblCreateAccountLayout = new System.Windows.Forms.TableLayoutPanel();
             this.lblNoacc = new System.Windows.Forms.Label();
             this.lblCreateacc = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdminLogin = new System.Windows.Forms.Button();
-            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
             this.tblMainFormLayout.SuspendLayout();
             this.tblPictureLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
             this.tblInformationContainer.SuspendLayout();
             this.tblPhoneLayout.SuspendLayout();
             this.tblButtonsLayout.SuspendLayout();
             this.tblBottomLayout.SuspendLayout();
-            this.tblCreateAccountLayout.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
+            this.tblCreateAccountLayout.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainFormLayout
@@ -105,6 +105,18 @@
             this.tblPictureLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 419F));
             this.tblPictureLayout.Size = new System.Drawing.Size(1112, 419);
             this.tblPictureLayout.TabIndex = 2;
+            // 
+            // pictureBoxLogin
+            // 
+            this.pictureBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxLogin.Image = global::BookWise_AutoMart.Properties.Resources.Login_pic;
+            this.pictureBoxLogin.Location = new System.Drawing.Point(3, 2);
+            this.pictureBoxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBoxLogin.Name = "pictureBoxLogin";
+            this.pictureBoxLogin.Size = new System.Drawing.Size(644, 415);
+            this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxLogin.TabIndex = 1;
+            this.pictureBoxLogin.TabStop = false;
             // 
             // tblInformationContainer
             // 
@@ -256,6 +268,40 @@
             this.tblBottomLayout.Size = new System.Drawing.Size(1112, 165);
             this.tblBottomLayout.TabIndex = 48;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.btnAdminLogin, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1106, 62);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // btnAdminLogin
+            // 
+            this.btnAdminLogin.BackColor = System.Drawing.Color.White;
+            this.btnAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.btnAdminLogin.ForeColor = System.Drawing.Color.Tomato;
+            this.btnAdminLogin.Location = new System.Drawing.Point(23, 2);
+            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAdminLogin.Name = "btnAdminLogin";
+            this.btnAdminLogin.Size = new System.Drawing.Size(344, 58);
+            this.btnAdminLogin.TabIndex = 5;
+            this.btnAdminLogin.TabStop = false;
+            this.btnAdminLogin.Text = "ADMIN LOGIN";
+            this.btnAdminLogin.UseVisualStyleBackColor = false;
+            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
+            // 
             // tblCreateAccountLayout
             // 
             this.tblCreateAccountLayout.ColumnCount = 3;
@@ -300,52 +346,6 @@
             this.lblCreateacc.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCreateacc.Click += new System.EventHandler(this.lblCreateacc_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 350F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnAdminLogin, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 2);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1106, 62);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
-            // btnAdminLogin
-            // 
-            this.btnAdminLogin.BackColor = System.Drawing.Color.White;
-            this.btnAdminLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdminLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdminLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdminLogin.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.btnAdminLogin.ForeColor = System.Drawing.Color.Tomato;
-            this.btnAdminLogin.Location = new System.Drawing.Point(23, 2);
-            this.btnAdminLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnAdminLogin.Name = "btnAdminLogin";
-            this.btnAdminLogin.Size = new System.Drawing.Size(344, 58);
-            this.btnAdminLogin.TabIndex = 5;
-            this.btnAdminLogin.TabStop = false;
-            this.btnAdminLogin.Text = "ADMIN LOGIN";
-            this.btnAdminLogin.UseVisualStyleBackColor = false;
-            this.btnAdminLogin.Click += new System.EventHandler(this.btnAdminLogin_Click);
-            // 
-            // pictureBoxLogin
-            // 
-            this.pictureBoxLogin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxLogin.Image = global::BookWise_AutoMart.Properties.Resources.Login_pic;
-            this.pictureBoxLogin.Location = new System.Drawing.Point(3, 2);
-            this.pictureBoxLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBoxLogin.Name = "pictureBoxLogin";
-            this.pictureBoxLogin.Size = new System.Drawing.Size(644, 415);
-            this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxLogin.TabIndex = 1;
-            this.pictureBoxLogin.TabStop = false;
-            // 
             // UserLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,16 +360,16 @@
             this.tblMainFormLayout.ResumeLayout(false);
             this.tblMainFormLayout.PerformLayout();
             this.tblPictureLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
             this.tblInformationContainer.ResumeLayout(false);
             this.tblInformationContainer.PerformLayout();
             this.tblPhoneLayout.ResumeLayout(false);
             this.tblPhoneLayout.PerformLayout();
             this.tblButtonsLayout.ResumeLayout(false);
             this.tblBottomLayout.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.tblCreateAccountLayout.ResumeLayout(false);
             this.tblCreateAccountLayout.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
             this.ResumeLayout(false);
 
         }

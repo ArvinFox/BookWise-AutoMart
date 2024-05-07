@@ -408,6 +408,7 @@ namespace BookWise_AutoMart
 
             if (result == DialogResult.Yes)
             {
+                DeleteOrderItems(id);
                 DeleteItem(id);
             }
         }
@@ -442,6 +443,29 @@ namespace BookWise_AutoMart
                     catch (Exception ex)
                     {
                         MessageBox.Show($"Error in deleting item: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        private void DeleteOrderItems(int itemId)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "DELETE FROM Order_Items WHERE order_items_item_id = @ItemId";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        command.Parameters.AddWithValue("@ItemId", itemId);
+
+                        connection.Open();
+
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error in deleting order items data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }

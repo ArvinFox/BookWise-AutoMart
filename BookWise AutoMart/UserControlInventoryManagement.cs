@@ -31,10 +31,6 @@ namespace BookWise_AutoMart
             DisplayItems();
             PopulateCategoriesComboBox();
             Placeholder(txtSearchBar, "Enter item name...");
-
-            pnlLogoutButtonContainer.Location = new Point(this.Width - pnlLogoutButtonContainer.Width, this.Height - pnlLogoutButtonContainer.Height);
-            pnlLogoutButtonContainer.BringToFront();
-            pnlLogoutButtonContainer.BringToFront();
         }
 
         private void Placeholder(TextBox textBox, string placeholder)

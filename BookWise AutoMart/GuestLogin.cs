@@ -87,7 +87,7 @@ namespace BookWise_AutoMart
         private bool ValidatePhoneNumber(string phoneNumber)
         {
             // Regular expression pattern to validate the phone number
-            string pattern = @"^\(?[0-9]{3}\)?[-.]?([0-9]{3})[-.]?([0-9]{4})$";
+            string pattern = @"^(070|071|072|074|075|076|077|078)[0-9]{7}$";
 
             // Check if the phone number matches the pattern
             return Regex.IsMatch(phoneNumber.ToString(), pattern);
